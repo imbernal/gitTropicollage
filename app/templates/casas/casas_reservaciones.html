@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Home</title>
+    <link rel="stylesheet" href="../../static/css/tropicollage.css">
+    <link rel="stylesheet" href="../../static/css/bootstrap.min.css">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, maximum-scale=1" />
+</head>
+<body>
+
+    <div class="opcion_casas row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="row div_opciones_fechas container">
+                <div class="col-sm-2 col-md-2 col-lg-2">
+                    <h4>Fechas</h4>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3" id="desde">
+                    <input type="text" class="form-control" placeholder="Desde">
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <input type="text" class="form-control" placeholder="Hasta">
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <input type="submit" class="btn btn-default">
+                </div>
+            </div>
+
+            <div class="row div_opciones_prices">
+                <div class="col-xs-2 col-sm-2 col-md-3 col-lg-2">
+                    <h4>Range Price</h4>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" id="range">
+                    <input type="text"  class="form-control" placeholder="Range Price">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="list_casas">
+        <div class="col-xs-11">
+            <div class="opciones">
+                <div class="filtros">
+                    <button type="submit" class="btn btn-default">Mas filtros</button>
+                    <p class="pull-right">Mas de 50000 reservaciones ¿Porque no usted?</p>
+                </div>
+
+            </div>
+            <section class="posts row">
+            {% for item in list %}
+                <div class=" item col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <article class="post">
+                        <div class="descripcion row">
+                            <div class="casa-foto">
+                                <img class="img-responsive" src="../../static/img/foto.jpg" />
+                                <p class="price">
+                                    $ 34
+                                </p>
+                            </div>
+                            <div class="row">
+                                <div class="detalles col-xs-12">
+                                    <h4><a href="#">{{ item.casa.nombre }}</a></h4>
+                                    <h5 class="resumen">
+                                        {{ item.casa.descripcion }}
+                                    </h5>
+                                    <div class="row">
+                                        <div class="reviews">
+                                            <div class="cant-review col-xs-6">23 reviews</div>
+                                            <div class="categoria col-xs-6">Categoria: *****</div>
+                                        </div>
+                                    </div>
+
+                            </div>
+                            </div>
+
+                        </div>
+                    </article>
+                </div>
+            {% endfor %}
+            </section>
+	    </div>
+    </div>
+
+
+
+	<!-- <div class="map col-xs-6">
+		<img src="imagenes/mapa.jpg"></img>
+	</div> -->
+
+	<footer></footer>
+</body>
+</html>

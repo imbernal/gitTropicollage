@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tropicollage - {% block title %}{% endblock %}</title>
+    <meta name="description"
+          content="Spirit8 is a Digital agency one page template built based on bootstrap framework. This template is design by Robert Berki and coded by Jenn Pereira. It is simple, mobile responsive, perfect for portfolio and agency websites. Get this for free exclusively at ThemeForces.com">
+    <meta name="keywords"
+          content="bootstrap theme, portfolio template, digital agency, onepage, mobile responsive, spirit8, free website, free theme, themeforces themes, themeforces wordpress themes, themeforces bootstrap theme">
+    <meta name="author" content="ThemeForces.com">
+
+
+
+
+    {% block global_styles %}
+        <link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon" href="static/img/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/static/img/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/static/img/apple-touch-icon-114x114.png">
+
+
+        <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="/static/ionicons/css/ionicons.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+
+    {% endblock %}
+    {% block level_styles %}
+
+        {#        <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic'#}
+        {#              rel='stylesheet' type='text/css'>#}
+        {#        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,700,300,600,800,400'#}
+        {#              rel='stylesheet' type='text/css'>#}
+
+    {% endblock %}
+
+</head>
+
+<body>
+{% block nav %}{% endblock %}
+
+{% block body %}{% endblock %}
+
+{% block footer %}
+    <nav id="footer">
+        <div class="container">
+            <div class="pull-left fnav">
+                <p>ALL RIGHTS RESERVED. COPYRIGHT © 2015. Tropicollage
+            </div>
+            <div class="pull-right fnav">
+                <ul class="footer-social">
+                    <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                    <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                    <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+{% endblock %}
+
+{% block global_scripts %}
+    <script type="text/javascript" src="/static/js/jquery.1.11.1.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.js"></script>
+
+{% endblock %}
+
+{% block level_scripts %}{% endblock %}
+</body>
+</html>

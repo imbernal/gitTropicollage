@@ -1,0 +1,392 @@
+{% extends 'layout.html' %}
+{% block level_styles %}
+
+    <link rel="stylesheet" href="/static/css/details.css">
+    <link rel="stylesheet" href="/static/css/tropicollage.css">
+    <link rel="stylesheet" href="/static/css/normalize.css">
+    <link rel="stylesheet" href="/static/css/ion.rangeSlider.css">
+    {#    <link rel="stylesheet" href="/static/css/ion.rangeSlider.skinFlat.css">#}
+    <link rel="stylesheet" href="/static/css/ion.rangeSlider.skinModern.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap-datetimepicker.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap-datetimepicker.min.css">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1"/>
+{% endblock %}
+
+
+{% block nav %}
+    <nav class="navbar navbar-default" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Logo</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+
+            <form class="navbar-form navbar-left" role="search">
+                <div class="input-group">
+                    <input type="text" class="form-control">
+        					<span class="input-group-btn">
+        							<button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                                    </button>
+        					</span>
+                </div>
+                <!-- /input-group -->
+            </form>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a data-toggle="modal" href="#myModal">Help </a></li>
+                <li><a href="#">Register</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title">Articulos Sugeridos</h4>
+                        </div>
+                        <div class="modal-body">
+                            <h4><span class="ion-document-text"></span>Guia para empezar</h4>
+                        </div>
+                        <hr>
+                        <div class="modal-body">
+                            <h4><span class="ion-document-text"></span>Que tengo que hacer para reservar</h4>
+                        </div>
+                        <hr>
+                        <div class="modal-body">
+                            <h4><span class="ion-document-text"></span>Puedo modificar una reserva confirmada</h4>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            <a href="#" class="pull-left">Centro de Ayuda</a>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <!-- /.modal -->
+
+        </div>
+        <!-- /.navbar-collapse -->
+    </nav>
+{% endblock %}
+
+{% block body %}
+
+    <div class="total">
+
+        <div class="plus" id="plus">
+            <a class="navbar-toggle" data-toggle="collapse" data-target=".filt">
+                <span id="filters_simbol" class="ion-ios-arrow-forward"></span>
+            </a>
+        </div>
+        <div class="list_casas">
+
+
+            <div class="col-xs-11" id="home_list">
+                <section class="posts row">
+                    {% for item in filter %}
+
+                        <div class="item col-xs-8 col-sm-4 col-md-4 col-lg-3">
+
+                            <div class="post">
+                                <div class="descripcion row">
+                                    <div class="casa-foto">
+
+
+                                        <img class="img-responsive cv"
+                                             src="/media/{{ item.foto_principal }}"/>
+
+                                        <div class="price">
+                                            <span class="pull-left" id="simbolo_peso">$</span> <span
+                                                id="precio_valor">{{ item.precio_alta }}</span>
+                                        </div>
+
+
+                                    </div>
+
+
+                                </div>
+                                <div class="categoria">
+                                    <span class="star ion-android-star"></span>
+                                    <span class="star ion-android-star"></span>
+                                    <span class="star ion-android-star"></span>
+                                    <span class="star ion-android-star"></span>
+                                    <span class="star ion-android-star"></span>
+                                </div>
+                            </div>
+                            <div class="detalles">
+                                <div class="image_owner">
+                                    <img class="img-circle img-responsive"
+                                         src="/media/{{ item.foto_dueno }}"
+                                         id="owner" width="56" height="66"
+                                         alt="100">
+                                </div>
+                                <h4><a href="{% url 'home_details' item.pk %}">{{ item.nombre }}</a></h4>
+
+
+                                <h5 class="resumen text_truncate">
+                                    {{ item.mensaje_promocional }}
+                                </h5>
+
+                                <div class="reviews">
+                                    <a href="{% url 'home_details' item.pk %}">
+                                        <button class="btn-reserv btn btn-lg btn-block btn-default"><span
+                                                class="ion-ios-calendar-outline"></span> Book now!!
+                                        </button>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    {% endfor %}
+
+                </section>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="collapse navbar-collapse filt">
+        <form action="" method="get">
+            <div class="filtros">
+
+
+                <div class="tipos_filtros row">
+                    <div class="filtros_title col-xs-12">
+                        <h2>Filtros</h2>
+                    </div>
+
+                    <div class="filter col-xs-12 col-sm-12 col-lg-11 row">
+
+                        {% csrf_token %}
+
+                        <div class="one_filter">
+                            <div class="one_filter_title">
+                                <h4><span
+                                        id="medal"
+                                        class="ion-ribbon-b"></span>SuperHost<span id="bombillo"
+                                                                                   class="ion-android-bulb"></span></h4>
+                            </div>
+                            <div class="row each_filter">
+                                <div class="col-xs-5 name_filter">
+                                    Superhost
+                                </div>
+                                <div class="col-xs-3 filter_select">
+                                    {{ filter.form.superhost }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr>
+
+
+                        <div class="one_filter">
+                            <div class="one_filter_title">
+                                <h4><span class="icons ion-android-home"></span>Location</h4>
+                            </div>
+                            <div class="row each_filter">
+                                <div class="col-xs-5 name_filter">
+                                    Ciudad
+                                </div>
+                                <div class="col-xs-3 filter_select">
+                                    {{ filter.form.ciudad }}
+                                </div>
+                            </div>
+                            <div class="row each_filter">
+                                <div class="col-xs-5 name_filter">
+                                    Campo
+                                </div>
+                                <div class="col-xs-3 filter_select">
+                                    {{ filter.form.campo }}
+                                </div>
+                            </div>
+                            <div class="row each_filter">
+                                <div class="col-xs-5 name_filter">
+                                    Playa
+                                </div>
+                                <div class="col-xs-3 filter_select">
+                                    {{ filter.form.playa }}
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+
+                        <div class="one_filter">
+
+
+                            <div class="one_filter_title">
+
+                                <h4><span class="icons ion-happy-outline">
+                                                                    <span id="arrow_down"
+                                                                          class="ion-chevron-down"></span>
+                                                                </span>Servicios</h4>
+
+                            </div>
+                            <div class="col-xs-10 col-sm-12 col-lg-11">
+                                <div class="row each_filter">
+                                    <div class="col-xs-5 name_filter">
+                                        Internet
+                                    </div>
+                                    <div class="col-xs-3 filter_select">
+                                        {{ filter.form.internet }}
+                                    </div>
+                                </div>
+
+                                <div class="row each_filter">
+                                    <div class="col-xs-5 name_filter">
+                                        Parqueo
+                                    </div>
+                                    <div class="col-xs-3 filter_select">
+                                        {{ filter.form.parqueo }}
+                                    </div>
+                                </div>
+                                <div class="row each_filter">
+                                    <div class="col-xs-5 name_filter">
+                                        Garaje
+                                    </div>
+                                    <div class="col-xs-3 filter_select">
+                                        {{ filter.form.garaje }}
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-xs-10 col-sm-12 col-lg-11" id="more_comfort">
+                            <div class="row each_filter">
+                                <div class="col-xs-5 name_filter">
+                                    Habitacions
+                                </div>
+                                <div class="col-xs-3 filter_select">
+                                    {{ filter.form.cant_habitaciones }}
+                                </div>
+                            </div>
+                            <label>
+                                <input type="checkbox" name="air_condition" id="air_condition" value="">
+                                Air-conditioning.
+                            </label>
+                            <label>
+                                <input type="checkbox" name="gimnasio" id="gimnasio" value="">
+                                Gimnasio
+                            </label>
+
+                        </div>
+                        {#                        <hr>#}
+                        {#                        <div class="one_filter">#}
+                        {##}
+                        {#                            <div class="one_filter_title">#}
+                        {##}
+                        {#                                <h4><span class="icons ion-social-usd">#}
+                        {#                                                                </span>Precio</h4>#}
+                        {##}
+                        {#                            </div>#}
+                        {#                            <div class="col-xs-12 col-sm-12 col-lg-11 buttons_price">#}
+                        {##}
+                        {#                                <div class="input-group">#}
+                        {#                                    <span class="input-group-addon">$</span>#}
+                        {#                                    <input type="text" placeholder="Min" class="form-control">#}
+                        {##}
+                        {#                                </div>#}
+                        {#                                <br/>#}
+                        {##}
+                        {#                                <div class="input-group">#}
+                        {#                                    <span class="input-group-addon">$</span>#}
+                        {#                                    <input type="text" placeholder="Max" class="form-control">#}
+                        {##}
+                        {#                                </div>#}
+                        {#                                <br/>#}
+                        {#                            </div>#}
+                        {#                        </div>#}
+                        {#                        <hr>#}
+                    </div>
+
+                </div>
+
+                {#            </form>#}
+                {#            <img class="map-image" src="../../static/img/mapa.jpg"/>#}
+                <div class="buttons_filter">
+                    <button type="submit" id="filtrar" name="action" value="filtrar" class="btn">
+                        Filtrar
+                    </button>
+                    <button type="submit" id="all" value="all" name="action" class="btn">Cancel
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
+{% block footer %}
+{% endblock %}
+{% block level_scripts %}
+    {#    <script src="/static/js/jquery-1.11.3.min.js"></script>#}
+    <script src="/static/js/jquery.isotope.js"></script>
+    <script src="/static/js/ion.rangeSlider.js"></script>
+    <script src="/static/js/SmoothScroll.js"></script>
+    <script src="/static/js/owl.carousel.js"></script>
+    <script type="text/javascript" src="/static/js/moment.js"></script>
+
+
+
+    <script src="/static/js/modernizr.custom.js"></script>
+
+    <script>
+
+        $(function () {
+
+            $('#collapseOne').collapse('hide');
+
+            {#            $('#filtrar').attr('disabled', true);#}
+
+            $("#more_comfort").css("display", "none");
+            $("#more_foto").css("display", "none");
+            {# flecha de mostrar filtros en resolucion < 768px     #}
+            $('#filters_simbol').on('click', function () {
+                $('#home_list').toggle(700);
+                $('#filters_simbol').toggleClass("ion-ios-arrow-back");
+                $('.filtros').css({width: 230, left: 46});
+            });
+            {# Mostrar mas filtros de tipo comfort   #}
+            $('#arrow_down').on('click', function () {
+
+                $('#more_comfort').toggle(700);
+                $('#arrow_down').toggleClass("ion-chevron-up");
+            });
+            $('#arrow_down_rooms').on('click', function () {
+
+                $('#more_rooms').toggle(700);
+                $('#arrow_down_rooms').toggleClass("ion-chevron-up");
+            });
+
+
+            function disabled() {
+                var checkboxes = $('input[type="checkbox"]:checked');
+
+                if (checkboxes.length == 0) {
+                    $('#superhostSelected').val(false);
+                    $('#filtrar').attr('disabled', true);
+                    $('#all').attr('disabled', false);
+                }
+
+            }
+
+            function validateButtons() {
+                $('#filtrar').attr('disabled', false);
+                $('#all').attr('disabled', true);
+            }
+
+        });
+    </script>
+{% endblock %}

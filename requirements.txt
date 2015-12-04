@@ -1,0 +1,5 @@
+djangorestframework
+git+git://github.com/gkuhn1/django-admin-multiupload.git
+django-filter
+gunicorn
+

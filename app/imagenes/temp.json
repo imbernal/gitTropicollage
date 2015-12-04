@@ -1,0 +1,17 @@
+{
+	"name":"Cesar",
+	"superhost": true,
+	"internet": true,
+	"rooms_count": 3,
+	"room_set": [
+		{
+			"title": "Habitacion #1"
+		},
+		{
+			"title": "Habitacion #2"
+		},
+		{
+			"title": "Habitacion #3"
+		}
+	]
+}

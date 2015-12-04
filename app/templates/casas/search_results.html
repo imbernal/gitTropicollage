@@ -1,0 +1,9 @@
+{% extends 'layout.html' %}
+{% block body %}
+    {% for item in entities %}
+        <h1><a href="{% url 'home_details' item.pk %}">{{ item }}</a></h1>
+        <hr />
+    {% empty %}
+        <h1>No hay casas pa ti, asi q no jodas mas...</h1>
+    {% endfor %}
+{% endblock %}
