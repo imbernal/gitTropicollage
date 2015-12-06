@@ -1,14 +1,12 @@
 {% extends 'layout.html' %}
 {% block level_styles %}
-    {% load static from staticfiles %}
-    <link rel="stylesheet" href="{% static "details.css" %}">
-    <link rel="stylesheet" href="{% static "tropicollage.css" %}">
-    <link rel="stylesheet" href="{% static "normalize.css" %}">
-    <link rel="stylesheet" href="{% static "ion.rangeSlider.css" %}">
-    {#    <link rel="stylesheet" href="/static/css/ion.rangeSlider.skinFlat.css">#}
-    <link rel="stylesheet" href="{% static "ion.rangeSlider.skinModern.css" %}">
-    <link rel="stylesheet" type="text/css" href="{% static "bootstrap-datetimepicker.css" %}">
-    <link rel="stylesheet" type="text/css" href="{% static "bootstrap-datetimepicker.min.css" %}">
+
+    <link rel="stylesheet" href="/static/css/details.css">
+    <link rel="stylesheet" href="/static/css/tropicollage.css">
+    <link rel="stylesheet" href="/static/css/normalize.css">
+    <link rel="stylesheet" href="/static/css/ion.rangeSlider.css">
+
+
     <meta name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1"/>
 {% endblock %}
@@ -336,14 +334,10 @@
 {% block footer %}
 {% endblock %}
 {% block level_scripts %}
-    {#    <script src="/static/js/jquery-1.11.3.min.js"></script>#}
-    <script src="/static/js/jquery.isotope.js"></script>
-    <script src="/static/js/ion.rangeSlider.js"></script>
+
     <script src="/static/js/SmoothScroll.js"></script>
-    <script src="/static/js/owl.carousel.js"></script>
+
     <script type="text/javascript" src="/static/js/moment.js"></script>
-
-
 
     <script src="/static/js/modernizr.custom.js"></script>
 
