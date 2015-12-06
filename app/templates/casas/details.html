@@ -33,23 +33,52 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
 
             <form class="navbar-form navbar-left" role="search">
-
                 <div class="input-group">
                     <input type="text" class="form-control">
-					<span class="input-group-btn">
-							<button type="button" class="btn btn-default">
-                                <span class="ion-ios-search" aria-hidden="true"></span>
-                            </button>
-					</span>
+        					<span class="input-group-btn">
+        							<button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                                    </button>
+        					</span>
                 </div>
                 <!-- /input-group -->
-
             </form>
+
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Help</a></li>
+                <li><a data-toggle="modal" href="#myModal">Help </a></li>
                 <li><a href="#">Register</a></li>
                 <li><a href="#">Login</a></li>
             </ul>
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title">Articulos Sugeridos</h4>
+                        </div>
+                        <div class="modal-body">
+                            <h4><span class="ion-document-text"></span>Guia para empezar</h4>
+                        </div>
+                        <hr>
+                        <div class="modal-body">
+                            <h4><span class="ion-document-text"></span>Que tengo que hacer para reservar</h4>
+                        </div>
+                        <hr>
+                        <div class="modal-body">
+                            <h4><span class="ion-document-text"></span>Puedo modificar una reserva confirmada</h4>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            <a href="#" class="pull-left">Centro de Ayuda</a>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <!-- /.modal -->
+
         </div>
         <!-- /.navbar-collapse -->
     </nav>
@@ -148,9 +177,7 @@
                     <a class="btn btn-lg btn-block btn-default"><span class="ion-ios-heart-outline"></span> Add to
                         wishlist
                     </a>
-                    <a {% if user.is_authenticated %}
-                        data-toggle="modal" href="#access-modal"
-                    {% endif %}  class="btn btn-lg btn-block btn-default"><span class="ion-ios-calendar-outline"></span>
+                    <a class="btn btn-lg btn-block btn-default"><span class="ion-ios-calendar-outline"></span>
                         Make
                         a reservation
                     </a>
@@ -821,76 +848,76 @@
         <div class="container">
             <h5 class="reviews-count">47 Reviews</h5>
 
-            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-                <h5 class="title-details">Resumen</h5>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
-                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                    <h6 class="point">Habitaciones: </h6>
-                    <span class="score">
-                        <span class="ion-star"></span>
-                        <span class="ion-star"></span>
-                        <span class="ion-star"></span>
-                        <span class="ion-star"></span>
-                        <span class="ion-star"></span>
-                    </span>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                    <h6 class="point">Limpieza: </h6>
-                    <span class="score">
-                        <span class="ion-star"></span>
-                        <span class="ion-star"></span>
-                        <span class="ion-star"></span>
-                        <span class="ion-star"></span>
-                        <span class="ion-star"></span>
-                    </span>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                    <h6 class="point">Atencion: </h6>
-                    <span class="score">
-                        <span class="ion-star"></span>
-                        <span class="ion-star"></span>
-                        <span class="ion-star"></span>
-                        <span class="ion-star"></span>
-                        <span class="ion-star"></span>
-                    </span>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                    <h6 class="point">Recibida: </h6>
-                    <span class="score">
-                        <span class="ion-star"></span>
-                        <span class="ion-star"></span>
-                        <span class="ion-star"></span>
-                        <span class="ion-star"></span>
-                        <span class="ion-star"></span>
-                    </span>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                    <h6 class="point">Despedida: </h6>
-                    <span class="score">
-                        <span class="ion-star"></span>
-                        <span class="ion-star"></span>
-                        <span class="ion-star"></span>
-                        <span class="ion-star"></span>
-                        <span class="ion-star"></span>
-                    </span>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                    <h6 class="point">Alimentacion: </h6>
-                    <span class="score">
-                        <span class="ion-star"></span>
-                        <span class="ion-star"></span>
-                        <span class="ion-star"></span>
-                        <span class="ion-star"></span>
-                        <span class="ion-star"></span>
-                    </span>
-                </div>
-            </div>
+{#            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">#}
+{#                <h5 class="title-details">Resumen</h5>#}
+{#            </div>#}
+{#            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">#}
+{#                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">#}
+{#                    <h6 class="point">Habitaciones: </h6>#}
+{#                    <span class="score">#}
+{#                        <span class="ion-star"></span>#}
+{#                        <span class="ion-star"></span>#}
+{#                        <span class="ion-star"></span>#}
+{#                        <span class="ion-star"></span>#}
+{#                        <span class="ion-star"></span>#}
+{#                    </span>#}
+{#                </div>#}
+{#                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">#}
+{#                    <h6 class="point">Limpieza: </h6>#}
+{#                    <span class="score">#}
+{#                        <span class="ion-star"></span>#}
+{#                        <span class="ion-star"></span>#}
+{#                        <span class="ion-star"></span>#}
+{#                        <span class="ion-star"></span>#}
+{#                        <span class="ion-star"></span>#}
+{#                    </span>#}
+{#                </div>#}
+{#                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">#}
+{#                    <h6 class="point">Atencion: </h6>#}
+{#                    <span class="score">#}
+{#                        <span class="ion-star"></span>#}
+{#                        <span class="ion-star"></span>#}
+{#                        <span class="ion-star"></span>#}
+{#                        <span class="ion-star"></span>#}
+{#                        <span class="ion-star"></span>#}
+{#                    </span>#}
+{#                </div>#}
+{#                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">#}
+{#                    <h6 class="point">Recibida: </h6>#}
+{#                    <span class="score">#}
+{#                        <span class="ion-star"></span>#}
+{#                        <span class="ion-star"></span>#}
+{#                        <span class="ion-star"></span>#}
+{#                        <span class="ion-star"></span>#}
+{#                        <span class="ion-star"></span>#}
+{#                    </span>#}
+{#                </div>#}
+{#                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">#}
+{#                    <h6 class="point">Despedida: </h6>#}
+{#                    <span class="score">#}
+{#                        <span class="ion-star"></span>#}
+{#                        <span class="ion-star"></span>#}
+{#                        <span class="ion-star"></span>#}
+{#                        <span class="ion-star"></span>#}
+{#                        <span class="ion-star"></span>#}
+{#                    </span>#}
+{#                </div>#}
+{#                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">#}
+{#                    <h6 class="point">Alimentacion: </h6>#}
+{#                    <span class="score">#}
+{#                        <span class="ion-star"></span>#}
+{#                        <span class="ion-star"></span>#}
+{#                        <span class="ion-star"></span>#}
+{#                        <span class="ion-star"></span>#}
+{#                        <span class="ion-star"></span>#}
+{#                    </span>#}
+{#                </div>#}
+{#            </div>#}
 
             <div class="col-xs-12">
                 <button class="translator-btn btn btn-block">Translate all the experiences</button>
 
-                <div class="reviews-list container">
+                <div class="reviews-list container" id="comentarios">
                     <div class="item col-xs-12">
                         <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
                             <div class="container">
