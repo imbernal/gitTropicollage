@@ -6,9 +6,4 @@ class CasaFilter(django_filters.FilterSet):
     # superhost = forms.BooleanField()
     class Meta:
         model = Casa
-        fields = ['superhost','ciudad' ,'garaje', 'campo' , 'playa' , 'internet' , 'parqueo' , 'piscina' , 'cant_habitaciones']
-
-class HabitacionFilter(django_filters.FilterSet):
-    class Meta:
-        model = Habitacion
-        fields = ['caja_fuerte' , ]
+        fields = ['superhost','ciudad' ,'filter_agua_caliente', 'campo' , 'playa' , 'internet' , 'parqueo' , 'filter_bano_privado' , 'filter_caja_fuerte']

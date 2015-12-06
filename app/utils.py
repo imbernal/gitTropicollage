@@ -107,6 +107,15 @@ def handle_uploaded_file(cad):
 		habitacion.casa = casa
 		habitacion.save()
 
+		if habitacion.agua_caliente:
+			casa.filter_agua_caliente = habitacion.agua_caliente
+
+		if habitacion.bano_privado:
+			casa.filter_bano_privado = habitacion.bano_privado
+
+		if habitacion.caja_fuerte:
+			casa.filter_caja_fuerte = habitacion.caja_fuerte
+
 	casa.precio_baja = menor_precio_baja
 	casa.precio_alta = menor_precio_alta
 	casa.save()

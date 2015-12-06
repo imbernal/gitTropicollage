@@ -101,6 +101,11 @@ class Casa(models.Model):
     precio_alta = models.FloatField(null = True , default = 0)
     precio_baja = models.FloatField(null = True , default = 0)
 
+    #datos para buscar
+    filter_agua_caliente = models.BooleanField(choices = CHOICES , default=False)
+    filter_bano_privado = models.BooleanField(choices = CHOICES,default=False)
+    filter_caja_fuerte = models.BooleanField(choices = CHOICES,default=False)
+
     def __str__(self):
         return self.nombre
 
