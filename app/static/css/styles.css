@@ -15,6 +15,9 @@ p {
 	overflow-x: hidden;
 }
 
+h1 {
+	font-size: 35px;
+}
 /* Set a large height to see parallax effect */
 main {
 	display: block;

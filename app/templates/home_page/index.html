@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="/static/css/daterangepicker.css">
 
     <link rel="stylesheet" type="text/css" href="/static/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="/static/css/home.css">
 {% endblock %}
 {% block body %}
 
@@ -32,8 +33,6 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#tf-home" class="page-scroll">Home</a></li>
                         <li><a href="#tf-about" class="page-scroll">About</a></li>
-                        <li><a href="#tf-team" class="page-scroll">Team</a></li>
-                        <li><a href="#tf-services" class="page-scroll">Services</a></li>
                         <li><a href="#tf-works" class="page-scroll">Portfolio</a></li>
                         <li><a href="#tf-testimonials" class="page-scroll">Testimonials</a></li>
                         <li><a href="#tf-contact" class="page-scroll">Contact</a></li>
@@ -54,8 +53,8 @@
                     <source src="/static/media/movie.ogv" type="video/ogg">
                 </video>
             </div>
-
-            <div class="col-xs-12 col-sm-12 col-md-12 main-filter ">
+            <div class="container-fluid">
+                <div class="row main-filter">
                 <div class="content text-center">
                     <header class="text_promo">
                         <h1>Find the house to spend your vacations, Like a dream.</h1>
@@ -106,12 +105,10 @@
                         <div class="button_search">
                             <button type="submit" class="btn btn-default">Search</button>
                         </div>
-                        <div class="check_in">
-
-                        </div>
                     </form>
-                    <br/>
+
                 </div>
+            </div>
             </div>
         </main>
         {#        <div class="content-overlay text-center">#}
@@ -311,7 +308,7 @@
                 </div>
             </div>
         </div>
-
+{#TODO: Edit the search form in the tf-home #}
         <!-- Contact Section
         ==========================================-->
         <div id="tf-contact" class="text-center">
@@ -328,21 +325,18 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Username</label>
                                         <input type="email" name="username" class="form-control" id="exampleInputEmail1"
                                                placeholder="Enter email">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="exampleInputPassword1">Email address</label>
                                         <input class="form-control" name="email" id="exampleInputPassword1"
                                                placeholder="Email adress">
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Message</label>
                                 <textarea class="form-control" name="message" rows="3"></textarea>
                             </div>
 
