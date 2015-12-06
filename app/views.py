@@ -48,16 +48,20 @@ def homeDetails(request, home_id):
     cant_camas_dobles = 0
 
 
+
     for item in entity.habitacion_set.all():
         cant_camas_simples += item.cama_personal
         cant_camas_dobles += item.cama_doble
 
     cant_total_personas = 2 * cant_camas_dobles + cant_camas_simples
 
+    pictures_list = get_pictures_from_gallery(entity.gallery)
+
     return render(request, 'casas/details.html', {'entity': entity,
                                                   'cant_camas_simples': cant_camas_simples,
                                                   'cant_camas_dobles': cant_camas_dobles,
-                                                  'cant_total_personas': cant_total_personas
+                                                  'cant_total_personas': cant_total_personas,
+                                                  'pictures': pictures_list
                                                   },
                   context_instance=RequestContext(request))
 

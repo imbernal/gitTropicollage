@@ -1,39 +1,42 @@
 $(document).ready(function () {
 
-    var home_id = $('#entity_id').attr('value');
-    var imageName = [];
+    $('.preloader').hide();
 
-    console.log(home_id);
+    var main_pic = $('.pic-link:first').attr('href');
 
-    $.ajax({
-        method: 'POST',
-        url: '/home_pictures/',
-        data: {
-            'home_id': home_id
-        }
-    })
-        .done(function (data) {
-            imageName = data.pictures_list;
-        })
-        .fail(function (data, err) {
-            console.log('ERROR: ' + err);
-        });
-    
-    var count = 0;
+    $('.gallery-container').html('<img src="' + main_pic + '" class="picture">');
 
-    var click_away =
-        function go() {
-            $('.picture').fadeOut(300, function () {
-                var self = $(this);
-                self.attr("src", "/media/imagenes/" + imageName[count]);
-                count++;
+    $('.pic-link').click(function () {
+        var selected_pic = $(this).attr('href');
 
-                if (count > imageName.length - 1) {
-                    count = 0;
+        if (selected_pic != main_pic) {
+            main_pic = selected_pic;
+
+            $('.pic-link').each(function () {
+                if ($(this).attr('href') == selected_pic) {
+                    $(this).animate({'opacity': '.5'});
                 }
-                self.fadeIn(500).delay(3000);
-                go();
+                else {
+                    $(this).animate({'opacity': '1'});
+                }
             });
-        };
-    click_away();
+
+            $('.gallery-container').html('<img src="' + selected_pic + '" class="picture">').animate({'opacity': '0'}, 0);
+            $('.preloader').fadeIn();
+            $('.gallery-container .picture').load(function () {
+                $('.preloader').fadeOut(500, function () {
+                    $('.gallery-container').animate({'opacity': '1'}, 200);
+                });
+            });
+            return false;
+        }
+        else {
+            return false;
+        }
+    });
 });
+
+
+function l(arg) {
+    console.log(arg);
+}

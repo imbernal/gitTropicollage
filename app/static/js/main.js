@@ -38,10 +38,10 @@ function main() {
         }
     });
 
-    $('body').scrollspy({ 
-        target: '.navbar-default',
-        offset: 80
-    })
+    //$('body').scrollspy({
+    //    target: '.navbar-default',
+    //    offset: 80
+    //});
 
   	$(document).ready(function() {
   	  $("#team").owlCarousel({

@@ -93,13 +93,16 @@
             </ul>
         </div>
     </div>
+    <img src="/static/img/loading.gif" alt="Loading" class="preloader">
     <div class="gallery" id="gallery">
         <div class="jumbotron col-xs-12">
-            <div class="gallery-container col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="row gallery-container col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <img src="/static/img/01.jpg" alt="01" class="picture">
             </div>
-            <div class="map-container col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                <img src="/static/img/mapa.jpg" alt="map" class="map">
+            <div class="thumbs">
+                {% for item in pictures %}
+                    <a class="pic-link" href="/media/imagenes/{{ item }}"><img class="thumb" src="/media/imagenes/{{ item }}"></a>
+                {% endfor %}
             </div>
         </div>
     </div>
@@ -905,7 +908,7 @@
                                 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
                                 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                         </div>
-                        <div class="date col-xs-12 col-xs-offset-10"><span class="ion-android-calendar"></span>
+                        <div class="date col-xs-12"><span class="ion-android-calendar"></span>
                             <small>A moment ago</small>
                         </div>
                     </div>
@@ -926,7 +929,7 @@
                                 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
                                 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                         </div>
-                        <div class="date col-xs-12 col-xs-offset-10"><span class="ion-android-calendar"></span>
+                        <div class="date col-xs-12"><span class="ion-android-calendar"></span>
                             <small>A moment ago</small>
                         </div>
                     </div>

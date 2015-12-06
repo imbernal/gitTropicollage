@@ -14,7 +14,7 @@
 .pydevproject
 atlassian-ide-plugin.xml
 .ropeproject
-.virtualenv/
+.virtualenvs/
 # Project
 settings_local.py
 public/*
@@ -27,3 +27,4 @@ cache
 ENV
 
 *.sqlite3
+app/imagenes/imagenes
