@@ -1,14 +1,14 @@
 {% extends 'layout.html' %}
 {% block level_styles %}
-
-    <link rel="stylesheet" href="/static/css/details.css">
-    <link rel="stylesheet" href="/static/css/tropicollage.css">
-    <link rel="stylesheet" href="/static/css/normalize.css">
-    <link rel="stylesheet" href="/static/css/ion.rangeSlider.css">
+    {% load static from staticfiles %}
+    <link rel="stylesheet" href="{% static "details.css" %}">
+    <link rel="stylesheet" href="{% static "tropicollage.css" %}">
+    <link rel="stylesheet" href="{% static "normalize.css" %}">
+    <link rel="stylesheet" href="{% static "ion.rangeSlider.css" %}">
     {#    <link rel="stylesheet" href="/static/css/ion.rangeSlider.skinFlat.css">#}
-    <link rel="stylesheet" href="/static/css/ion.rangeSlider.skinModern.css">
-    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap-datetimepicker.css">
-    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="{% static "ion.rangeSlider.skinModern.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "bootstrap-datetimepicker.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "bootstrap-datetimepicker.min.css" %}">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1"/>
 {% endblock %}
@@ -255,10 +255,10 @@
                                 </div>
                                 <div class="row each_filter">
                                     <div class="col-xs-5 name_filter">
-                                        Garaje
+                                        Agua Caliente
                                     </div>
                                     <div class="col-xs-3 filter_select">
-                                        {{ filter.form.garaje }}
+                                        {{ filter.form.filter_agua_caliente }}
                                     </div>
                                 </div>
 
@@ -267,20 +267,22 @@
                         <div class="col-xs-10 col-sm-12 col-lg-11" id="more_comfort">
                             <div class="row each_filter">
                                 <div class="col-xs-5 name_filter">
-                                    Habitacions
+                                    Caja Fuerte
                                 </div>
                                 <div class="col-xs-3 filter_select">
-                                    {{ filter.form.cant_habitaciones }}
+                                    {{ filter.form.filter_caja_fuerte }}
+                                </div>
+
+                            </div>
+                            <div class="row each_filter">
+                                <div class="col-xs-5 name_filter">
+                                    Bano Privado
+                                </div>
+                                <div class="col-xs-3 filter_select">
+                                    {{ filter.form.filter_bano_privado }}
                                 </div>
                             </div>
-                            <label>
-                                <input type="checkbox" name="air_condition" id="air_condition" value="">
-                                Air-conditioning.
-                            </label>
-                            <label>
-                                <input type="checkbox" name="gimnasio" id="gimnasio" value="">
-                                Gimnasio
-                            </label>
+
 
                         </div>
                         {#                        <hr>#}
@@ -317,11 +319,14 @@
                 {#            </form>#}
                 {#            <img class="map-image" src="../../static/img/mapa.jpg"/>#}
                 <div class="buttons_filter">
+
                     <button type="submit" id="filtrar" name="action" value="filtrar" class="btn">
-                        Filtrar
+                        <span id="arrow_down"
+                          class="ion-android-search">
+                    </span>Filtrar
                     </button>
-                    <button type="submit" id="all" value="all" name="action" class="btn">Cancel
-                    </button>
+                    {#                    <button type="submit" id="all" value="all" name="action" class="btn">Cancel#}
+                    {#                    </button>#}
                 </div>
             </div>
         </form>

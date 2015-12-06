@@ -4,16 +4,14 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.shortcuts import render, render_to_response, get_object_or_404
 from django.template import RequestContext
-# from requests import request
-from .models import *
-import json
+
 from django.http.response import HttpResponse, JsonResponse, HttpResponseRedirect
-from django.shortcuts import render
+
 from django.views.decorators.csrf import csrf_protect, csrf_exempt
 from django.contrib import messages
 from django.core.mail import send_mail
 from app.filter import *
-from django.shortcuts import render
+
 
 from .forms import UploadFileForm
 from .utils import handle_uploaded_file
@@ -32,13 +30,11 @@ def homeList(request):
     if request.POST:
         destination = request.POST['destination']
         filter = CasaFilter(request.GET, queryset=Casa.objects.filter(polo_turistico = destination))
-        filter_habitacion = HabitacionFilter(request.GET, queryset=Habitacion.objects.all())
 
     else:
         filter = CasaFilter(request.GET, queryset=Casa.objects.all())
-        filter_habitacion = HabitacionFilter(request.GET, queryset=Habitacion.objects.all())
 
-    return render(request, 'casas/index.html', {"filter": filter, 'filter_habitacion': filter_habitacion})
+    return render(request, 'casas/index.html', {"filter": filter})
 
 
 def homeDetails(request, home_id):
