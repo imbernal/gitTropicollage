@@ -134,8 +134,10 @@ body {
 }
 .simple-about .detail-container {
   color: #858586;
-  padding: 10%;
-  font-size: 2.8em;
+  font-size: 2.3em;
+}
+.simple-about .detail-container a {
+  color: #565a5c;
 }
 .simple-about .first {
   padding-left: 0 !important;
@@ -271,4 +273,10 @@ hr {
   width: 10%;
   border: 4px solid #000;
   margin: 0.5%;
+}
+.panel {
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  -o-border-radius: 0 !important;
+  border-radius: 0 !important;
 }

@@ -35,8 +35,3 @@ $(document).ready(function () {
         }
     });
 });
-
-
-function l(arg) {
-    console.log(arg);
-}
