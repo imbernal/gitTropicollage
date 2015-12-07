@@ -1,6 +1,7 @@
 import datetime
 from django.contrib.auth import authenticate
 from django.contrib.auth import login
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.shortcuts import render, render_to_response, get_object_or_404
 from django.template import RequestContext
@@ -118,7 +119,7 @@ def fecha_search(request):
 
 
 
-
+@login_required(login_url='/admin/login/')
 def uploadJson(request):
     form = UploadFileForm()
     return render(request, 'upload/index.html', {'form': form})
