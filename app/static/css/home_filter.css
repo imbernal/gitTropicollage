@@ -1,1 +1,69 @@
-.main-filter{position:absolute;color:#fff;top:36%;z-index:20;}.main-filter .content{background:rgba(0,0,0,0.6);padding:5px;}.main-filter .content .place{width:20%;display:inline-block}.main-filter .content .place select{-webkit-border-radius:0;-moz-border-radius:0;-o-border-radius:0;border-radius:0}.main-filter .content .to{display:inline-block;color:#000;width:20%;}.main-filter .content .to input{height:34px}.from{display:inline-block;color:#000;width:20%;}.from input{height:34px}.button_search{display:inline-block}.button_search button{-webkit-border-radius:0;-moz-border-radius:0;-o-border-radius:0;border-radius:0}@media screen and (min-width:147px) and (max-width:768px){.place{display:block !important;width:100% !important;margin-bottom:5px}}.casas_home{background:#fff;width:210px;}.casas_home .btn-group{top:13%;left:-18%;}.casas_home .btn-group button{-webkit-border-radius:0;-moz-border-radius:0;-o-border-radius:0;border-radius:0}.casas_home select{-webkit-appearance:none !important;background-position:100% center;background-repeat:no-repeat;border-style:solid;border-width:1px;float:left;border-color:#ccc;padding:.5em;font-size:.875rem;color:rgba(0,0,0,0.75);line-height:normal;-webkit-border-radius:0;-moz-border-radius:0;-o-border-radius:0;border-radius:0;height:2.3125rem}
+.form-control {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+}
+.btn-default {
+  background-color: #fcac45;
+  color: #fff;
+  border: 1px solid #fcac45;
+}
+.main-filter {
+  position: absolute;
+  color: #fff;
+  top: 32%;
+  z-index: 20;
+}
+.main-filter .content {
+  background: rgba(0,0,0,0.6);
+  padding: 5px;
+}
+.button_search {
+  display: inline-block;
+}
+.button_search button {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+}
+@media screen and (min-width: 147px) and (max-width: 768px) {
+  .place {
+    display: block !important;
+    width: 100% !important;
+    margin-bottom: 5px;
+  }
+}
+.casas_home {
+  background: #fff;
+  width: 210px;
+}
+.casas_home .btn-group {
+  top: 13%;
+  left: -18%;
+}
+.casas_home .btn-group button {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+}
+.casas_home select {
+  -webkit-appearance: none !important;
+  background-position: 100% center;
+  background-repeat: no-repeat;
+  border-style: solid;
+  border-width: 1px;
+  float: left;
+  border-color: #ccc;
+  padding: 0.5em;
+  font-size: 0.875rem;
+  color: rgba(0,0,0,0.75);
+  line-height: normal;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  height: 2.3125rem;
+}

@@ -59,10 +59,11 @@
                     <header class="text_promo">
                         <h1>Find the house to spend your vacations, Like a dream.</h1>
                     </header>
-                    <form action="{% url 'casas' %}" method="post">
+                    <form action="{% url 'casas' %}" class="form-inline" method="post">
                         {% csrf_token %}
-                        <div class="place">
-                            <select class="form-control" id="id_destination" name="destination">
+                        <div class="row">
+                            <div class="place">
+                                <select class="form-control" id="id_destination" name="destination">
                                 <option value="Vinales">Vinales</option>
                                 <option value="Pinar del Rio">Pinar del Rio</option>
                                 <option value="Havana Centro">Havana Centro</option>
@@ -93,13 +94,16 @@
                                 <option value="Jaguey Grande">Jaguey Grande</option>
                                 <option value="Boca de Camarioca">Boca de Camarioca</option>
                             </select>
+                            </div>
                         </div>
 
-                        <div class="to">
-                            <input placeholder="Check-in" type="text" id="endDate" name="endDate">
-                        </div>
-                        <div class="from">
-                            <input type="text" placeholder="check-out" id="startDate" name="startDate">
+                        <div class="row">
+                            <div class="to form-group col-sm-6">
+                                <input class="form-control" placeholder="Check-in" type="text" id="endDate" name="endDate">
+                            </div>
+                            <div class="from form-group col-sm-6">
+                                <input class="form-control" type="text" placeholder="check-out" id="startDate" name="startDate">
+                            </div>
                         </div>
 
                         <div class="button_search">
