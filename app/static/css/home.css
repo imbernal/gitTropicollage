@@ -1,9 +1,18 @@
+#tf-menu {
+  background-color: rgba(0,0,0,0.89) !important;
+}
+.row {
+  margin: 0;
+}
+.col-sm-6 {
+  padding: 0 !important;
+}
 @media screen and (max-width: 767px) {
   .main-filter {
     top: 27%;
     margin-left: -41%;
     left: 41%;
-    right: 4%;
+    right: 0;
   }
   .place {
     margin-bottom: 0 !important;
@@ -45,7 +54,7 @@
   .main-filter {
     margin-left: -41%;
     left: 41%;
-    right: 2%;
+    right: 0;
   }
   .place {
     margin-bottom: 0 !important;
@@ -54,9 +63,15 @@
     display: block !important;
     width: 100% !important;
   }
+  .from {
+    padding-left: 0;
+  }
   .from input {
     width: 100% !important;
     margin-right: 0;
+  }
+  .to {
+    padding-right: 0;
   }
   .to input {
     width: 100% !important;
@@ -79,5 +94,14 @@
     margin-left: -25%;
     left: 50%;
     right: 25%;
+  }
+  .place {
+    margin-bottom: 0 !important;
+  }
+  .place .form-control {
+    margin-left: 0;
+  }
+  .row {
+    display: inline-block;
   }
 }
