@@ -1,36 +1,80 @@
-@media screen and (min-width: 320px) {
+@media screen and (max-width: 767px) {
   .main-filter {
+    top: 27%;
     margin-left: -41%;
     left: 41%;
     right: 4%;
   }
+  .place {
+    margin-bottom: 0 !important;
+  }
   .place .form-control {
-    display: block;
-    width: 100%;
+    display: block !important;
+    width: 100% !important;
+  }
+  .col-sm-6 {
+    margin-bottom: 0 !important;
+  }
+  .from {
+    display: block !important;
+    width: 100% !important;
+  }
+  .from input {
+    display: block !important;
+    width: 100% !important;
+  }
+  .to {
+    display: block !important;
+    width: 100% !important;
+  }
+  .to input {
+    display: block !important;
+    width: 100% !important;
+  }
+  .button_search {
+    display: block !important;
+    width: 100% !important;
+    padding-bottom: 6%;
+  }
+  .button_search button {
+    display: block !important;
+    width: 100% !important;
   }
 }
-@media screen and (min-width: 480px) {
-  .main-filter {
-    margin-left: -41%;
-    left: 41%;
-    right: 3%;
-  }
-}
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 991px) {
   .main-filter {
     margin-left: -41%;
     left: 41%;
     right: 2%;
   }
-}
-@media screen and (min-width: 992px) {
-  .main-filter {
-    margin-left: -41%;
-    left: 41%;
-    right: 1%;
+  .place {
+    margin-bottom: 0 !important;
+  }
+  .place .form-control {
+    display: block !important;
+    width: 100% !important;
+  }
+  .from input {
+    width: 100% !important;
+    margin-right: 0;
+  }
+  .to input {
+    width: 100% !important;
+  }
+  .button_search {
+    display: block !important;
+    width: 100% !important;
+    padding-bottom: 6%;
+  }
+  .button_search button {
+    display: block !important;
+    width: 100% !important;
+  }
+  .col-sm-6 {
+    margin-bottom: 5px;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 992px) {
   .main-filter {
     margin-left: -25%;
     left: 50%;
