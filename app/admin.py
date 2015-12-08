@@ -14,7 +14,7 @@ class HabitacionAdmin(admin.ModelAdmin):
 
 
 class ReservacionAdmin(admin.ModelAdmin):
-    list_display = ('fecha_ini' , 'fecha_fin' , 'casa')
+    list_display = ('hora_estimada' , 'fecha_fin' , 'casa')
 
 class ImageInlineAdmin(admin.TabularInline):
     model = Image

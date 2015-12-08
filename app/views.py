@@ -1,6 +1,7 @@
 import datetime
 from django.contrib.auth import authenticate
 from django.contrib.auth import login
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.shortcuts import render, render_to_response, get_object_or_404
 from django.template import RequestContext
@@ -60,9 +61,9 @@ def homeDetails(request, home_id):
                                                   },
                   context_instance=RequestContext(request))
 
-def reservar(request, CasaId):
+def reservar(request, home_id):
 
-    casa = Casa.objects.get(pk = CasaId)
+    casa = Casa.objects.get(pk = home_id)
 
     fname = request.POST['fname']
     lname = request.POST['lname']
@@ -70,21 +71,21 @@ def reservar(request, CasaId):
     wphone = request.POST['wphone']
     country = request.POST['country']
     city = request.POST['city']
-    cant_habitaciones = request.POST['cant_habitaciones']
-    hab_simple =request.POST['hab_simple']
-    hab_doble=request.POST['hab_doble']
-    hab_triple =request.POST['hab_triple']
-    desde =request.POST['to']
-    hasta =request.POST['from']
-    transport = request.POST['transport']
-    hora_estimada = request.POST['hora_estimada']
-    comment = request.POST['comment']
+    cant_habitaciones = request.POST['cantHabitaciones']
+    hab_simple =request.POST['cantSimples']
+    hab_doble=request.POST['cantDobles']
+    hab_triple =request.POST['cantTriples']
+    desde =request.POST['desde']
+    hasta =request.POST['hasta']
+    transport = request.POST['medioLlegada']
+    hora_estimada = request.POST['horaLLegada']
+    imformacionCliente = request.POST['imformacionCliente']
 
     reservacion = Reservacion()
     reservacion.cant_habitacion = cant_habitaciones
     reservacion.casa = casa
     reservacion.city_town = city
-    reservacion.comment = comment
+    reservacion.comment = imformacionCliente
     reservacion.country = country
     reservacion.email = email
     reservacion.first_name  = fname
@@ -118,7 +119,7 @@ def fecha_search(request):
 
 
 
-
+@login_required(login_url='/admin/login/')
 def uploadJson(request):
     form = UploadFileForm()
     return render(request, 'upload/index.html', {'form': form})
