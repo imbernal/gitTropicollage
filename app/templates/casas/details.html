@@ -225,7 +225,7 @@
                         {% endif %}">Garaje</h5>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                        <h5 class="point{% if not entity.parqueo %}
+                        <h5 class="point {% if not entity.parqueo %}
                             line-through
                         {% endif %}">Parqueo</h5>
                     </div>
@@ -359,6 +359,119 @@
         </section>
     </div>
     <hr>
+
+    <div class="container rooms-details">
+
+        <div class="panel-group" id="accordion">
+
+            {% for item in entity.habitacion_set.all %}
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion"
+                               href="#collapse{{ forloop.counter }}">
+                                Habitacion #{{ forloop.counter }}
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse{{ forloop.counter }}" class="panel-collapse collapse" style="height: 0px;">
+                        <div class="panel-body">
+                            <div class="col-xs-4">
+                                <h5 class="{% if not item.primer_piso %}
+                                line-through
+                                {% endif %}">Primer piso</h5>
+                            </div>
+                            <div class="col-xs-4">
+                                <h5 class="{% if not item.segundo_piso %}
+                                line-through
+                                {% endif %}">Segundo piso</h5>
+                            </div>
+
+                            <div class="col-xs-4">
+                                <h5 class="point {% if not item.superior %}
+                                line-through
+                                {% endif %}">Superior</h5>
+                            </div>
+                            <div class="col-xs-4">
+                                <h5 class="point {% if not item.caja_fuerte %}
+                                line-through
+                                {% endif %}">Caja fuerte</h5>
+                            </div>
+                            <div class="col-xs-4">
+                                <h5 class="point {% if not item.ventilador %}
+                                line-through
+                                {% endif %}">Ventilador</h5>
+                            </div>
+
+                            <div class="col-xs-4">
+                                <h5 class="point {% if not item.aire_acondicionado %}
+                                line-through
+                                {% endif %}">Aire acondicionado</h5>
+                            </div>
+
+                            <div class="col-xs-4">
+                                <h5 class="point {% if not item.agua_caliente %}
+                                line-through
+                                {% endif %}">Agua caliente</h5>
+                            </div>
+
+                            <div class="col-xs-4">
+                                <h5 class="point {% if not item.secador %}
+                                line-through
+                                {% endif %}">Secador</h5>
+                            </div>
+
+                            <div class="col-xs-4">
+                                <h5 class="point {% if not item.minibar %}
+                                line-through
+                                {% endif %}">Minibar</h5>
+                            </div>
+
+                            <div class="col-xs-4">
+                                <h5 class="point {% if not item.corriente_110 %}
+                                line-through
+                                {% endif %}">Corriente 110V</h5>
+                            </div>
+
+                            <div class="col-xs-4">
+                                <h5 class="point {% if not item.corriente_220 %}
+                                line-through
+                                {% endif %}">Corriente 220V</h5>
+                            </div>
+
+                            <div class="col-xs-4">
+                                <h5 class="point {% if not item.balcon %}
+                                line-through
+                                {% endif %}">Balcon</h5>
+                            </div>
+
+                            <div class="col-xs-4">
+                                <h5 class="point {% if not item.terraza %}
+                                line-through
+                                {% endif %}">Terraza</h5>
+                            </div>
+
+                            <div class="col-xs-4">
+                                <h5 class="point {% if not item.bano_privado %}
+                                line-through
+                                {% endif %}">Bano privado</h5>
+                            </div>
+
+                            <div class="col-xs-4">
+                                <h5 class="point {% if not item.TV %}
+                                line-through
+                                {% endif %}">TV</h5>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                </div>
+            {% endfor %}
+    </div>
+    </div>
+
+    <hr>
     <div class="text-center reservation-title">
         <h2>Make a Reservation</h2>
     </div>
@@ -367,24 +480,24 @@
     <div class="row">
         <div class="container">
             <div class="portlet box blue" id="form_wizard_1">
-{#                <div class="portlet-title">#}
-{#                    <div class="caption">#}
-{#                        <i class="fa fa-reorder"></i> Form Wizard -#}
-{#								<span class="step-title">#}
-{#									 Step 1 of 4#}
-{#								</span>#}
-{#                    </div>#}
-{#                    <div class="tools hidden-xs">#}
-{#                        <a href="javascript:;" class="collapse">#}
-{#                        </a>#}
-{#                        <a href="#portlet-config" data-toggle="modal" class="config">#}
-{#                        </a>#}
-{#                        <a href="javascript:;" class="reload">#}
-{#                        </a>#}
-{#                        <a href="javascript:;" class="remove">#}
-{#                        </a>#}
-{#                    </div>#}
-{#                </div>#}
+                {#                <div class="portlet-title">#}
+                {#                    <div class="caption">#}
+                {#                        <i class="fa fa-reorder"></i> Form Wizard -#}
+                {#								<span class="step-title">#}
+                {#									 Step 1 of 4#}
+                {#								</span>#}
+                {#                    </div>#}
+                {#                    <div class="tools hidden-xs">#}
+                {#                        <a href="javascript:;" class="collapse">#}
+                {#                        </a>#}
+                {#                        <a href="#portlet-config" data-toggle="modal" class="config">#}
+                {#                        </a>#}
+                {#                        <a href="javascript:;" class="reload">#}
+                {#                        </a>#}
+                {#                        <a href="javascript:;" class="remove">#}
+                {#                        </a>#}
+                {#                    </div>#}
+                {#                </div>#}
                 <div class="portlet-body form">
                     <form action="{% url 'reservar' entity.id %}" method="post" class="form-horizontal"
                           id="submit_form">
@@ -916,8 +1029,9 @@
                                             </label>
 
                                             <div class="col-md-4" data-date-format="yyyy-mm-dd">
-                                                <input type="text" class="form-control input-icon" id="hasta" name="hasta"/>
-{#                                                <span class="ion-calendar icon"></span>#}
+                                                <input type="text" class="form-control input-icon" id="hasta"
+                                                       name="hasta"/>
+                                                {#                                                <span class="ion-calendar icon"></span>#}
 
                                                 <span class="help-block">
                                                      Provide check-out
