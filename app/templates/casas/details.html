@@ -57,34 +57,34 @@
                 <li><a href="#">Register</a></li>
                 <li><a href="#">Login</a></li>
             </ul>
-            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                 aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4 class="modal-title">Articulos Sugeridos</h4>
-                        </div>
-                        <div class="modal-body">
-                            <h4><span class="ion-document-text"></span>Guia para empezar</h4>
-                        </div>
-                        <hr>
-                        <div class="modal-body">
-                            <h4><span class="ion-document-text"></span>Que tengo que hacer para reservar</h4>
-                        </div>
-                        <hr>
-                        <div class="modal-body">
-                            <h4><span class="ion-document-text"></span>Puedo modificar una reserva confirmada</h4>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                            <a href="#" class="pull-left">Centro de Ayuda</a>
-                        </div>
-                    </div>
-                    <!-- /.modal-content -->
-                </div>
-                <!-- /.modal-dialog -->
-            </div>
+            {#            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"#}
+            {#                 aria-hidden="true">#}
+            {#                <div class="modal-dialog">#}
+            {#                    <div class="modal-content">#}
+            {#                        <div class="modal-header">#}
+            {#                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>#}
+            {#                            <h4 class="modal-title">Articulos Sugeridos</h4>#}
+            {#                        </div>#}
+            {#                        <div class="modal-body">#}
+            {#                            <h4><span class="ion-document-text"></span>Guia para empezar</h4>#}
+            {#                        </div>#}
+            {#                        <hr>#}
+            {#                        <div class="modal-body">#}
+            {#                            <h4><span class="ion-document-text"></span>Que tengo que hacer para reservar</h4>#}
+            {#                        </div>#}
+            {#                        <hr>#}
+            {#                        <div class="modal-body">#}
+            {#                            <h4><span class="ion-document-text"></span>Puedo modificar una reserva confirmada</h4>#}
+            {#                        </div>#}
+            {#                        <div class="modal-footer">#}
+            {#                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>#}
+            {#                            <a href="#" class="pull-left">Centro de Ayuda</a>#}
+            {#                        </div>#}
+            {#                    </div>#}
+            {#                    <!-- /.modal-content -->#}
+            {#                </div>#}
+            {#                <!-- /.modal-dialog -->#}
+            {#            </div>#}
             <!-- /.modal -->
 
         </div>
@@ -127,6 +127,7 @@
                 <li><a href="#main-info">Informacion sobre este anuncio</a></li>
                 <li><a href="#detailed-info">Detalles</a></li>
                 <li><a href="#comments">Comentarios</a></li>
+
             </ul>
         </div>
     </div>
@@ -189,7 +190,8 @@
                     {#                    <a class="btn btn-lg btn-block btn-default"><span class="ion-ios-heart-outline"></span> Add to#}
                     {#                        wishlist#}
                     {#                    </a>#}
-                    <a class="btn btn-lg btn-block btn-default"><span class="ion-ios-calendar-outline"></span>
+                    <a href="#wizard" class="btn btn-lg btn-block btn-default"><span
+                            class="ion-ios-calendar-outline"></span>
                         Make
                         a reservation
                     </a>
@@ -385,7 +387,7 @@
                 {#                        </a>#}
                 {#                    </div>#}
                 {#                </div>#}
-                <div class="portlet-body form">
+                <div class="portlet-body form" id="wizard">
                     <form action="{% url 'reservar' entity.id %}" method="post" class="form-horizontal"
                           id="submit_form">
                         {% csrf_token %}
@@ -1297,6 +1299,14 @@
     <script type="text/javascript">
         // DO NOT REMOVE : GLOBAL FUNCTIONS!
         $(document).ready(function () {
+
+            var $root = $('html, body');
+            $('a[href*="#"]').click(function () {
+                $root.animate({
+                    scrollTop: $($.attr(this, 'href')).offset().top
+                }, 1000);
+                return false;
+            });
 
             $('.tooltip-test').tooltip();
 
