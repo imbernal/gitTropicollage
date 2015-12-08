@@ -190,7 +190,7 @@ var FormWizard = function () {
                     $('#form_wizard_1').find('.button-next').show();
                     $('#form_wizard_1').find('.button-submit').hide();
                 }
-                App.scrollTo($('.page-title'));
+                //App.scrollTo($('.page-title'));
             }
 
             // default form wizard

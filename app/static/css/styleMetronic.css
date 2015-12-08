@@ -1626,7 +1626,7 @@ Box portlet
 } 
 
 .portlet.box.blue {  
-   border: 1px solid #b4cef8;
+   /*border: 1px solid #b4cef8;*/
    border-top: 0;
 }
 
@@ -3996,7 +3996,7 @@ textarea.placeholder {
 }
 
 .form-actions.fluid {
-  padding: 20px 0;
+  padding: 11px 0;
 }
 
 .form-actions.fluid > [class^="col-"] {

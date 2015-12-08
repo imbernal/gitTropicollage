@@ -367,24 +367,24 @@
     <div class="row">
         <div class="container">
             <div class="portlet box blue" id="form_wizard_1">
-                <div class="portlet-title">
-                    <div class="caption">
-                        <i class="fa fa-reorder"></i> Form Wizard -
-								<span class="step-title">
-									 Step 1 of 4
-								</span>
-                    </div>
-                    <div class="tools hidden-xs">
-                        <a href="javascript:;" class="collapse">
-                        </a>
-                        <a href="#portlet-config" data-toggle="modal" class="config">
-                        </a>
-                        <a href="javascript:;" class="reload">
-                        </a>
-                        <a href="javascript:;" class="remove">
-                        </a>
-                    </div>
-                </div>
+{#                <div class="portlet-title">#}
+{#                    <div class="caption">#}
+{#                        <i class="fa fa-reorder"></i> Form Wizard -#}
+{#								<span class="step-title">#}
+{#									 Step 1 of 4#}
+{#								</span>#}
+{#                    </div>#}
+{#                    <div class="tools hidden-xs">#}
+{#                        <a href="javascript:;" class="collapse">#}
+{#                        </a>#}
+{#                        <a href="#portlet-config" data-toggle="modal" class="config">#}
+{#                        </a>#}
+{#                        <a href="javascript:;" class="reload">#}
+{#                        </a>#}
+{#                        <a href="javascript:;" class="remove">#}
+{#                        </a>#}
+{#                    </div>#}
+{#                </div>#}
                 <div class="portlet-body form">
                     <form action="{% url 'reservar' entity.id %}" method="post" class="form-horizontal"
                           id="submit_form">
@@ -916,13 +916,12 @@
                                             </label>
 
                                             <div class="col-md-4" data-date-format="yyyy-mm-dd">
-                                                <input type="text" class="form-control" id="hasta" name="hasta"/>
-                                                <span class="input-group-addon">
-                                                    <span class="glyphicon glyphicon-calenadar"></span>
+                                                <input type="text" class="form-control input-icon" id="hasta" name="hasta"/>
+{#                                                <span class="ion-calendar icon"></span>#}
+
+                                                <span class="help-block">
+                                                     Provide check-out
                                                 </span>
-														<span class="help-block">
-															 Provide check-out
-														</span>
                                             </div>
                                         </div>
 
