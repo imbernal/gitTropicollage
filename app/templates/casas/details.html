@@ -959,9 +959,7 @@
                                                 <input type="text" name="horaLLegada" data-autoclose="true" id="clock"
                                                        class="form-control"
                                                        value="" placeholder="Hora llegada*">
-                                                <span class="input-group-addon">
-                                                    <span class="glyphicon glyphicon-time"></span>
-                                                </span>
+
                                             </div>
                                         </div>
 
@@ -1293,7 +1291,9 @@
     <script src="/static/js/customValidation.js"></script>
 
     <script type="text/javascript">
-        $('#clock').clockpicker();
+        $('#clock').clockpicker({
+            twelvehour : true
+        });
         FormWizard.init();
     </script>
     <script type="text/javascript">
