@@ -7,3 +7,4 @@ class CasaFilter(django_filters.FilterSet):
     class Meta:
         model = Casa
         fields = ['superhost','ciudad' ,'filter_agua_caliente', 'campo' , 'playa' , 'internet' , 'parqueo' , 'filter_bano_privado' , 'filter_caja_fuerte']
+
