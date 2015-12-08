@@ -13,7 +13,6 @@ from django.contrib import messages
 from django.core.mail import send_mail
 from app.filter import *
 
-
 from .forms import UploadFileForm
 from .utils import handle_uploaded_file
 
@@ -24,13 +23,14 @@ def home_page(request):
     casas = Casa.objects.all()[:8]
     feedbacks = FeedBack.objects.all()[:3]
     reservaciones = Reservacion.objects.all()[:5]
-    return render(request, 'home_page/index.html', {'feedbacks': feedbacks, 'casas': casas , 'reservaciones':reservaciones})
+    return render(request, 'home_page/index.html',
+                  {'feedbacks': feedbacks, 'casas': casas, 'reservaciones': reservaciones})
+
 
 def homeList(request):
-
     if request.POST:
         destination = request.POST['destination']
-        filter = CasaFilter(request.GET, queryset=Casa.objects.filter(polo_turistico = destination))
+        filter = CasaFilter(request.GET, queryset=Casa.objects.filter(polo_turistico=destination))
 
     else:
         filter = CasaFilter(request.GET, queryset=Casa.objects.all())
@@ -61,9 +61,9 @@ def homeDetails(request, home_id):
                                                   },
                   context_instance=RequestContext(request))
 
-def reservar(request, home_id):
 
-    casa = Casa.objects.get(pk = home_id)
+def reservar(request, home_id):
+    casa = Casa.objects.get(pk=home_id)
 
     fname = request.POST['fname']
     lname = request.POST['lname']
@@ -72,11 +72,11 @@ def reservar(request, home_id):
     country = request.POST['country']
     city = request.POST['city']
     cant_habitaciones = request.POST['cantHabitaciones']
-    hab_simple =request.POST['cantSimples']
-    hab_doble=request.POST['cantDobles']
-    hab_triple =request.POST['cantTriples']
-    desde =request.POST['desde']
-    hasta =request.POST['hasta']
+    hab_simple = request.POST['cantSimples']
+    hab_doble = request.POST['cantDobles']
+    hab_triple = request.POST['cantTriples']
+    desde = request.POST['desde']
+    hasta = request.POST['hasta']
     transport = request.POST['medioLlegada']
     hora_estimada = request.POST['horaLLegada']
     imformacionCliente = request.POST['imformacionCliente']
@@ -88,11 +88,11 @@ def reservar(request, home_id):
     reservacion.comment = imformacionCliente
     reservacion.country = country
     reservacion.email = email
-    reservacion.first_name  = fname
+    reservacion.first_name = fname
     reservacion.last_name = lname
     reservacion.phone_nombre = wphone
     reservacion.hab_simples = hab_simple
-    reservacion.hab_dobles  = hab_doble
+    reservacion.hab_dobles = hab_doble
     reservacion.hab_triples = hab_triple
     reservacion.fecha_ini = desde
     reservacion.fecha_fin = hasta
@@ -118,7 +118,6 @@ def fecha_search(request):
     return render(request, 'casas/index.html', {'entities': result_list})
 
 
-
 @login_required(login_url='/admin/login/')
 def uploadJson(request):
     form = UploadFileForm()
@@ -134,7 +133,6 @@ def upload(request):
         return HttpResponseRedirect('/')
 
 
-
 def contact(request):
     username = request.POST['username']
     email = request.POST['email']
@@ -143,6 +141,14 @@ def contact(request):
     send_mail(username, message, email,
               ['imbernal92@nauta.cu'], fail_silently=False)
 
+
+def send_data(request):
+    data = {'name': 'Cesar Bretana Glez', 'start_date': '05-02-15', }
+    message = data['name'] + ' rento en ' + data['start_date']
+
+    send_mail('New rent', message, 'info@tropicollage.com',
+              ['i.martinez@estudiantes.upr.edu.cu', 'cesar.bretana@estudiantes.upr.edu.cu'], fail_silently=False)
+    return HttpResponse(200)
 
 def register(request):
     if request.method == 'POST':
@@ -201,12 +207,13 @@ def get_pictures_from_home(request):
     pictures_list = get_pictures_from_gallery(entity.first().gallery)
     return JsonResponse({'pictures_list': pictures_list})
 
+
 @csrf_exempt
 def comment(request):
     full_name = request.POST['full_name']
     email = request.POST['email']
     body = request.POST['body']
-    foreign_home = Casa.objects.filter(pk = request.POST['home_id'])
+    foreign_home = Casa.objects.filter(pk=request.POST['home_id'])
     client_ip = request.META['REMOTE_ADDR']
     comment = FeedBack()
     comment.full_name = full_name
