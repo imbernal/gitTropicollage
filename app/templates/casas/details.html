@@ -367,24 +367,24 @@
     <div class="row">
         <div class="container">
             <div class="portlet box blue" id="form_wizard_1">
-{#                <div class="portlet-title">#}
-{#                    <div class="caption">#}
-{#                        <i class="fa fa-reorder"></i> Form Wizard -#}
-{#								<span class="step-title">#}
-{#									 Step 1 of 4#}
-{#								</span>#}
-{#                    </div>#}
-{#                    <div class="tools hidden-xs">#}
-{#                        <a href="javascript:;" class="collapse">#}
-{#                        </a>#}
-{#                        <a href="#portlet-config" data-toggle="modal" class="config">#}
-{#                        </a>#}
-{#                        <a href="javascript:;" class="reload">#}
-{#                        </a>#}
-{#                        <a href="javascript:;" class="remove">#}
-{#                        </a>#}
-{#                    </div>#}
-{#                </div>#}
+                {#                <div class="portlet-title">#}
+                {#                    <div class="caption">#}
+                {#                        <i class="fa fa-reorder"></i> Form Wizard -#}
+                {#								<span class="step-title">#}
+                {#									 Step 1 of 4#}
+                {#								</span>#}
+                {#                    </div>#}
+                {#                    <div class="tools hidden-xs">#}
+                {#                        <a href="javascript:;" class="collapse">#}
+                {#                        </a>#}
+                {#                        <a href="#portlet-config" data-toggle="modal" class="config">#}
+                {#                        </a>#}
+                {#                        <a href="javascript:;" class="reload">#}
+                {#                        </a>#}
+                {#                        <a href="javascript:;" class="remove">#}
+                {#                        </a>#}
+                {#                    </div>#}
+                {#                </div>#}
                 <div class="portlet-body form">
                     <form action="{% url 'reservar' entity.id %}" method="post" class="form-horizontal"
                           id="submit_form">
@@ -916,8 +916,9 @@
                                             </label>
 
                                             <div class="col-md-4" data-date-format="yyyy-mm-dd">
-                                                <input type="text" class="form-control input-icon" id="hasta" name="hasta"/>
-{#                                                <span class="ion-calendar icon"></span>#}
+                                                <input type="text" class="form-control input-icon" id="hasta"
+                                                       name="hasta"/>
+                                                {#                                                <span class="ion-calendar icon"></span>#}
 
                                                 <span class="help-block">
                                                      Provide check-out
@@ -975,14 +976,30 @@
 
                                     </div>
                                     <div class="tab-pane" id="tab4">
-                                        <h3 class="block">Confirm your account</h3>
-                                        <h4 class="form-section">Account</h4>
+                                        <h3 class="block">Confirm your book!!</h3>
+                                        <h4 class="form-section">Basic Information</h4>
 
                                         <div class="form-group">
-                                            <label class="control-label col-md-3">Username:</label>
+                                            <label class="control-label col-md-3">First Name:</label>
 
                                             <div class="col-md-4">
-                                                <p class="form-control-static" data-display="username">
+                                                <p class="form-control-static" data-display="fname">
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">Last Name:</label>
+
+                                            <div class="col-md-4">
+                                                <p class="form-control-static" data-display="lname">
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">Phone Number:</label>
+
+                                            <div class="col-md-4">
+                                                <p class="form-control-static" data-display="wphone">
                                                 </p>
                                             </div>
                                         </div>
@@ -991,48 +1008,6 @@
 
                                             <div class="col-md-4">
                                                 <p class="form-control-static" data-display="email">
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <h4 class="form-section">Profile</h4>
-
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3">Fullname:</label>
-
-                                            <div class="col-md-4">
-                                                <p class="form-control-static" data-display="fullname">
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3">Gender:</label>
-
-                                            <div class="col-md-4">
-                                                <p class="form-control-static" data-display="gender">
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3">Phone:</label>
-
-                                            <div class="col-md-4">
-                                                <p class="form-control-static" data-display="phone">
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3">Address:</label>
-
-                                            <div class="col-md-4">
-                                                <p class="form-control-static" data-display="address">
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3">City/Town:</label>
-
-                                            <div class="col-md-4">
-                                                <p class="form-control-static" data-display="city">
                                                 </p>
                                             </div>
                                         </div>
@@ -1045,55 +1020,96 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label col-md-3">Remarks:</label>
+                                            <label class="control-label col-md-3">City/Town:</label>
 
                                             <div class="col-md-4">
-                                                <p class="form-control-static" data-display="remarks">
+                                                <p class="form-control-static" data-display="city">
                                                 </p>
                                             </div>
                                         </div>
-                                        <h4 class="form-section">Billing</h4>
+                                        <h4 class="form-section">Detalles de la reservacion:</h4>
+
 
                                         <div class="form-group">
-                                            <label class="control-label col-md-3">Card Holder Name:</label>
+                                            <label class="control-label col-md-3">Cantidad de Habitaciones:</label>
+
 
                                             <div class="col-md-4">
-                                                <p class="form-control-static" data-display="card_name">
+                                                <p class="form-control-static" data-display="cantHabitaciones">
+                                                </p>
+                                            </div>
+
+
+                                            <label class="control-label col-md-3">Cantidad de Simples:</label>
+
+                                            <div class="col-md-4">
+                                                <p class="form-control-static" data-display="cantSimples">
+                                                </p>
+                                            </div>
+
+
+                                            <label class="control-label col-md-3">Cantidad de Dobles:</label>
+
+                                            <div class="col-md-4">
+                                                <p class="form-control-static" data-display="cantDobles">
+                                                </p>
+
+                                            </div>
+
+                                            <label class="control-label col-md-3">Cantidad de Triples:</label>
+
+                                            <div class="col-md-4">
+                                                <p class="form-control-static" data-display="cantTriples">
+                                                </p>
+                                            </div>
+
+
+                                            <label class="control-label col-md-3">Check-in:</label>
+
+                                            <div class="col-md-4">
+                                                <p class="form-control-static" data-display="desde">
+                                                </p>
+                                            </div>
+
+
+                                            <label class="control-label col-md-3">Check-out:</label>
+
+                                            <div class="col-md-4">
+                                                <p class="form-control-static" data-display="hasta">
+                                                </p>
+                                            </div>
+
+
+                                        </div>
+
+                                        <h4 class="form-section">Otras Informaciones</h4>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">Forma de llegada</label>
+
+                                            <div class="col-md-4">
+                                                <p class="form-control-static" data-display="medioLlegada">
                                                 </p>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label col-md-3">Card Number:</label>
+                                            <label class="control-label col-md-3">Hora estimada</label>
 
                                             <div class="col-md-4">
-                                                <p class="form-control-static" data-display="card_number">
+                                                <p class="form-control-static" data-display="horaLLegada">
                                                 </p>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label col-md-3">CVC:</label>
+                                            <label class="control-label col-md-3">Informacion que usted considero
+                                                necesaria</label>
 
                                             <div class="col-md-4">
-                                                <p class="form-control-static" data-display="card_cvc">
+                                                <p class="form-control-static" data-display="imformacionCliente">
                                                 </p>
                                             </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3">Expiration:</label>
 
-                                            <div class="col-md-4">
-                                                <p class="form-control-static" data-display="card_expiry_date">
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3">Payment Options:</label>
-
-                                            <div class="col-md-4">
-                                                <p class="form-control-static" data-display="payment">
-                                                </p>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
