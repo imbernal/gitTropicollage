@@ -4,7 +4,7 @@ from .models import *
 class CasaSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Casa
-        fields = ('nombre' , 'descripcion' , 'price' , 'gallery' )
+        fields = ('nombre' , 'municipio' , 'precio_alta' )
 
 class GallerySerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
