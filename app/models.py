@@ -151,7 +151,7 @@ class Reservacion(models.Model):
     fecha_ini = models.DateField()
     fecha_fin = models.DateField()
     forma_llegada = models.CharField(max_length=50, default="")
-    hora_estimada = models.CharField(max_length=50, default="")
+    hora_estimada = models.TimeField()
     comment = models.TextField(max_length=600, default="")
     casa = models.ForeignKey(Casa)
 

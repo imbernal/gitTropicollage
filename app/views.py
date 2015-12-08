@@ -61,9 +61,9 @@ def homeDetails(request, home_id):
                                                   },
                   context_instance=RequestContext(request))
 
-def reservar(request, CasaId):
+def reservar(request, home_id):
 
-    casa = Casa.objects.get(pk = CasaId)
+    casa = Casa.objects.get(pk = home_id)
 
     fname = request.POST['fname']
     lname = request.POST['lname']
@@ -71,21 +71,21 @@ def reservar(request, CasaId):
     wphone = request.POST['wphone']
     country = request.POST['country']
     city = request.POST['city']
-    cant_habitaciones = request.POST['cant_habitaciones']
-    hab_simple =request.POST['hab_simple']
-    hab_doble=request.POST['hab_doble']
-    hab_triple =request.POST['hab_triple']
-    desde =request.POST['to']
-    hasta =request.POST['from']
-    transport = request.POST['transport']
-    hora_estimada = request.POST['hora_estimada']
-    comment = request.POST['comment']
+    cant_habitaciones = request.POST['cantHabitaciones']
+    hab_simple =request.POST['cantSimples']
+    hab_doble=request.POST['cantDobles']
+    hab_triple =request.POST['cantTriples']
+    desde =request.POST['desde']
+    hasta =request.POST['hasta']
+    transport = request.POST['medioLlegada']
+    hora_estimada = request.POST['horaLLegada']
+    imformacionCliente = request.POST['imformacionCliente']
 
     reservacion = Reservacion()
     reservacion.cant_habitacion = cant_habitaciones
     reservacion.casa = casa
     reservacion.city_town = city
-    reservacion.comment = comment
+    reservacion.comment = imformacionCliente
     reservacion.country = country
     reservacion.email = email
     reservacion.first_name  = fname

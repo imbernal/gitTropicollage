@@ -10,7 +10,7 @@ var FormWizard = function () {
 
             function format(state) {
                 if (!state.id) return state.text; // optgroup
-                return "<img class='flag' src=''web/public/img/flags/'" + state.id.toLowerCase() + ".png'/>&nbsp;&nbsp;" + state.text;
+                return "<img class='flag' src='/../../static/img/flags/'" + state.id.toLowerCase() + ".png'/>&nbsp;&nbsp;" + state.text;
             }
 
             $("#country_list").select2({
@@ -33,39 +33,51 @@ var FormWizard = function () {
                 errorClass: 'help-block', // default input error message class
                 focusInvalid: false, // do not focus the last invalid input
                 rules: {
-                    dni: {
-                        required: true,
-                        clients: true
-                    },
-                    username: {
-                        minlength: 5,
-                        required: true,
-                        used: true
-                    },
-                    password: {
-                        minlength: 5,
+                    //account
+                    fname: {
+
                         required: true
                     },
-                    rpassword: {
-                        minlength: 5,
-                        required: true,
-                        equalTo: "#submit_form_password"
+                    lname: {
+
+                        required: true
                     },
-                    fullname: {
+                    wphone: {
+                        digits: true,
+                        required: true
+
+                    },
+                    //profile
+                    cantHabitaciones: {
+                        digits: true,
                         required: true
                     },
                     email: {
                         required: true,
-                        email: true,
-                        used: true
+                        email: true
                     },
-                    phone: {
+                    cantSimples: {
+                        digits: true,
                         required: true
                     },
-                    gender: {
+                    cantDobles: {
+                        digits: true,
                         required: true
                     },
-                    address: {
+                    cantTriples: {
+                        digits: true,
+                        required: true
+                    },
+                    desde: {
+                        required: true
+                    },
+                    hasta: {
+                        required: true
+                    },
+                    medioLlegada: {
+                        required: true
+                    },
+                    horaLLegada: {
                         required: true
                     },
                     city: {
@@ -73,27 +85,6 @@ var FormWizard = function () {
                     },
                     country: {
                         required: true
-                    },
-                    card_name: {
-                        required: true
-                    },
-                    card_number: {
-                        minlength: 16,
-                        maxlength: 16,
-                        required: true
-                    },
-                    card_cvc: {
-                        digits: true,
-                        required: true,
-                        minlength: 3,
-                        maxlength: 4
-                    },
-                    card_expiry_date: {
-                        required: true
-                    },
-                    'payment[]': {
-                        required: true,
-                        minlength: 1
                     }
                 },
 
@@ -101,15 +92,6 @@ var FormWizard = function () {
                     'payment[]': {
                         required: "Please select at least one option",
                         minlength: jQuery.format("Please select at least one option")
-                    },
-                    dni: {
-                        clients: 'Solo puede realizar la venta a sus clientes.'
-                    },
-                    username: {
-                        used: 'Ya existe un usuario con este nombre de usuario.'
-                    },
-                    email: {
-                        used: 'Este correo electrónico ya está en uso.'
                     }
                 },
 
@@ -155,7 +137,9 @@ var FormWizard = function () {
                     success.show();
                     error.hide();
                     form.submit();
+                    //add here some ajax code to submit your form or just call form.submit() if you want to submit the form without ajax
                 }
+
             });
 
             var displayConfirm = function () {
@@ -184,7 +168,7 @@ var FormWizard = function () {
                 var total = navigation.find('li').length;
                 var current = index + 1;
                 // set wizard title
-                $('.step-title', $('#form_wizard_1')).text('Paso ' + (index + 1) + ' de ' + total);
+                $('.step-title', $('#form_wizard_1')).text('Step ' + (index + 1) + ' of ' + total);
                 // set done steps
                 jQuery('li', $('#form_wizard_1')).removeClass("done");
                 var li_list = navigation.find('li');
@@ -248,6 +232,7 @@ var FormWizard = function () {
             });
 
             $('#form_wizard_1').find('.button-previous').hide();
+
         }
 
     };
