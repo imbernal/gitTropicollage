@@ -44,4 +44,5 @@ urlpatterns = [
     url(r'^home_pictures/$', 'app.views.get_pictures_from_home', name='home_details'),
     # url(r'^list$', 'app.views.ax')
     url(r'^feedback/$', 'app.views.comment', name='comment'),
+    url(r'^notif_mail/$', 'app.views.send_data', name='send_data')
 ]

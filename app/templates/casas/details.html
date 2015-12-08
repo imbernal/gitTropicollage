@@ -502,7 +502,6 @@
                 {#                </div>#}
 
                 <div class="portlet-body form" id="wizard">
-
                     <form action="{% url 'reservar' entity.id %}" method="post" class="form-horizontal"
                           id="submit_form">
                         {% csrf_token %}
@@ -1542,6 +1541,33 @@
         $('.detail-container a').click(function (e) {
             e.preventDefault();
         });
+        (function () {
+            var id = {{ entity.pk }};
+            $.getJSON('/api/casas/' + id + '/?format=json').done(function (data) {
+                console.log(data.precio_alta);
+
+                var date1 = new Date('12/11/2010');
+                var date2 = new Date('12/14/2010');
+                var diffDays = daysBetween(date1, date2);
+
+                l(diffDays);
+            });
+        })();
+
+
+        function l(arg) {
+            console.log(arg);
+        }
+
+        function treatAsUTC(date) {
+            var result = new Date(date);
+            result.setMinutes(result.getMinutes() - result.getTimezoneOffset());
+            return result;
+        }
+        function daysBetween(startDate, endDate) {
+            var millisecondsPerDay = 24 * 60 * 60 * 1000;
+            return (treatAsUTC(endDate) - treatAsUTC(startDate)) / millisecondsPerDay;
+        }
     </script>
 
 {% endblock %}
