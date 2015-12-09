@@ -507,7 +507,7 @@
                         {% csrf_token %}
                         <div class="form-wizard">
                             <div class="form-body">
-                                <ul class="nav nav-pills nav-justified steps">
+                                <ul class="nav nav-pills nav-justified steps" id="ulWizard">
                                     <li>
                                         <a href="#tab1" data-toggle="tab" class="step">
 													<span class="number">
@@ -940,7 +940,7 @@
                                             </label>
 
                                             <div class="col-md-4">
-                                                <input type="text" class="form-control" name="city"/>
+                                                <input type="text" class="form-control" id="city" name="city"/>
 														<span class="help-block">
 															 Provide your city/town
 														</span>
@@ -961,7 +961,11 @@
                                             </label>
 
                                             <div class="col-md-4">
-                                                <input type="text" class="form-control" name="cantHabitaciones"/>
+                                                <select name="cantHabitaciones" class="form-control" id="cantHabitaciones">
+                                                    {% for item in entity.habitacion_set.all %}
+                                                        <option value="{{ forloop.counter }}">{{ forloop.counter }}</option>
+                                                    {% endfor %}
+                                                </select>
 														<span class="help-block">
 															 Provide Catidad total de Habitaciones
 														</span>
@@ -975,8 +979,8 @@
                                             </label>
 
                                             <div class="col-md-4">
-                                                <input type="text" class="form-control" name="cantSimples"/>
-														<span class="help-block">
+                                                <input type="text" class="form-control" id="cantSimples" name="cantSimples"/>
+														<span class="help-block" id="spanSimples">
 															 Provide cantidad de habitaciones Simples
 														</span>
                                             </div>
@@ -989,7 +993,7 @@
                                             </label>
 
                                             <div class="col-md-4">
-                                                <input type="text" class="form-control" name="cantDobles"/>
+                                                <input type="text" class="form-control" id="cantDobles" name="cantDobles"/>
 														<span class="help-block">
 															 Provide cantidad de habitaciones Dobles
 														</span>
@@ -1003,7 +1007,7 @@
                                             </label>
 
                                             <div class="col-md-4">
-                                                <input type="text" class="form-control" name="cantTriples"/>
+                                                <input type="text" class="form-control" id="cantTriples" name="cantTriples"/>
 														<span class="help-block">
 															 Provide cantidad de habitaciones Triples
 														</span>
@@ -1141,7 +1145,7 @@
                                                 </p>
                                             </div>
                                         </div>
-                                        <h4 class="form-section">Detalles de la reservacion:</h4>
+                                        <h4 id="asa" class="form-section">Detalles de la reservacion:</h4>
 
 
                                         <div class="form-group">
@@ -1152,8 +1156,8 @@
                                                 <p class="form-control-static" data-display="cantHabitaciones">
                                                 </p>
                                             </div>
-
-
+                                        </div>
+                                        <div class="form-group">
                                             <label class="control-label col-md-3">Cantidad de Simples:</label>
 
                                             <div class="col-md-4">
@@ -1161,7 +1165,8 @@
                                                 </p>
                                             </div>
 
-
+                                        </div>
+                                        <div class="form-group">
                                             <label class="control-label col-md-3">Cantidad de Dobles:</label>
 
                                             <div class="col-md-4">
@@ -1169,14 +1174,16 @@
                                                 </p>
 
                                             </div>
-
+                                        </div>
+                                        <div class="form-group">
                                             <label class="control-label col-md-3">Cantidad de Triples:</label>
 
                                             <div class="col-md-4">
                                                 <p class="form-control-static" data-display="cantTriples">
                                                 </p>
                                             </div>
-
+                                        </div>
+                                        <div class="form-group">
 
                                             <label class="control-label col-md-3">Check-in:</label>
 
@@ -1184,17 +1191,17 @@
                                                 <p class="form-control-static" data-display="desde">
                                                 </p>
                                             </div>
+                                        </div>
 
-
+                                        <div class="form-group">
                                             <label class="control-label col-md-3">Check-out:</label>
 
                                             <div class="col-md-4">
                                                 <p class="form-control-static" data-display="hasta">
                                                 </p>
                                             </div>
-
-
                                         </div>
+
 
                                         <h4 class="form-section">Otras Informaciones</h4>
 
@@ -1223,6 +1230,13 @@
                                                 </p>
                                             </div>
                                         </div>
+                                        <input type="hidden" name="homeWizard_id" id="home_id" value="{{ entity.pk }}">
+                                        <input type="hidden" name="wizard_url" id="post_url" value="{% url 'reservar' entity.pk %}">
+                                        <h4 class="form-section">Information</h4>
+
+                                        <div class="information">
+                                            <h3>Congratulations!!!!</h3>
+                                        </div>
 
                                     </div>
                                 </div>
@@ -1236,7 +1250,7 @@
                                         <a href="javascript:;" class="btn blue button-next">
                                             Continue <i class="m-icon-swapright m-icon-white"></i>
                                         </a>
-                                        <input type="submit" class="btn green button-submit" style="display: none;"
+                                        <input type="submit" id="sendWizard" class="btn green button-submit" style="display: none;"
                                                value="Submit">
                                         <i class="m-icon-swapright m-icon-white"></i>
 
@@ -1381,6 +1395,7 @@
 
     <script src="/static/js/plugin/jquery-validate/jquery.validate.min.js"></script>
 
+
     <script src="/static/js/plugin/bootstrap-slider/bootstrap-slider.min.js"></script>
     <script type="text/javascript" src="/static/js/bootstrap-clockpicker.min.js"></script>
     <script type="text/javascript" src="/static/js/jquery-clockpicker.min.js"></script>
@@ -1400,13 +1415,15 @@
 
     <script src="/static/js/jquery-ui.min.js"></script>
     <script src="/static/js/comment_async.js"></script>
+
     <script src="/static/js/select2.min.js"></script>
     <script src="/static/js/form-wizard.js"></script>
+{#    <script src="/static/js/rent-wizard.js"></script>#}
     <script src="/static/js/customValidation.js"></script>
 
     <script type="text/javascript">
         $('#clock').clockpicker({
-            twelvehour : true
+            twelvehour: true
         });
         FormWizard.init();
     </script>
@@ -1443,116 +1460,26 @@
 
             });
 
-
-            {#            pageSetUp();#}
-            {#            //Bootstrap Wizard Validations#}
-            {#            var $validator = $("#fuelux-wizard").validate({#}
-            {#                rules: {#}
-            {#                    email: {#}
-            {#                        required: true,#}
-            {#                        email: "Your email address must be in the format of name@domain.com"#}
-            {#                    },#}
-            {#                    fname: {#}
-            {#                        required: true#}
-            {#                    },#}
-            {#                    lname: {#}
-            {#                        required: true#}
-            {#                    },#}
-            {#                    cantHabitaciones: {#}
-            {#                        required: true#}
-            {#                    },#}
-            {#                    cantSimple: {#}
-            {#                        required: true#}
-            {#                    },#}
-            {#                    cantDoble: {#}
-            {#                        required: true#}
-            {#                    },#}
-            {#                    cantTriple: {#}
-            {#                        required: true#}
-            {#                    },#}
-            {#                    country: {#}
-            {#                        required: true#}
-            {#                    },#}
-            {#                    city: {#}
-            {#                        required: true#}
-            {#                    },#}
-            {#                    phoneNumber: {#}
-            {#                        required: true#}
-            {##}
-            {#                    }#}
-            {#                },#}
-            {#                messages: {#}
-            {#                    fname: "Please specify your First name",#}
-            {#                    lname: "Please specify your Last name",#}
-            {#                    email: {#}
-            {#                        required: "We need your email address to contact you",#}
-            {#                        email: "Your email address must be in the format of name@domain.com"#}
-            {#                    }#}
-            {#                },#}
-            {#                highlight: function (element) {#}
-            {#                    $(element).closest('.form-group').removeClass('has-success').addClass('has-error');#}
-            {#                },#}
-            {#                unhighlight: function (element) {#}
-            {#                    $(element).closest('.form-group').removeClass('has-error').addClass('has-success');#}
-            {#                },#}
-            {#                errorElement: 'span',#}
-            {#                errorClass: 'help-block',#}
-            {#                errorPlacement: function (error, element) {#}
-            {#                    if (element.parent('.input-group').length) {#}
-            {#                        error.insertAfter(element.parent());#}
-            {#                    } else {#}
-            {#                        error.insertAfter(element);#}
-            {#                    }#}
-            {#                }#}
-            {#            });#}
-            {##}
-            {#            var wizard = $('.wizard').wizard();#}
-            {##}
-            {#            $('#bootstrap-wizard-1').bootstrapWizard({#}
-            {#                'onNext': function (tab, navigation, index) {#}
-            {#                    console.log("ASASASASAS")#}
-            {#                    var $valid = $("#wizard-1").valid();#}
-            {#                    if (!$valid) {#}
-            {#                        $validator.focusInvalid();#}
-            {#                        return false;#}
-            {#                    } else {#}
-            {#                        $('#bootstrap-wizard-1').find('.form-wizard').children('li').eq(index - 1).addClass(#}
-            {#                                'complete');#}
-            {#                        $('#bootstrap-wizard-1').find('.form-wizard').children('li').eq(index - 1).find('.step')#}
-            {#                                .html('<i class="fa fa-check"></i>');#}
-            {#                    }#}
-            {#                }#}
-            {#            });#}
-            {##}
-            {#            wizard.on('finished', function (e, data) {#}
-            {#                $("#fuelux-wizard").submit();#}
-            {#                //console.log("submitted!");#}
-            {#                $.smallBox({#}
-            {#                    title: "Congratulations! Your form was submitted",#}
-            {#                    content: "<i class='fa fa-clock-o'></i> <i>1 seconds ago...</i>",#}
-            {#                    color: "#5F895F",#}
-            {#                    iconSmall: "fa fa-check bounce animated",#}
-            {#                    timeout: 4000#}
-            {#                });#}
-            {##}
-            {#            });#}
-
         });
-        $('.detail-container a').click(function (e) {
+
+        $('#clock').click(function(e){
             e.preventDefault();
-        });
-        (function () {
+            console.log($('#infoPrice').val())
             var id = {{ entity.pk }};
             $.getJSON('/api/casas/' + id + '/?format=json').done(function (data) {
                 console.log(data.precio_alta);
 
-                var date1 = new Date('12/11/2010');
-                var date2 = new Date('12/14/2010');
-                var diffDays = daysBetween(date1, date2);
+                var desde = $('#desde');
+                var hasta = $('#hasta');
+                var diffDays = daysBetween(desde, hasta);
 
-                l(diffDays);
+                $('#infoPrice').val(data.precio_alta);
+                console.log(diffDays);
+
             });
-        })();
+        });
+
+
 
 
         function l(arg) {

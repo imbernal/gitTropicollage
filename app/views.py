@@ -61,7 +61,7 @@ def homeDetails(request, home_id):
                                                   },
                   context_instance=RequestContext(request))
 
-
+@csrf_exempt
 def reservar(request, home_id):
     casa = Casa.objects.get(pk=home_id)
 
@@ -77,8 +77,8 @@ def reservar(request, home_id):
     hab_triple = request.POST['cantTriples']
     desde = request.POST['desde']
     hasta = request.POST['hasta']
-    transport = request.POST['medioLlegada']
-    hora_estimada = request.POST['horaLLegada']
+    medioLLegada = request.POST['medioLlegada']
+    horaLLegada = request.POST['horaLLegada']
     imformacionCliente = request.POST['imformacionCliente']
 
     reservacion = Reservacion()
@@ -96,8 +96,8 @@ def reservar(request, home_id):
     reservacion.hab_triples = hab_triple
     reservacion.fecha_ini = desde
     reservacion.fecha_fin = hasta
-    reservacion.forma_llegada = transport
-    reservacion.hora_estimada = hora_estimada
+    reservacion.forma_llegada = medioLLegada
+    reservacion.hora_estimada = horaLLegada
 
     reservacion.save()
 
