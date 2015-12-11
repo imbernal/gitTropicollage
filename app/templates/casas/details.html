@@ -14,6 +14,8 @@
     <link rel="stylesheet" type="text/css" href="/static/css/select2-metronic.css">
     <link rel="stylesheet" type="text/css" href="/static/css/styleMetronic.css">
     <link rel="stylesheet" type="text/css" href="/static/css/style-metronic.css">
+    <link rel="stylesheet" href="/static/css/owl.carousel.css">
+    <link rel="stylesheet" href="/static/css/owl.theme.css">
     {#    <link rel="stylesheet" type="text/css" href="/static/css/style-responsive.css">#}
     <!-- SmartAdmin RTL Support -->
     <link rel="stylesheet" type="text/css" media="screen" href="/static/css/smartadmin-rtl.min.css">
@@ -97,6 +99,16 @@
             text-decoration: line-through;
             color: #b7b7b7;
         }
+
+        #owl-demo .item {
+            margin: 3px;
+        }
+
+        #owl-demo .item img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
     </style>
     <div class="modal fade" id="access-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
          aria-hidden="true">
@@ -131,15 +143,15 @@
             </ul>
         </div>
     </div>
-    <img src="/static/img/loading.gif" alt="Loading" class="preloader">
+    {#    <img src="/static/img/loading.gif" alt="Loading" class="preloader">#}
     <div class="gallery" id="gallery">
         <div class="jumbotron col-xs-12">
-            <div class="row gallery-container col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            </div>
-            <div class="thumbs">
+            {#            <div class="row gallery-container col-xs-12 col-sm-12 col-md-12 col-lg-12">#}
+            {#            </div>#}
+            <div id="owl-demo" class="owl-carousel">
                 {% for item in pictures %}
-                    <a class="pic-link" href="/media/imagenes/{{ item }}"><img class="thumb"
-                                                                               src="/media/imagenes/{{ item }}"></a>
+                    {#                    <a class="pic-link" href="/media/imagenes/{{ item }}">#}
+                    <div><img class="owl-item" src="/media/imagenes/{{ item }}"></div>{#</a>#}
                 {% endfor %}
             </div>
         </div>
@@ -1405,7 +1417,7 @@
 {% endblock %}
 {% block level_scripts %}
     {#    <script src="/static/js/jquery-1.10.2.min.js"></script>#}
-    <script src="/static/js/gallery.js"></script>
+    {#    <script src="/static/js/gallery.js"></script>#}
     <script src="/static/js/app.config.js"></script>
 
     <script src="/static/js/plugin/jquery-validate/jquery.validate.min.js"></script>
@@ -1420,7 +1432,6 @@
     <script src="/static/js/app.min.js"></script>
     <script src="/static/js/appMetronic.js"></script>
 
-    <script src="/static/js/speech/voicecommand.min.js"></script>
     <!-- SmartChat UI : plugin -->
 
     <!-- PAGE RELATED PLUGIN(S) -->
@@ -1435,6 +1446,7 @@
     <script src="/static/js/form-wizard.js"></script>
     <script src="/static/js/rent-wizard.js"></script>
     <script src="/static/js/customValidation.js"></script>
+    <script src="/static/js/owl.carousel.js"></script>
 
     <script type="text/javascript">
         $('#clock').clockpicker({
@@ -1446,16 +1458,22 @@
         // DO NOT REMOVE : GLOBAL FUNCTIONS!
         $(document).ready(function () {
 
+            $('#owl-demo').owlCarousel({
+                autoPlay: 3000, //Set AutoPlay to 3 seconds
+                items: 4,
+                itemsDesktop: [1199, 3],
+                itemsDesktopSmall: [979, 3]
+            });
+
             var $root = $('html, body');
             $('a[href*="#"]').click(function () {
-                if(!$(this).hasClass('accordion-toggle')) {
+                if (!$(this).hasClass('accordion-toggle')) {
                     $root.animate({
                         scrollTop: $($.attr(this, 'href')).offset().top
                     }, 1000);
                     return false;
                 }
             });
-
 
 
             $('.tooltip-test').tooltip();
