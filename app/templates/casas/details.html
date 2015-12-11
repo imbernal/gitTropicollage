@@ -362,115 +362,116 @@
     </div>
     <hr>
 
-    <div class="container rooms-details">
+    <a class="btn btn-info" id="action-temp" href="javascript:void(0);">Toggle</a>
 
-        <div class="panel-group" id="accordion">
+    <div class="panel-group container rooms-details" id="accordion">
+        {% for item in entity.habitacion_set.all %}
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion"
+                           href="#collapse{{ forloop.counter }}" data-val="{{ forloop.counter }}">
+                            Habitacion #{{ forloop.counter }}
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapse{{ forloop.counter }}" class="panel-collapse collapse" style="height: 0;">
+                    <div class="panel-body" data-val-target="{{ forloop.counter }}">
 
-            {% for item in entity.habitacion_set.all %}
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion"
-                               href="#collapse{{ forloop.counter }}">
-                                Habitacion #{{ forloop.counter }}
-                            </a>
-                        </h4>
-                    </div>
-                    <div id="collapse{{ forloop.counter }}" class="panel-collapse collapse" style="height: 0px;">
-                        <div class="panel-body">
-                            <div class="col-xs-4">
-                                <h5 class="{% if not item.primer_piso %}
+                        <div class="col-xs-4">
+                            <h5 class="{% if not item.primer_piso %}
                                 line-through
                                 {% endif %}">Primer piso</h5>
-                            </div>
-                            <div class="col-xs-4">
-                                <h5 class="{% if not item.segundo_piso %}
+                        </div>
+
+                        <div class="col-xs-4">
+                            <h5 class="{% if not item.segundo_piso %}
                                 line-through
                                 {% endif %}">Segundo piso</h5>
-                            </div>
+                        </div>
 
-                            <div class="col-xs-4">
-                                <h5 class="point {% if not item.superior %}
+                        <div class="col-xs-4">
+                            <h5 class="point {% if not item.superior %}
                                 line-through
                                 {% endif %}">Superior</h5>
-                            </div>
-                            <div class="col-xs-4">
-                                <h5 class="point {% if not item.caja_fuerte %}
+                        </div>
+
+                        <div class="col-xs-4">
+                            <h5 class="point {% if not item.caja_fuerte %}
                                 line-through
                                 {% endif %}">Caja fuerte</h5>
-                            </div>
-                            <div class="col-xs-4">
-                                <h5 class="point {% if not item.ventilador %}
+                        </div>
+
+                        <div class="col-xs-4">
+                            <h5 class="point {% if not item.ventilador %}
                                 line-through
                                 {% endif %}">Ventilador</h5>
-                            </div>
+                        </div>
 
-                            <div class="col-xs-4">
-                                <h5 class="point {% if not item.aire_acondicionado %}
+                        <div class="col-xs-4">
+                            <h5 class="point {% if not item.aire_acondicionado %}
                                 line-through
                                 {% endif %}">Aire acondicionado</h5>
-                            </div>
+                        </div>
 
-                            <div class="col-xs-4">
-                                <h5 class="point {% if not item.agua_caliente %}
+                        <div class="col-xs-4">
+                            <h5 class="point {% if not item.agua_caliente %}
                                 line-through
                                 {% endif %}">Agua caliente</h5>
-                            </div>
+                        </div>
 
-                            <div class="col-xs-4">
-                                <h5 class="point {% if not item.secador %}
+                        <div class="col-xs-4">
+                            <h5 class="point {% if not item.secador %}
                                 line-through
                                 {% endif %}">Secador</h5>
-                            </div>
+                        </div>
 
-                            <div class="col-xs-4">
-                                <h5 class="point {% if not item.minibar %}
+                        <div class="col-xs-4">
+                            <h5 class="point {% if not item.minibar %}
                                 line-through
                                 {% endif %}">Minibar</h5>
-                            </div>
+                        </div>
 
-                            <div class="col-xs-4">
-                                <h5 class="point {% if not item.corriente_110 %}
+                        <div class="col-xs-4">
+                            <h5 class="point {% if not item.corriente_110 %}
                                 line-through
                                 {% endif %}">Corriente 110V</h5>
-                            </div>
+                        </div>
 
-                            <div class="col-xs-4">
-                                <h5 class="point {% if not item.corriente_220 %}
+                        <div class="col-xs-4">
+                            <h5 class="point {% if not item.corriente_220 %}
                                 line-through
                                 {% endif %}">Corriente 220V</h5>
-                            </div>
+                        </div>
 
-                            <div class="col-xs-4">
-                                <h5 class="point {% if not item.balcon %}
+                        <div class="col-xs-4">
+                            <h5 class="point {% if not item.balcon %}
                                 line-through
                                 {% endif %}">Balcon</h5>
-                            </div>
+                        </div>
 
-                            <div class="col-xs-4">
-                                <h5 class="point {% if not item.terraza %}
+                        <div class="col-xs-4">
+                            <h5 class="point {% if not item.terraza %}
                                 line-through
                                 {% endif %}">Terraza</h5>
-                            </div>
+                        </div>
 
-                            <div class="col-xs-4">
-                                <h5 class="point {% if not item.bano_privado %}
+                        <div class="col-xs-4">
+                            <h5 class="point {% if not item.bano_privado %}
                                 line-through
                                 {% endif %}">Bano privado</h5>
-                            </div>
+                        </div>
 
-                            <div class="col-xs-4">
-                                <h5 class="point {% if not item.TV %}
+                        <div class="col-xs-4">
+                            <h5 class="point {% if not item.TV %}
                                 line-through
                                 {% endif %}">TV</h5>
-                            </div>
-
                         </div>
+
                     </div>
                 </div>
-                </div>
-            {% endfor %}
-    </div>
+            </div>
+        {% endfor %}
     </div>
 
     <hr>
@@ -1406,7 +1407,7 @@
 
     <script type="text/javascript">
         $('#clock').clockpicker({
-            twelvehour : true
+            twelvehour: true
         });
         FormWizard.init();
     </script>
@@ -1416,11 +1417,15 @@
 
             var $root = $('html, body');
             $('a[href*="#"]').click(function () {
-                $root.animate({
-                    scrollTop: $($.attr(this, 'href')).offset().top
-                }, 1000);
-                return false;
+                if(!$(this).hasClass('accordion-toggle')) {
+                    $root.animate({
+                        scrollTop: $($.attr(this, 'href')).offset().top
+                    }, 1000);
+                    return false;
+                }
             });
+
+
 
             $('.tooltip-test').tooltip();
 
@@ -1541,18 +1546,17 @@
         $('.detail-container a').click(function (e) {
             e.preventDefault();
         });
-        (function () {
-            var id = {{ entity.pk }};
-            $.getJSON('/api/casas/' + id + '/?format=json').done(function (data) {
-                console.log(data.precio_alta);
 
-                var date1 = new Date('12/11/2010');
-                var date2 = new Date('12/14/2010');
-                var diffDays = daysBetween(date1, date2);
+        var id = {{ entity.pk }};
+        $.getJSON('/api/casas/' + id + '/?format=json').done(function (data) {
+            console.log(data.precio_alta);
 
-                l(diffDays);
-            });
-        })();
+            var date1 = new Date('12/11/2010');
+            var date2 = new Date('12/14/2010');
+            var diffDays = daysBetween(date1, date2);
+
+            l(diffDays);
+        });
 
 
         function l(arg) {
@@ -1569,6 +1573,6 @@
             return (treatAsUTC(endDate) - treatAsUTC(startDate)) / millisecondsPerDay;
         }
     </script>
+    <script src="/static/js/accordion_utils.js"></script>
 
 {% endblock %}
-
