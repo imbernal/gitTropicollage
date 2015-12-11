@@ -1,14 +1,15 @@
 
 $('#sendWizard').click(function(e){
+
     e.preventDefault();
     $.ajax({
         method: "POST",
-        url: $('#wizard_url').val(),
+        url: $('#post_urlWizard').val(),
         data:{
-            fname : $('#fname').val(),
-            lname : $('#lname').val(),
+            fname : $('#Fname').val(),
+            lname : $('#Lname').val(),
             wphone: $('#wphone').val(),
-            email: $('#email').val(),
+            email: $('#Wemail').val(),
             country: $('#country').val(),
             city: $('#city').val(),
             cantHabitaciones: $('#cantHabitaciones').val(),
@@ -17,14 +18,14 @@ $('#sendWizard').click(function(e){
             cantTriples: $('#cantTriples').val(),
             desde: $('#desde').val(),
             hasta: $('#hasta').val(),
-            medioLLegada: $('#medioLLegada').val(),
-            horaLLegada: $('#horaLLegada').val(),
-            imformacionCliente: $('#informacionCliente').val()
+            llegar: $('#llegar').val(),
+            horaLLegada: $('#clock').val(),
+            informacionCliente: $('#informacionCliente').val()
 
         }
     })
         .done(function(){
-            debugger;
+            
             console.log(data);
         });
 });

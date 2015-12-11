@@ -76,15 +76,15 @@ def reservar(request, home_id):
     hab_triple = request.POST['cantTriples']
     desde = request.POST['desde']
     hasta = request.POST['hasta']
-    medioLLegada = request.POST['medioLlegada']
+    llegar = request.POST['llegar']
     horaLLegada = request.POST['horaLLegada']
-    imformacionCliente = request.POST['imformacionCliente']
+    informacionCliente = request.POST['informacionCliente']
 
     reservacion = Reservacion()
     reservacion.cant_habitacion = cant_habitaciones
     reservacion.casa = casa
     reservacion.city_town = city
-    reservacion.comment = imformacionCliente
+    reservacion.comment = informacionCliente
     reservacion.country = country
     reservacion.email = email
     reservacion.first_name = fname
@@ -95,7 +95,7 @@ def reservar(request, home_id):
     reservacion.hab_triples = hab_triple
     reservacion.fecha_ini = desde
     reservacion.fecha_fin = hasta
-    reservacion.forma_llegada = medioLLegada
+    reservacion.forma_llegada = llegar
     reservacion.hora_estimada = horaLLegada
 
     reservacion.save()

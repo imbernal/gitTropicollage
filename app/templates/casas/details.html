@@ -518,7 +518,7 @@
                     <form action="#" method="post" class="form-horizontal" id="submit_form">
                         {% csrf_token %}
                         <div class="form-wizard">
-                        
+
                             <div class="form-body">
                                 <input type="hidden" id="homeName" value="{{ entity.nombre }}">
                                 <input type="hidden" id="homePolo" value="{{ entity.polo_turistico }}">
@@ -588,7 +588,7 @@
                                             </label>
 
                                             <div class="col-md-4">
-                                                <input type="text" class="form-control" name="fname"/>
+                                                <input type="text" class="form-control" id="Fname" name="fname"/>
 														<span class="help-block">
 															 Provide your First Name
 														</span>
@@ -602,7 +602,7 @@
                                             </label>
 
                                             <div class="col-md-4">
-                                                <input type="text" class="form-control" name="lname"/>
+                                                <input type="text" class="form-control" id="Lname" name="lname"/>
 														<span class="help-block">
 															 Provide your Last Name
 														</span>
@@ -616,7 +616,7 @@
                                             </label>
 
                                             <div class="col-md-4">
-                                                <input type="text" class="form-control" name="wphone"/>
+                                                <input type="text" class="form-control" id="wphone" name="wphone"/>
 														<span class="help-block">
 															 Phone Number
 														</span>
@@ -630,7 +630,7 @@
                                             </label>
 
                                             <div class="col-md-4">
-                                                <input type="text" class="form-control" name="email"/>
+                                                <input type="text" class="form-control" id="Wemail" name="email"/>
 														<span class="help-block">
 															 Provide your email address
 														</span>
@@ -644,7 +644,7 @@
                                             </label>
 
                                             <div class="col-md-4">
-                                                <select name="country" class="form-control">
+                                                <select name="country" id="country" class="form-control">
                                                     <option value="" selected="selected">Select Country</option>
                                                     <option value="United States">United States</option>
                                                     <option value="United Kingdom">United Kingdom</option>
@@ -976,8 +976,8 @@
                                             </label>
 
                                             <div class="col-md-4">
-                                                <select name="cantHabitaciones" class="form-control"
-                                                        id="cantHabitaciones">
+                                                <select name="cantHabitaciones" id="cantHabitaciones" class="form-control"
+                                                        >
                                                     {% for item in entity.habitacion_set.all %}
                                                         <option value="{{ forloop.counter }}">{{ forloop.counter }}</option>
                                                     {% endfor %}
@@ -1057,7 +1057,7 @@
                                             <div class="col-md-4" data-date-format="yyyy-mm-dd">
                                                 <input type="text" class="form-control input-icon" id="hasta"
                                                        name="hasta"/>
-                                                {#                                                <span class="ion-calendar icon"></span>#}
+                                                <!--{#                                                <span class="ion-calendar icon"></span>#}-->
 
                                                 <span class="help-block">
                                                      Provide check-out
@@ -1077,10 +1077,10 @@
                                             </label>
 
                                             <div class="col-md-4">
-                                                <select name="medioLlegada" class="form-control">
+                                                <select name="llegar" id="llegar" class="form-control">
                                                     <option value="" selected="selected">Seleccine medio</option>
-                                                    <option value="Bus_Viazul">Bus Viazul</option>
-                                                    <option value="Bus_Transtur">Bus Transtur</option>
+                                                    <option value="BusViazul">Bus Viazul</option>
+                                                    <option value="BusTranstur">Bus Transtur</option>
                                                     <option value="Taxi">Taxi</option>
                                                     <option value="Car">Car</option>
                                                     <option value="Other">Other</option>
@@ -1109,7 +1109,7 @@
                                             <div class="col-md-4">
                                                 <textarea class="form-control"
                                                           placeholder="Informacion que usted considere importante"
-                                                          rows="3" name="imformacionCliente"></textarea>
+                                                          rows="3" id="informacionCliente" name="informacionCliente"></textarea>
                                             </div>
                                         </div>
 
@@ -1123,7 +1123,7 @@
                                             <label class="control-label col-md-3">First Name:</label>
 
                                             <div class="col-md-4">
-                                                <p class="form-control-static" id="fname" data-display="fname">
+                                                <p class="form-control-static"  data-display="fname">
                                                 </p>
                                             </div>
                                         </div>
@@ -1131,7 +1131,7 @@
                                             <label class="control-label col-md-3">Last Name:</label>
 
                                             <div class="col-md-4">
-                                                <p class="form-control-static" id="lname" data-display="lname">
+                                                <p class="form-control-static"  data-display="lname">
                                                 </p>
                                             </div>
                                         </div>
@@ -1139,7 +1139,7 @@
                                             <label class="control-label col-md-3">Phone Number:</label>
 
                                             <div class="col-md-4">
-                                                <p class="form-control-static" id="wphone" data-display="wphone">
+                                                <p class="form-control-static"  data-display="wphone">
                                                 </p>
                                             </div>
                                         </div>
@@ -1147,7 +1147,7 @@
                                             <label class="control-label col-md-3">Email:</label>
 
                                             <div class="col-md-4">
-                                                <p class="form-control-static" id="email" data-display="email">
+                                                <p class="form-control-static"  data-display="email">
                                                 </p>
                                             </div>
                                         </div>
@@ -1155,7 +1155,7 @@
                                             <label class="control-label col-md-3">Country:</label>
 
                                             <div class="col-md-4">
-                                                <p class="form-control-static" id="country" data-display="country">
+                                                <p class="form-control-static" data-display="country">
                                                 </p>
                                             </div>
                                         </div>
@@ -1163,7 +1163,7 @@
                                             <label class="control-label col-md-3">City/Town:</label>
 
                                             <div class="col-md-4">
-                                                <p class="form-control-static" id="city" data-display="city">
+                                                <p class="form-control-static" data-display="city">
                                                 </p>
                                             </div>
                                         </div>
@@ -1175,7 +1175,7 @@
 
 
                                             <div class="col-md-4">
-                                                <p class="form-control-static" id="cantHabitaciones" data-display="cantHabitaciones">
+                                                <p class="form-control-static"  data-display="cantHabitaciones">
                                                 </p>
                                             </div>
                                         </div>
@@ -1183,7 +1183,7 @@
                                             <label class="control-label col-md-3">Cantidad de Simples:</label>
 
                                             <div class="col-md-4">
-                                                <p class="form-control-static" id="cantSimples" data-display="cantSimples">
+                                                <p class="form-control-static"  data-display="cantSimples">
                                                 </p>
                                             </div>
 
@@ -1192,7 +1192,7 @@
                                             <label class="control-label col-md-3">Cantidad de Dobles:</label>
 
                                             <div class="col-md-4">
-                                                <p class="form-control-static" id="cantDobles" data-display="cantDobles">
+                                                <p class="form-control-static" data-display="cantDobles">
                                                 </p>
 
                                             </div>
@@ -1201,7 +1201,7 @@
                                             <label class="control-label col-md-3">Cantidad de Triples:</label>
 
                                             <div class="col-md-4">
-                                                <p class="form-control-static" id="cantTriples" data-display="cantTriples">
+                                                <p class="form-control-static"  data-display="cantTriples">
                                                 </p>
                                             </div>
                                         </div>
@@ -1210,7 +1210,7 @@
                                             <label class="control-label col-md-3">Check-in:</label>
 
                                             <div class="col-md-4">
-                                                <p class="form-control-static" id="desde" data-display="desde">
+                                                <p class="form-control-static"  data-display="desde">
                                                 </p>
                                             </div>
                                         </div>
@@ -1219,7 +1219,7 @@
                                             <label class="control-label col-md-3">Check-out:</label>
 
                                             <div class="col-md-4">
-                                                <p class="form-control-static" id="hasta" data-display="hasta">
+                                                <p class="form-control-static" data-display="hasta">
                                                 </p>
                                             </div>
                                         </div>
@@ -1231,7 +1231,7 @@
                                             <label class="control-label col-md-3">Forma de llegada</label>
 
                                             <div class="col-md-4">
-                                                <p class="form-control-static" id="medioLlegada" data-display="medioLlegada">
+                                                <p class="form-control-static"  data-display="llegar">
                                                 </p>
                                             </div>
                                         </div>
@@ -1239,7 +1239,7 @@
                                             <label class="control-label col-md-3">Hora estimada</label>
 
                                             <div class="col-md-4">
-                                                <p class="form-control-static" id="horaLLegada" data-display="horaLLegada">
+                                                <p class="form-control-static"  data-display="horaLLegada">
                                                 </p>
                                             </div>
                                         </div>
@@ -1248,12 +1248,12 @@
                                                 necesaria</label>
 
                                             <div class="col-md-4">
-                                                <p class="form-control-static" id="informacionCliente" data-display="informacionCliente">
+                                                <p class="form-control-static"  data-display="informacionCliente">
                                                 </p>
                                             </div>
                                         </div>
-                                        <input type="hidden" name="homeWizard_id" id="home_id" value="{{ entity.pk }}">
-                                        <input type="hidden" name="wizard_url" id="post_url"
+                                        <input type="hidden" name="homeWizard_id" id="homeId" value="{{ entity.pk }}">
+                                        <input type="hidden" name="wizard_url" id="post_urlWizard"
                                                value="{% url 'reservar' entity.pk %}">
                                         <h4 class="form-section">Information</h4>
 
@@ -1397,7 +1397,7 @@
                         </div>
 
                         <input type="hidden" name="home_id" id="home_id" value="{{ entity.pk }}">
-                        <input type="hidden" name="post_url" id="post_url" value="{% url 'comment' %}">
+                        <input type="hidden" name="post_url" id="post_url" value="{% url 'comment'%}">
 
                         <div class="col-xs-12 form-group">
                             <textarea class="form-control comment-body" name="comment-body" id="comment-body"
@@ -1449,9 +1449,7 @@
     <script src="/static/js/owl.carousel.js"></script>
 
     <script type="text/javascript">
-        $('#clock').clockpicker({
-            twelvehour: true
-        });
+        $('#clock').clockpicker();
         FormWizard.init();
     </script>
     <script type="text/javascript">
@@ -1502,8 +1500,8 @@
         $('#clock').click(function (e) {
             e.preventDefault();
 
-            
-            var id = {{ entity.pk }};
+
+            var id = $('#homeId').val();
             $.getJSON('/api/casas/' + id + '/?format=json').done(function (data) {
                 console.log(data.precio_alta);
 
@@ -1511,7 +1509,7 @@
                 var hasta = $('#hasta').val();
 
                 var diffDays = daysBetween(desde, hasta);
-                
+
                 var casa = $('#homeName').val();
 
                 var polo = $('#homePolo').val();
