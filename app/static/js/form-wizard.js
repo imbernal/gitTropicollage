@@ -25,50 +25,73 @@ var FormWizard = function () {
 
             //validate cant habitation
 
+            var sum = 0;
+            $('#cantSimples').val(0);
+            $('#cantDobles').val(0);
+            $('#cantTriples').val(0);
 
-            //    var cantHabitaciones = $('#cantHabitaciones').val();
-            //    var cantSimples = $('#cantSimples').val();
-            //    var cantDobles = $('#cantDobles').val();
-            //    var cantTriples = $('#cantTriples').val();
-            //
+            var tempSimples = 0;
+            var tempDobles = 0;
+            var tempTriples = 0;
+            var cantHabitaciones = parseInt($('#cantHabitaciones').val());
+
+            $('#cantHabitaciones').click(function(e){
+                cantHabitaciones = parseInt($('#cantHabitaciones').val());
+                sum = 0;
+            });
+
+            $('#cantSimples').keyup(function (e) {
+                var cantSimples = parseInt($('#cantSimples').val());
+
+                tempSimples++;
+
+                if(tempSimples != 1){
+                    sum = 0;
+                }
+
+                sum += cantSimples;
+                l(sum);
+                if (sum > cantHabitaciones) {
+                    $('#cantSimples').val(0);
+                }
+            });
+
+            $('#cantDobles').keyup(function (e) {
+                var cantDobles = parseInt($('#cantDobles').val());
+
+                sum += cantDobles;
+
+                tempDobles++;
+
+                if(tempDobles != 1){
+                    sum = 0;
+                }
+
+                if (sum > cantHabitaciones) {
+
+                    $('#cantDobles').val(0);
+                }
 
 
-            //$('#hasta').click(function (e) {
+            });
 
-            //
-            //    e.preventDefault();
-            //
-            //    if (cantSimples > cantHabitaciones) {
-            //        $('#cantSimples').val(0);
-            //        alert("cantidad de habitaciones simples superior a la cantdad de habitaciones")
-            //    }
-            //
-            //    if (cantSimples == cantHabitaciones) {
-            //        $('#cantDobles').hide();
-            //        $('#cantTriples').hide();
-            //    }
-            //
-            //    if (cantSimples + cantDobles > cantHabitaciones) {
-            //        $('#cantTriples').hide();
-            //    }
-            //
-            //    if (cantSimples + cantTriples > cantHabitaciones) {
-            //        $('#cantDobles').hide();
-            //    }
-            //
-            //    if (cantDobles + cantTriples > cantHabitaciones) {
-            //        $('#cantSimples').hide();
-            //    }
-            //
-            //    if (cantSimples + cantTriples + cantDobles > cantHabitaciones) {
-            //        $('#cantDobles').val(0);
-            //        $('#cantSimples').val(0);
-            //        $('#cantTriples').val(0);
-            //        alert("Te pasastes");
-            //    }
-            //
-            //
-            //});
+            $('#cantTriples').keyup(function (e) {
+                var cantTriples = parseInt($('#cantTriples').val());
+
+                sum += cantTriples;
+
+                tempTriples++;
+
+                if(tempTriples != 1){
+                    sum = 0;
+                }
+
+                if (sum > cantHabitaciones) {
+                    $('#cantTriples').val(0);
+                }
+
+
+            });
 
 
             var form = $('#submit_form');
@@ -103,20 +126,6 @@ var FormWizard = function () {
                     email: {
                         required: true,
                         email: true
-                    },
-                    cantSimples: {
-                        digits: true,
-                        required: true
-
-
-                    },
-                    cantDobles: {
-                        digits: true,
-                        required: true
-                    },
-                    cantTriples: {
-                        digits: true,
-                        required: true
                     },
                     desde: {
                         required: true

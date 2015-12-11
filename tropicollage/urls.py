@@ -21,9 +21,9 @@ from app.views import *
 
 router = routers.DefaultRouter()
 
-router.register(r'casas' , CasaViewSet)
-router.register(r'galleries' , GalleryViewSet)
-router.register(r'images' , ImagesViewSet)
+router.register(r'casas', CasaViewSet)
+router.register(r'galleries', GalleryViewSet)
+router.register(r'images', ImagesViewSet)
 
 urlpatterns = [
     url(r'^api/' , include(router.urls)),
