@@ -502,11 +502,13 @@
                 {#                </div>#}
 
                 <div class="portlet-body form" id="wizard">
-                    <form action="{% url 'reservar' entity.id %}" method="post" class="form-horizontal"
-                          id="submit_form">
+                    <form action="#" method="post" class="form-horizontal" id="submit_form">
                         {% csrf_token %}
                         <div class="form-wizard">
+                        
                             <div class="form-body">
+                                <input type="hidden" id="homeName" value="{{ entity.nombre }}">
+                                <input type="hidden" id="homePolo" value="{{ entity.polo_turistico }}">
                                 <ul class="nav nav-pills nav-justified steps" id="ulWizard">
                                     <li>
                                         <a href="#tab1" data-toggle="tab" class="step">
@@ -961,7 +963,8 @@
                                             </label>
 
                                             <div class="col-md-4">
-                                                <select name="cantHabitaciones" class="form-control" id="cantHabitaciones">
+                                                <select name="cantHabitaciones" class="form-control"
+                                                        id="cantHabitaciones">
                                                     {% for item in entity.habitacion_set.all %}
                                                         <option value="{{ forloop.counter }}">{{ forloop.counter }}</option>
                                                     {% endfor %}
@@ -979,7 +982,8 @@
                                             </label>
 
                                             <div class="col-md-4">
-                                                <input type="text" class="form-control" id="cantSimples" name="cantSimples"/>
+                                                <input type="text" class="form-control" id="cantSimples"
+                                                       name="cantSimples"/>
 														<span class="help-block" id="spanSimples">
 															 Provide cantidad de habitaciones Simples
 														</span>
@@ -993,7 +997,8 @@
                                             </label>
 
                                             <div class="col-md-4">
-                                                <input type="text" class="form-control" id="cantDobles" name="cantDobles"/>
+                                                <input type="text" class="form-control" id="cantDobles"
+                                                       name="cantDobles"/>
 														<span class="help-block">
 															 Provide cantidad de habitaciones Dobles
 														</span>
@@ -1007,7 +1012,8 @@
                                             </label>
 
                                             <div class="col-md-4">
-                                                <input type="text" class="form-control" id="cantTriples" name="cantTriples"/>
+                                                <input type="text" class="form-control" id="cantTriples"
+                                                       name="cantTriples"/>
 														<span class="help-block">
 															 Provide cantidad de habitaciones Triples
 														</span>
@@ -1060,8 +1066,11 @@
                                             <div class="col-md-4">
                                                 <select name="medioLlegada" class="form-control">
                                                     <option value="" selected="selected">Seleccine medio</option>
-                                                    <option value="Bus">Bus</option>
+                                                    <option value="Bus_Viazul">Bus Viazul</option>
+                                                    <option value="Bus_Transtur">Bus Transtur</option>
                                                     <option value="Taxi">Taxi</option>
+                                                    <option value="Car">Car</option>
+                                                    <option value="Other">Other</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -1101,7 +1110,7 @@
                                             <label class="control-label col-md-3">First Name:</label>
 
                                             <div class="col-md-4">
-                                                <p class="form-control-static" data-display="fname">
+                                                <p class="form-control-static" id="fname" data-display="fname">
                                                 </p>
                                             </div>
                                         </div>
@@ -1109,7 +1118,7 @@
                                             <label class="control-label col-md-3">Last Name:</label>
 
                                             <div class="col-md-4">
-                                                <p class="form-control-static" data-display="lname">
+                                                <p class="form-control-static" id="lname" data-display="lname">
                                                 </p>
                                             </div>
                                         </div>
@@ -1117,7 +1126,7 @@
                                             <label class="control-label col-md-3">Phone Number:</label>
 
                                             <div class="col-md-4">
-                                                <p class="form-control-static" data-display="wphone">
+                                                <p class="form-control-static" id="wphone" data-display="wphone">
                                                 </p>
                                             </div>
                                         </div>
@@ -1125,7 +1134,7 @@
                                             <label class="control-label col-md-3">Email:</label>
 
                                             <div class="col-md-4">
-                                                <p class="form-control-static" data-display="email">
+                                                <p class="form-control-static" id="email" data-display="email">
                                                 </p>
                                             </div>
                                         </div>
@@ -1133,7 +1142,7 @@
                                             <label class="control-label col-md-3">Country:</label>
 
                                             <div class="col-md-4">
-                                                <p class="form-control-static" data-display="country">
+                                                <p class="form-control-static" id="country" data-display="country">
                                                 </p>
                                             </div>
                                         </div>
@@ -1141,7 +1150,7 @@
                                             <label class="control-label col-md-3">City/Town:</label>
 
                                             <div class="col-md-4">
-                                                <p class="form-control-static" data-display="city">
+                                                <p class="form-control-static" id="city" data-display="city">
                                                 </p>
                                             </div>
                                         </div>
@@ -1153,7 +1162,7 @@
 
 
                                             <div class="col-md-4">
-                                                <p class="form-control-static" data-display="cantHabitaciones">
+                                                <p class="form-control-static" id="cantHabitaciones" data-display="cantHabitaciones">
                                                 </p>
                                             </div>
                                         </div>
@@ -1161,7 +1170,7 @@
                                             <label class="control-label col-md-3">Cantidad de Simples:</label>
 
                                             <div class="col-md-4">
-                                                <p class="form-control-static" data-display="cantSimples">
+                                                <p class="form-control-static" id="cantSimples" data-display="cantSimples">
                                                 </p>
                                             </div>
 
@@ -1170,7 +1179,7 @@
                                             <label class="control-label col-md-3">Cantidad de Dobles:</label>
 
                                             <div class="col-md-4">
-                                                <p class="form-control-static" data-display="cantDobles">
+                                                <p class="form-control-static" id="cantDobles" data-display="cantDobles">
                                                 </p>
 
                                             </div>
@@ -1179,7 +1188,7 @@
                                             <label class="control-label col-md-3">Cantidad de Triples:</label>
 
                                             <div class="col-md-4">
-                                                <p class="form-control-static" data-display="cantTriples">
+                                                <p class="form-control-static" id="cantTriples" data-display="cantTriples">
                                                 </p>
                                             </div>
                                         </div>
@@ -1188,7 +1197,7 @@
                                             <label class="control-label col-md-3">Check-in:</label>
 
                                             <div class="col-md-4">
-                                                <p class="form-control-static" data-display="desde">
+                                                <p class="form-control-static" id="desde" data-display="desde">
                                                 </p>
                                             </div>
                                         </div>
@@ -1197,7 +1206,7 @@
                                             <label class="control-label col-md-3">Check-out:</label>
 
                                             <div class="col-md-4">
-                                                <p class="form-control-static" data-display="hasta">
+                                                <p class="form-control-static" id="hasta" data-display="hasta">
                                                 </p>
                                             </div>
                                         </div>
@@ -1209,7 +1218,7 @@
                                             <label class="control-label col-md-3">Forma de llegada</label>
 
                                             <div class="col-md-4">
-                                                <p class="form-control-static" data-display="medioLlegada">
+                                                <p class="form-control-static" id="medioLlegada" data-display="medioLlegada">
                                                 </p>
                                             </div>
                                         </div>
@@ -1217,7 +1226,7 @@
                                             <label class="control-label col-md-3">Hora estimada</label>
 
                                             <div class="col-md-4">
-                                                <p class="form-control-static" data-display="horaLLegada">
+                                                <p class="form-control-static" id="horaLLegada" data-display="horaLLegada">
                                                 </p>
                                             </div>
                                         </div>
@@ -1226,16 +1235,19 @@
                                                 necesaria</label>
 
                                             <div class="col-md-4">
-                                                <p class="form-control-static" data-display="imformacionCliente">
+                                                <p class="form-control-static" id="informacionCliente" data-display="informacionCliente">
                                                 </p>
                                             </div>
                                         </div>
                                         <input type="hidden" name="homeWizard_id" id="home_id" value="{{ entity.pk }}">
-                                        <input type="hidden" name="wizard_url" id="post_url" value="{% url 'reservar' entity.pk %}">
+                                        <input type="hidden" name="wizard_url" id="post_url"
+                                               value="{% url 'reservar' entity.pk %}">
                                         <h4 class="form-section">Information</h4>
 
                                         <div class="information">
                                             <h3>Congratulations!!!!</h3>
+                                            <p id="finalInformation">sdasdasd</p>
+                                            <input type="checkbox" name="sadasdasd" id="terms">I agree to the Terms and Conditions
                                         </div>
 
                                     </div>
@@ -1250,7 +1262,8 @@
                                         <a href="javascript:;" class="btn blue button-next">
                                             Continue <i class="m-icon-swapright m-icon-white"></i>
                                         </a>
-                                        <input type="submit" id="sendWizard" class="btn green button-submit" style="display: none;"
+                                        <input type="submit" id="sendWizard" class="btn green button-submit"
+                                               style="display: none;"
                                                value="Submit">
                                         <i class="m-icon-swapright m-icon-white"></i>
 
@@ -1360,6 +1373,7 @@
                     <h6 class="review-create-title text-center">Please, leave your thoughts.</h6>
 
                     <form action="#" method="post" class="form-group">
+                        {% csrf_token %}
                         <div class="col-xs-12 form-group">
                             <input type="text" class="form-control input-lg" name="full_name" id="full_name"
                                    placeholder="Nombre completo">
@@ -1418,7 +1432,7 @@
 
     <script src="/static/js/select2.min.js"></script>
     <script src="/static/js/form-wizard.js"></script>
-{#    <script src="/static/js/rent-wizard.js"></script>#}
+    <script src="/static/js/rent-wizard.js"></script>
     <script src="/static/js/customValidation.js"></script>
 
     <script type="text/javascript">
@@ -1462,24 +1476,27 @@
 
         });
 
-        $('#clock').click(function(e){
+        $('#clock').click(function (e) {
             e.preventDefault();
-            console.log($('#infoPrice').val())
+            
             var id = {{ entity.pk }};
             $.getJSON('/api/casas/' + id + '/?format=json').done(function (data) {
                 console.log(data.precio_alta);
 
-                var desde = $('#desde');
-                var hasta = $('#hasta');
+                var desde = $('#desde').val();
+                var hasta = $('#hasta').val();
+
                 var diffDays = daysBetween(desde, hasta);
+                
+                var casa = $('#homeName').val();
 
-                $('#infoPrice').val(data.precio_alta);
-                console.log(diffDays);
+                var polo = $('#homePolo').val();
+                l(casa);
+                l(polo);
 
+                $('#finalInformation').html("Usted estara en "+polo+" en "+casa+" durante "+diffDays+" noches, por un precio de "+ diffDays*data.precio_alta+" pasala bien.");
             });
         });
-
-
 
 
         function l(arg) {
