@@ -374,9 +374,7 @@
     </div>
     <hr>
 
-    <a class="btn btn-info" id="action-temp" href="javascript:void(0);">Toggle</a>
-
-    <div class="panel-group container rooms-details" id="accordion">
+     <div class="panel-group container rooms-details" id="accordion">
         {% for item in entity.habitacion_set.all %}
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -1257,9 +1255,22 @@
                                         <h4 class="form-section">Information</h4>
 
                                         <div class="information">
-                                            <h3>Congratulations!!!!</h3>
+
                                             <p id="finalInformation">sdasdasd</p>
-                                            <input type="checkbox" name="sadasdasd" id="terms">I agree to the Terms and Conditions
+                                            <br>
+                                            <p>
+                                                <h4>Cancellation Policy</h4>
+                                                Customers can cancel their reservation 2 days before their arrival via email
+                                                or calling by phone to the owner of the house.
+                                            </p>
+                                            <br>
+                                            <p>
+                                                <h4>Prices and Payments</h4>
+                                                The price of the room is : per night per room. The payment will be made to
+                                                our arrival, directly with the owners of the house. <span> Only the payment in cash is accepted.</span>
+                                            </p>
+                                            <br>
+                                            <input type="checkbox" value="1"  id="agree">I agree to the Terms and Conditions
                                         </div>
 
                                     </div>
@@ -1268,7 +1279,7 @@
                             <div class="form-actions fluid">
                                 <div class="row">
                                     <div class="col-md-offset-3 col-md-9">
-                                        <a href="javascript:;" class="btn default button-previous">
+                                        <a href="javascript:;" id="back" class="btn default button-previous">
                                             <i class="m-icon-swapleft"></i> Back
                                         </a>
                                         <a href="javascript:;" class="btn blue button-next">
@@ -1384,23 +1395,23 @@
                 <div class="review-create-form">
                     <h6 class="review-create-title text-center">Please, leave your thoughts.</h6>
 
-                    <form action="#" method="post" class="form-group">
+                    <form action="#" method="post" id="formComment" class="form-group">
                         {% csrf_token %}
                         <div class="col-xs-12 form-group">
                             <input type="text" class="form-control input-lg" name="full_name" id="full_name"
-                                   placeholder="Nombre completo">
+                                   placeholder="Nombre completo" required>
                         </div>
                         <div class="col-xs-12 form-group">
                             <input type="email" class="form-control input-lg" name="user_email" id="user_email"
-                                   placeholder="Correo electronico">
+                                   placeholder="Correo electronico" required>
                         </div>
 
                         <input type="hidden" name="home_id" id="home_id" value="{{ entity.pk }}">
                         <input type="hidden" name="post_url" id="post_url" value="{% url 'comment'%}">
 
                         <div class="col-xs-12 form-group">
-                            <textarea class="form-control comment-body" name="comment-body" id="comment-body"
-                                      rows="10"></textarea>
+                            <textarea class="form-control comment-body" name="comment_body" id="comment-body"
+                                      rows="10" required></textarea>
                         </div>
                         <div class="col-xs-12 form-group">
                             <input type="submit" class="btn btn-success" value="Comment">
@@ -1455,6 +1466,9 @@
         // DO NOT REMOVE : GLOBAL FUNCTIONS!
         $(document).ready(function () {
 
+            //validate comment form
+
+
             $('#owl-demo').owlCarousel({
                 autoPlay: 3000, //Set AutoPlay to 3 seconds
                 items: 4,
@@ -1495,9 +1509,28 @@
             });
 
         });
+        $('#agree').val(2);
+        $('#agree').click(function(e){
+
+            var agreeVal = $('#agree').val();
+
+            if(agreeVal == 1) {
+
+                $('#agree').val(2);
+                $('#sendWizard').attr('disabled' , 'disabled');
+            }else{
+                $('#sendWizard').attr('disabled' , false);
+                $('#agree').val(1)
+            }
+
+
+        });
 
         $('#clock').click(function (e) {
             e.preventDefault();
+
+            $('#sendWizard').attr('disabled' , 'disabled');
+
 
 
             var id = $('#homeId').val();
@@ -1512,10 +1545,11 @@
                 var casa = $('#homeName').val();
 
                 var polo = $('#homePolo').val();
-                l(casa);
-                l(polo);
 
-                $('#finalInformation').html("Usted estara en "+polo+" en "+casa+" durante "+diffDays+" noches, por un precio de "+ diffDays*data.precio_alta+" pasala bien.");
+                var precio = diffDays * data.precio_alta;
+
+                $('#finalInformation').html("Noches: " + diffDays + ", Precio: " + precio + " $");
+
             });
 
         });

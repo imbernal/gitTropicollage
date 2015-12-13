@@ -100,6 +100,11 @@ def reservar(request, home_id):
 
     reservacion.save()
 
+    message = ""
+
+    send_mail('New rent', message, 'info@tropicollage.com',
+              ['i.martinez@estudiantes.upr.edu.cu', 'cesar.bretana@estudiantes.upr.edu.cu'], fail_silently=False)
+
 
 def fecha_search(request):
     start_date = request.POST['in-date']
