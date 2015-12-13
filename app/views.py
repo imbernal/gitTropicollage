@@ -7,8 +7,7 @@ from django.shortcuts import render, render_to_response, get_object_or_404
 from django.template import RequestContext
 
 from django.http.response import HttpResponse, JsonResponse, HttpResponseRedirect
-
-from django.views.decorators.csrf import csrf_protect, csrf_exempt
+from django.views.decorators.csrf import csrf_exempt
 from django.contrib import messages
 from django.core.mail import send_mail
 from app.filter import *
@@ -61,7 +60,7 @@ def homeDetails(request, home_id):
                                                   },
                   context_instance=RequestContext(request))
 
-
+@csrf_exempt
 def reservar(request, home_id):
     casa = Casa.objects.get(pk=home_id)
 
@@ -77,15 +76,15 @@ def reservar(request, home_id):
     hab_triple = request.POST['cantTriples']
     desde = request.POST['desde']
     hasta = request.POST['hasta']
-    transport = request.POST['medioLlegada']
-    hora_estimada = request.POST['horaLLegada']
-    imformacionCliente = request.POST['imformacionCliente']
+    llegar = request.POST['llegar']
+    horaLLegada = request.POST['horaLLegada']
+    informacionCliente = request.POST['informacionCliente']
 
     reservacion = Reservacion()
     reservacion.cant_habitacion = cant_habitaciones
     reservacion.casa = casa
     reservacion.city_town = city
-    reservacion.comment = imformacionCliente
+    reservacion.comment = informacionCliente
     reservacion.country = country
     reservacion.email = email
     reservacion.first_name = fname
@@ -96,8 +95,8 @@ def reservar(request, home_id):
     reservacion.hab_triples = hab_triple
     reservacion.fecha_ini = desde
     reservacion.fecha_fin = hasta
-    reservacion.forma_llegada = transport
-    reservacion.hora_estimada = hora_estimada
+    reservacion.forma_llegada = llegar
+    reservacion.hora_estimada = horaLLegada
 
     reservacion.save()
 

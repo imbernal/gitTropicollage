@@ -23,6 +23,54 @@ var FormWizard = function () {
                 }
             });
 
+            //validate cant habitation
+
+
+            //    var cantHabitaciones = $('#cantHabitaciones').val();
+            //    var cantSimples = $('#cantSimples').val();
+            //    var cantDobles = $('#cantDobles').val();
+            //    var cantTriples = $('#cantTriples').val();
+            //
+
+
+            //$('#hasta').click(function (e) {
+
+            //
+            //    e.preventDefault();
+            //
+            //    if (cantSimples > cantHabitaciones) {
+            //        $('#cantSimples').val(0);
+            //        alert("cantidad de habitaciones simples superior a la cantdad de habitaciones")
+            //    }
+            //
+            //    if (cantSimples == cantHabitaciones) {
+            //        $('#cantDobles').hide();
+            //        $('#cantTriples').hide();
+            //    }
+            //
+            //    if (cantSimples + cantDobles > cantHabitaciones) {
+            //        $('#cantTriples').hide();
+            //    }
+            //
+            //    if (cantSimples + cantTriples > cantHabitaciones) {
+            //        $('#cantDobles').hide();
+            //    }
+            //
+            //    if (cantDobles + cantTriples > cantHabitaciones) {
+            //        $('#cantSimples').hide();
+            //    }
+            //
+            //    if (cantSimples + cantTriples + cantDobles > cantHabitaciones) {
+            //        $('#cantDobles').val(0);
+            //        $('#cantSimples').val(0);
+            //        $('#cantTriples').val(0);
+            //        alert("Te pasastes");
+            //    }
+            //
+            //
+            //});
+
+
             var form = $('#submit_form');
             var error = $('.alert-danger', form);
             var success = $('.alert-success', form);
@@ -59,6 +107,8 @@ var FormWizard = function () {
                     cantSimples: {
                         digits: true,
                         required: true
+
+
                     },
                     cantDobles: {
                         digits: true,
@@ -136,7 +186,7 @@ var FormWizard = function () {
                 submitHandler: function (form) {
                     success.show();
                     error.hide();
-                    form.submit();
+                    //form.submit();
                     //add here some ajax code to submit your form or just call form.submit() if you want to submit the form without ajax
                 }
 
