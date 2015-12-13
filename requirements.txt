@@ -1,4 +1,4 @@
-admin-multiupload==0.1
+git+git://github.com/gkuhn1/django-admin-multiupload.git
 Django==1.8.3
 django-appconf==1.0.1
 django-classy-tags==0.6.2
