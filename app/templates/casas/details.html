@@ -154,7 +154,8 @@
             <div id="owl-demo" class="owl-carousel">
                 {% for item in pictures %}
                     {#                    <a class="pic-link" href="/media/imagenes/{{ item }}">#}
-                    <a href="/media/imagenes/{{ item }}" class="fancybox" data-fancybox-group="gallery" title="{{ item }}"><img class="owl-item" src="/media/imagenes/{{ item }}"></a>{#</a>#}
+                    <a href="/media/imagenes/{{ item }}" class="fancybox" data-fancybox-group="gallery"
+                       title="{{ item }}"><img class="owl-item" src="/media/imagenes/{{ item }}"></a>{#</a>#}
                 {% endfor %}
             </div>
         </div>
@@ -977,7 +978,8 @@
                                             </label>
 
                                             <div class="col-md-4">
-                                                <select name="cantHabitaciones" id="cantHabitaciones" class="form-control"
+                                                <select name="cantHabitaciones" id="cantHabitaciones"
+                                                        class="form-control"
                                                         >
                                                     {% for item in entity.habitacion_set.all %}
                                                         <option value="{{ forloop.counter }}">{{ forloop.counter }}</option>
@@ -1110,7 +1112,8 @@
                                             <div class="col-md-4">
                                                 <textarea class="form-control"
                                                           placeholder="Informacion que usted considere importante"
-                                                          rows="3" id="informacionCliente" name="informacionCliente"></textarea>
+                                                          rows="3" id="informacionCliente"
+                                                          name="informacionCliente"></textarea>
                                             </div>
                                         </div>
 
@@ -1124,7 +1127,7 @@
                                             <label class="control-label col-md-3">First Name:</label>
 
                                             <div class="col-md-4">
-                                                <p class="form-control-static"  data-display="fname">
+                                                <p class="form-control-static" data-display="fname">
                                                 </p>
                                             </div>
                                         </div>
@@ -1132,7 +1135,7 @@
                                             <label class="control-label col-md-3">Last Name:</label>
 
                                             <div class="col-md-4">
-                                                <p class="form-control-static"  data-display="lname">
+                                                <p class="form-control-static" data-display="lname">
                                                 </p>
                                             </div>
                                         </div>
@@ -1140,7 +1143,7 @@
                                             <label class="control-label col-md-3">Phone Number:</label>
 
                                             <div class="col-md-4">
-                                                <p class="form-control-static"  data-display="wphone">
+                                                <p class="form-control-static" data-display="wphone">
                                                 </p>
                                             </div>
                                         </div>
@@ -1148,7 +1151,7 @@
                                             <label class="control-label col-md-3">Email:</label>
 
                                             <div class="col-md-4">
-                                                <p class="form-control-static"  data-display="email">
+                                                <p class="form-control-static" data-display="email">
                                                 </p>
                                             </div>
                                         </div>
@@ -1176,7 +1179,7 @@
 
 
                                             <div class="col-md-4">
-                                                <p class="form-control-static"  data-display="cantHabitaciones">
+                                                <p class="form-control-static" data-display="cantHabitaciones">
                                                 </p>
                                             </div>
                                         </div>
@@ -1184,7 +1187,7 @@
                                             <label class="control-label col-md-3">Cantidad de Simples:</label>
 
                                             <div class="col-md-4">
-                                                <p class="form-control-static"  data-display="cantSimples">
+                                                <p class="form-control-static" data-display="cantSimples">
                                                 </p>
                                             </div>
 
@@ -1202,7 +1205,7 @@
                                             <label class="control-label col-md-3">Cantidad de Triples:</label>
 
                                             <div class="col-md-4">
-                                                <p class="form-control-static"  data-display="cantTriples">
+                                                <p class="form-control-static" data-display="cantTriples">
                                                 </p>
                                             </div>
                                         </div>
@@ -1211,7 +1214,7 @@
                                             <label class="control-label col-md-3">Check-in:</label>
 
                                             <div class="col-md-4">
-                                                <p class="form-control-static"  data-display="desde">
+                                                <p class="form-control-static" data-display="desde">
                                                 </p>
                                             </div>
                                         </div>
@@ -1232,7 +1235,7 @@
                                             <label class="control-label col-md-3">Forma de llegada</label>
 
                                             <div class="col-md-4">
-                                                <p class="form-control-static"  data-display="llegar">
+                                                <p class="form-control-static" data-display="llegar">
                                                 </p>
                                             </div>
                                         </div>
@@ -1240,7 +1243,7 @@
                                             <label class="control-label col-md-3">Hora estimada</label>
 
                                             <div class="col-md-4">
-                                                <p class="form-control-static"  data-display="horaLLegada">
+                                                <p class="form-control-static" data-display="horaLLegada">
                                                 </p>
                                             </div>
                                         </div>
@@ -1249,7 +1252,7 @@
                                                 necesaria</label>
 
                                             <div class="col-md-4">
-                                                <p class="form-control-static"  data-display="informacionCliente">
+                                                <p class="form-control-static" data-display="informacionCliente">
                                                 </p>
                                             </div>
                                         </div>
@@ -1260,8 +1263,10 @@
 
                                         <div class="information">
                                             <h3>Congratulations!!!!</h3>
+
                                             <p id="finalInformation">sdasdasd</p>
-                                            <input type="checkbox" name="sadasdasd" id="terms">I agree to the Terms and Conditions
+                                            <input type="checkbox" name="sadasdasd" id="terms">I agree to the Terms and
+                                            Conditions
                                         </div>
 
                                     </div>
@@ -1386,19 +1391,20 @@
                 <div class="review-create-form">
                     <h6 class="review-create-title text-center">Please, leave your thoughts.</h6>
 
+                    <div class="errors"></div>
                     <form action="#" method="post" class="form-group">
                         {% csrf_token %}
                         <div class="col-xs-12 form-group">
-                            <input type="text" class="form-control input-lg" name="full_name" id="full_name"
+                            <input type="text" class="form-control input-lg" required name="full_name" id="full_name"
                                    placeholder="Nombre completo">
                         </div>
                         <div class="col-xs-12 form-group">
-                            <input type="email" class="form-control input-lg" name="user_email" id="user_email"
+                            <input type="email" class="form-control input-lg" required name="user_email" id="user_email"
                                    placeholder="Correo electronico">
                         </div>
 
                         <input type="hidden" name="home_id" id="home_id" value="{{ entity.pk }}">
-                        <input type="hidden" name="post_url" id="post_url" value="{% url 'comment'%}">
+                        <input type="hidden" name="post_url" id="post_url" value="{% url 'comment' %}">
 
                         <div class="col-xs-12 form-group">
                             <textarea class="form-control comment-body" name="comment-body" id="comment-body"
@@ -1522,7 +1528,7 @@
                 l(casa);
                 l(polo);
 
-                $('#finalInformation').html("Usted estara en "+polo+" en "+casa+" durante "+diffDays+" noches, por un precio de "+ diffDays*data.precio_alta+" pasala bien.");
+                $('#finalInformation').html("Usted estara en " + polo + " en " + casa + " durante " + diffDays + " noches, por un precio de " + diffDays * data.precio_alta + " pasala bien.");
             });
 
         });
