@@ -1,17 +1,16 @@
 import datetime
 from django.contrib.auth import authenticate
 from django.contrib.auth import login
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.shortcuts import render, render_to_response, get_object_or_404
 from django.template import RequestContext
 
 from django.http.response import HttpResponse, JsonResponse, HttpResponseRedirect
-
-from django.views.decorators.csrf import csrf_protect, csrf_exempt
+from django.views.decorators.csrf import csrf_exempt
 from django.contrib import messages
 from django.core.mail import send_mail
 from app.filter import *
-
 
 from .forms import UploadFileForm
 from .utils import handle_uploaded_file
@@ -19,17 +18,33 @@ from .utils import handle_uploaded_file
 
 # Create your views here.
 
+def exists(check, coll):
+    flag = False
+    for item in coll:
+        if check == item:
+            flag = True
+    return flag
+
 def home_page(request):
     casas = Casa.objects.all()[:8]
     feedbacks = FeedBack.objects.all()[:3]
     reservaciones = Reservacion.objects.all()[:5]
-    return render(request, 'home_page/index.html', {'feedbacks': feedbacks, 'casas': casas , 'reservaciones':reservaciones})
+    lugares = Casa.objects.all()
+
+    lugares_fin = []
+
+    for item in lugares:
+        if not exists(item, lugares_fin):
+            lugares_fin.append(str(item.polo_turistico))
+
+    return render(request, 'home_page/index.html',
+                  {'feedbacks': feedbacks, 'casas': casas, 'reservaciones': reservaciones, 'places': lugares_fin})
+
 
 def homeList(request):
-
     if request.POST:
         destination = request.POST['destination']
-        filter = CasaFilter(request.GET, queryset=Casa.objects.filter(polo_turistico = destination))
+        filter = CasaFilter(request.GET, queryset=Casa.objects.filter(polo_turistico=destination))
 
     else:
         filter = CasaFilter(request.GET, queryset=Casa.objects.all())
@@ -60,9 +75,9 @@ def homeDetails(request, home_id):
                                                   },
                   context_instance=RequestContext(request))
 
-def reservar(request, CasaId):
-
-    casa = Casa.objects.get(pk = CasaId)
+@csrf_exempt
+def reservar(request, home_id):
+    casa = Casa.objects.get(pk=home_id)
 
     fname = request.POST['fname']
     lname = request.POST['lname']
@@ -70,33 +85,33 @@ def reservar(request, CasaId):
     wphone = request.POST['wphone']
     country = request.POST['country']
     city = request.POST['city']
-    cant_habitaciones = request.POST['cant_habitaciones']
-    hab_simple =request.POST['hab_simple']
-    hab_doble=request.POST['hab_doble']
-    hab_triple =request.POST['hab_triple']
-    desde =request.POST['to']
-    hasta =request.POST['from']
-    transport = request.POST['transport']
-    hora_estimada = request.POST['hora_estimada']
-    comment = request.POST['comment']
+    cant_habitaciones = request.POST['cantHabitaciones']
+    hab_simple = request.POST['cantSimples']
+    hab_doble = request.POST['cantDobles']
+    hab_triple = request.POST['cantTriples']
+    desde = request.POST['desde']
+    hasta = request.POST['hasta']
+    llegar = request.POST['llegar']
+    horaLLegada = request.POST['horaLLegada']
+    informacionCliente = request.POST['informacionCliente']
 
     reservacion = Reservacion()
     reservacion.cant_habitacion = cant_habitaciones
     reservacion.casa = casa
     reservacion.city_town = city
-    reservacion.comment = comment
+    reservacion.comment = informacionCliente
     reservacion.country = country
     reservacion.email = email
-    reservacion.first_name  = fname
+    reservacion.first_name = fname
     reservacion.last_name = lname
     reservacion.phone_nombre = wphone
     reservacion.hab_simples = hab_simple
-    reservacion.hab_dobles  = hab_doble
+    reservacion.hab_dobles = hab_doble
     reservacion.hab_triples = hab_triple
     reservacion.fecha_ini = desde
     reservacion.fecha_fin = hasta
-    reservacion.forma_llegada = transport
-    reservacion.hora_estimada = hora_estimada
+    reservacion.forma_llegada = llegar
+    reservacion.hora_estimada = horaLLegada
 
     reservacion.save()
 
@@ -117,8 +132,7 @@ def fecha_search(request):
     return render(request, 'casas/index.html', {'entities': result_list})
 
 
-
-
+@login_required(login_url='/admin/login/')
 def uploadJson(request):
     form = UploadFileForm()
     return render(request, 'upload/index.html', {'form': form})
@@ -133,7 +147,6 @@ def upload(request):
         return HttpResponseRedirect('/')
 
 
-
 def contact(request):
     username = request.POST['username']
     email = request.POST['email']
@@ -142,6 +155,14 @@ def contact(request):
     send_mail(username, message, email,
               ['imbernal92@nauta.cu'], fail_silently=False)
 
+
+def send_data(request):
+    data = {'name': 'Cesar Bretana Glez', 'start_date': '05-02-15', }
+    message = data['name'] + ' rento en ' + data['start_date']
+
+    send_mail('New rent', message, 'info@tropicollage.com',
+              ['i.martinez@estudiantes.upr.edu.cu', 'cesar.bretana@estudiantes.upr.edu.cu'], fail_silently=False)
+    return HttpResponse(200)
 
 def register(request):
     if request.method == 'POST':
@@ -200,12 +221,13 @@ def get_pictures_from_home(request):
     pictures_list = get_pictures_from_gallery(entity.first().gallery)
     return JsonResponse({'pictures_list': pictures_list})
 
+
 @csrf_exempt
 def comment(request):
     full_name = request.POST['full_name']
     email = request.POST['email']
     body = request.POST['body']
-    foreign_home = Casa.objects.filter(pk = request.POST['home_id'])
+    foreign_home = Casa.objects.filter(pk=request.POST['home_id'])
     client_ip = request.META['REMOTE_ADDR']
     comment = FeedBack()
     comment.full_name = full_name

@@ -265,15 +265,6 @@ hr {
 .reservation-title h2 {
   color: #000;
 }
-.thumbs {
-  width: 60%;
-  display: block;
-}
-.thumbs a .thumb {
-  width: 10%;
-  border: 4px solid #000;
-  margin: 0.5%;
-}
 .panel {
   -webkit-border-radius: 0 !important;
   -moz-border-radius: 0 !important;

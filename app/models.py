@@ -141,7 +141,7 @@ class Reservacion(models.Model):
     first_name = models.CharField(max_length=50, default="")
     last_name = models.CharField(max_length=50, default="")
     email = models.CharField(max_length=50, default="")
-    phone_nombre = models.CharField(max_length=50, default="")
+    phone_nombre = models.IntegerField(default="")
     country = models.CharField(max_length=50, default="")
     city_town = models.CharField(max_length=50 , default="")
     cant_habitacion = models.IntegerField(default=0)
@@ -151,7 +151,7 @@ class Reservacion(models.Model):
     fecha_ini = models.DateField()
     fecha_fin = models.DateField()
     forma_llegada = models.CharField(max_length=50, default="")
-    hora_estimada = models.CharField(max_length=50, default="")
+    hora_estimada = models.TimeField(default=None)
     comment = models.TextField(max_length=600, default="")
     casa = models.ForeignKey(Casa)
 

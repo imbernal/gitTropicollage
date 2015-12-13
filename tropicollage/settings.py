@@ -25,7 +25,7 @@ SECRET_KEY = 'arexbbsm5o@lvlgtmg)kplx4hf^etd#wm+gq=t376bgguxh@8x'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['10.42.0.1']
 
 
 # Application definition
@@ -45,7 +45,7 @@ INSTALLED_APPS = (
 
 SERVER_EMAIL = "info@tropicollage.com"
 
-# EMAIL_HOST = "estudiantes.upr.edu.cu"
+# EMAIL_HOST =
 # EMAIL_PORT =
 # EMAIL_HOST_USER =
 # EMAIL_HOST_PASSWORD =
