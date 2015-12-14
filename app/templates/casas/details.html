@@ -162,7 +162,7 @@
                 <div class="container">
                     <!-- temp -->
                     <div>
-                        <img class="img-circle" src="/media/{{ entity.foto_dueno }}" width="56" height="66">
+                        <img id="pictureOwner" class="img-circle img-responsive" src="/media/{{ entity.foto_dueno }}" width="56" height="66" alt="100">
                     </div>
                     <small class="author">{{ entity.nombre_dueno }}</small>
                 </div>
@@ -207,7 +207,7 @@
                         Make
                         a reservation
                     </a>
-                    <a class="btn btn-lg btn-block btn-default"><span class="ion-chatbubbles"></span> Contact us
+                    <a href="#formComment" class="btn btn-lg btn-block btn-default"><span class="ion-chatbubbles"></span> Contact us
                     </a>
                     <a class="btn btn-lg btn-block btn-default"><span class="ion-android-share-alt"></span> Share
                     </a>
@@ -1455,7 +1455,7 @@
     <script src="/static/js/select2.min.js"></script>
     <script src="/static/js/form-wizard.js"></script>
     <script src="/static/js/rent-wizard.js"></script>
-    <script src="/static/js/customValidation.js"></script>
+    
     <script src="/static/js/owl.carousel.js"></script>
 
     <script type="text/javascript">

@@ -183,6 +183,12 @@ hr {
   color: #565a5c;
   margin-top: 2%;
 }
+#pictureOwner {
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  -o-border-radius: 50% !important;
+  border-radius: 50% !important;
+}
 .item {
   padding: 5%;
 }

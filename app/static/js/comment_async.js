@@ -3,23 +3,58 @@ function parse_data(full_name, body) {
 
 }
 
-$('input[value="Comment"]').click(function (e) {
-    e.preventDefault();
-    $.ajax({
-        method: "POST",
-        url: $('#post_url').val(),
-        data: {
-            full_name: $('#full_name').val(),
-            email: $('#user_email').val(),
-            body: $('#comment-body').val(),
-            home_id: $('#home_id').val()
+$('#formComment').validate({
+    rules:{
+        full_name:{
+            required: true
+        },
+        user_email: {
+            required: true,
+            email: true
+        },
+        comment_body:{
+            required: true
         }
-    })
-        .done(function () {
-            var html = parse_data($('#full_name').val(), $('#comment-body').val());
-            $('.reviews-list').prepend(html);
-        })
-        .error(function () {
-            console.log("Oops");
-        });
+
+    },
+    submitHandler: function(form){
+        $.ajax({
+            method: "POST",
+            url: $('#post_url').val(),
+            data: {
+                full_name: $('#full_name').val(),
+                email: $('#user_email').val(),
+                body: $('#comment-body').val(),
+                home_id: $('#home_id').val()
+            }
+         })
+            .done(function(e){
+                var html = parse_data($('#full_name').val(), $('#comment-body').val());
+                $('.reviews-list').prepend(html);
+                $('#full_name').val("");
+                $('#user_email').val("");
+                $('#comment-body').val("")
+            })
+    }
 });
+//
+//$('input[value="Comment"]').click(function (e) {
+//    e.preventDefault();
+//    $.ajax({
+//        method: "POST",
+//        url: $('#post_url').val(),
+//        data: {
+//            full_name: $('#full_name').val(),
+//            email: $('#user_email').val(),
+//            body: $('#comment-body').val(),
+//            home_id: $('#home_id').val()
+//        }
+//    })
+//        .done(function () {
+//            var html = parse_data($('#full_name').val(), $('#comment-body').val());
+//            $('.reviews-list').prepend(html);
+//        })
+//        .error(function () {
+//            console.log("Oops");
+//        });
+//});
