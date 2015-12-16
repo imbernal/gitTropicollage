@@ -18,12 +18,27 @@ from .utils import handle_uploaded_file
 
 # Create your views here.
 
+def exists(check, coll):
+    flag = False
+    for item in coll:
+        if check == item:
+            flag = True
+    return flag
+
 def home_page(request):
     casas = Casa.objects.all()[:8]
     feedbacks = FeedBack.objects.all()[:3]
     reservaciones = Reservacion.objects.all()[:5]
+    lugares = Casa.objects.all()
+
+    lugares_fin = []
+
+    for item in lugares:
+        if not exists(item, lugares_fin):
+            lugares_fin.append(str(item.polo_turistico))
+
     return render(request, 'home_page/index.html',
-                  {'feedbacks': feedbacks, 'casas': casas, 'reservaciones': reservaciones})
+                  {'feedbacks': feedbacks, 'casas': casas, 'reservaciones': reservaciones, 'places': lugares_fin})
 
 
 def homeList(request):

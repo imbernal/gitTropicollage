@@ -2,7 +2,6 @@ function parse_data(full_name, body) {
     return '<div class="panel panel-default"> <div class="panel-heading"><b>' + full_name + '</b> <small class="pull-right"> 0 minutes</small></div> <div class="panel-body">' + body + '</div> </div>';
 
 }
-
 $('#formComment').validate({
     rules:{
         full_name:{

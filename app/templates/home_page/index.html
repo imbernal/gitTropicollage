@@ -11,6 +11,7 @@
 {% endblock %}
 {% block body %}
 
+
     <div class="text-overlay-example">
         <!-- Navigation
         ==========================================-->
@@ -55,64 +56,41 @@
             </div>
             <div class="container-fluid">
                 <div class="row main-filter">
-                <div class="content text-center">
-                    <header class="text_promo">
-                        <h1>Find the house to spend your vacations, Like a dream.</h1>
-                    </header>
-                    <form action="{% url 'casas' %}" class="form-inline" method="post">
-                        {% csrf_token %}
-                        <div class="row">
-                            <div class="place">
-                                <select class="form-control" id="id_destination" name="destination">
-                                <option value="Vinales">Vinales</option>
-                                <option value="Pinar del Rio">Pinar del Rio</option>
-                                <option value="Havana Centro">Havana Centro</option>
-                                <option value="Trinidad">Trinidad</option>
-                                <option value="Old Havana">Old Havana</option>
-                                <option value="Havana Vedado">Havana Vedado</option>
-                                <option value="Cienfuegos">Cienfuegos</option>
-                                <option value="Matanzas">Matanzas</option>
-                                <option value="Santa Clara">Santa Clara</option>
-                                <option value="Sancti Spiritus">Sancti Spiritus</option>
-                                <option value="Soroa">Soroa</option>
-                                <option value="Varadero Beach">Varadero Beach</option>
-                                <option value="Moron">Moron</option>
-                                <option value="Remedios">Remedios</option>
-                                <option value="Camaguey">Camaguey</option>
-                                <option value="Ciego de Avila">Ciego de Avila</option>
-                                <option value="Holguin">Holguin</option>
-                                <option value="Santiago de Cuba">Santiago de Cuba</option>
-                                <option value="Baracoa">Baracoa</option>
-                                <option value="Miramar-Playa">Miramar-Playa</option>
-                                <option value="Playa Larga">Playa Larga</option>
-                                <option value="Playa Giron">Playa Girón</option>
-                                <option value="Playa del Este">Playas del Este</option>
-                                <option value="Puerto Esperanza">Puerto Esperanza</option>
-                                <option value="Sandino">Sandino</option>
-                                <option value="Bayamo">Bayamo</option>
-                                <option value="Guardalavaca">Guardalavaca</option>
-                                <option value="Jaguey Grande">Jaguey Grande</option>
-                                <option value="Boca de Camarioca">Boca de Camarioca</option>
-                            </select>
+                    <div class="content text-center">
+                        <header class="text_promo">
+                            <h1>Find the house to spend your vacations, Like a dream.</h1>
+                        </header>
+                        <form action="{% url 'casas' %}" class="form-inline" method="post">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="place">
+                                    <select class="form-control" id="id_destination" name="destination" required>
+                                          <option value>Select a place</option>
+                                          {% for item in places %}
+                                              <option value="{{ item }}">{{ item }}</option>
+                                          {% endfor %}
+                                    </select>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="row">
-                            <div class="to form-group col-sm-6">
-                                <input class="form-control" placeholder="Check-in" type="text" id="endDate" name="endDate">
+                            <div class="row">
+                                <div class="to form-group col-sm-6">
+                                    <input class="form-control" placeholder="Check-in" required type="text" id="endDate"
+                                           name="endDate">
+                                </div>
+                                <div class="from form-group col-sm-6">
+                                    <input class="form-control" type="text" required placeholder="check-out" id="startDate"
+                                           name="startDate">
+                                </div>
                             </div>
-                            <div class="from form-group col-sm-6">
-                                <input class="form-control" type="text" placeholder="check-out" id="startDate" name="startDate">
+
+                            <div class="button_search">
+                                <button type="submit" class="btn btn-default">Search</button>
                             </div>
-                        </div>
+                        </form>
 
-                        <div class="button_search">
-                            <button type="submit" class="btn btn-default">Search</button>
-                        </div>
-                    </form>
-
+                    </div>
                 </div>
-            </div>
             </div>
         </main>
         {#        <div class="content-overlay text-center">#}
@@ -199,7 +177,7 @@
                 </div>
             </div>
         </div>
-    
+
 
         <!-- Clients Section
         ==========================================-->
@@ -213,7 +191,8 @@
                     <div id="clients" class="owl-carousel owl-theme">
                         {% for item in reservaciones %}
                             <div class="item">
-                                <p>{{ item.first_name }} reservo la casa "{{ item.casa.nombre }}" desde {{ item.country }}</p>
+                                <p>{{ item.first_name }} reservo la casa "{{ item.casa.nombre }}"
+                                    desde {{ item.country }}</p>
                             </div>
                         {% endfor %}
 
@@ -312,7 +291,7 @@
                 </div>
             </div>
         </div>
-{#TODO: Edit the search form in the tf-home #}
+        {#TODO: Edit the search form in the tf-home #}
         <!-- Contact Section
         ==========================================-->
         <div id="tf-contact" class="text-center">
@@ -365,7 +344,34 @@
             <script src="/static/js/jquery-ui.min.js"></script>
 
             <script>
+                var isMobile = {
+                    Android: function () {
+                        return navigator.userAgent.match(/Android/i);
+                    },
+                    BlackBerry: function () {
+                        return navigator.userAgent.match(/BlackBerry/i);
+                    },
+                    iOS: function () {
+                        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+                    },
+                    Opera: function () {
+                        return navigator.userAgent.match(/Opera Mini/i);
+                    },
+                    Windows: function () {
+                        return navigator.userAgent.match(/IEMobile/i);
+                    },
+                    any: function () {
+                        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+                    }
+                };
+
                 $(document).ready(function () {
+
+                    if (isMobile.any()) {
+                        $('#my-video').attr('poster', '/static/img/poster.jpg');
+                        $('#my-video').removeAttr('autoplay');
+                    }
+
                     $('#my-video').backgroundVideo({
                         pauseVideoOnViewLoss: true,
                         parallaxOptions: {
