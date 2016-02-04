@@ -1,13 +1,16 @@
 {% extends 'layout.html' %}
-{% block level_styles %}
-    <script type="text/javascript" src="/static/js/modernizr.custom.js"></script>
-    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
-    <link rel="stylesheet" type="text/css" href="/static/css/home_filter.css">
-    <link rel="stylesheet" type="text/css" href="/static/css/responsive.css">
-    <link rel="stylesheet" type="text/css" href="/static/css/daterangepicker.css">
 
-    <link rel="stylesheet" type="text/css" href="/static/css/jquery-ui.min.css">
-    <link rel="stylesheet" href="/static/css/home.css">
+{% load staticfiles %}
+
+{% block level_styles %}
+    <script type="text/javascript" src="{% static 'js/modernizr.custom.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home_filter.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/daterangepicker.css' %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/jquery-ui.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
 {% endblock %}
 {% block body %}
 
@@ -49,9 +52,9 @@
         <main id="tf-home">
             <div id="video-wrap" class="video-wrap">
                 <video preload="metadata" autoplay loop muted="muted" id="my-video">
-                    <source src="/static/media/movie.mp4" type="video/mp4">
-                    <source src="/static/media/movie.webm" type="video/webm">
-                    <source src="/static/media/movie.ogv" type="video/ogg">
+                    <source src="{% static 'media/movie.mp4' %}" type="video/mp4">
+                    <source src="{% static 'media/movie.webm' %}" type="video/webm">
+                    <source src="{% static 'media/movie.ogv' %}" type="video/ogg">
                 </video>
             </div>
             <div class="container-fluid">
@@ -157,7 +160,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <img src="../../static/img/team/02.jpg" class="img-responsive">
+                        <img src="{% static 'img/team/02.jpg' %}" class="img-responsive">
                     </div>
                     <div class="col-md-6">
                         <div class="about-text">
@@ -252,7 +255,7 @@
 
                                                 <h3>$ {{ item.precio_alta }}</h3>
                                             </div>
-                                            <img src="/media/{{ item.foto_principal }}" class="img-responsive" alt="">
+                                            <img src="{% static 'media/{{ item.foto_principal }}' %}" class="img-responsive" alt="">
                                         </a>
                                     </a>
                                 </div>
@@ -332,16 +335,16 @@
             </div>
         </div>
         {% block level_scripts %}
-            <script type="text/javascript" src="/static/js/jquery.1.11.1.js"></script>
-            <script type="text/javascript" src="/static/js/SmoothScroll.js"></script>
-            <script type="text/javascript" src="/static/js/jquery.isotope.js"></script>
-            <script src="/static/js/owl.carousel.js"></script>
-            <script type="text/javascript" src="/static/js/moment.js"></script>
-            <script type="text/javascript" src="/static/js/main.js"></script>
+            <script type="text/javascript" src="{% static 'js/jquery.1.11.1.js' %}"></script>
+            <script type="text/javascript" src="{% static 'js/SmoothScroll.js' %}"></script>
+            <script type="text/javascript" src="{% static 'js/jquery.isotope.js' %}"></script>
+            <script src="{% static 'js/owl.carousel.js' %}"></script>
+            <script type="text/javascript" src="{% static 'js/moment.js' %}"></script>
+            <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
 
 
-            <script type="text/javascript" src="/static/js/backgroundVideo.js"></script>
-            <script src="/static/js/jquery-ui.min.js"></script>
+            <script type="text/javascript" src="{% static 'js/backgroundVideo.js' %}"></script>
+            <script src="{% static 'js/jquery-ui.min.js' %}"></script>
 
             <script>
                 var isMobile = {

@@ -1,9 +1,12 @@
 {% extends 'layout.html' %}
+
+{% load staticfiles %}
+
 {% block level_styles %}
 
-    <link rel="stylesheet" href="/static/css/details.css">
-    <link rel="stylesheet" href="/static/css/tropicollage.css">
-    <link rel="stylesheet" href="/static/css/normalize.css">
+    <link rel="stylesheet" href="{% static 'css/details.css' %}">
+    <link rel="stylesheet" href="{% static 'css/tropicollage.css' %}">
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
 
 
 
@@ -335,11 +338,11 @@
 {% endblock %}
 {% block level_scripts %}
 
-    <script src="/static/js/SmoothScroll.js"></script>
+    <script src="{% static 'js/SmoothScroll.js' %}"></script>
 
-    <script type="text/javascript" src="/static/js/moment.js"></script>
+    <script type="text/javascript" src="{% static 'js/moment.js' %}"></script>
 
-    <script src="/static/js/modernizr.custom.js"></script>
+    <script src="{% static 'js/modernizr.custom.js' %}"></script>
 
     <script>
 
