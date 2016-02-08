@@ -50,6 +50,7 @@
         <!-- Home Page
         ==========================================-->
         <main id="tf-home">
+            <img src="" alt="">
             <div id="video-wrap" class="video-wrap">
                 <video preload="metadata" autoplay loop muted="muted" id="my-video">
                     <source src="{% static 'media/movie.mp4' %}" type="video/mp4">
@@ -67,7 +68,7 @@
                             {% csrf_token %}
                             <div class="row">
                                 <div class="place">
-                                    <select class="form-control" id="id_destination" name="destination" required>
+                                    <select class="form-control" id="id_destination" name="destination">
                                           <option value>Select a place</option>
                                           {% for item in places %}
                                               <option value="{{ item }}">{{ item }}</option>
@@ -78,11 +79,11 @@
 
                             <div class="row">
                                 <div class="to form-group col-sm-6">
-                                    <input class="form-control" placeholder="Check-in" required type="text" id="endDate"
+                                    <input class="form-control" placeholder="Check-in" type="text" id="endDate"
                                            name="endDate">
                                 </div>
                                 <div class="from form-group col-sm-6">
-                                    <input class="form-control" type="text" required placeholder="check-out" id="startDate"
+                                    <input class="form-control" type="text" placeholder="check-out" id="startDate"
                                            name="startDate">
                                 </div>
                             </div>
@@ -184,7 +185,12 @@
 
         <!-- Clients Section
         ==========================================-->
-        <div id="tf-clients" class="text-center">
+        <div id="tf-clients" style="background: url({% static 'img/04.jpg' %}); background-size: cover;
+                                    background-position: center;
+                                    background-attachment: fixed;
+                                    background-repeat: no-repeat;
+                                    color: #ffffff;" class="text-center">
+            <!--<img id="prueba_foto" src=""  alt="">-->
             <div class="overlay">
                 <div class="container">
 
@@ -255,7 +261,7 @@
 
                                                 <h3>$ {{ item.precio_alta }}</h3>
                                             </div>
-                                            <img src="{% static 'media/{{ item.foto_principal }}' %}" class="img-responsive" alt="">
+                                            <img src="media/{{ item.foto_principal }}" class="img-responsive" alt="">
                                         </a>
                                     </a>
                                 </div>
@@ -269,7 +275,12 @@
 
         <!-- Testimonials Section
         ==========================================-->
-        <div id="tf-testimonials" class="text-center">
+        <div id="tf-testimonials" style="   background: url({% static 'img/05.jpg' %});
+                                            background-size: cover;
+                                            background-position: center;
+                                            background-attachment: fixed;
+                                            background-repeat: no-repeat;
+                                            color: #ffffff;" class="text-center">
             <div class="overlay">
                 <div class="container">
                     <div class="section-title center">
@@ -370,10 +381,10 @@
 
                 $(document).ready(function () {
 
-                    if (isMobile.any()) {
-                        $('#my-video').attr('poster', '/static/img/poster.jpg');
-                        $('#my-video').removeAttr('autoplay');
-                    }
+                    <!--if (isMobile.any()) {-->
+                        <!--$('#my-video').attr('poster', '/static/img/poster.jpg');-->
+                        <!--$('#my-video').removeAttr('autoplay');-->
+                    <!--}-->
 
                     $('#my-video').backgroundVideo({
                         pauseVideoOnViewLoss: true,

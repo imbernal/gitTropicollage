@@ -313,14 +313,7 @@ img.img-circle.team-img {
 }
 
 /* Clients Section */
-#tf-clients{
-	background: url(../img/04.jpg);
-	background-size: cover;
-	background-position: center;
-	background-attachment: fixed;
-	background-repeat: no-repeat;
-	color: #ffffff;
-}
+
 
 #tf-clients .overlay{
 	background: -moz-linear-gradient(top,  rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.73) 17%, rgba(0,0,0,0.66) 35%, rgba(0,0,0,0.55) 62%, rgba(0,0,0,0.4) 100%); /* FF3.6+ */
@@ -451,14 +444,7 @@ ol.type li a.active { font-weight: 700; }
 	color: #FCAC45;
 }
 /* Testimonials Section */
-#tf-testimonials{
-	background: url(../img/05.jpg);
-	background-size: cover;
-	background-position: center;
-	background-attachment: fixed;
-	background-repeat: no-repeat;
-	color: #ffffff;
-}
+
 
 #tf-testimonials .overlay{
 	background: -moz-linear-gradient(top,  rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.73) 17%, rgba(0,0,0,0.66) 35%, rgba(0,0,0,0.55) 62%, rgba(0,0,0,0.4) 100%); /* FF3.6+ */
