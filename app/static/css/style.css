@@ -124,14 +124,14 @@ font-weight: 900;
 	background-color: #FFF;
 	}
 /* Home Style */
-#tf-home{
-	background: url(../img/01.jpg);
-	background-size: cover;
-	background-position: center;
-	background-attachment: fixed;
-	background-repeat: no-repeat;
-	color: #cfcfcf;
-}
+/*#tf-home{*/
+	/*background: url(../img/01.jpg);*/
+	/*background-size: cover;*/
+	/*background-position: center;*/
+	/*background-attachment: fixed;*/
+	/*background-repeat: no-repeat;*/
+	/*color: #cfcfcf;*/
+/*}*/
 
 #tf-home .overlay{
 	background: -moz-linear-gradient(top,  rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.73) 17%, rgba(0,0,0,0.66) 35%, rgba(0,0,0,0.55) 62%, rgba(0,0,0,0.4) 100%); /* FF3.6+ */
@@ -563,4 +563,104 @@ nav#footer p{
 	background: #FCAC45;
 	border-color: #FCAC45;
 	color: #ffffff;
+}
+
+input {
+  display: block;
+  width: 100%;
+  margin: 0;
+  border: 0;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+  outline: none;
+}
+
+.holo {
+  background: transparent;
+  position: relative;
+  border: none;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 8px 8px 6px;
+  background: bottom left -moz-linear-gradient(#a9a9a9, #a9a9a9) no-repeat, bottom center -moz-linear-gradient(#a9a9a9, #a9a9a9) repeat-x, bottom right -moz-linear-gradient(#a9a9a9, #a9a9a9) no-repeat;
+  background: bottom left -webkit-linear-gradient(#a9a9a9, #a9a9a9) no-repeat, bottom center -webkit-linear-gradient(#a9a9a9, #a9a9a9) repeat-x, bottom right -webkit-linear-gradient(#a9a9a9, #a9a9a9) no-repeat;
+  background: bottom left linear-gradient(#a9a9a9, #a9a9a9) no-repeat, bottom center linear-gradient(#a9a9a9, #a9a9a9) repeat-x, bottom right linear-gradient(#a9a9a9, #a9a9a9) no-repeat;
+  -moz-background-size: 1px 6px, 1px 1px, 1px 6px;
+  -o-background-size: 1px 6px, 1px 1px, 1px 6px;
+  -webkit-background-size: 1px 6px, 1px 1px, 1px 6px;
+  background-size: 1px 6px, 1px 1px, 1px 6px;
+}
+.holo[disabled], .holo.disabled {
+  color: darkgray;
+  background: bottom left -moz-linear-gradient(#cecece, #cecece) no-repeat, bottom center -moz-linear-gradient(#cecece, #cecece) repeat-x, bottom right -moz-linear-gradient(#cecece, #cecece) no-repeat;
+  background: bottom left -webkit-linear-gradient(#cecece, #cecece) no-repeat, bottom center -webkit-linear-gradient(#cecece, #cecece) repeat-x, bottom right -webkit-linear-gradient(#cecece, #cecece) no-repeat;
+  background: bottom left linear-gradient(#cecece, #cecece) no-repeat, bottom center linear-gradient(#cecece, #cecece) repeat-x, bottom right linear-gradient(#cecece, #cecece) no-repeat;
+  -moz-background-size: 1px 6px, 1px 1px, 1px 6px;
+  -o-background-size: 1px 6px, 1px 1px, 1px 6px;
+  -webkit-background-size: 1px 6px, 1px 1px, 1px 6px;
+  background-size: 1px 6px, 1px 1px, 1px 6px;
+}
+.holo:focus {
+  background: bottom left -moz-linear-gradient(#0099cc, #0099cc) no-repeat, bottom center -moz-linear-gradient(#0099cc, #0099cc) repeat-x, bottom right -moz-linear-gradient(#0099cc, #0099cc) no-repeat;
+  background: bottom left -webkit-linear-gradient(#0099cc, #0099cc) no-repeat, bottom center -webkit-linear-gradient(#0099cc, #0099cc) repeat-x, bottom right -webkit-linear-gradient(#0099cc, #0099cc) no-repeat;
+  background: bottom left linear-gradient(#0099cc, #0099cc) no-repeat, bottom center linear-gradient(#0099cc, #0099cc) repeat-x, bottom right linear-gradient(#0099cc, #0099cc) no-repeat;
+  -moz-background-size: 1px 6px, 1px 1px, 1px 6px;
+  -o-background-size: 1px 6px, 1px 1px, 1px 6px;
+  -webkit-background-size: 1px 6px, 1px 1px, 1px 6px;
+  background-size: 1px 6px, 1px 1px, 1px 6px;
+}
+
+/* ==========  Select Field Variables ========== */
+/* ==========  Select Field ========== */
+/* Style Select Field */
+.material-select {
+  font-family: inherit;
+  background-color: transparent;
+  width: 100%;
+  padding: 8px 8px 6px;
+  font-size: 14px;
+  color: darkgrey;
+  border: none;
+  border-bottom: 1px solid darkgrey;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+
+/* Remove focus */
+.material-select:focus {
+  outline: none;
+}
+
+/* Hide label */
+.mdl-selectfield .material-label {
+  display: none;
+}
+
+/* Use custom arrow */
+.mdl-selectfield .material-select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.mdl-selectfield {
+  font-family: 'Roboto','Helvetica','Arial',sans-serif;
+  position: relative;
+}
+.mdl-selectfield:after {
+  position: absolute;
+  top: 0.75em;
+  right: 0.5em;
+  /* Styling the down arrow */
+  width: 0;
+  height: 0;
+  padding: 0;
+  content: '';
+  border-left: .25em solid transparent;
+  border-right: .25em solid transparent;
+  border-top: 0.375em solid rgba(0,0,0, 0.12);
+  pointer-events: none;
 }
