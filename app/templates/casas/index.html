@@ -130,7 +130,7 @@
                             <div class="detalles">
                                 <div class="image_owner">
                                     <img class="img-circle img-responsive"
-                                         src="/media/{{ item.foto_dueno }}"
+                                         src="{% static '/media/{{ item.foto_dueno }}' %}"
                                          id="owner" width="56" height="66"
                                          alt="100">
                                 </div>
@@ -350,17 +350,16 @@
 
             $('#collapseOne').collapse('hide');
 
-            {#            $('#filtrar').attr('disabled', true);#}
 
             $("#more_comfort").css("display", "none");
             $("#more_foto").css("display", "none");
-            {# flecha de mostrar filtros en resolucion < 768px     #}
+
             $('#filters_simbol').on('click', function () {
                 $('#home_list').toggle(700);
                 $('#filters_simbol').toggleClass("ion-ios-arrow-back");
                 $('.filtros').css({width: 230, left: 46});
             });
-            {# Mostrar mas filtros de tipo comfort   #}
+
             $('#arrow_down').on('click', function () {
 
                 $('#more_comfort').toggle(700);

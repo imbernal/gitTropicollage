@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'arexbbsm5o@lvlgtmg)kplx4hf^etd#wm+gq=t376bgguxh@8x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['10.42.0.1', '127.0.0.1', '188.166.42.182']
 
@@ -114,11 +114,3 @@ STATIC_ROOT = os.path.join('app/','img')
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
-
-<<<<<<< HEAD
-
-
-
-=======
-STATIC_ROOT = '/opt/tropicollage/static/'
->>>>>>> 108120dc845dc7fbd6d88d91bbaa93ee0ddb20ab
