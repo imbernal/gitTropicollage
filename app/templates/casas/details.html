@@ -1,6 +1,7 @@
 {% extends 'layout.html' %}
 {% load staticfiles %}
 {% load easy_maps_tags %}
+{% load map_styles %}
 
 {% block title %}Details{% endblock %}
 {% block level_styles %}
@@ -114,11 +115,9 @@
             height: auto;
             margin: 3px !important;
         }
-        #map-canvas-2 {
-            width: 100% !important;
-            height: 400px !important;
-        }
+        {% generate_styles 2 %}
     </style>
+
     <div class="modal fade" id="access-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
          aria-hidden="true">
         <div class="modal-dialog">
@@ -162,7 +161,7 @@
                 {% for item in pictures %}
                     {#                    <a class="pic-link" href="/media/imagenes/{{ item }}">#}
                     <a href="/media/imagenes/{{ item }}" class="fancybox" data-fancybox-group="gallery"
-                       title="{{ item }}"><img class="owl-item" src="{% static 'media/imagenes/{{ item }}' %}"></a>{#</a>#}
+                       title="{{ item }}"><img class="owl-item" src="/media/imagenes/{{ item }}"></a>{#</a>#}
                 {% endfor %}
             </div>
         </div>
@@ -173,7 +172,7 @@
                 <div class="container">
                     <!-- temp -->
                     <div>
-                        <img id="pictureOwner" class="img-circle img-responsive" src="{% static 'media/{{ entity.foto_dueno }}' %}" width="56" height="66" alt="100">
+                        <img id="pictureOwner" class="img-rounded img-responsive" src="/media/{{ entity.foto_dueno }}" width="56" height="66" alt="100">
                     </div>
                     <small class="author">{{ entity.nombre_dueno }}</small>
                 </div>

@@ -42,14 +42,10 @@ def home_page(request):
 
 
 def homeList(request):
-
-    destination = request.POST['destination']
-
-    if destination != "":
-        filter = CasaFilter(request.GET, queryset=Casa.objects.filter(polo_turistico=destination))
-
-    else:
-        filter = CasaFilter(request.GET, queryset=Casa.objects.all())
+    # if request.POST['destination']:
+    #     filter = CasaFilter(request.GET, queryset=Casa.objects.filter(polo_turistico=destination))
+    # else:
+    filter = CasaFilter(request.GET, queryset=Casa.objects.all())
 
     return render(request, 'casas/index.html', {"filter": filter})
 
