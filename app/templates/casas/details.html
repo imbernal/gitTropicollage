@@ -1,5 +1,7 @@
 {% extends 'layout.html' %}
 {% load staticfiles %}
+{% load easy_maps_tags %}
+
 {% block title %}Details{% endblock %}
 {% block level_styles %}
     <link rel="stylesheet" href="{% static 'css/details.css' %}">
@@ -112,6 +114,10 @@
             height: auto;
             margin: 3px !important;
         }
+        #map-canvas-2 {
+            width: 100% !important;
+            height: 400px !important;
+        }
     </style>
     <div class="modal fade" id="access-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
          aria-hidden="true">
@@ -148,6 +154,7 @@
     </div>
     {#    <img src="/static/img/loading.gif" alt="Loading" class="preloader">#}
     <div class="gallery" id="gallery">
+        {% easy_map "Cuba, Pinar del Rio, Vinales" 1920 1080 %}
         <div class="jumbotron col-xs-12">
             {#            <div class="row gallery-container col-xs-12 col-sm-12 col-md-12 col-lg-12">#}
             {#            </div>#}
@@ -155,7 +162,7 @@
                 {% for item in pictures %}
                     {#                    <a class="pic-link" href="/media/imagenes/{{ item }}">#}
                     <a href="/media/imagenes/{{ item }}" class="fancybox" data-fancybox-group="gallery"
-                       title="{{ item }}"><img class="owl-item" src="{% static 'imagenes/imagenes/{{ item }}' %}"></a>{#</a>#}
+                       title="{{ item }}"><img class="owl-item" src="{% static 'imagenesgo/imagenes/{{ item }}' %}"></a>{#</a>#}
                 {% endfor %}
             </div>
         </div>

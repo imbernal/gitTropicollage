@@ -40,7 +40,8 @@ INSTALLED_APPS = (
     'app',
     'rest_framework',
     'multiupload',
-    'django_filters'
+    'django_filters',
+    'easy_maps',
 )
 
 SERVER_EMAIL = "info@tropicollage.com"
@@ -114,3 +115,7 @@ STATIC_ROOT = os.path.join('app/','img')
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+# STATIC_ROOT = '/opt/tropicollage/static/'
+
