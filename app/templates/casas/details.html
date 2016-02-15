@@ -1,6 +1,7 @@
 {% extends 'layout.html' %}
 {% load staticfiles %}
 {% load easy_maps_tags %}
+{% load map_styles %}
 
 {% block title %}Details{% endblock %}
 {% block level_styles %}
@@ -114,11 +115,9 @@
             height: auto;
             margin: 3px !important;
         }
-        #map-canvas-2 {
-            width: 100% !important;
-            height: 400px !important;
-        }
+        {% generate_styles 2 %}
     </style>
+
     <div class="modal fade" id="access-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
          aria-hidden="true">
         <div class="modal-dialog">
@@ -162,22 +161,23 @@
                 {% for item in pictures %}
                     {#                    <a class="pic-link" href="/media/imagenes/{{ item }}">#}
                     <a href="/media/imagenes/{{ item }}" class="fancybox" data-fancybox-group="gallery"
-                       title="{{ item }}"><img class="owl-item" src="{% static 'imagenes/imagenes/{{ item }}' %}"></a>{#</a>#}
+
+                       title="{{ item }}"><img class="owl-item" src="/media/imagenes/{{ item }}"></a>{#</a>#}
                 {% endfor %}
             </div>
         </div>
     </div>
     <div class="main-info" id="main-info">
         <div class="container">
-            <div class="hidden-xs hidden-sm col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                <div class="container">
+            {# <div class="hidden-xs hidden-sm col-xs-2 col-sm-2 col-md-2 col-lg-2"> #}
+                {# <div class="container"> #}
                     <!-- temp -->
-                    <div>
-                        <img id="pictureOwner" class="img-circle img-responsive" src="{% static 'media/{{ entity.foto_dueno }}' %}" width="56" height="66" alt="100">
-                    </div>
-                    <small class="author">{{ entity.nombre_dueno }}</small>
-                </div>
-            </div>
+                    {# <div> #}
+                        {# <img id="pictureOwner" class="img-rounded img-responsive" src="/media/{{ entity.foto_dueno }}" width="56" height="66" alt="100"> #}
+                    {# </div> #}
+                    {# <small class="author">{{ entity.nombre_dueno }}</small> #}
+                {# </div> #}
+            {# </div>  #}
             <div class="details col-xs-12 col-sm-12 col-md-6 col-lg-6">
                 <h1 class="home-name">{{ entity }} at {{ entity.municipio }}</h1>
                 <input type="hidden" value="{{ entity.pk }}" id="entity_id">
@@ -208,7 +208,7 @@
                 </div>
             </div>
 
-            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 pull-right">
                 <div class="fav">
                     {#                    <a class="btn btn-lg btn-block btn-default"><span class="ion-ios-heart-outline"></span> Add to#}
                     {#                        wishlist#}
