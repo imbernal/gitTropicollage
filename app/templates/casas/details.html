@@ -143,10 +143,10 @@
     <div class="categories  hidden-xs hidden-sm">
         <div class="container">
             <ul>
-                <li><a href="#gallery">Fotos</a></li>
-                <li><a href="#main-info">Informacion sobre este anuncio</a></li>
-                <li><a href="#detailed-info">Detalles</a></li>
-                <li><a href="#comments">Comentarios</a></li>
+                <li><a class="page-scroll" href="#gallery">Fotos</a></li>
+                <li><a class="page-scroll" href="#main-info">Informacion sobre este anuncio</a></li>
+                <li><a class="page-scroll" href="#detailed-info">Detalles</a></li>
+                <li><a class="page-scroll" href="#comments">Comentarios</a></li>
 
             </ul>
         </div>
@@ -162,6 +162,7 @@
                     {#                    <a class="pic-link" href="/media/imagenes/{{ item }}">#}
                     <a href="/media/imagenes/{{ item }}" class="fancybox" data-fancybox-group="gallery"
                        title="{{ item }}"><img class="owl-item" src="/media/imagenes/{{ item }}"></a>{#</a>#}
+
                 {% endfor %}
             </div>
         </div>
@@ -212,14 +213,14 @@
                     {#                    <a class="btn btn-lg btn-block btn-default"><span class="ion-ios-heart-outline"></span> Add to#}
                     {#                        wishlist#}
                     {#                    </a>#}
-                    <a href="#wizard" class="btn btn-lg btn-block btn-default"><span
+                    <a href="#wizard" class="btn btn-lg btn-block btn-default page-scroll"><span
                             class="ion-ios-calendar-outline"></span>
                         Make
                         a reservation
                     </a>
-                    <a href="#formComment" class="btn btn-lg btn-block btn-default"><span class="ion-chatbubbles"></span> Contact us
+                    <a href="#formComment" class="btn btn-lg btn-block btn-default page-scroll"><span class="ion-chatbubbles"></span> Contact us
                     </a>
-                    <a class="btn btn-lg btn-block btn-default"><span class="ion-android-share-alt"></span> Share
+                    <a class="btn btn-lg btn-block btn-default page-scroll"><span class="ion-android-share-alt"></span> Share
                     </a>
                 </div>
             </div>
@@ -1494,6 +1495,7 @@
             //validate comment form
 
 
+
             $('#owl-demo').owlCarousel({
                 autoPlay: 3000, //Set AutoPlay to 3 seconds
                 items: 4,
@@ -1580,6 +1582,15 @@
 
         });
 
+        var $root = $('html,body');
+                $('.page-scroll').click(function(){
+                    $root.animate({
+                        scrollTop: $($.attr(this, 'href')).offset().top
+                        }, 1000);
+                        return false;
+
+                });
+
         function l(arg) {
             console.log(arg);
         }
@@ -1594,6 +1605,6 @@
             return (treatAsUTC(endDate) - treatAsUTC(startDate)) / millisecondsPerDay;
         }
     </script>
-    <script src="/static/js/accordion_utils.js"></script>
+    <script src="{% static 'static/js/accordion_utils.js' %}"></script>
 
 {% endblock %}

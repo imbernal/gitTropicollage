@@ -116,5 +116,6 @@ STATIC_ROOT = os.path.join('app/','img')
 
 STATIC_URL = '/static/'
 
+
 # STATIC_ROOT = '/opt/tropicollage/static/'
 

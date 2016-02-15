@@ -25,76 +25,76 @@ var FormWizard = function () {
 
             //validate cant habitation
 
-            var sum = 0;
-            $('#cantSimples').val(0);
-            $('#cantDobles').val(0);
-            $('#cantTriples').val(0);
+            //var sum = 0;
+            //$('#cantSimples').val(0);
+            //$('#cantDobles').val(0);
+            //$('#cantTriples').val(0);
+            //
+            //var tempSimples = 0;
+            //var tempDobles = 0;
+            //var tempTriples = 0;
+            //var cantHabitaciones = parseInt($('#cantHabitaciones').val());
+            //
+            //$('#cantHabitaciones').click(function (e) {
+            //    cantHabitaciones = parseInt($('#cantHabitaciones').val());
+            //    sum = 0;
+            //});
+            //
+            //$('#cantSimples').keyup(function (e) {
+            //    var cantSimples = parseInt($('#cantSimples').val());
+            //
+            //    tempSimples++;
+            //
+            //    if (tempSimples != 1) {
+            //        sum = parseInt($('#cantSimples').val());
+            //        tempSimples=0;
+            //        l(sum);
+            //    }
+            //
+            //    sum += cantSimples;
+            //    l(sum);
+            //    if (sum > cantHabitaciones) {
+            //        $('#cantSimples').val(0);
+            //    }
+            //});
 
-            var tempSimples = 0;
-            var tempDobles = 0;
-            var tempTriples = 0;
-            var cantHabitaciones = parseInt($('#cantHabitaciones').val());
-
-            $('#cantHabitaciones').click(function (e) {
-                cantHabitaciones = parseInt($('#cantHabitaciones').val());
-                sum = 0;
-            });
-
-            $('#cantSimples').keyup(function (e) {
-                var cantSimples = parseInt($('#cantSimples').val());
-
-                tempSimples++;
-
-                if (tempSimples != 1) {
-                    sum = parseInt($('#cantSimples').val());
-                    tempSimples=0;
-                    l(sum);
-                }
-
-                sum += cantSimples;
-                l(sum);
-                if (sum > cantHabitaciones) {
-                    $('#cantSimples').val(0);
-                }
-            });
-
-            $('#cantDobles').keyup(function (e) {
-                var cantDobles = parseInt($('#cantDobles').val());
-
-                sum += cantDobles;
-
-                tempDobles++;
-
-                if (tempDobles != 1) {
-                    tempDobles=0;
-                    sum = parseInt($('#cantDobles').val());
-                }
-
-                if (sum > cantHabitaciones) {
-
-                    $('#cantDobles').val(0);
-                }
-
-
-            });
-
-            $('#cantTriples').keyup(function (e) {
-                var cantTriples = parseInt($('#cantTriples').val());
-
-                sum += cantTriples;
-
-                tempTriples++;
-
-                if (tempTriples != 1) {
-                    sum = 0;
-                }
-
-                if (sum > cantHabitaciones) {
-                    $('#cantTriples').val(0);
-                }
-
-
-            });
+            //$('#cantDobles').keyup(function (e) {
+            //    var cantDobles = parseInt($('#cantDobles').val());
+            //
+            //    sum += cantDobles;
+            //
+            //    tempDobles++;
+            //
+            //    if (tempDobles != 1) {
+            //        tempDobles=0;
+            //        sum = parseInt($('#cantDobles').val());
+            //    }
+            //
+            //    if (sum > cantHabitaciones) {
+            //
+            //        $('#cantDobles').val(0);
+            //    }
+            //
+            //
+            //});
+            //
+            //$('#cantTriples').keyup(function (e) {
+            //    var cantTriples = parseInt($('#cantTriples').val());
+            //
+            //    sum += cantTriples;
+            //
+            //    tempTriples++;
+            //
+            //    if (tempTriples != 1) {
+            //        sum = 0;
+            //    }
+            //
+            //    if (sum > cantHabitaciones) {
+            //        $('#cantTriples').val(0);
+            //    }
+            //
+            //
+            //});
 
             //$('#formComment').validate({
             //    doNotHideMessage: true, //this option enables to show the error/success messages on tab switch.
