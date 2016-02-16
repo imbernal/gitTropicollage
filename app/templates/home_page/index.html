@@ -8,6 +8,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/home_filter.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'css/daterangepicker.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/MyStyle.css' %}">
 
 <link rel="stylesheet" type="text/css" href="{% static 'css/jquery-ui.min.css' %}">
 <link rel="stylesheet" href="{% static 'css/home.css' %}">
@@ -58,46 +59,81 @@
                 <source src="{% static 'media/movie.ogv' %}" type="video/ogg">
             </video>
         </div>
-        <div class="container-fluid">
-            <div class="row main-filter">
-                <div class="content text-center">
-                    <header class="text_promo">
-                        <h1 class="text-center" id="card-title">Find the house to spend your vacations, Like a
-                            dream.</h1>
-                    </header>
-                    <form action="{% url 'casas' %}" class="form-inline" method="post" style="padding-bottom: 2%;">
-                        {% csrf_token %}
-                        <div class="row">
-                            <div class="place">
-                                <select class="material-select" id="id_destination" name="destination">
-                                    <option value>Select a place</option>
-                                    {% for item in places %}
-                                    <option value="{{ item }}">{{ item }}</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
+        <div class="backgroundc">
+          <div class="container-fluid">
+                  <div class="content">
+                      <header  >
+                         <p class="Nombre1 hidden-xs">Find the house to spend your vacations.</p>
+                      </header>
+                        <div class="selectdays">
+                            <div class="row pull-left">
+                                  <div class="form-group col-xs-12 col-sm-12 col-md-3 label1">
+                              	     <input type="text" class="form-control" placeholder="Search">
+                              	  </div>
+                              	  <div class="form-group col-xs-12 col-sm-12 col-md-3 label1" >
+                              	     <input type="text" class="form-control" placeholder="Check in">
+                              	  </div>
+                              	  <div class="form-group col-xs-12 col-sm-12 col-md-3 label3" >
+                              	     <input type="text" class="form-control" placeholder="Check out">
+                              	 </div>
+                              	  <div class="form-group col-xs-12 col-sm-12 col-md-3 pull-left" >
+                              	     <button type="button" class="btn btn-warning findButton">
+                                       <span class="glyphicon glyphicon-search"></span>
+                              	     Find</button>
+                              	   </div>
+                              	  </div>
+
+                              </div>
                         </div>
 
-                        <div class="row">
-                            <div class="to form-group col-sm-6">
-                                <input class="holo" placeholder="Check-in" type="text" id="endDate"
-                                       name="endDate">
-                            </div>
-                            <div class="from form-group col-sm-6">
-                                <input class="holo" type="text" placeholder="check-out" id="startDate"
-                                       name="startDate">
-                            </div>
-                        </div>
 
-                        <div class="button_search">
-                            <button type="submit" class="btn btn-default">Search</button>
-                        </div>
-                    </form>
 
-                </div>
+                    </div>
+
             </div>
-        </div>
-    </main>
+
+
+</main>
+        <!--<div class="container-fluid">-->
+            <!--<div class="row main-filter">-->
+                <!--<div class="content text-center">-->
+                    <!--<header class="text_promo">-->
+                        <!--<h1 class="text-center" id="card-title">Find the house to spend your vacations, Like a-->
+                            <!--dream.</h1>-->
+                    <!--</header>-->
+                    <!--<form action="{% url 'casas' %}" class="form-inline" method="post" style="padding-bottom: 2%;">-->
+                        <!--{% csrf_token %}-->
+                        <!--<div class="row">-->
+                            <!--<div class="place">-->
+                                <!--<select class="material-select" id="id_destination" name="destination">-->
+                                    <!--<option value>Select a place</option>-->
+                                    <!--{% for item in places %}-->
+                                    <!--<option value="{{ item }}">{{ item }}</option>-->
+                                    <!--{% endfor %}-->
+                                <!--</select>-->
+                            <!--</div>-->
+                        <!--</div>-->
+
+                        <!--<div class="row">-->
+                            <!--<div class="to form-group col-sm-6">-->
+                                <!--<input class="holo" placeholder="Check-in" type="text" id="endDate"-->
+                                       <!--name="endDate">-->
+                            <!--</div>-->
+                            <!--<div class="from form-group col-sm-6">-->
+                                <!--<input class="holo" type="text" placeholder="check-out" id="startDate"-->
+                                       <!--name="startDate">-->
+                            <!--</div>-->
+                        <!--</div>-->
+
+                        <!--<div class="button_search">-->
+                            <!--<button type="submit" class="btn btn-default">Search</button>-->
+                        <!--</div>-->
+                    <!--</form>-->
+
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+
 
     <!-- About Us Page
     ==========================================-->
@@ -269,7 +305,7 @@
 
                 </div>
             </div>
-<
+
         </div>
         {% block level_scripts %}
             <script type="text/javascript" src="{% static 'js/jquery.1.11.1.js' %}"></script>
@@ -308,7 +344,7 @@
                 $(document).ready(function () {
 
                     if (isMobile.any()) {
-                          $('#my-video').addEventListener('canplay' , function(){
+                          $('#my-video').addEventListener('autoplay' , function(){
                               $('#my-video').play();
                           });
                           $('#my-video').load();
@@ -372,79 +408,6 @@
 
         </div>
     </div>
-    {% block level_scripts %}
-    <script type="text/javascript" src="{% static 'js/jquery.1.11.1.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/SmoothScroll.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/jquery.isotope.js' %}"></script>
-    <script src="{% static 'js/owl.carousel.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/moment.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
-
-
-    <script type="text/javascript" src="{% static 'js/backgroundVideo.js' %}"></script>
-    <script src="{% static 'js/jquery-ui.min.js' %}"></script>
-
-    <script>
-        var isMobile = {
-            Android: function () {
-                return navigator.userAgent.match(/Android/i);
-            },
-            BlackBerry: function () {
-                return navigator.userAgent.match(/BlackBerry/i);
-            },
-            iOS: function () {
-                return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-            },
-            Opera: function () {
-                return navigator.userAgent.match(/Opera Mini/i);
-            },
-            Windows: function () {
-                return navigator.userAgent.match(/IEMobile/i);
-            },
-            any: function () {
-                return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
-            }
-        };
-
-        $(document).ready(function () {
-
-            <!--if (isMobile.any()) {-->
-            <!--$('#my-video').attr('poster', '/static/img/poster.jpg');-->
-            <!--$('#my-video').removeAttr('autoplay');-->
-            <!--}-->
-
-            $('#my-video').backgroundVideo({
-                pauseVideoOnViewLoss: true,
-                parallaxOptions: {
-                    effect: 1.7
-                }
-            });
-
-            $('#startDate').datepicker({
-                defaultDate: "+lw",
-                changeMonth: true,
-                onClose: function (selectedDate) {
-                    $("endDate").datepicker("option", "maxDate", selectedDate);
-                }
-            });
-
-            $('#endDate').datepicker({
-                defaultDate: "+lw",
-                changeMonth: true,
-                onClose: function (selectedDate) {
-                    $("#startDate").datepicker("option", "minDate", selectedDate);
-                }
-            });
-
-            $('#myTab a').click(function (e) {
-                e.preventDefault();
-                $(this).tab('show')
-            });
-
-        })
-        ;
-    </script>
-    {% endblock %}
 
 
 </div>
