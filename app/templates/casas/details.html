@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 {% load staticfiles %}
 {% load easy_maps_tags %}
-{% load map_styles %}
+{# {% load map_styles %} #}
 
 {% block title %}Details{% endblock %}
 {% block level_styles %}
@@ -115,7 +115,7 @@
             height: auto;
             margin: 3px !important;
         }
-        {% generate_styles 2 %}
+        
     </style>
 
     <div class="modal fade" id="access-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
