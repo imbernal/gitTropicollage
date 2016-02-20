@@ -1504,8 +1504,10 @@
                 css_props['height'] = '195px';
             else if (width >= 481 && width <= 768)
                 css_props['height'] = '205px';
-
-            console.log(css_props);
+            else if (width >= 769 && width <= 992)
+                css_props['height'] = '300px';
+            else if (width >= 993)
+                css_props['height'] = '400px';
 
             map_container.css(css_props);
 
