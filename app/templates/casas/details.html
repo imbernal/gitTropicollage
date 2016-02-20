@@ -115,7 +115,7 @@
             height: auto;
             margin: 3px !important;
         }
-        {% generate_styles 2 %}
+
     </style>
 
     <div class="modal fade" id="access-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
@@ -1491,10 +1491,25 @@
     <script type="text/javascript">
         // DO NOT REMOVE : GLOBAL FUNCTIONS!
         $(document).ready(function () {
+            // Some media queries in javascript... (What?, i'm not messing with you...)
+
+            var width = screen.availWidth; // get the screen real size.
+
+            var css_props = {'width': '100%'};
+            
+            var map_container = $("div[id|='map-canvas']");
+            // Selector to add css properties to the map-canvas-X id
+
+            if (width >= 320 && width <= 480)
+                css_props['height'] = '195px';
+            else if (width >= 481 && width <= 768)
+                css_props['height'] = '205px';
+
+            console.log(css_props);
+
+            map_container.css(css_props);
 
             //validate comment form
-
-
 
             $('#owl-demo').owlCarousel({
                 autoPlay: 3000, //Set AutoPlay to 3 seconds
@@ -1604,6 +1619,7 @@
             var millisecondsPerDay = 24 * 60 * 60 * 1000;
             return (treatAsUTC(endDate) - treatAsUTC(startDate)) / millisecondsPerDay;
         }
+
     </script>
     <script src="{% static 'static/js/accordion_utils.js' %}"></script>
 
