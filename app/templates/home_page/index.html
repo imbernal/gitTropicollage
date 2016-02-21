@@ -9,7 +9,8 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'css/daterangepicker.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'css/MyStyle.css' %}">
-
+<link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+<link rel="stylesheet" href="{% static 'css/owl.theme.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'css/jquery-ui.min.css' %}">
 <link rel="stylesheet" href="{% static 'css/home.css' %}">
 {% endblock %}
@@ -60,83 +61,83 @@
             </video>
         </div>
         <div class="backgroundc">
-          <div class="container-fluid">
-                  <div class="content">
-                      <header  >
-                         <p class="Nombre1 hidden-xs">Find the house to spend your vacations.</p>
-                      </header>
-                      <form action="{% url 'casas' %}" class="form-inline" method="post" style="padding-bottom: 2%;">
+            <div class="container-fluid">
+                <div class="content">
+                    <header>
+                        <p class="Nombre1">Find the house to spend your vacations.</p>
+                    </header>
+                    <form action="{% url 'casas' %}" class="form-inline" method="post" style="padding-bottom: 2%;">
                         {% csrf_token %}
                         <div class="selectdays">
-                            <div class="row pull-left">
-                                  <!--<div class="form-group  label1">-->
-                                      <select class="form-control findButton col-xs-12 col-sm-12 col-md-3" name="destination">
-                                        <option value>Select a place</option>
-                                        {% for item in places %}
-                                        <option value="{{ item }}">{{ item }}</option>
-                                        {% endfor %}
-                                      </select>
-                              	     <!--<input type="text" class="" placeholder="Search">-->
-                              	  <!--</div>-->
-                              	  <div class="form-group col-xs-12 col-sm-12 col-md-3 label1" >
-                              	     <input type="text" id="endDate" class="form-control" placeholder="Check in">
-                              	  </div>
-                              	  <div class="form-group col-xs-12 col-sm-12 col-md-3 label3" >
-                              	     <input type="text" id="startDate" class="form-control" placeholder="Check out">
-                              	 </div>
-                              	  <div class="form-group col-xs-12 col-sm-12 col-md-3 pull-left" >
-                              	     <button type="submit" class="btn btn-warning findButton">
-                                       <span class="glyphicon glyphicon-search"></span>
-                              	     Find</button>
-                              	   </div>
-                              	  </div>
-
+                            <!--<div class="form-group  label1">-->
+                            <select class="form-control findButton" name="destination">
+                                <option value>Select a place</option>
+                                {% for item in places %}
+                                <option value="{{ item }}">{{ item }}</option>
+                                {% endfor %}
+                            </select>
+                            <!--<input type="text" class="" placeholder="Search">-->
+                            <!--</div>-->
+                            <!--<div class="form-group col-xs-12 col-sm-12 col-md-12 label1">-->
+                            <!--<input type="text" id="endDate" class="form-control" placeholder="Check in">-->
+                            <!--</div>-->
+                            <!--<div class="form-group col-xs-12 col-sm-12 col-md-12 label3">-->
+                            <!--<input type="text" id="startDate" class="form-control" placeholder="Check out">-->
+                            <!--</div>-->
+                            <div>
+                                <button type="submit" class="btn btn-warning findButton">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                    Find
+                                </button>
+                            </div>
                         </div>
-                      </form>>
-                  </div>
-          </div>
+
+                    </form>
+
+                </div>
+            </div>
 
         </div>
     </main>
-        <!--<div class="container-fluid">-->
-            <!--<div class="row main-filter">-->
-                <!--<div class="content text-center">-->
-                    <!--<header class="text_promo">-->
-                        <!--<h1 class="text-center" id="card-title">Find the house to spend your vacations, Like a-->
-                            <!--dream.</h1>-->
-                    <!--</header>-->
-                    <!--<form action="{% url 'casas' %}" class="form-inline" method="post" style="padding-bottom: 2%;">-->
-                        <!--{% csrf_token %}-->
-                        <!--<div class="row">-->
-                            <!--<div class="place">-->
-                                <!--<select class="material-select" id="id_destination" name="destination">-->
-                                    <!--<option value>Select a place</option>-->
-                                    <!--{% for item in places %}-->
-                                    <!--<option value="{{ item }}">{{ item }}</option>-->
-                                    <!--{% endfor %}-->
-                                <!--</select>-->
-                            <!--</div>-->
-                        <!--</div>-->
+    <!--<div class="container-fluid">-->
+    <!--<div class="row main-filter">-->
+    <!--<div class="content text-center">-->
+    <!--<header class="text_promo">-->
+    <!--<h1 class="text-center" id="card-title">Find the house to spend your vacations, Like a-->
+    <!--dream.</h1>-->
+    <!--</header>-->
+    <!--<form action="{% url 'casas' %}" class="form-inline" method="post" style="padding-bottom: 2%;">-->
+    <!--{% csrf_token %}-->
+    <!--<div class="row">-->
+    <!--<div class="place">-->
+    <!--<select class="material-select" id="id_destination" name="destination">-->
+    <!--<option value>Select a place</option>-->
+    <!--{% for item in places %}-->
+    <!--<option value="{{ item }}">{{ item }}</option>-->
+    <!--{% endfor %}-->
+    <!--</select>-->
+    <!--</div>-->
+    <!--</div>-->
 
-                        <!--<div class="row">-->
-                            <!--<div class="to form-group col-sm-6">-->
-                                <!--<input class="holo" placeholder="Check-in" type="text" id="endDate"-->
-                                       <!--name="endDate">-->
-                            <!--</div>-->
-                            <!--<div class="from form-group col-sm-6">-->
-                                <!--<input class="holo" type="text" placeholder="check-out" id="startDate"-->
-                                       <!--name="startDate">-->
-                            <!--</div>-->
-                        <!--</div>-->
+    <!--<div class="row">-->
+    <!--<div class="to form-group col-sm-6">-->
+    <!--<input class="holo" placeholder="Check-in" type="text" id="endDate"-->
+    <!--name="endDate">-->
+    <!--</div>-->
+    <!--<div class="from form-group col-sm-6">-->
+    <!--<input class="holo" type="text" placeholder="check-out" id="startDate"-->
+    <!--name="startDate">-->
+    <!--</div>-->
+    <!--</div>-->
 
-                        <!--<div class="button_search">-->
-                            <!--<button type="submit" class="btn btn-default">Search</button>-->
-                        <!--</div>-->
-                    <!--</form>-->
+    <!--<div class="button_search">-->
+    <!--<button type="submit" class="btn btn-default">Search</button>-->
+    <!--</div>-->
+    <!--</form>-->
 
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
 
 
     <!-- About Us Page
@@ -195,8 +196,7 @@
         </div>
     </div>
 
-    <!-- Portfolio Section
-    ==========================================-->
+
     <div id="tf-works">
         <div class="container"> <!-- Container -->
             <div class="title-contact text-center center">
@@ -228,7 +228,7 @@
 
                                         <h3>$ {{ item.precio_alta }}</h3>
                                     </div>
-                                    <img src="media/{{ item.foto_principal }}" class="img-responsive" alt="">
+                                    <img src="/media/{{ item.foto_principal }}" class="img-responsive" alt="">
                                 </a>
                             </a>
                         </div>
@@ -262,7 +262,7 @@
                         <div class="item">
                             <h5>{{ entity.body }}</h5>
 
-                            <p>user: <strong>{{ entity.usuario }}</strong></p>
+                            <p>user: <strong>{{ entity.full_name }}</strong></p>
                         </div>
                         {% endfor %}
 
@@ -309,82 +309,85 @@
 
                 </div>
             </div>
-<<<<<<< HEAD
+
 
         </div>
+
         {% block level_scripts %}
-            <script type="text/javascript" src="{% static 'js/jquery.1.11.1.js' %}"></script>
-            <script type="text/javascript" src="{% static 'js/SmoothScroll.js' %}"></script>
-            <script type="text/javascript" src="{% static 'js/jquery.isotope.js' %}"></script>
-            <script src="{% static 'js/owl.carousel.js' %}"></script>
-            <script type="text/javascript" src="{% static 'js/moment.js' %}"></script>
-            <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery-1.10.2.min.js' %}"></script>
+        <script src="{% static 'js/jquery-ui.min.js' %}"></script>
+        <script src="{% static 'js/owl.carousel.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/SmoothScroll.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.isotope.js' %}"></script>
+        <script src="{% static 'js/owl.carousel.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/moment.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
 
 
-            <script type="text/javascript" src="{% static 'js/backgroundVideo.js' %}"></script>
-            <script src="{% static 'js/jquery-ui.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/backgroundVideo.js' %}"></script>
 
-            <script>
-                var isMobile = {
-                    Android: function () {
-                        return navigator.userAgent.match(/Android/i);
-                    },
-                    BlackBerry: function () {
-                        return navigator.userAgent.match(/BlackBerry/i);
-                    },
-                    iOS: function () {
-                        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-                    },
-                    Opera: function () {
-                        return navigator.userAgent.match(/Opera Mini/i);
-                    },
-                    Windows: function () {
-                        return navigator.userAgent.match(/IEMobile/i);
-                    },
-                    any: function () {
-                        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
-                    }
-                };
 
-                $(document).ready(function () {
+        <script>
+            var isMobile = {
+                Android: function () {
+                    return navigator.userAgent.match(/Android/i);
+                },
+                BlackBerry: function () {
+                    return navigator.userAgent.match(/BlackBerry/i);
+                },
+                iOS: function () {
+                    return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+                },
+                Opera: function () {
+                    return navigator.userAgent.match(/Opera Mini/i);
+                },
+                Windows: function () {
+                    return navigator.userAgent.match(/IEMobile/i);
+                },
+                any: function () {
+                    return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+                }
+            };
 
-                    if (isMobile.any()) {
-                          $('#my-video').addEventListener('autoplay' , function(){
-                              $('#my-video').play();
-                          });
-                          $('#my-video').load();
-                          $('#my-video').play();
+            $(document).ready(function () {
+
+                if (isMobile.any()) {
+                    $('#my-video').addEventListener('autoplay', function () {
+                        $('#my-video').play();
+                    });
+                    $('#my-video').load();
+                    $('#my-video').play();
 //                        $('#my-video').attr('poster', '/static/img/poster.jpg');
 //                        $('#my-video').removeAttr('autoplay');
+                }
+
+                $('#my-video').backgroundVideo({
+                    pauseVideoOnViewLoss: true,
+                    parallaxOptions: {
+                        effect: 1.7
                     }
+                });
 
-                    $('#my-video').backgroundVideo({
-                        pauseVideoOnViewLoss: true,
-                        parallaxOptions: {
-                            effect: 1.7
-                        }
-                    });
+                $('#startDate').datepicker({
+                    defaultDate: "+lw",
+                    changeMonth: true,
+                    onClose: function (selectedDate) {
+                        $("endDate").datepicker("option", "maxDate", selectedDate);
+                    }
+                });
 
-                    $('#startDate').datepicker({
-                        defaultDate: "+lw",
-                        changeMonth: true,
-                        onClose: function (selectedDate) {
-                            $("endDate").datepicker("option", "maxDate", selectedDate);
-                        }
-                    });
+                $('#endDate').datepicker({
+                    defaultDate: "+lw",
+                    changeMonth: true,
+                    onClose: function (selectedDate) {
+                        $("#startDate").datepicker("option", "minDate", selectedDate);
+                    }
+                });
 
-                    $('#endDate').datepicker({
-                        defaultDate: "+lw",
-                        changeMonth: true,
-                        onClose: function (selectedDate) {
-                            $("#startDate").datepicker("option", "minDate", selectedDate);
-                        }
-                    });
-
-                    $('#myTab a').click(function (e) {
-                        e.preventDefault();
-                        $(this).tab('show')
-                    });
+                $('#myTab a').click(function (e) {
+                    e.preventDefault();
+                    $(this).tab('show')
+                });
 
 //
 //                    {#                    $('#demo').daterangepicker({#}
@@ -396,21 +399,28 @@
 //                    {#                        $('#out-date').attr('value', end.format('YYYY-MM-DD'));#}
 //                    {#                        console.log(start.format('YYYY-MM-DD'));#}
 //                    {#                    });#}
-                })
-                ;
+            })
+            ;
 
-                var $root = $('html,body');
-                $('.page-scroll').click(function(){
-                    $root.animate({
-                        scrollTop: $($.attr(this, 'href')).offset().top
-                        }, 1000);
-                        return false;
+            $('#owl-demo').owlCarousel({
+                autoPlay: 3000, //Set AutoPlay to 3 seconds
+                items: 4,
+                itemsDesktop: [1199, 3],
+                itemsDesktopSmall: [979, 3]
+            });
 
-                });
-            </script>
+            var $root = $('html,body');
+            $('.page-scroll').click(function () {
+                $root.animate({
+                    scrollTop: $($.attr(this, 'href')).offset().top
+                }, 1000);
+                return false;
+
+            });
+        </script>
         {% endblock %}
 
-        </div>
     </div>
+</div>
 </div>
 {% endblock %}

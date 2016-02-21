@@ -11,19 +11,20 @@
           content="renta, casas, cuba, vinales, pinar del rio, rent, car, carro, vacaciones">
     <meta name="author" content="ThemeForces.com">
 
-
+    {% load staticfiles%}
 
 
     {% block global_styles %}
-        <link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon">
-        <link rel="apple-touch-icon" href="static/img/apple-touch-icon.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="/static/img/apple-touch-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="/static/img/apple-touch-icon-114x114.png">
+        <link rel="shortcut icon" href="{% static '/img/favicon.ico' %}" type="image/x-icon">
+        <link rel="apple-touch-icon" href="{% static 'img/apple-touch-icon.png' %}">
+        <link rel="apple-touch-icon" sizes="72x72" href="{% static 'img/apple-touch-icon-72x72.png' %}">
+        <link rel="apple-touch-icon" sizes="114x114" href="{% static 'img/apple-touch-icon-114x114.png' %}">
 
 
-        <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
-        <link rel="stylesheet" type="text/css" href="/static/ionicons/css/ionicons.css">
-        <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'ionicons/css/ionicons.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
 
     {% endblock %}
     {% block level_styles %}
@@ -60,8 +61,9 @@
 {% endblock %}
 
 {% block global_scripts %}
-    <script type="text/javascript" src="/static/js/jquery.1.11.1.js"></script>
-    <script type="text/javascript" src="/static/js/bootstrap.js"></script>
+
+    <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+
 
 {% endblock %}
 
