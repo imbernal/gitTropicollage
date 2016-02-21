@@ -66,6 +66,7 @@
 
         <!-- /.modal -->
 
+
     </div>
     <!-- /.navbar-collapse -->
 </nav>
@@ -97,27 +98,6 @@
     }
 </style>
 
-<div class="modal fade" id="access-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Authenticate with one of your social networks</h4>
-            </div>
-            <div class="modal-body">
-                <a href="#" class="btn btn-fb btn-block btn-lg"><span
-                        class="icon-social ion-social-facebook"></span>Register with Facebook</a>
-                <a href="#" class="btn btn-tw btn-block btn-lg"><span class="icon-social ion-social-twitter"></span>Register
-                    with Twitter</a>
-                <a href="#" class="btn btn-gp btn-block btn-lg"><span
-                        class="icon-social ion-social-googleplus"></span>Register with Google+</a>
-            </div>
-        </div>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-</div><!-- /.modal -->
 
 <div class="categories  hidden-xs hidden-sm">
     <div class="container">
@@ -477,33 +457,33 @@
 <div class="row">
     <div class="container">
         <div class="portlet box blue" id="form_wizard_1">
-            {#
-            <div class="portlet-title">#}
-                {#
-                <div class="caption">#}
-                    {# <i class="fa fa-reorder"></i> Form Wizard -#}
-                    {#								<span class="step-title">#}
-                {#									 Step 1 of 4#}
-                {#								</span>#}
-                    {#
-                </div>
-                #}
-                {#
-                <div class="tools hidden-xs">#}
-                    {# <a href="javascript:;" class="collapse">#}
-                        {# </a>#}
-                    {# <a href="#portlet-config" data-toggle="modal" class="config">#}
-                        {# </a>#}
-                    {# <a href="javascript:;" class="reload">#}
-                        {# </a>#}
-                    {# <a href="javascript:;" class="remove">#}
-                        {# </a>#}
-                    {#
-                </div>
-                #}
-                {#
-            </div>
-            #}
+            <!--{#-->
+            <!--<div class="portlet-title">#}-->
+                <!--{#-->
+                <!--<div class="caption">#}-->
+                    <!--{# <i class="fa fa-reorder"></i> Form Wizard -#}-->
+                    <!--{#								<span class="step-title">#}-->
+                <!--{#									 Step 1 of 4#}-->
+                <!--{#								</span>#}-->
+                    <!--{#-->
+                <!--</div>-->
+                <!--#}-->
+                <!--{#-->
+                <!--<div class="tools hidden-xs">#}-->
+                    <!--{# <a href="javascript:;" class="collapse">#}-->
+                        <!--{# </a>#}-->
+                    <!--{# <a href="#portlet-config" data-toggle="modal" class="config">#}-->
+                        <!--{# </a>#}-->
+                    <!--{# <a href="javascript:;" class="reload">#}-->
+                        <!--{# </a>#}-->
+                    <!--{# <a href="javascript:;" class="remove">#}-->
+                        <!--{# </a>#}-->
+                    <!--{#-->
+                <!--</div>-->
+                <!--#}-->
+                <!--{#-->
+            <!--</div>-->
+            <!--#}-->
 
             <div class="portlet-body form" id="wizard">
                 <form action="#" method="post" class="form-horizontal" id="submit_form">
@@ -1307,95 +1287,95 @@
     <div class="container">
         <h5 class="reviews-count">{{ entity.feedback_set.all.count }} Reviews</h5>
 
-        {#
-        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">#}
-            {# <h5 class="title-details">Resumen</h5>#}
-            {#
-        </div>
-        #}
-        {#
-        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">#}
-            {#
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">#}
-                {# <h6 class="point">Habitaciones: </h6>#}
-                {#                    <span class="score">#}
-            {#                        <span class="ion-star"></span>#}
-            {#                        <span class="ion-star"></span>#}
-            {#                        <span class="ion-star"></span>#}
-            {#                        <span class="ion-star"></span>#}
-            {#                        <span class="ion-star"></span>#}
-            {#                    </span>#}
-                {#
-            </div>
-            #}
-            {#
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">#}
-                {# <h6 class="point">Limpieza: </h6>#}
-                {#                    <span class="score">#}
-            {#                        <span class="ion-star"></span>#}
-            {#                        <span class="ion-star"></span>#}
-            {#                        <span class="ion-star"></span>#}
-            {#                        <span class="ion-star"></span>#}
-            {#                        <span class="ion-star"></span>#}
-            {#                    </span>#}
-                {#
-            </div>
-            #}
-            {#
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">#}
-                {# <h6 class="point">Atencion: </h6>#}
-                {#                    <span class="score">#}
-            {#                        <span class="ion-star"></span>#}
-            {#                        <span class="ion-star"></span>#}
-            {#                        <span class="ion-star"></span>#}
-            {#                        <span class="ion-star"></span>#}
-            {#                        <span class="ion-star"></span>#}
-            {#                    </span>#}
-                {#
-            </div>
-            #}
-            {#
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">#}
-                {# <h6 class="point">Recibida: </h6>#}
-                {#                    <span class="score">#}
-            {#                        <span class="ion-star"></span>#}
-            {#                        <span class="ion-star"></span>#}
-            {#                        <span class="ion-star"></span>#}
-            {#                        <span class="ion-star"></span>#}
-            {#                        <span class="ion-star"></span>#}
-            {#                    </span>#}
-                {#
-            </div>
-            #}
-            {#
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">#}
-                {# <h6 class="point">Despedida: </h6>#}
-                {#                    <span class="score">#}
-            {#                        <span class="ion-star"></span>#}
-            {#                        <span class="ion-star"></span>#}
-            {#                        <span class="ion-star"></span>#}
-            {#                        <span class="ion-star"></span>#}
-            {#                        <span class="ion-star"></span>#}
-            {#                    </span>#}
-                {#
-            </div>
-            #}
-            {#
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">#}
-                {# <h6 class="point">Alimentacion: </h6>#}
-                {#                    <span class="score">#}
-            {#                        <span class="ion-star"></span>#}
-            {#                        <span class="ion-star"></span>#}
-            {#                        <span class="ion-star"></span>#}
-            {#                        <span class="ion-star"></span>#}
-            {#                        <span class="ion-star"></span>#}
-            {#                    </span>#}
-                {#
-            </div>
-            #}
-            {#
-        </div>
-        #}
+        <!--{#-->
+        <!--<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">#}-->
+            <!--{# <h5 class="title-details">Resumen</h5>#}-->
+            <!--{#-->
+        <!--</div>-->
+        <!--#}-->
+        <!--{#-->
+        <!--<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">#}-->
+            <!--{#-->
+            <!--<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">#}-->
+                <!--{# <h6 class="point">Habitaciones: </h6>#}-->
+                <!--{#                    <span class="score">#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                    </span>#}-->
+                <!--{#-->
+            <!--</div>-->
+            <!--#}-->
+            <!--{#-->
+            <!--<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">#}-->
+                <!--{# <h6 class="point">Limpieza: </h6>#}-->
+                <!--{#                    <span class="score">#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                    </span>#}-->
+                <!--{#-->
+            <!--</div>-->
+            <!--#}-->
+            <!--{#-->
+            <!--<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">#}-->
+                <!--{# <h6 class="point">Atencion: </h6>#}-->
+                <!--{#                    <span class="score">#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                    </span>#}-->
+                <!--{#-->
+            <!--</div>-->
+            <!--#}-->
+            <!--{#-->
+            <!--<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">#}-->
+                <!--{# <h6 class="point">Recibida: </h6>#}-->
+                <!--{#                    <span class="score">#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                    </span>#}-->
+                <!--{#-->
+            <!--</div>-->
+            <!--#}-->
+            <!--{#-->
+            <!--<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">#}-->
+                <!--{# <h6 class="point">Despedida: </h6>#}-->
+                <!--{#                    <span class="score">#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                    </span>#}-->
+                <!--{#-->
+            <!--</div>-->
+            <!--#}-->
+            <!--{#-->
+            <!--<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">#}-->
+                <!--{# <h6 class="point">Alimentacion: </h6>#}-->
+                <!--{#                    <span class="score">#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                    </span>#}-->
+                <!--{#-->
+            <!--</div>-->
+            <!--#}-->
+            <!--{#-->
+        <!--</div>-->
+        <!--#}-->
 
         <div class="col-xs-12">
             <button class="translator-btn btn btn-block">Translate all the experiences</button>
@@ -1455,7 +1435,8 @@
 {% block level_scripts %}
 
 <script src="{% static 'js/jquery-1.10.2.min.js' %}"></script>
-
+<script src="{% static 'js/jquery-ui.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
 <script src="{% static 'js/gallery.js' %}"></script>
 <script src="{% static 'js/app.config.js' %}"></script>
 
@@ -1479,23 +1460,55 @@
 <script src="{% static 'js/additional-methods.min.js' %}"></script>
 <script src="{%  static 'js/jquery.bootstrap.wizard.min.js' %}"></script>
 
-<script src="{% static 'js/jquery-ui.min.js' %}"></script>
+
+
 <script src="{% static 'js/comment_async.js' %}"></script>
 
 <script src="{% static 'js/select2.min.js' %}"></script>
 <script src="{% static 'js/form-wizard.js' %}"></script>
 <script src="{% static 'js/rent-wizard.js' %}"></script>
-<script src="{% static 'js/jquery-ui.min.js' %}"></script>
+
 <script src="{% static 'js/owl.carousel.js' %}"></script>
 
-
 <script type="text/javascript">
-    $('#clock').clockpicker();
-    FormWizard.init();
-</script>
+        $('#clock').clockpicker();
+        FormWizard.init();
+    </script>
+    <script type="text/javascript">
+        // DO NOT REMOVE : GLOBAL FUNCTIONS!
+        $(document).ready(function () {
+            // Some media queries in javascript... (What?, i'm not messing with you...)
+
+            var width = screen.availWidth; // get the screen real size.
+
+            var css_props = {'width': '100%'};
+
+            var map_container = $("div[id|='map-canvas']");
+            // Selector to add css properties to the map-canvas-X id
+
+
+            if (width >= 320 && width <= 480)
+                css_props['height'] = '195px';
+            else if (width >= 481 && width <= 768)
+                css_props['height'] = '205px';
+            else if (width >= 769 && width <= 992)
+                css_props['height'] = '300px';
+            else if (width >= 993)
+                css_props['height'] = '400px';
+
+            });
+
+
+
+    </script>
+
 <script type="text/javascript">
     // DO NOT REMOVE : GLOBAL FUNCTIONS!
     $(document).ready(function () {
+
+            map_container.css(css_props);
+
+            //validate comment form
 
         //validate comment form
 
@@ -1622,6 +1635,5 @@
         return (treatAsUTC(endDate) - treatAsUTC(startDate)) / millisecondsPerDay;
     }
 </script>
-<script src="{% static 'static/js/accordion_utils.js' %}"></script>
 
 {% endblock %}
