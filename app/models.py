@@ -46,7 +46,8 @@ class Casa(models.Model):
     meriendas = models.BooleanField(default=False)
     cena = models.BooleanField(default=False)
     bebidas_bar = models.BooleanField(default=False)
-    
+    slug = models.CharField(max_length=255, default="")
+        
     #servicios
     telefono = models.NullBooleanField(choices = CHOICES)
     garaje = models.BooleanField(choices = CHOICES)
