@@ -26,7 +26,7 @@ def exists(check, coll):
     return flag
 
 def home_page(request):
-    casas = Casa.objects.all()[:8]
+    casas = Casa.objects.all()[:3]
     feedbacks = FeedBack.objects.all()[:3]
     reservaciones = Reservacion.objects.all()[:5]
     lugares = Casa.objects.all()

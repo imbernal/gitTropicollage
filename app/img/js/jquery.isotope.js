@@ -147,10 +147,29 @@
   if ( Modernizr.csstransforms ) {
 
         // i.e. transformFnNotations.scale(0.5) >> 'scale3d( 0.5, 0.5, 1)'
+<<<<<<< HEAD
     var transformFnNotations = Modernizr.csstransforms3d ?
       { // 3D transform functions
         translate : function ( position ) {
           return 'translate3d(' + position[0] + 'px, ' + position[1] + 'px, 0) ';
+=======
+    var a = 40;
+    var transformFnNotations = Modernizr.csstransforms3d ?
+      { // 3D transform functions
+        translate : function ( position ) {
+          //debugger;
+          console.log(position[0]);
+          if(position[0]!=0){
+            position[0] = position[0] + a ;
+            a = a*2;
+          }
+
+          //if (a){
+          //  position[0] = position[0] + 16;
+          //}
+          return 'translate3d(' + position[0] + 'px, ' + position[1] + 'px, 0) ';
+
+>>>>>>> dcc2b0b1a2256a8310f07d4311143bdf66c9540a
         },
         scale : function ( scale ) {
           return 'scale3d(' + scale + ', ' + scale + ', 1) ';

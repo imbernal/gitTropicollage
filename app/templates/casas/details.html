@@ -5,110 +5,117 @@
 
 {% block title %}Details{% endblock %}
 {% block level_styles %}
-    <link rel="stylesheet" href="{% static 'css/details.css' %}">
-    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/font-awesome.min.css' %}">
-    <!-- SmartAdmin Styles : Caution! DO NOT change the order -->
-    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/smartadmin-production-plugins.min.css' %}">
-    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/smartadmin-production.min.css' %}">
-    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/smartadmin-skins.min.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-clockpicker.min.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/jquery-clockpicker.min.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/select2.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/select2-metronic.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/styleMetronic.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style-metronic.css' %}">
-    <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
-    <link rel="stylesheet" href="{% static 'css/owl.theme.css' %}">
-    <script src="{% static 'js/plugin/fancybox/source/jquery.fancybox.css' %}"></script>
-    {#    <link rel="stylesheet" type="text/css" href="/static/css/style-responsive.css">#}
-    <!-- SmartAdmin RTL Support -->
-    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/smartadmin-rtl.min.css' %}">
-    <!-- We recommend you use "your_style.css" to override SmartAdmin
-							specific styles this will also ensure you retrain your customization with each SmartAdmin update.
-	<link rel="stylesheet" type="text/css" media="screen" href="css/your_style.css"> -->
-    <!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
-    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/demo.min.css' %}">
-    <link rel="stylesheet" href="{% static 'flaticons/flaticon.css' %}">
+<link rel="stylesheet" href="{% static 'css/details.css' %}">
+<link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/font-awesome.min.css' %}">
+<!-- SmartAdmin Styles : Caution! DO NOT change the order -->
+<link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/smartadmin-production-plugins.min.css' %}">
+<link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/smartadmin-production.min.css' %}">
+<link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/smartadmin-skins.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-clockpicker.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/jquery-clockpicker.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/select2.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/select2-metronic.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/styleMetronic.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/style-metronic.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/jquery.fancybox.css' %}">
+<link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+<link rel="stylesheet" href="{% static 'css/owl.theme.css' %}">
+
+<!-- SmartAdmin RTL Support -->
+<link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/smartadmin-rtl.min.css' %}">
+<!-- We recommend you use "your_style.css" to override SmartAdmin
+                        specific styles this will also ensure you retrain your customization with each SmartAdmin update.
+<link rel="stylesheet" type="text/css" media="screen" href="css/your_style.css"> -->
+<!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
+<link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/demo.min.css' %}">
+<link rel="stylesheet" href="{% static 'flaticons/flaticon.css' %}">
 {% endblock %}
 {% block nav %}
-    <nav class="navbar navbar-default" role="navigation">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Logo</a>
-        </div>
+<nav class="navbar navbar-default" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Logo</a>
+    </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
 
-            <form class="navbar-form navbar-left" role="search">
-                <div class="input-group">
-                    <input type="text" class="form-control">
+        <form class="navbar-form navbar-left" role="search">
+            <div class="input-group">
+                <input type="text" class="form-control">
                         <span class="input-group-btn">
                                 <button type="button" class="btn btn-default">
                                     <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                                 </button>
                         </span>
-                </div>
-                <!-- /input-group -->
-            </form>
+            </div>
+            <!-- /input-group -->
+        </form>
 
-            <ul class="nav navbar-nav navbar-right">
-                <li><a data-toggle="modal" href="#myModal">Help </a></li>
-                <li><a href="#">Register</a></li>
-                <li><a href="#">Login</a></li>
-            </ul>
-            {#            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"#}
-            {#                 aria-hidden="true">#}
-            {#                <div class="modal-dialog">#}
-            {#                    <div class="modal-content">#}
-            {#                        <div class="modal-header">#}
-            {#                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>#}
-            {#                            <h4 class="modal-title">Articulos Sugeridos</h4>#}
-            {#                        </div>#}
-            {#                        <div class="modal-body">#}
-            {#                            <h4><span class="ion-document-text"></span>Guia para empezar</h4>#}
-            {#                        </div>#}
-            {#                        <hr>#}
-            {#                        <div class="modal-body">#}
-            {#                            <h4><span class="ion-document-text"></span>Que tengo que hacer para reservar</h4>#}
-            {#                        </div>#}
-            {#                        <hr>#}
-            {#                        <div class="modal-body">#}
-            {#                            <h4><span class="ion-document-text"></span>Puedo modificar una reserva confirmada</h4>#}
-            {#                        </div>#}
-            {#                        <div class="modal-footer">#}
-            {#                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>#}
-            {#                            <a href="#" class="pull-left">Centro de Ayuda</a>#}
-            {#                        </div>#}
-            {#                    </div>#}
-            {#                    <!-- /.modal-content -->#}
-            {#                </div>#}
-            {#                <!-- /.modal-dialog -->#}
-            {#            </div>#}
-            <!-- /.modal -->
+        <ul class="nav navbar-nav navbar-right">
+            <li><a data-toggle="modal" href="#myModal">Help </a></li>
+            <li><a href="#">Register</a></li>
+            <li><a href="#">Login</a></li>
+        </ul>
 
-        </div>
-        <!-- /.navbar-collapse -->
-    </nav>
+        <!-- /.modal -->
+
+
+    </div>
+    <!-- /.navbar-collapse -->
+</nav>
 {% endblock %}
 {% block body %}
-    <style>
-        .line-through {
-            text-decoration: line-through;
-            color: #b7b7b7;
-        }
+<style>
+    .line-through {
+        text-decoration: line-through;
+        color: #b7b7b7;
+    }
 
-        #owl-demo .item {
-            margin: 3px !important;
-            width: 60%;
-        }
+    #owl-demo .item {
+        margin: 3px !important;
+        width: 60%;
+    }
 
+    #owl-demo .item img {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: 3px !important;
+    }
+
+    {
+    %
+    generate_styles
+    2
+    %
+    }
+</style>
+
+
+<div class="categories  hidden-xs hidden-sm">
+    <div class="container">
+        <ul>
+            <li><a class="page-scroll" href="#gallery">Fotos</a></li>
+            <li><a class="page-scroll" href="#main-info">Informacion sobre este anuncio</a></li>
+            <li><a class="page-scroll" href="#detailed-info">Detalles</a></li>
+            <li><a class="page-scroll" href="#comments">Comentarios</a></li>
+
+        </ul>
+    </div>
+</div>
+
+<div class="gallery" id="gallery">
+    {% easy_map "Cuba, Pinar del Rio, Vinales" 1920 1080 %}
+    <div class="jumbotron col-xs-12">
+
+<<<<<<< HEAD
         #owl-demo .item img {
             display: block;
             width: 100%;
@@ -121,1374 +128,1364 @@
 
 >>>>>>> 3eb388317fb30b17b1f80d8b14134c913c49fae8
     </style>
+=======
+        <div id="owl-demo" class="owl-carousel">
+            {% for item in pictures %}
 
-    <div class="modal fade" id="access-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-         aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title">Authenticate with one of your social networks</h4>
-                </div>
-                <div class="modal-body">
-                    <a href="#" class="btn btn-fb btn-block btn-lg"><span
-                            class="icon-social ion-social-facebook"></span>Register with Facebook</a>
-                    <a href="#" class="btn btn-tw btn-block btn-lg"><span class="icon-social ion-social-twitter"></span>Register
-                        with Twitter</a>
-                    <a href="#" class="btn btn-gp btn-block btn-lg"><span
-                            class="icon-social ion-social-googleplus"></span>Register with Google+</a>
-                </div>
-            </div>
-            <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+            <a href="/media/imagenes/{{ item }}" class="fancybox" data-fancybox-group="gallery"
+>>>>>>> dcc2b0b1a2256a8310f07d4311143bdf66c9540a
 
-    <div class="categories  hidden-xs hidden-sm">
-        <div class="container">
-            <ul>
-                <li><a class="page-scroll" href="#gallery">Fotos</a></li>
-                <li><a class="page-scroll" href="#main-info">Informacion sobre este anuncio</a></li>
-                <li><a class="page-scroll" href="#detailed-info">Detalles</a></li>
-                <li><a class="page-scroll" href="#comments">Comentarios</a></li>
-
-            </ul>
+               title="{{ item }}"><img class="owl-item" src="/media/imagenes/{{ item }}"></a>
+            {% endfor %}
         </div>
     </div>
-    {#    <img src="/static/img/loading.gif" alt="Loading" class="preloader">#}
-    <div class="gallery" id="gallery">
-        {% easy_map "Cuba, Pinar del Rio, Vinales" 1920 1080 %}
-        <div class="jumbotron col-xs-12">
-            {#            <div class="row gallery-container col-xs-12 col-sm-12 col-md-12 col-lg-12">#}
-            {#            </div>#}
-            <div id="owl-demo" class="owl-carousel">
-                {% for item in pictures %}
-                    {#                    <a class="pic-link" href="/media/imagenes/{{ item }}">#}
-                    <a href="/media/imagenes/{{ item }}" class="fancybox" data-fancybox-group="gallery"
+</div>
+<div class="main-info" id="main-info">
+    <div class="container">
 
-                       title="{{ item }}"><img class="owl-item" src="/media/imagenes/{{ item }}"></a>{#</a>#}
-                {% endfor %}
+        <div class="details col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <h1 class="home-name">{{ entity }} at {{ entity.municipio }}</h1>
+            <input type="hidden" value="{{ entity.pk }}" id="entity_id">
+            <small class="home-location"><span class="ion-ios-location" aria-hidden="false"></span>
+                {{ entity.municipio }}, {{ entity.provincia }}, {{ entity.pais }}
+            </small>
+            <div class="category">
+                {# {% for item in range(entity.votos) %}#}
+                <span class="ion-ios-star"></span>
+                {# {% endfor %}#}
+
+                <small class="reviews">({{ entity.feedback_set.count }})</small>
+            </div>
+            <div class="simple-about col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="detail-container col-sm-3 col-xs-6"><a href="#" class="tooltip-test"
+                                                                   title="Cantidad de habitaciones"><span
+                        class="flaticon-bedroom1"></span><span>&times; {{ entity.cant_habitaciones }}</span></a>
+                </div>
+                <div class="detail-container col-sm-3 col-xs-6"><a href="#" class="tooltip-test"
+                                                                   title="Cantidad de camas simples"><span
+                        class="flaticon-bed15"></span><span>&times; {{ cant_camas_simples }}</span></a></div>
+                <div class="detail-container col-sm-3 col-xs-6"><a href="#" class="tooltip-test"
+                                                                   title="Cantidad de camas dobles"><span
+                        class="flaticon-bed13"></span><span>&times; {{ cant_camas_dobles }}</span></a></div>
+                <div class="detail-container col-sm-3 col-xs-6"><a href="#" class="tooltip-test"
+                                                                   title="Cantidad de personas"><span
+                        class="flaticon-two148"></span><span>&times; {{ cant_total_personas }}</span></a></div>
             </div>
         </div>
-    </div>
-    <div class="main-info" id="main-info">
-        <div class="container">
-            {# <div class="hidden-xs hidden-sm col-xs-2 col-sm-2 col-md-2 col-lg-2"> #}
-                {# <div class="container"> #}
-                    <!-- temp -->
-                    {# <div> #}
-                        {# <img id="pictureOwner" class="img-rounded img-responsive" src="/media/{{ entity.foto_dueno }}" width="56" height="66" alt="100"> #}
-                    {# </div> #}
-                    {# <small class="author">{{ entity.nombre_dueno }}</small> #}
-                {# </div> #}
-            {# </div>  #}
-            <div class="details col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                <h1 class="home-name">{{ entity }} at {{ entity.municipio }}</h1>
-                <input type="hidden" value="{{ entity.pk }}" id="entity_id">
-                <small class="home-location"><span class="ion-ios-location" aria-hidden="false"></span>
-                    {{ entity.municipio }}, {{ entity.provincia }}, {{ entity.pais }}
-                </small>
-                <div class="category">
-                    {#                    {% for item in range(entity.votos) %}#}
-                    <span class="ion-ios-star"></span>
-                    {#                    {% endfor %}#}
 
-                    <small class="reviews">({{ entity.feedback_set.count }})</small>
-                </div>
-                <div class="simple-about col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div class="detail-container col-sm-3 col-xs-6"><a href="#" class="tooltip-test"
-                                                                       title="Cantidad de habitaciones"><span
-                            class="flaticon-bedroom1"></span><span>&times; {{ entity.cant_habitaciones }}</span></a>
-                    </div>
-                    <div class="detail-container col-sm-3 col-xs-6"><a href="#" class="tooltip-test"
-                                                                       title="Cantidad de camas simples"><span
-                            class="flaticon-bed15"></span><span>&times; {{ cant_camas_simples }}</span></a></div>
-                    <div class="detail-container col-sm-3 col-xs-6"><a href="#" class="tooltip-test"
-                                                                       title="Cantidad de camas dobles"><span
-                            class="flaticon-bed13"></span><span>&times; {{ cant_camas_dobles }}</span></a></div>
-                    <div class="detail-container col-sm-3 col-xs-6"><a href="#" class="tooltip-test"
-                                                                       title="Cantidad de personas"><span
-                            class="flaticon-two148"></span><span>&times; {{ cant_total_personas }}</span></a></div>
-                </div>
-            </div>
-
-            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 pull-right">
-                <div class="fav">
-                    {#                    <a class="btn btn-lg btn-block btn-default"><span class="ion-ios-heart-outline"></span> Add to#}
-                    {#                        wishlist#}
-                    {#                    </a>#}
-                    <a href="#wizard" class="btn btn-lg btn-block btn-default page-scroll"><span
-                            class="ion-ios-calendar-outline"></span>
-                        Make
-                        a reservation
-                    </a>
-                    <a href="#formComment" class="btn btn-lg btn-block btn-default page-scroll"><span class="ion-chatbubbles"></span> Contact us
-                    </a>
-                    <a class="btn btn-lg btn-block btn-default page-scroll"><span class="ion-android-share-alt"></span> Share
-                    </a>
-                </div>
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 pull-right">
+            <div class="fav">
+                {# <a class="btn btn-lg btn-block btn-default"><span class="ion-ios-heart-outline"></span> Add to#}
+                {# wishlist#}
+                {# </a>#}
+                <a href="#wizard" class="btn btn-lg btn-block btn-default page-scroll"><span
+                        class="ion-ios-calendar-outline"></span>
+                    Make
+                    a reservation
+                </a>
+                <a href="#formComment" class="btn btn-lg btn-block btn-default page-scroll"><span
+                        class="ion-chatbubbles"></span> Contact us
+                </a>
+                <a class="btn btn-lg btn-block btn-default page-scroll"><span class="ion-android-share-alt"></span>
+                    Share
+                </a>
             </div>
         </div>
     </div>
+</div>
 
-    <div class="container detailed-info" id="detailed-info">
-        <h3>More Info</h3>
-        <section>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </section>
-        <hr/>
-        <section class="all-details">
-            <div class="section-exponation col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-                    <h4 class="title-details">El Lugar</h4>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                        <h5 class="point {% if not entity.garaje %}
+<div class="container detailed-info" id="detailed-info">
+    <h3>More Info</h3>
+    <section>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </section>
+    <hr/>
+    <section class="all-details">
+        <div class="section-exponation col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                <h4 class="title-details">El Lugar</h4>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <h5 class="point {% if not entity.garaje %}
                             line-through
                         {% endif %}">Garaje</h5>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                        <h5 class="point {% if not entity.parqueo %}
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <h5 class="point {% if not entity.parqueo %}
                             line-through
                         {% endif %}">Parqueo</h5>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                        <h5 class="point {% if not entity.internet %}
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <h5 class="point {% if not entity.internet %}
                             line-through
                         {% endif %}">Internet</h5>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                        <h5 class="point {% if not entity.piscina %}
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <h5 class="point {% if not entity.piscina %}
                             line-through
                         {% endif %}">Piscina</h5>
-                    </div>
+                </div>
 
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                        <h5 class="point {% if not entity.jacuzzi %}
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <h5 class="point {% if not entity.jacuzzi %}
                             line-through
                         {% endif %}">Jacuzzi</h5>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                        <h5 class="point {% if not entity.ciudad %}
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <h5 class="point {% if not entity.ciudad %}
                             line-through
                         {% endif %}">Casa en la ciudad</h5>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                        <h5 class="point {% if not entity.campo %}
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <h5 class="point {% if not entity.campo %}
                             line-through
                         {% endif %}">Casa en el campo</h5>
-                    </div>
+                </div>
 
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                        <h5 class="point {% if not entity.playa %}
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <h5 class="point {% if not entity.playa %}
                             line-through
                         {% endif %}">Casa en la playa</h5>
-                    </div>
                 </div>
             </div>
-            <hr/>
-            <div class="section-exponation col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-                    <h4 class="title-details">Servicios</h4>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                        <h5 class="point {% if not entity.desayuno %}
+        </div>
+        <hr/>
+        <div class="section-exponation col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                <h4 class="title-details">Servicios</h4>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <h5 class="point {% if not entity.desayuno %}
                             line-through
                         {% endif %}">Desayuno</h5>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                        <h5 class="point {% if not entity.meriendas %}
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <h5 class="point {% if not entity.meriendas %}
                             line-through
                         {% endif %}">Merienda</h5>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                        <h5 class="point {% if not entity.cena %}
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <h5 class="point {% if not entity.cena %}
                             line-through
                         {% endif %}">Cena</h5>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                        <h5 class="point {% if not entity.bebidas_bar %}
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <h5 class="point {% if not entity.bebidas_bar %}
                             line-through
                         {% endif %}">Bebidas (Bar)</h5>
-                    </div>
+                </div>
 
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                        <h5 class="point {% if not entity.clase_baile %}
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <h5 class="point {% if not entity.clase_baile %}
                             line-through
                         {% endif %}">Clases de baile</h5>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                        <h5 class="point {% if not entity.lavanderia %}
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <h5 class="point {% if not entity.lavanderia %}
                             line-through
                         {% endif %}">Lavanderia</h5>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                        <h5 class="point {% if not entity.comida_vegetariana %}
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <h5 class="point {% if not entity.comida_vegetariana %}
                             line-through
                         {% endif %}">Comidas vegetarianas</h5>
-                    </div>
                 </div>
             </div>
-            <hr/>
-            <div class="section-exponation col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-                    <h4 class="title-details">Idiomas</h4>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                        <h5 class="point {% if not entity.ingles %}
+        </div>
+        <hr/>
+        <div class="section-exponation col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                <h4 class="title-details">Idiomas</h4>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <h5 class="point {% if not entity.ingles %}
                             line-through
                         {% endif %}">Ingles</h5>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                        <h5 class="point {% if not entity.frances %}
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <h5 class="point {% if not entity.frances %}
                             line-through
                         {% endif %}">Frances</h5>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                        <h5 class="point {% if not entity.aleman %}
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <h5 class="point {% if not entity.aleman %}
                             line-through
                         {% endif %}">Aleman</h5>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                        <h5 class="point {% if not entity.italiano %}
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <h5 class="point {% if not entity.italiano %}
                             line-through
                         {% endif %}">Italiano</h5>
-                    </div>
+                </div>
 
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                        <h5 class="point {% if not entity.portugues %}
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <h5 class="point {% if not entity.portugues %}
                             line-through
                         {% endif %}">Portugues</h5>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                        <h5 class="point">Espanol</h5>
-                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <h5 class="point">Espanol</h5>
+                </div>
 
+            </div>
+        </div>
+        <hr/>
+        <div class="section-exponation col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                <h4 class="title-details">Mensaje promocional</h4>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <p>{{ entity.mensaje_promocional }}</p>
                 </div>
             </div>
-            <hr/>
-            <div class="section-exponation col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-                    <h4 class="title-details">Mensaje promocional</h4>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <p>{{ entity.mensaje_promocional }}</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-    <hr>
+        </div>
+    </section>
+</div>
+<hr>
 
-     <div class="panel-group container rooms-details" id="accordion">
+<div class="panel-group container rooms-details" id="accordion">
 
-        {% for item in entity.habitacion_set.all %}
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion"
-                           href="#collapse{{ forloop.counter }}" data-val="{{ forloop.counter }}">
-                            Habitacion #{{ forloop.counter }}
-                        </a>
-                    </h4>
-                </div>
-                <div id="collapse{{ forloop.counter }}" class="panel-collapse collapse" style="height: 0;">
-                    <div class="panel-body" data-val-target="{{ forloop.counter }}">
+    {% for item in entity.habitacion_set.all %}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion"
+                   href="#collapse{{ forloop.counter }}" data-val="{{ forloop.counter }}">
+                    Habitacion #{{ forloop.counter }}
+                </a>
+            </h4>
+        </div>
+        <div id="collapse{{ forloop.counter }}" class="panel-collapse collapse" style="height: 0;">
+            <div class="panel-body" data-val-target="{{ forloop.counter }}">
 
-                        <div class="col-xs-4">
-                            <h5 class="{% if not item.primer_piso %}
+                <div class="col-xs-4">
+                    <h5 class="{% if not item.primer_piso %}
                                 line-through
                                 {% endif %}">Primer piso</h5>
-                        </div>
+                </div>
 
-                        <div class="col-xs-4">
-                            <h5 class="{% if not item.segundo_piso %}
+                <div class="col-xs-4">
+                    <h5 class="{% if not item.segundo_piso %}
                                 line-through
                                 {% endif %}">Segundo piso</h5>
-                        </div>
+                </div>
 
-                        <div class="col-xs-4">
-                            <h5 class="point {% if not item.superior %}
+                <div class="col-xs-4">
+                    <h5 class="point {% if not item.superior %}
                                 line-through
                                 {% endif %}">Superior</h5>
-                        </div>
+                </div>
 
-                        <div class="col-xs-4">
-                            <h5 class="point {% if not item.caja_fuerte %}
+                <div class="col-xs-4">
+                    <h5 class="point {% if not item.caja_fuerte %}
                                 line-through
                                 {% endif %}">Caja fuerte</h5>
-                        </div>
+                </div>
 
-                        <div class="col-xs-4">
-                            <h5 class="point {% if not item.ventilador %}
+                <div class="col-xs-4">
+                    <h5 class="point {% if not item.ventilador %}
                                 line-through
                                 {% endif %}">Ventilador</h5>
-                        </div>
+                </div>
 
-                        <div class="col-xs-4">
-                            <h5 class="point {% if not item.aire_acondicionado %}
+                <div class="col-xs-4">
+                    <h5 class="point {% if not item.aire_acondicionado %}
                                 line-through
                                 {% endif %}">Aire acondicionado</h5>
-                        </div>
+                </div>
 
-                        <div class="col-xs-4">
-                            <h5 class="point {% if not item.agua_caliente %}
+                <div class="col-xs-4">
+                    <h5 class="point {% if not item.agua_caliente %}
                                 line-through
                                 {% endif %}">Agua caliente</h5>
-                        </div>
+                </div>
 
-                        <div class="col-xs-4">
-                            <h5 class="point {% if not item.secador %}
+                <div class="col-xs-4">
+                    <h5 class="point {% if not item.secador %}
                                 line-through
                                 {% endif %}">Secador</h5>
-                        </div>
+                </div>
 
-                        <div class="col-xs-4">
-                            <h5 class="point {% if not item.minibar %}
+                <div class="col-xs-4">
+                    <h5 class="point {% if not item.minibar %}
                                 line-through
                                 {% endif %}">Minibar</h5>
-                        </div>
+                </div>
 
-                        <div class="col-xs-4">
-                            <h5 class="point {% if not item.corriente_110 %}
+                <div class="col-xs-4">
+                    <h5 class="point {% if not item.corriente_110 %}
                                 line-through
                                 {% endif %}">Corriente 110V</h5>
-                        </div>
+                </div>
 
-                        <div class="col-xs-4">
-                            <h5 class="point {% if not item.corriente_220 %}
+                <div class="col-xs-4">
+                    <h5 class="point {% if not item.corriente_220 %}
                                 line-through
                                 {% endif %}">Corriente 220V</h5>
-                        </div>
+                </div>
 
-                        <div class="col-xs-4">
-                            <h5 class="point {% if not item.balcon %}
+                <div class="col-xs-4">
+                    <h5 class="point {% if not item.balcon %}
                                 line-through
                                 {% endif %}">Balcon</h5>
-                        </div>
+                </div>
 
-                        <div class="col-xs-4">
-                            <h5 class="point {% if not item.terraza %}
+                <div class="col-xs-4">
+                    <h5 class="point {% if not item.terraza %}
                                 line-through
                                 {% endif %}">Terraza</h5>
-                        </div>
+                </div>
 
-                        <div class="col-xs-4">
-                            <h5 class="point {% if not item.bano_privado %}
+                <div class="col-xs-4">
+                    <h5 class="point {% if not item.bano_privado %}
                                 line-through
                                 {% endif %}">Bano privado</h5>
-                        </div>
+                </div>
 
-                        <div class="col-xs-4">
-                            <h5 class="point {% if not item.TV %}
+                <div class="col-xs-4">
+                    <h5 class="point {% if not item.TV %}
                                 line-through
                                 {% endif %}">TV</h5>
-                        </div>
-
-                    </div>
                 </div>
+
             </div>
-        {% endfor %}
+        </div>
     </div>
+    {% endfor %}
+</div>
 
-    <hr>
-    <div class="text-center reservation-title">
-        <h2>Make a Reservation</h2>
-    </div>
-    <br/>
+<hr>
+<div class="text-center reservation-title">
+    <h2>Make a Reservation</h2>
+</div>
+<br/>
 
-    <div class="row">
-        <div class="container">
-            <div class="portlet box blue" id="form_wizard_1">
-                {#                <div class="portlet-title">#}
-                {#                    <div class="caption">#}
-                {#                        <i class="fa fa-reorder"></i> Form Wizard -#}
-                {#								<span class="step-title">#}
-                {#									 Step 1 of 4#}
-                {#								</span>#}
-                {#                    </div>#}
-                {#                    <div class="tools hidden-xs">#}
-                {#                        <a href="javascript:;" class="collapse">#}
-                {#                        </a>#}
-                {#                        <a href="#portlet-config" data-toggle="modal" class="config">#}
-                {#                        </a>#}
-                {#                        <a href="javascript:;" class="reload">#}
-                {#                        </a>#}
-                {#                        <a href="javascript:;" class="remove">#}
-                {#                        </a>#}
-                {#                    </div>#}
-                {#                </div>#}
+<div class="row">
+    <div class="container">
+        <div class="portlet box blue" id="form_wizard_1">
+            <!--{#-->
+            <!--<div class="portlet-title">#}-->
+                <!--{#-->
+                <!--<div class="caption">#}-->
+                    <!--{# <i class="fa fa-reorder"></i> Form Wizard -#}-->
+                    <!--{#								<span class="step-title">#}-->
+                <!--{#									 Step 1 of 4#}-->
+                <!--{#								</span>#}-->
+                    <!--{#-->
+                <!--</div>-->
+                <!--#}-->
+                <!--{#-->
+                <!--<div class="tools hidden-xs">#}-->
+                    <!--{# <a href="javascript:;" class="collapse">#}-->
+                        <!--{# </a>#}-->
+                    <!--{# <a href="#portlet-config" data-toggle="modal" class="config">#}-->
+                        <!--{# </a>#}-->
+                    <!--{# <a href="javascript:;" class="reload">#}-->
+                        <!--{# </a>#}-->
+                    <!--{# <a href="javascript:;" class="remove">#}-->
+                        <!--{# </a>#}-->
+                    <!--{#-->
+                <!--</div>-->
+                <!--#}-->
+                <!--{#-->
+            <!--</div>-->
+            <!--#}-->
 
-                <div class="portlet-body form" id="wizard">
-                    <form action="#" method="post" class="form-horizontal" id="submit_form">
-                        {% csrf_token %}
-                        <div class="form-wizard">
+            <div class="portlet-body form" id="wizard">
+                <form action="#" method="post" class="form-horizontal" id="submit_form">
+                    {% csrf_token %}
+                    <div class="form-wizard">
 
-                            <div class="form-body">
-                                <input type="hidden" id="homeName" value="{{ entity.nombre }}">
-                                <input type="hidden" id="homePolo" value="{{ entity.polo_turistico }}">
-                                <ul class="nav nav-pills nav-justified steps" id="ulWizard">
-                                    <li>
-                                        <a href="#tab1" data-toggle="tab" class="step">
+                        <div class="form-body">
+                            <input type="hidden" id="homeName" value="{{ entity.nombre }}">
+                            <input type="hidden" id="homePolo" value="{{ entity.polo_turistico }}">
+                            <ul class="nav nav-pills nav-justified steps" id="ulWizard">
+                                <li>
+                                    <a href="#tab1" data-toggle="tab" class="step">
 													<span class="number">
 														 1
 													</span>
 													<span class="desc">
 														<i class="fa fa-check"></i> Informacion Basica
 													</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#tab2" data-toggle="tab" class="step">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#tab2" data-toggle="tab" class="step">
 													<span class="number">
 														 2
 													</span>
 													<span class="desc">
 														<i class="fa fa-check"></i> Detalles de la Reservacion
 													</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#tab3" data-toggle="tab" class="step active">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#tab3" data-toggle="tab" class="step active">
 													<span class="number">
 														 3
 													</span>
 													<span class="desc">
 														<i class="fa fa-check"></i> Otras Informaciones
 													</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#tab4" data-toggle="tab" class="step">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#tab4" data-toggle="tab" class="step">
 													<span class="number">
 														 4
 													</span>
 													<span class="desc">
 														<i class="fa fa-check"></i> Confirmacion
 													</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                                <div id="bar" class="progress progress-striped" role="progressbar">
-                                    <div class="progress-bar progress-bar-success">
-                                    </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div id="bar" class="progress progress-striped" role="progressbar">
+                                <div class="progress-bar progress-bar-success">
                                 </div>
-                                <div class="tab-content">
-                                    <div class="alert alert-danger display-none">
-                                        <button class="close" data-dismiss="alert"></button>
-                                        You have some form errors. Please check below.
-                                    </div>
-                                    <div class="alert alert-success display-none">
-                                        <button class="close" data-dismiss="alert"></button>
-                                        Your form validation is successful!
-                                    </div>
-                                    <div class="tab-pane active" id="tab1">
-                                        <h3 class="block">Informacion Basica</h3>
+                            </div>
+                            <div class="tab-content">
+                                <div class="alert alert-danger display-none">
+                                    <button class="close" data-dismiss="alert"></button>
+                                    You have some form errors. Please check below.
+                                </div>
+                                <div class="alert alert-success display-none">
+                                    <button class="close" data-dismiss="alert"></button>
+                                    Your form validation is successful!
+                                </div>
+                                <div class="tab-pane active" id="tab1">
+                                    <h3 class="block">Informacion Basica</h3>
 
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3">First Name
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">First Name
 													<span class="required">
 														 *
 													</span>
-                                            </label>
+                                        </label>
 
-                                            <div class="col-md-4">
-                                                <input type="text" class="form-control" id="Fname" name="fname"/>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" id="Fname" name="fname"/>
 														<span class="help-block">
 															 Provide your First Name
 														</span>
-                                            </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3">Last Name
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Last Name
 													<span class="required">
 														 *
 													</span>
-                                            </label>
+                                        </label>
 
-                                            <div class="col-md-4">
-                                                <input type="text" class="form-control" id="Lname" name="lname"/>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" id="Lname" name="lname"/>
 														<span class="help-block">
 															 Provide your Last Name
 														</span>
-                                            </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3">Phone Number
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Phone Number
 													<span class="required">
 														 *
 													</span>
-                                            </label>
+                                        </label>
 
-                                            <div class="col-md-4">
-                                                <input type="text" class="form-control" id="wphone" name="wphone"/>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" id="wphone" name="wphone"/>
 														<span class="help-block">
 															 Phone Number
 														</span>
-                                            </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3">Email
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Email
 													<span class="required">
 														 *
 													</span>
-                                            </label>
+                                        </label>
 
-                                            <div class="col-md-4">
-                                                <input type="text" class="form-control" id="Wemail" name="email"/>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" id="Wemail" name="email"/>
 														<span class="help-block">
 															 Provide your email address
 														</span>
-                                            </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3">Country
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Country
 													<span class="required">
 														 *
 													</span>
-                                            </label>
+                                        </label>
 
-                                            <div class="col-md-4">
-                                                <select name="country" id="country" class="form-control">
-                                                    <option value="" selected="selected">Select Country</option>
-                                                    <option value="United States">United States</option>
-                                                    <option value="United Kingdom">United Kingdom</option>
-                                                    <option value="Afghanistan">Afghanistan</option>
-                                                    <option value="Albania">Albania</option>
-                                                    <option value="Algeria">Algeria</option>
-                                                    <option value="American Samoa">American Samoa</option>
-                                                    <option value="Andorra">Andorra</option>
-                                                    <option value="Angola">Angola</option>
-                                                    <option value="Anguilla">Anguilla</option>
-                                                    <option value="Antarctica">Antarctica</option>
-                                                    <option value="Antigua and Barbuda">Antigua and Barbuda</option>
-                                                    <option value="Argentina">Argentina</option>
-                                                    <option value="Armenia">Armenia</option>
-                                                    <option value="Aruba">Aruba</option>
-                                                    <option value="Australia">Australia</option>
-                                                    <option value="Austria">Austria</option>
-                                                    <option value="Azerbaijan">Azerbaijan</option>
-                                                    <option value="Bahamas">Bahamas</option>
-                                                    <option value="Bahrain">Bahrain</option>
-                                                    <option value="Bangladesh">Bangladesh</option>
-                                                    <option value="Barbados">Barbados</option>
-                                                    <option value="Belarus">Belarus</option>
-                                                    <option value="Belgium">Belgium</option>
-                                                    <option value="Belize">Belize</option>
-                                                    <option value="Benin">Benin</option>
-                                                    <option value="Bermuda">Bermuda</option>
-                                                    <option value="Bhutan">Bhutan</option>
-                                                    <option value="Bolivia">Bolivia</option>
-                                                    <option value="Bosnia and Herzegovina">Bosnia and Herzegovina
-                                                    </option>
-                                                    <option value="Botswana">Botswana</option>
-                                                    <option value="Bouvet Island">Bouvet Island</option>
-                                                    <option value="Brazil">Brazil</option>
-                                                    <option value="British Indian Ocean Territory">British Indian Ocean
-                                                        Territory
-                                                    </option>
-                                                    <option value="Brunei Darussalam">Brunei Darussalam</option>
-                                                    <option value="Bulgaria">Bulgaria</option>
-                                                    <option value="Burkina Faso">Burkina Faso</option>
-                                                    <option value="Burundi">Burundi</option>
-                                                    <option value="Cambodia">Cambodia</option>
-                                                    <option value="Cameroon">Cameroon</option>
-                                                    <option value="Canada">Canada</option>
-                                                    <option value="Cape Verde">Cape Verde</option>
-                                                    <option value="Cayman Islands">Cayman Islands</option>
-                                                    <option value="Central African Republic">Central African Republic
-                                                    </option>
-                                                    <option value="Chad">Chad</option>
-                                                    <option value="Chile">Chile</option>
-                                                    <option value="China">China</option>
-                                                    <option value="Christmas Island">Christmas Island</option>
-                                                    <option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands
-                                                    </option>
-                                                    <option value="Colombia">Colombia</option>
-                                                    <option value="Comoros">Comoros</option>
-                                                    <option value="Congo">Congo</option>
-                                                    <option value="Congo, The Democratic Republic of The">Congo, The
-                                                        Democratic
-                                                        Republic of The
-                                                    </option>
-                                                    <option value="Cook Islands">Cook Islands</option>
-                                                    <option value="Costa Rica">Costa Rica</option>
-                                                    <option value="Cote D'ivoire">Cote D'ivoire</option>
-                                                    <option value="Croatia">Croatia</option>
-                                                    <option value="Cuba">Cuba</option>
-                                                    <option value="Cyprus">Cyprus</option>
-                                                    <option value="Czech Republic">Czech Republic</option>
-                                                    <option value="Denmark">Denmark</option>
-                                                    <option value="Djibouti">Djibouti</option>
-                                                    <option value="Dominica">Dominica</option>
-                                                    <option value="Dominican Republic">Dominican Republic</option>
-                                                    <option value="Ecuador">Ecuador</option>
-                                                    <option value="Egypt">Egypt</option>
-                                                    <option value="El Salvador">El Salvador</option>
-                                                    <option value="Equatorial Guinea">Equatorial Guinea</option>
-                                                    <option value="Eritrea">Eritrea</option>
-                                                    <option value="Estonia">Estonia</option>
-                                                    <option value="Ethiopia">Ethiopia</option>
-                                                    <option value="Falkland Islands (Malvinas)">Falkland Islands
-                                                        (Malvinas)
-                                                    </option>
-                                                    <option value="Faroe Islands">Faroe Islands</option>
-                                                    <option value="Fiji">Fiji</option>
-                                                    <option value="Finland">Finland</option>
-                                                    <option value="France">France</option>
-                                                    <option value="French Guiana">French Guiana</option>
-                                                    <option value="French Polynesia">French Polynesia</option>
-                                                    <option value="French Southern Territories">French Southern
-                                                        Territories
-                                                    </option>
-                                                    <option value="Gabon">Gabon</option>
-                                                    <option value="Gambia">Gambia</option>
-                                                    <option value="Georgia">Georgia</option>
-                                                    <option value="Germany">Germany</option>
-                                                    <option value="Ghana">Ghana</option>
-                                                    <option value="Gibraltar">Gibraltar</option>
-                                                    <option value="Greece">Greece</option>
-                                                    <option value="Greenland">Greenland</option>
-                                                    <option value="Grenada">Grenada</option>
-                                                    <option value="Guadeloupe">Guadeloupe</option>
-                                                    <option value="Guam">Guam</option>
-                                                    <option value="Guatemala">Guatemala</option>
-                                                    <option value="Guinea">Guinea</option>
-                                                    <option value="Guinea-bissau">Guinea-bissau</option>
-                                                    <option value="Guyana">Guyana</option>
-                                                    <option value="Haiti">Haiti</option>
-                                                    <option value="Heard Island and Mcdonald Islands">Heard Island and
-                                                        Mcdonald
-                                                        Islands
-                                                    </option>
-                                                    <option value="Holy See (Vatican City State)">Holy See (Vatican City
-                                                        State)
-                                                    </option>
-                                                    <option value="Honduras">Honduras</option>
-                                                    <option value="Hong Kong">Hong Kong</option>
-                                                    <option value="Hungary">Hungary</option>
-                                                    <option value="Iceland">Iceland</option>
-                                                    <option value="India">India</option>
-                                                    <option value="Indonesia">Indonesia</option>
-                                                    <option value="Iran, Islamic Republic of">Iran, Islamic Republic
-                                                        of
-                                                    </option>
-                                                    <option value="Iraq">Iraq</option>
-                                                    <option value="Ireland">Ireland</option>
-                                                    <option value="Israel">Israel</option>
-                                                    <option value="Italy">Italy</option>
-                                                    <option value="Jamaica">Jamaica</option>
-                                                    <option value="Japan">Japan</option>
-                                                    <option value="Jordan">Jordan</option>
-                                                    <option value="Kazakhstan">Kazakhstan</option>
-                                                    <option value="Kenya">Kenya</option>
-                                                    <option value="Kiribati">Kiribati</option>
-                                                    <option value="Korea, Democratic People's Republic of">Korea,
-                                                        Democratic
-                                                        People's Republic of
-                                                    </option>
-                                                    <option value="Korea, Republic of">Korea, Republic of</option>
-                                                    <option value="Kuwait">Kuwait</option>
-                                                    <option value="Kyrgyzstan">Kyrgyzstan</option>
-                                                    <option value="Lao People's Democratic Republic">Lao People's
-                                                        Democratic
-                                                        Republic
-                                                    </option>
-                                                    <option value="Latvia">Latvia</option>
-                                                    <option value="Lebanon">Lebanon</option>
-                                                    <option value="Lesotho">Lesotho</option>
-                                                    <option value="Liberia">Liberia</option>
-                                                    <option value="Libyan Arab Jamahiriya">Libyan Arab Jamahiriya
-                                                    </option>
-                                                    <option value="Liechtenstein">Liechtenstein</option>
-                                                    <option value="Lithuania">Lithuania</option>
-                                                    <option value="Luxembourg">Luxembourg</option>
-                                                    <option value="Macao">Macao</option>
-                                                    <option value="Macedonia, The Former Yugoslav Republic of">
-                                                        Macedonia, The Former
-                                                        Yugoslav Republic of
-                                                    </option>
-                                                    <option value="Madagascar">Madagascar</option>
-                                                    <option value="Malawi">Malawi</option>
-                                                    <option value="Malaysia">Malaysia</option>
-                                                    <option value="Maldives">Maldives</option>
-                                                    <option value="Mali">Mali</option>
-                                                    <option value="Malta">Malta</option>
-                                                    <option value="Marshall Islands">Marshall Islands</option>
-                                                    <option value="Martinique">Martinique</option>
-                                                    <option value="Mauritania">Mauritania</option>
-                                                    <option value="Mauritius">Mauritius</option>
-                                                    <option value="Mayotte">Mayotte</option>
-                                                    <option value="Mexico">Mexico</option>
-                                                    <option value="Micronesia, Federated States of">Micronesia,
-                                                        Federated States
-                                                        of
-                                                    </option>
-                                                    <option value="Moldova, Republic of">Moldova, Republic of</option>
-                                                    <option value="Monaco">Monaco</option>
-                                                    <option value="Mongolia">Mongolia</option>
-                                                    <option value="Montserrat">Montserrat</option>
-                                                    <option value="Morocco">Morocco</option>
-                                                    <option value="Mozambique">Mozambique</option>
-                                                    <option value="Myanmar">Myanmar</option>
-                                                    <option value="Namibia">Namibia</option>
-                                                    <option value="Nauru">Nauru</option>
-                                                    <option value="Nepal">Nepal</option>
-                                                    <option value="Netherlands">Netherlands</option>
-                                                    <option value="Netherlands Antilles">Netherlands Antilles</option>
-                                                    <option value="New Caledonia">New Caledonia</option>
-                                                    <option value="New Zealand">New Zealand</option>
-                                                    <option value="Nicaragua">Nicaragua</option>
-                                                    <option value="Niger">Niger</option>
-                                                    <option value="Nigeria">Nigeria</option>
-                                                    <option value="Niue">Niue</option>
-                                                    <option value="Norfolk Island">Norfolk Island</option>
-                                                    <option value="Northern Mariana Islands">Northern Mariana Islands
-                                                    </option>
-                                                    <option value="Norway">Norway</option>
-                                                    <option value="Oman">Oman</option>
-                                                    <option value="Pakistan">Pakistan</option>
-                                                    <option value="Palau">Palau</option>
-                                                    <option value="Palestinian Territory, Occupied">Palestinian
-                                                        Territory,
-                                                        Occupied
-                                                    </option>
-                                                    <option value="Panama">Panama</option>
-                                                    <option value="Papua New Guinea">Papua New Guinea</option>
-                                                    <option value="Paraguay">Paraguay</option>
-                                                    <option value="Peru">Peru</option>
-                                                    <option value="Philippines">Philippines</option>
-                                                    <option value="Pitcairn">Pitcairn</option>
-                                                    <option value="Poland">Poland</option>
-                                                    <option value="Portugal">Portugal</option>
-                                                    <option value="Puerto Rico">Puerto Rico</option>
-                                                    <option value="Qatar">Qatar</option>
-                                                    <option value="Reunion">Reunion</option>
-                                                    <option value="Romania">Romania</option>
-                                                    <option value="Russian Federation">Russian Federation</option>
-                                                    <option value="Rwanda">Rwanda</option>
-                                                    <option value="Saint Helena">Saint Helena</option>
-                                                    <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
-                                                    <option value="Saint Lucia">Saint Lucia</option>
-                                                    <option value="Saint Pierre and Miquelon">Saint Pierre and
-                                                        Miquelon
-                                                    </option>
-                                                    <option value="Saint Vincent and The Grenadines">Saint Vincent and
-                                                        The
-                                                        Grenadines
-                                                    </option>
-                                                    <option value="Samoa">Samoa</option>
-                                                    <option value="San Marino">San Marino</option>
-                                                    <option value="Sao Tome and Principe">Sao Tome and Principe</option>
-                                                    <option value="Saudi Arabia">Saudi Arabia</option>
-                                                    <option value="Senegal">Senegal</option>
-                                                    <option value="Serbia and Montenegro">Serbia and Montenegro</option>
-                                                    <option value="Seychelles">Seychelles</option>
-                                                    <option value="Sierra Leone">Sierra Leone</option>
-                                                    <option value="Singapore">Singapore</option>
-                                                    <option value="Slovakia">Slovakia</option>
-                                                    <option value="Slovenia">Slovenia</option>
-                                                    <option value="Solomon Islands">Solomon Islands</option>
-                                                    <option value="Somalia">Somalia</option>
-                                                    <option value="South Africa">South Africa</option>
-                                                    <option value="South Georgia and The South Sandwich Islands">South
-                                                        Georgia and
-                                                        The South Sandwich Islands
-                                                    </option>
-                                                    <option value="Spain">Spain</option>
-                                                    <option value="Sri Lanka">Sri Lanka</option>
-                                                    <option value="Sudan">Sudan</option>
-                                                    <option value="Suriname">Suriname</option>
-                                                    <option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen
-                                                    </option>
-                                                    <option value="Swaziland">Swaziland</option>
-                                                    <option value="Sweden">Sweden</option>
-                                                    <option value="Switzerland">Switzerland</option>
-                                                    <option value="Syrian Arab Republic">Syrian Arab Republic</option>
-                                                    <option value="Taiwan, Province of China">Taiwan, Province of
-                                                        China
-                                                    </option>
-                                                    <option value="Tajikistan">Tajikistan</option>
-                                                    <option value="Tanzania, United Republic of">Tanzania, United
-                                                        Republic of
-                                                    </option>
-                                                    <option value="Thailand">Thailand</option>
-                                                    <option value="Timor-leste">Timor-leste</option>
-                                                    <option value="Togo">Togo</option>
-                                                    <option value="Tokelau">Tokelau</option>
-                                                    <option value="Tonga">Tonga</option>
-                                                    <option value="Trinidad and Tobago">Trinidad and Tobago</option>
-                                                    <option value="Tunisia">Tunisia</option>
-                                                    <option value="Turkey">Turkey</option>
-                                                    <option value="Turkmenistan">Turkmenistan</option>
-                                                    <option value="Turks and Caicos Islands">Turks and Caicos Islands
-                                                    </option>
-                                                    <option value="Tuvalu">Tuvalu</option>
-                                                    <option value="Uganda">Uganda</option>
-                                                    <option value="Ukraine">Ukraine</option>
-                                                    <option value="United Arab Emirates">United Arab Emirates</option>
-                                                    <option value="United Kingdom">United Kingdom</option>
-                                                    <option value="United States">United States</option>
-                                                    <option value="United States Minor Outlying Islands">United States
-                                                        Minor
-                                                        Outlying Islands
-                                                    </option>
-                                                    <option value="Uruguay">Uruguay</option>
-                                                    <option value="Uzbekistan">Uzbekistan</option>
-                                                    <option value="Vanuatu">Vanuatu</option>
-                                                    <option value="Venezuela">Venezuela</option>
-                                                    <option value="Viet Nam">Viet Nam</option>
-                                                    <option value="Virgin Islands, British">Virgin Islands, British
-                                                    </option>
-                                                    <option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option>
-                                                    <option value="Wallis and Futuna">Wallis and Futuna</option>
-                                                    <option value="Western Sahara">Western Sahara</option>
-                                                    <option value="Yemen">Yemen</option>
-                                                    <option value="Zambia">Zambia</option>
-                                                    <option value="Zimbabwe">Zimbabwe</option>
-                                                </select>
+                                        <div class="col-md-4">
+                                            <select name="country" id="country" class="form-control">
+                                                <option value="" selected="selected">Select Country</option>
+                                                <option value="United States">United States</option>
+                                                <option value="United Kingdom">United Kingdom</option>
+                                                <option value="Afghanistan">Afghanistan</option>
+                                                <option value="Albania">Albania</option>
+                                                <option value="Algeria">Algeria</option>
+                                                <option value="American Samoa">American Samoa</option>
+                                                <option value="Andorra">Andorra</option>
+                                                <option value="Angola">Angola</option>
+                                                <option value="Anguilla">Anguilla</option>
+                                                <option value="Antarctica">Antarctica</option>
+                                                <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+                                                <option value="Argentina">Argentina</option>
+                                                <option value="Armenia">Armenia</option>
+                                                <option value="Aruba">Aruba</option>
+                                                <option value="Australia">Australia</option>
+                                                <option value="Austria">Austria</option>
+                                                <option value="Azerbaijan">Azerbaijan</option>
+                                                <option value="Bahamas">Bahamas</option>
+                                                <option value="Bahrain">Bahrain</option>
+                                                <option value="Bangladesh">Bangladesh</option>
+                                                <option value="Barbados">Barbados</option>
+                                                <option value="Belarus">Belarus</option>
+                                                <option value="Belgium">Belgium</option>
+                                                <option value="Belize">Belize</option>
+                                                <option value="Benin">Benin</option>
+                                                <option value="Bermuda">Bermuda</option>
+                                                <option value="Bhutan">Bhutan</option>
+                                                <option value="Bolivia">Bolivia</option>
+                                                <option value="Bosnia and Herzegovina">Bosnia and Herzegovina
+                                                </option>
+                                                <option value="Botswana">Botswana</option>
+                                                <option value="Bouvet Island">Bouvet Island</option>
+                                                <option value="Brazil">Brazil</option>
+                                                <option value="British Indian Ocean Territory">British Indian Ocean
+                                                    Territory
+                                                </option>
+                                                <option value="Brunei Darussalam">Brunei Darussalam</option>
+                                                <option value="Bulgaria">Bulgaria</option>
+                                                <option value="Burkina Faso">Burkina Faso</option>
+                                                <option value="Burundi">Burundi</option>
+                                                <option value="Cambodia">Cambodia</option>
+                                                <option value="Cameroon">Cameroon</option>
+                                                <option value="Canada">Canada</option>
+                                                <option value="Cape Verde">Cape Verde</option>
+                                                <option value="Cayman Islands">Cayman Islands</option>
+                                                <option value="Central African Republic">Central African Republic
+                                                </option>
+                                                <option value="Chad">Chad</option>
+                                                <option value="Chile">Chile</option>
+                                                <option value="China">China</option>
+                                                <option value="Christmas Island">Christmas Island</option>
+                                                <option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands
+                                                </option>
+                                                <option value="Colombia">Colombia</option>
+                                                <option value="Comoros">Comoros</option>
+                                                <option value="Congo">Congo</option>
+                                                <option value="Congo, The Democratic Republic of The">Congo, The
+                                                    Democratic
+                                                    Republic of The
+                                                </option>
+                                                <option value="Cook Islands">Cook Islands</option>
+                                                <option value="Costa Rica">Costa Rica</option>
+                                                <option value="Cote D'ivoire">Cote D'ivoire</option>
+                                                <option value="Croatia">Croatia</option>
+                                                <option value="Cuba">Cuba</option>
+                                                <option value="Cyprus">Cyprus</option>
+                                                <option value="Czech Republic">Czech Republic</option>
+                                                <option value="Denmark">Denmark</option>
+                                                <option value="Djibouti">Djibouti</option>
+                                                <option value="Dominica">Dominica</option>
+                                                <option value="Dominican Republic">Dominican Republic</option>
+                                                <option value="Ecuador">Ecuador</option>
+                                                <option value="Egypt">Egypt</option>
+                                                <option value="El Salvador">El Salvador</option>
+                                                <option value="Equatorial Guinea">Equatorial Guinea</option>
+                                                <option value="Eritrea">Eritrea</option>
+                                                <option value="Estonia">Estonia</option>
+                                                <option value="Ethiopia">Ethiopia</option>
+                                                <option value="Falkland Islands (Malvinas)">Falkland Islands
+                                                    (Malvinas)
+                                                </option>
+                                                <option value="Faroe Islands">Faroe Islands</option>
+                                                <option value="Fiji">Fiji</option>
+                                                <option value="Finland">Finland</option>
+                                                <option value="France">France</option>
+                                                <option value="French Guiana">French Guiana</option>
+                                                <option value="French Polynesia">French Polynesia</option>
+                                                <option value="French Southern Territories">French Southern
+                                                    Territories
+                                                </option>
+                                                <option value="Gabon">Gabon</option>
+                                                <option value="Gambia">Gambia</option>
+                                                <option value="Georgia">Georgia</option>
+                                                <option value="Germany">Germany</option>
+                                                <option value="Ghana">Ghana</option>
+                                                <option value="Gibraltar">Gibraltar</option>
+                                                <option value="Greece">Greece</option>
+                                                <option value="Greenland">Greenland</option>
+                                                <option value="Grenada">Grenada</option>
+                                                <option value="Guadeloupe">Guadeloupe</option>
+                                                <option value="Guam">Guam</option>
+                                                <option value="Guatemala">Guatemala</option>
+                                                <option value="Guinea">Guinea</option>
+                                                <option value="Guinea-bissau">Guinea-bissau</option>
+                                                <option value="Guyana">Guyana</option>
+                                                <option value="Haiti">Haiti</option>
+                                                <option value="Heard Island and Mcdonald Islands">Heard Island and
+                                                    Mcdonald
+                                                    Islands
+                                                </option>
+                                                <option value="Holy See (Vatican City State)">Holy See (Vatican City
+                                                    State)
+                                                </option>
+                                                <option value="Honduras">Honduras</option>
+                                                <option value="Hong Kong">Hong Kong</option>
+                                                <option value="Hungary">Hungary</option>
+                                                <option value="Iceland">Iceland</option>
+                                                <option value="India">India</option>
+                                                <option value="Indonesia">Indonesia</option>
+                                                <option value="Iran, Islamic Republic of">Iran, Islamic Republic
+                                                    of
+                                                </option>
+                                                <option value="Iraq">Iraq</option>
+                                                <option value="Ireland">Ireland</option>
+                                                <option value="Israel">Israel</option>
+                                                <option value="Italy">Italy</option>
+                                                <option value="Jamaica">Jamaica</option>
+                                                <option value="Japan">Japan</option>
+                                                <option value="Jordan">Jordan</option>
+                                                <option value="Kazakhstan">Kazakhstan</option>
+                                                <option value="Kenya">Kenya</option>
+                                                <option value="Kiribati">Kiribati</option>
+                                                <option value="Korea, Democratic People's Republic of">Korea,
+                                                    Democratic
+                                                    People's Republic of
+                                                </option>
+                                                <option value="Korea, Republic of">Korea, Republic of</option>
+                                                <option value="Kuwait">Kuwait</option>
+                                                <option value="Kyrgyzstan">Kyrgyzstan</option>
+                                                <option value="Lao People's Democratic Republic">Lao People's
+                                                    Democratic
+                                                    Republic
+                                                </option>
+                                                <option value="Latvia">Latvia</option>
+                                                <option value="Lebanon">Lebanon</option>
+                                                <option value="Lesotho">Lesotho</option>
+                                                <option value="Liberia">Liberia</option>
+                                                <option value="Libyan Arab Jamahiriya">Libyan Arab Jamahiriya
+                                                </option>
+                                                <option value="Liechtenstein">Liechtenstein</option>
+                                                <option value="Lithuania">Lithuania</option>
+                                                <option value="Luxembourg">Luxembourg</option>
+                                                <option value="Macao">Macao</option>
+                                                <option value="Macedonia, The Former Yugoslav Republic of">
+                                                    Macedonia, The Former
+                                                    Yugoslav Republic of
+                                                </option>
+                                                <option value="Madagascar">Madagascar</option>
+                                                <option value="Malawi">Malawi</option>
+                                                <option value="Malaysia">Malaysia</option>
+                                                <option value="Maldives">Maldives</option>
+                                                <option value="Mali">Mali</option>
+                                                <option value="Malta">Malta</option>
+                                                <option value="Marshall Islands">Marshall Islands</option>
+                                                <option value="Martinique">Martinique</option>
+                                                <option value="Mauritania">Mauritania</option>
+                                                <option value="Mauritius">Mauritius</option>
+                                                <option value="Mayotte">Mayotte</option>
+                                                <option value="Mexico">Mexico</option>
+                                                <option value="Micronesia, Federated States of">Micronesia,
+                                                    Federated States
+                                                    of
+                                                </option>
+                                                <option value="Moldova, Republic of">Moldova, Republic of</option>
+                                                <option value="Monaco">Monaco</option>
+                                                <option value="Mongolia">Mongolia</option>
+                                                <option value="Montserrat">Montserrat</option>
+                                                <option value="Morocco">Morocco</option>
+                                                <option value="Mozambique">Mozambique</option>
+                                                <option value="Myanmar">Myanmar</option>
+                                                <option value="Namibia">Namibia</option>
+                                                <option value="Nauru">Nauru</option>
+                                                <option value="Nepal">Nepal</option>
+                                                <option value="Netherlands">Netherlands</option>
+                                                <option value="Netherlands Antilles">Netherlands Antilles</option>
+                                                <option value="New Caledonia">New Caledonia</option>
+                                                <option value="New Zealand">New Zealand</option>
+                                                <option value="Nicaragua">Nicaragua</option>
+                                                <option value="Niger">Niger</option>
+                                                <option value="Nigeria">Nigeria</option>
+                                                <option value="Niue">Niue</option>
+                                                <option value="Norfolk Island">Norfolk Island</option>
+                                                <option value="Northern Mariana Islands">Northern Mariana Islands
+                                                </option>
+                                                <option value="Norway">Norway</option>
+                                                <option value="Oman">Oman</option>
+                                                <option value="Pakistan">Pakistan</option>
+                                                <option value="Palau">Palau</option>
+                                                <option value="Palestinian Territory, Occupied">Palestinian
+                                                    Territory,
+                                                    Occupied
+                                                </option>
+                                                <option value="Panama">Panama</option>
+                                                <option value="Papua New Guinea">Papua New Guinea</option>
+                                                <option value="Paraguay">Paraguay</option>
+                                                <option value="Peru">Peru</option>
+                                                <option value="Philippines">Philippines</option>
+                                                <option value="Pitcairn">Pitcairn</option>
+                                                <option value="Poland">Poland</option>
+                                                <option value="Portugal">Portugal</option>
+                                                <option value="Puerto Rico">Puerto Rico</option>
+                                                <option value="Qatar">Qatar</option>
+                                                <option value="Reunion">Reunion</option>
+                                                <option value="Romania">Romania</option>
+                                                <option value="Russian Federation">Russian Federation</option>
+                                                <option value="Rwanda">Rwanda</option>
+                                                <option value="Saint Helena">Saint Helena</option>
+                                                <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+                                                <option value="Saint Lucia">Saint Lucia</option>
+                                                <option value="Saint Pierre and Miquelon">Saint Pierre and
+                                                    Miquelon
+                                                </option>
+                                                <option value="Saint Vincent and The Grenadines">Saint Vincent and
+                                                    The
+                                                    Grenadines
+                                                </option>
+                                                <option value="Samoa">Samoa</option>
+                                                <option value="San Marino">San Marino</option>
+                                                <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+                                                <option value="Saudi Arabia">Saudi Arabia</option>
+                                                <option value="Senegal">Senegal</option>
+                                                <option value="Serbia and Montenegro">Serbia and Montenegro</option>
+                                                <option value="Seychelles">Seychelles</option>
+                                                <option value="Sierra Leone">Sierra Leone</option>
+                                                <option value="Singapore">Singapore</option>
+                                                <option value="Slovakia">Slovakia</option>
+                                                <option value="Slovenia">Slovenia</option>
+                                                <option value="Solomon Islands">Solomon Islands</option>
+                                                <option value="Somalia">Somalia</option>
+                                                <option value="South Africa">South Africa</option>
+                                                <option value="South Georgia and The South Sandwich Islands">South
+                                                    Georgia and
+                                                    The South Sandwich Islands
+                                                </option>
+                                                <option value="Spain">Spain</option>
+                                                <option value="Sri Lanka">Sri Lanka</option>
+                                                <option value="Sudan">Sudan</option>
+                                                <option value="Suriname">Suriname</option>
+                                                <option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen
+                                                </option>
+                                                <option value="Swaziland">Swaziland</option>
+                                                <option value="Sweden">Sweden</option>
+                                                <option value="Switzerland">Switzerland</option>
+                                                <option value="Syrian Arab Republic">Syrian Arab Republic</option>
+                                                <option value="Taiwan, Province of China">Taiwan, Province of
+                                                    China
+                                                </option>
+                                                <option value="Tajikistan">Tajikistan</option>
+                                                <option value="Tanzania, United Republic of">Tanzania, United
+                                                    Republic of
+                                                </option>
+                                                <option value="Thailand">Thailand</option>
+                                                <option value="Timor-leste">Timor-leste</option>
+                                                <option value="Togo">Togo</option>
+                                                <option value="Tokelau">Tokelau</option>
+                                                <option value="Tonga">Tonga</option>
+                                                <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+                                                <option value="Tunisia">Tunisia</option>
+                                                <option value="Turkey">Turkey</option>
+                                                <option value="Turkmenistan">Turkmenistan</option>
+                                                <option value="Turks and Caicos Islands">Turks and Caicos Islands
+                                                </option>
+                                                <option value="Tuvalu">Tuvalu</option>
+                                                <option value="Uganda">Uganda</option>
+                                                <option value="Ukraine">Ukraine</option>
+                                                <option value="United Arab Emirates">United Arab Emirates</option>
+                                                <option value="United Kingdom">United Kingdom</option>
+                                                <option value="United States">United States</option>
+                                                <option value="United States Minor Outlying Islands">United States
+                                                    Minor
+                                                    Outlying Islands
+                                                </option>
+                                                <option value="Uruguay">Uruguay</option>
+                                                <option value="Uzbekistan">Uzbekistan</option>
+                                                <option value="Vanuatu">Vanuatu</option>
+                                                <option value="Venezuela">Venezuela</option>
+                                                <option value="Viet Nam">Viet Nam</option>
+                                                <option value="Virgin Islands, British">Virgin Islands, British
+                                                </option>
+                                                <option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option>
+                                                <option value="Wallis and Futuna">Wallis and Futuna</option>
+                                                <option value="Western Sahara">Western Sahara</option>
+                                                <option value="Yemen">Yemen</option>
+                                                <option value="Zambia">Zambia</option>
+                                                <option value="Zimbabwe">Zimbabwe</option>
+                                            </select>
 														<span class="help-block">
 															 Provide your country
 														</span>
-                                            </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3">City/Town
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">City/Town
 													<span class="required">
 														 *
 													</span>
-                                            </label>
+                                        </label>
 
-                                            <div class="col-md-4">
-                                                <input type="text" class="form-control" id="city" name="city"/>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" id="city" name="city"/>
 														<span class="help-block">
 															 Provide your city/town
 														</span>
-                                            </div>
                                         </div>
                                     </div>
+                                </div>
 
 
-                                    <div class="tab-pane" id="tab2">
-                                        <h3 class="block">Reserve las habitaciones que usted quiera y como las
-                                            quiera</h3>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3">Cantidad de Habitaciones
+                                <div class="tab-pane" id="tab2">
+                                    <h3 class="block">Reserve las habitaciones que usted quiera y como las
+                                        quiera</h3>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Cantidad de Habitaciones
 													<span class="required">
 														 *
 													</span>
-                                            </label>
+                                        </label>
 
-                                            <div class="col-md-4">
-                                                <select name="cantHabitaciones" id="cantHabitaciones"
-                                                        class="form-control"
-                                                        >
-                                                    {% for item in entity.habitacion_set.all %}
-                                                        <option value="{{ forloop.counter }}">{{ forloop.counter }}</option>
-                                                    {% endfor %}
-                                                </select>
+                                        <div class="col-md-4">
+                                            <select name="cantHabitaciones" id="cantHabitaciones"
+                                                    class="form-control"
+                                            >
+                                                {% for item in entity.habitacion_set.all %}
+                                                <option value="{{ forloop.counter }}">{{ forloop.counter }}</option>
+                                                {% endfor %}
+                                            </select>
                                                     <span class="help-block">
                                                          Provide Cantidad total de Habitaciones
                                                     </span>
-                                            </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3">Habitaciones Simples
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Habitaciones Simples
 													<span class="required">
 														 *
 													</span>
-                                            </label>
+                                        </label>
 
-                                            <div class="col-md-4">
-                                                <input type="text" class="form-control" id="cantSimples"
-                                                       name="cantSimples"/>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" id="cantSimples"
+                                                   name="cantSimples"/>
 														<span class="help-block" id="spanSimples">
 															 Provide cantidad de habitaciones Simples
 														</span>
-                                            </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3">Habitaciones Dobles
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Habitaciones Dobles
 													<span class="required">
 														 *
 													</span>
-                                            </label>
+                                        </label>
 
-                                            <div class="col-md-4">
-                                                <input type="text" class="form-control" id="cantDobles"
-                                                       name="cantDobles"/>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" id="cantDobles"
+                                                   name="cantDobles"/>
 														<span class="help-block">
 															 Provide cantidad de habitaciones Dobles
 														</span>
-                                            </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3">Habitaciones Triples
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Habitaciones Triples
 													<span class="required">
 														 *
 													</span>
-                                            </label>
+                                        </label>
 
-                                            <div class="col-md-4">
-                                                <input type="text" class="form-control" id="cantTriples"
-                                                       name="cantTriples"/>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" id="cantTriples"
+                                                   name="cantTriples"/>
 														<span class="help-block">
 															 Provide cantidad de habitaciones Triples
 														</span>
-                                            </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3">Check-in
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Check-in
 													<span class="required">
 														 *
 													</span>
-                                            </label>
+                                        </label>
 
-                                            <div class="col-md-4" data-date-format="YYYY-MM-DD"
-                                                 data-link-format="YYYY-MM-DD">
-                                                <input type="text" class="form-control" id="desde" name="desde"/>
+                                        <div class="col-md-4" data-date-format="YYYY-MM-DD"
+                                             data-link-format="YYYY-MM-DD">
+                                            <input type="text" class="form-control" id="desde" name="desde"/>
 														<span class="help-block">
 															 Provide check-in
 														</span>
-                                            </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3">Check-out
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Check-out
 													<span class="required">
 														 *
 													</span>
-                                            </label>
+                                        </label>
 
-                                            <div class="col-md-4" data-date-format="yyyy-mm-dd">
-                                                <input type="text" class="form-control input-icon" id="hasta"
-                                                       name="hasta"/>
-                                                <!--{#                                                <span class="ion-calendar icon"></span>#}-->
+                                        <div class="col-md-4" data-date-format="yyyy-mm-dd">
+                                            <input type="text" class="form-control input-icon" id="hasta"
+                                                   name="hasta"/>
+                                            <!--{#                                                <span class="ion-calendar icon"></span>#}-->
 
                                                 <span class="help-block">
                                                      Provide check-out
                                                 </span>
-                                            </div>
                                         </div>
-
                                     </div>
-                                    <div class="tab-pane" id="tab3">
-                                        <h3 class="block">Provide other informations</h3>
 
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3">Como llegara a su destino
+                                </div>
+                                <div class="tab-pane" id="tab3">
+                                    <h3 class="block">Provide other informations</h3>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Como llegara a su destino
 													<span class="required">
 														 *
 													</span>
-                                            </label>
+                                        </label>
 
-                                            <div class="col-md-4">
-                                                <select name="llegar" id="llegar" class="form-control">
-                                                    <option value="" selected="selected">Seleccine medio</option>
-                                                    <option value="BusViazul">Bus Viazul</option>
-                                                    <option value="BusTranstur">Bus Transtur</option>
-                                                    <option value="Taxi">Taxi</option>
-                                                    <option value="Car">Car</option>
-                                                    <option value="Other">Other</option>
-                                                </select>
-                                            </div>
+                                        <div class="col-md-4">
+                                            <select name="llegar" id="llegar" class="form-control">
+                                                <option value="" selected="selected">Seleccine medio</option>
+                                                <option value="BusViazul">Bus Viazul</option>
+                                                <option value="BusTranstur">Bus Transtur</option>
+                                                <option value="Taxi">Taxi</option>
+                                                <option value="Car">Car</option>
+                                                <option value="Other">Other</option>
+                                            </select>
                                         </div>
+                                    </div>
 
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3">Hora Estimada de llegada
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Hora Estimada de llegada
 													<span class="required">
 														 *
 													</span>
-                                            </label>
+                                        </label>
 
-                                            <div class="col-md-4">
-                                                <input type="text" name="horaLLegada" data-autoclose="true" id="clock"
-                                                       class="form-control"
-                                                       value="" placeholder="Hora llegada*">
+                                        <div class="col-md-4">
+                                            <input type="text" name="horaLLegada" data-autoclose="true" id="clock"
+                                                   class="form-control"
+                                                   value="" placeholder="Hora llegada*">
 
-                                            </div>
                                         </div>
+                                    </div>
 
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3">Informacion</label>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Informacion</label>
 
-                                            <div class="col-md-4">
+                                        <div class="col-md-4">
                                                 <textarea class="form-control"
                                                           placeholder="Informacion que usted considere importante"
                                                           rows="3" id="informacionCliente"
                                                           name="informacionCliente"></textarea>
-                                            </div>
                                         </div>
-
-
                                     </div>
-                                    <div class="tab-pane" id="tab4">
-                                        <h3 class="block">Confirm your book!!</h3>
-                                        <h4 class="form-section">Basic Information</h4>
-
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3">First Name:</label>
-
-                                            <div class="col-md-4">
-                                                <p class="form-control-static" data-display="fname">
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3">Last Name:</label>
-
-                                            <div class="col-md-4">
-                                                <p class="form-control-static" data-display="lname">
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3">Phone Number:</label>
-
-                                            <div class="col-md-4">
-                                                <p class="form-control-static" data-display="wphone">
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3">Email:</label>
-
-                                            <div class="col-md-4">
-                                                <p class="form-control-static" data-display="email">
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3">Country:</label>
-
-                                            <div class="col-md-4">
-                                                <p class="form-control-static" data-display="country">
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3">City/Town:</label>
-
-                                            <div class="col-md-4">
-                                                <p class="form-control-static" data-display="city">
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <h4 id="asa" class="form-section">Detalles de la reservacion:</h4>
 
 
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3">Cantidad de Habitaciones:</label>
-
-
-                                            <div class="col-md-4">
-                                                <p class="form-control-static" data-display="cantHabitaciones">
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3">Cantidad de Simples:</label>
-
-                                            <div class="col-md-4">
-                                                <p class="form-control-static" data-display="cantSimples">
-                                                </p>
-                                            </div>
-
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3">Cantidad de Dobles:</label>
-
-                                            <div class="col-md-4">
-                                                <p class="form-control-static" data-display="cantDobles">
-                                                </p>
-
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3">Cantidad de Triples:</label>
-
-                                            <div class="col-md-4">
-                                                <p class="form-control-static" data-display="cantTriples">
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-
-                                            <label class="control-label col-md-3">Check-in:</label>
-
-                                            <div class="col-md-4">
-                                                <p class="form-control-static" data-display="desde">
-                                                </p>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3">Check-out:</label>
-
-                                            <div class="col-md-4">
-                                                <p class="form-control-static" data-display="hasta">
-                                                </p>
-                                            </div>
-                                        </div>
-
-
-                                        <h4 class="form-section">Otras Informaciones</h4>
-
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3">Forma de llegada</label>
-
-                                            <div class="col-md-4">
-                                                <p class="form-control-static" data-display="llegar">
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3">Hora estimada</label>
-
-                                            <div class="col-md-4">
-                                                <p class="form-control-static" data-display="horaLLegada">
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3">Informacion que usted considero
-                                                necesaria</label>
-
-                                            <div class="col-md-4">
-                                                <p class="form-control-static" data-display="informacionCliente">
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <input type="hidden" name="homeWizard_id" id="homeId" value="{{ entity.pk }}">
-                                        <input type="hidden" name="wizard_url" id="post_urlWizard"
-                                               value="{% url 'reservar' entity.pk %}">
-                                        <h4 class="form-section">Information</h4>
-
-                                        <div class="information">
-
-
-                                            <p id="finalInformation">sdasdasd</p>
-                                            <br>
-                                            <p>
-                                                <h4>Cancellation Policy</h4>
-                                                Customers can cancel their reservation 2 days before their arrival via email
-                                                or calling by phone to the owner of the house.
-                                            </p>
-                                            <br>
-                                            <p>
-                                                <h4>Prices and Payments</h4>
-                                                The price of the room is : per night per room. The payment will be made to
-                                                our arrival, directly with the owners of the house. <span> Only the payment in cash is accepted.</span>
-                                            </p>
-                                            <br>
-                                            <input type="checkbox" value="1"  id="agree">I agree to the Terms and Conditions
-                                            <h3>Congratulations!!!!</h3>
-
-                                            <p id="finalInformation2">sdasdasd</p>
-                                            <input type="checkbox" name="sadasdasd" id="terms">I agree to the Terms and
-                                            Conditions
-
-                                        </div>
-
-                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-actions fluid">
-                                <div class="row">
-                                    <div class="col-md-offset-3 col-md-9">
-                                        <a href="javascript:;" id="back" class="btn default button-previous">
-                                            <i class="m-icon-swapleft"></i> Back
-                                        </a>
-                                        <a href="javascript:;" class="btn blue button-next">
-                                            Continue <i class="m-icon-swapright m-icon-white"></i>
-                                        </a>
-                                        <input type="submit" id="sendWizard" class="btn green button-submit"
-                                               style="display: none;"
-                                               value="Submit">
-                                        <i class="m-icon-swapright m-icon-white"></i>
+                                <div class="tab-pane" id="tab4">
+                                    <h3 class="block">Confirm your book!!</h3>
+                                    <h4 class="form-section">Basic Information</h4>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">First Name:</label>
+
+                                        <div class="col-md-4">
+                                            <p class="form-control-static" data-display="fname">
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Last Name:</label>
+
+                                        <div class="col-md-4">
+                                            <p class="form-control-static" data-display="lname">
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Phone Number:</label>
+
+                                        <div class="col-md-4">
+                                            <p class="form-control-static" data-display="wphone">
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Email:</label>
+
+                                        <div class="col-md-4">
+                                            <p class="form-control-static" data-display="email">
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Country:</label>
+
+                                        <div class="col-md-4">
+                                            <p class="form-control-static" data-display="country">
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">City/Town:</label>
+
+                                        <div class="col-md-4">
+                                            <p class="form-control-static" data-display="city">
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <h4 id="asa" class="form-section">Detalles de la reservacion:</h4>
+
+
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Cantidad de Habitaciones:</label>
+
+
+                                        <div class="col-md-4">
+                                            <p class="form-control-static" data-display="cantHabitaciones">
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Cantidad de Simples:</label>
+
+                                        <div class="col-md-4">
+                                            <p class="form-control-static" data-display="cantSimples">
+                                            </p>
+                                        </div>
 
                                     </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Cantidad de Dobles:</label>
+
+                                        <div class="col-md-4">
+                                            <p class="form-control-static" data-display="cantDobles">
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Cantidad de Triples:</label>
+
+                                        <div class="col-md-4">
+                                            <p class="form-control-static" data-display="cantTriples">
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+
+                                        <label class="control-label col-md-3">Check-in:</label>
+
+                                        <div class="col-md-4">
+                                            <p class="form-control-static" data-display="desde">
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Check-out:</label>
+
+                                        <div class="col-md-4">
+                                            <p class="form-control-static" data-display="hasta">
+                                            </p>
+                                        </div>
+                                    </div>
+
+
+                                    <h4 class="form-section">Otras Informaciones</h4>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Forma de llegada</label>
+
+                                        <div class="col-md-4">
+                                            <p class="form-control-static" data-display="llegar">
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Hora estimada</label>
+
+                                        <div class="col-md-4">
+                                            <p class="form-control-static" data-display="horaLLegada">
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Informacion que usted considero
+                                            necesaria</label>
+
+                                        <div class="col-md-4">
+                                            <p class="form-control-static" data-display="informacionCliente">
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <input type="hidden" name="homeWizard_id" id="homeId" value="{{ entity.pk }}">
+                                    <input type="hidden" name="wizard_url" id="post_urlWizard"
+                                           value="{% url 'reservar' entity.pk %}">
+                                    <h4 class="form-section">Information</h4>
+
+                                    <div class="information">
+
+
+                                        <p id="finalInformation">sdasdasd</p>
+                                        <br>
+                                        <p>
+                                        <h4>Cancellation Policy</h4>
+                                        Customers can cancel their reservation 2 days before their arrival via email
+                                        or calling by phone to the owner of the house.
+                                        </p>
+                                        <br>
+                                        <p>
+                                        <h4>Prices and Payments</h4>
+                                        The price of the room is : per night per room. The payment will be made to
+                                        our arrival, directly with the owners of the house. <span> Only the payment in cash is accepted.</span>
+                                        </p>
+                                        <br>
+                                        <input type="checkbox" value="1" id="agree">I agree to the Terms and Conditions
+                                        <h3>Congratulations!!!!</h3>
+
+                                        <p id="finalInformation2">sdasdasd</p>
+                                        <input type="checkbox" name="sadasdasd" id="terms">I agree to the Terms and
+                                        Conditions
+
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
-                    </form>
-                </div>
+                        <div class="form-actions fluid">
+                            <div class="row">
+                                <div class="col-md-offset-3 col-md-9">
+                                    <a href="javascript:;" id="back" class="btn default button-previous">
+                                        <i class="m-icon-swapleft"></i> Back
+                                    </a>
+                                    <a href="javascript:;" class="btn blue button-next">
+                                        Continue <i class="m-icon-swapright m-icon-white"></i>
+                                    </a>
+                                    <input type="submit" id="sendWizard" class="btn green button-submit"
+                                           style="display: none;"
+                                           value="Submit">
+                                    <i class="m-icon-swapright m-icon-white"></i>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
+</div>
 
 
-    <div class="reviews-details" id="comments">
-        <div class="container">
-            <h5 class="reviews-count">{{ entity.feedback_set.all.count }} Reviews</h5>
+<div class="reviews-details" id="comments">
+    <div class="container">
+        <h5 class="reviews-count">{{ entity.feedback_set.all.count }} Reviews</h5>
 
-            {#            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">#}
-            {#                <h5 class="title-details">Resumen</h5>#}
-            {#            </div>#}
-            {#            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">#}
-            {#                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">#}
-            {#                    <h6 class="point">Habitaciones: </h6>#}
-            {#                    <span class="score">#}
-            {#                        <span class="ion-star"></span>#}
-            {#                        <span class="ion-star"></span>#}
-            {#                        <span class="ion-star"></span>#}
-            {#                        <span class="ion-star"></span>#}
-            {#                        <span class="ion-star"></span>#}
-            {#                    </span>#}
-            {#                </div>#}
-            {#                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">#}
-            {#                    <h6 class="point">Limpieza: </h6>#}
-            {#                    <span class="score">#}
-            {#                        <span class="ion-star"></span>#}
-            {#                        <span class="ion-star"></span>#}
-            {#                        <span class="ion-star"></span>#}
-            {#                        <span class="ion-star"></span>#}
-            {#                        <span class="ion-star"></span>#}
-            {#                    </span>#}
-            {#                </div>#}
-            {#                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">#}
-            {#                    <h6 class="point">Atencion: </h6>#}
-            {#                    <span class="score">#}
-            {#                        <span class="ion-star"></span>#}
-            {#                        <span class="ion-star"></span>#}
-            {#                        <span class="ion-star"></span>#}
-            {#                        <span class="ion-star"></span>#}
-            {#                        <span class="ion-star"></span>#}
-            {#                    </span>#}
-            {#                </div>#}
-            {#                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">#}
-            {#                    <h6 class="point">Recibida: </h6>#}
-            {#                    <span class="score">#}
-            {#                        <span class="ion-star"></span>#}
-            {#                        <span class="ion-star"></span>#}
-            {#                        <span class="ion-star"></span>#}
-            {#                        <span class="ion-star"></span>#}
-            {#                        <span class="ion-star"></span>#}
-            {#                    </span>#}
-            {#                </div>#}
-            {#                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">#}
-            {#                    <h6 class="point">Despedida: </h6>#}
-            {#                    <span class="score">#}
-            {#                        <span class="ion-star"></span>#}
-            {#                        <span class="ion-star"></span>#}
-            {#                        <span class="ion-star"></span>#}
-            {#                        <span class="ion-star"></span>#}
-            {#                        <span class="ion-star"></span>#}
-            {#                    </span>#}
-            {#                </div>#}
-            {#                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">#}
-            {#                    <h6 class="point">Alimentacion: </h6>#}
-            {#                    <span class="score">#}
-            {#                        <span class="ion-star"></span>#}
-            {#                        <span class="ion-star"></span>#}
-            {#                        <span class="ion-star"></span>#}
-            {#                        <span class="ion-star"></span>#}
-            {#                        <span class="ion-star"></span>#}
-            {#                    </span>#}
-            {#                </div>#}
-            {#            </div>#}
+        <!--{#-->
+        <!--<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">#}-->
+            <!--{# <h5 class="title-details">Resumen</h5>#}-->
+            <!--{#-->
+        <!--</div>-->
+        <!--#}-->
+        <!--{#-->
+        <!--<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">#}-->
+            <!--{#-->
+            <!--<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">#}-->
+                <!--{# <h6 class="point">Habitaciones: </h6>#}-->
+                <!--{#                    <span class="score">#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                    </span>#}-->
+                <!--{#-->
+            <!--</div>-->
+            <!--#}-->
+            <!--{#-->
+            <!--<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">#}-->
+                <!--{# <h6 class="point">Limpieza: </h6>#}-->
+                <!--{#                    <span class="score">#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                    </span>#}-->
+                <!--{#-->
+            <!--</div>-->
+            <!--#}-->
+            <!--{#-->
+            <!--<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">#}-->
+                <!--{# <h6 class="point">Atencion: </h6>#}-->
+                <!--{#                    <span class="score">#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                    </span>#}-->
+                <!--{#-->
+            <!--</div>-->
+            <!--#}-->
+            <!--{#-->
+            <!--<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">#}-->
+                <!--{# <h6 class="point">Recibida: </h6>#}-->
+                <!--{#                    <span class="score">#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                    </span>#}-->
+                <!--{#-->
+            <!--</div>-->
+            <!--#}-->
+            <!--{#-->
+            <!--<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">#}-->
+                <!--{# <h6 class="point">Despedida: </h6>#}-->
+                <!--{#                    <span class="score">#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                    </span>#}-->
+                <!--{#-->
+            <!--</div>-->
+            <!--#}-->
+            <!--{#-->
+            <!--<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">#}-->
+                <!--{# <h6 class="point">Alimentacion: </h6>#}-->
+                <!--{#                    <span class="score">#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                        <span class="ion-star"></span>#}-->
+            <!--{#                    </span>#}-->
+                <!--{#-->
+            <!--</div>-->
+            <!--#}-->
+            <!--{#-->
+        <!--</div>-->
+        <!--#}-->
 
-            <div class="col-xs-12">
-                <button class="translator-btn btn btn-block">Translate all the experiences</button>
+        <div class="col-xs-12">
+            <button class="translator-btn btn btn-block">Translate all the experiences</button>
 
-                <div class="reviews-list" id="comentarios">
+            <div class="reviews-list" id="comentarios">
 
-                    {% for item in feedbacks %}
-                        <div class="panel panel-default">
-                            <div class="panel-heading"><b>{{ item.full_name }}</b>
-                                <small class="pull-right"> {{ item.pub_date | timesince }}</small>
-                            </div>
-                            <div class="panel-body">
-                                {{ item.body }}
-                            </div>
-                        </div>
-                    {% empty %}
-                        <h3>Se el primero en comentar</h3>
-                    {% endfor %}
-
-
+                {% for item in feedbacks %}
+                <div class="panel panel-default">
+                    <div class="panel-heading"><b>{{ item.full_name }}</b>
+                        <small class="pull-right"> {{ item.pub_date | timesince }}</small>
+                    </div>
+                    <div class="panel-body">
+                        {{ item.body }}
+                    </div>
                 </div>
+                {% empty %}
+                <h3>Se el primero en comentar</h3>
+                {% endfor %}
 
-                <div class="review-create-form">
-                    <h6 class="review-create-title text-center">Please, leave your thoughts.</h6>
 
-                    <form action="#" method="post" id="formComment" class="form-group">
-                        {% csrf_token %}
-                        <div class="col-xs-12 form-group">
-                            <input type="text" class="form-control input-lg" name="full_name" id="full_name"
-                                   placeholder="Nombre completo" required>
-                        </div>
-                        <div class="col-xs-12 form-group">
-                            <input type="email" class="form-control input-lg" name="user_email" id="user_email"
-                                   placeholder="Correo electronico" required>
+            </div>
 
-                        </div>
+            <div class="review-create-form">
+                <h6 class="review-create-title text-center">Please, leave your thoughts.</h6>
 
-                        <input type="hidden" name="home_id" id="home_id" value="{{ entity.pk }}">
-                        <input type="hidden" name="post_url" id="post_url" value="{% url 'comment' %}">
+                <form action="#" method="post" id="formComment" class="form-group">
+                    {% csrf_token %}
+                    <div class="col-xs-12 form-group">
+                        <input type="text" class="form-control input-lg" name="full_name" id="full_name"
+                               placeholder="Nombre completo" required>
+                    </div>
+                    <div class="col-xs-12 form-group">
+                        <input type="email" class="form-control input-lg" name="user_email" id="user_email"
+                               placeholder="Correo electronico" required>
 
-                        <div class="col-xs-12 form-group">
+                    </div>
+
+                    <input type="hidden" name="home_id" id="home_id" value="{{ entity.pk }}">
+                    <input type="hidden" name="post_url" id="post_url" value="{% url 'comment' %}">
+
+                    <div class="col-xs-12 form-group">
                             <textarea class="form-control comment-body" name="comment_body" id="comment-body"
                                       rows="10" required></textarea>
-                        </div>
-                        <div class="col-xs-12 form-group">
-                            <input type="submit" class="btn btn-success" value="Comment">
-                            <input type="submit" class="btn btn-danger" value="Cancel">
-                        </div>
-                    </form>
-                </div>
-
+                    </div>
+                    <div class="col-xs-12 form-group">
+                        <input type="submit" class="btn btn-success" value="Comment">
+                        <input type="submit" class="btn btn-danger" value="Cancel">
+                    </div>
+                </form>
             </div>
+
         </div>
     </div>
+</div>
 
 {% endblock %}
 {% block level_scripts %}
-    {#    <script src="{% static 'js/jquery-1.10.2.min.js' %}"></script>#}
-    {#    <script src="{% static 'js/gallery.js' %}"></script>#}
-    <script src="{% static 'js/app.config.js' %}"></script>
 
-    <script src="{% static 'js/plugin/jquery-validate/jquery.validate.min.js' %}"></script>
+<script src="{% static 'js/jquery-1.10.2.min.js' %}"></script>
+<script src="{% static 'js/jquery-ui.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+<script src="{% static 'js/gallery.js' %}"></script>
+<script src="{% static 'js/app.config.js' %}"></script>
+
+<script src="{% static 'js/plugin/jquery-validate/jquery.validate.min.js' %}"></script>
 
 
-    <script src="{% static 'js/plugin/bootstrap-slider/bootstrap-slider.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/bootstrap-clockpicker.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/jquery-clockpicker.min.js' %}"></script>
+<script src="{% static 'js/plugin/bootstrap-slider/bootstrap-slider.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/bootstrap-clockpicker.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery-clockpicker.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.mousewheel.pack.js' %}"></script>
 
-    <script src="{% static 'js/demo.min.js' %}"></script>
+<script src="{% static 'js/demo.min.js' %}"></script>
 
-    <script src="{% static 'js/app.min.js' %}"></script>
-    <script src="{% static 'js/appMetronic.js' %}"></script>
+<script src="{% static 'js/app.min.js' %}"></script>
+<script src="{% static 'js/appMetronic.js' %}"></script>
 
-    <!-- SmartChat UI : plugin -->
+<!-- SmartChat UI : plugin -->
 
-    <!-- PAGE RELATED PLUGIN(S) -->
+<!-- PAGE RELATED PLUGIN(S) -->
 
-    <script src="{% static 'js/additional-methods.min.js' %}"></script>
-    <script src="{%  static 'js/jquery.bootstrap.wizard.min.js' %}"></script>
+<script src="{% static 'js/additional-methods.min.js' %}"></script>
+<script src="{%  static 'js/jquery.bootstrap.wizard.min.js' %}"></script>
 
-    <script src="{% static 'js/jquery-ui.min.js' %}"></script>
-    <script src="{% static 'js/comment_async.js' %}"></script>
 
-    <script src="{% static 'js/select2.min.js' %}"></script>
-    <script src="{% static 'js/form-wizard.js' %}"></script>
-    <script src="{% static 'js/rent-wizard.js' %}"></script>
-    
-    <script src="{% static 'js/owl.carousel.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/plugin/fancybox/lib/jquery.mousewheel-3.0.6.pack.js' %}"></script>
-    <script src="{% static 'js/plugin/fancybox/source/jquery.fancybox.js?v=2.1.3' %}"></script>
-    <script src="{% static 'js/plugin/fancybox/source/jquery.fancybox.js?v=2.1.2' %}"></script>
-    <script src="{% static 'js/plugin/fancybox/source/jquery.fancybox.pack.js' %}"></script>
 
-    <script type="text/javascript">
+<script src="{% static 'js/comment_async.js' %}"></script>
+
+<script src="{% static 'js/select2.min.js' %}"></script>
+<script src="{% static 'js/form-wizard.js' %}"></script>
+<script src="{% static 'js/rent-wizard.js' %}"></script>
+
+<script src="{% static 'js/owl.carousel.js' %}"></script>
+
+<script type="text/javascript">
         $('#clock').clockpicker();
         FormWizard.init();
     </script>
@@ -1500,9 +1497,10 @@
             var width = screen.availWidth; // get the screen real size.
 
             var css_props = {'width': '100%'};
-            
+
             var map_container = $("div[id|='map-canvas']");
             // Selector to add css properties to the map-canvas-X id
+
 
             if (width >= 320 && width <= 480)
                 css_props['height'] = '195px';
@@ -1513,120 +1511,144 @@
             else if (width >= 993)
                 css_props['height'] = '400px';
 
+            });
+
+
+
+    </script>
+
+<script type="text/javascript">
+    // DO NOT REMOVE : GLOBAL FUNCTIONS!
+    $(document).ready(function () {
+
             map_container.css(css_props);
 
             //validate comment form
 
-            $('#owl-demo').owlCarousel({
-                autoPlay: 3000, //Set AutoPlay to 3 seconds
-                items: 4,
-                itemsDesktop: [1199, 3],
-                itemsDesktopSmall: [979, 3]
-            });
+        //validate comment form
 
-            $(".fancybox").attr('rel', 'gallery').fancybox();
 
-            var $root = $('html, body');
-            $('a[href*="#"]').click(function () {
-                if (!$(this).hasClass('accordion-toggle')) {
-                    $root.animate({
-                        scrollTop: $($.attr(this, 'href')).offset().top
-                    }, 1000);
-                    return false;
-                }
-            });
-
-            $('.tooltip-test').tooltip();
-
-            $('#desde').datepicker({
-                defaultDate: "+lw",
-                dateFormat: 'yy-mm-dd',
-                changeMonth: true,
-                onClose: function (selectedDate) {
-                    $("#hasta").datepicker("option", "minDate", selectedDate);
-                }
-            });
-
-            $('#hasta').datepicker({
-                defaultDate: "+lw",
-                changeMonth: true,
-                dateFormat: 'yy-mm-dd',
-                onClose: function (selectedDate) {
-                    $("#desde").datepicker("option", "maxDate", selectedDate);
-                }
-
-            });
-
+        $('#owl-demo').owlCarousel({
+            autoPlay: 3000, //Set AutoPlay to 3 seconds
+            items: 4,
+            itemsDesktop: [1199, 3],
+            itemsDesktopSmall: [979, 3]
         });
-        $('#agree').val(2);
-        $('#agree').click(function(e){
 
-            var agreeVal = $('#agree').val();
+        $(".fancybox").fancybox({
+				padding: 0,
 
-            if(agreeVal == 1) {
+				openEffect : 'elastic',
+				openSpeed  : 150,
 
-                $('#agree').val(2);
-                $('#sendWizard').attr('disabled' , 'disabled');
-            }else{
-                $('#sendWizard').attr('disabled' , false);
-                $('#agree').val(1)
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+
+				helpers : {
+					overlay : null
+				}
+			});
+
+        var $root = $('html, body');
+        $('a[href*="#"]').click(function () {
+            if (!$(this).hasClass('accordion-toggle')) {
+                $root.animate({
+                    scrollTop: $($.attr(this, 'href')).offset().top
+                }, 1000);
+                return false;
+            }
+        });
+
+        $('.tooltip-test').tooltip();
+
+        $('#desde').datepicker({
+            defaultDate: "+lw",
+            dateFormat: 'yy-mm-dd',
+            changeMonth: true,
+            onClose: function (selectedDate) {
+                $("#hasta").datepicker("option", "minDate", selectedDate);
+            }
+        });
+
+        $('#hasta').datepicker({
+            defaultDate: "+lw",
+            changeMonth: true,
+            dateFormat: 'yy-mm-dd',
+            onClose: function (selectedDate) {
+                $("#desde").datepicker("option", "maxDate", selectedDate);
             }
 
+        });
+
+    });
+    $('#agree').val(2);
+    $('#agree').click(function (e) {
+
+        var agreeVal = $('#agree').val();
+
+        if (agreeVal == 1) {
+
+            $('#agree').val(2);
+            $('#sendWizard').attr('disabled', 'disabled');
+        } else {
+            $('#sendWizard').attr('disabled', false);
+            $('#agree').val(1)
+        }
+
+
+    });
+
+    $('#clock').click(function (e) {
+        e.preventDefault();
+
+        $('#sendWizard').attr('disabled', 'disabled');
+
+
+        var id = $('#homeId').val();
+        $.getJSON('/api/casas/' + id + '/?format=json').done(function (data) {
+            console.log(data.precio_alta);
+
+            var desde = $('#desde').val();
+            var hasta = $('#hasta').val();
+
+            var diffDays = daysBetween(desde, hasta);
+
+            var casa = $('#homeName').val();
+
+            var polo = $('#homePolo').val();
+
+            var precio = diffDays * data.precio_alta;
+
+            $('#finalInformation').html("Noches: " + diffDays + ", Precio: " + precio + " $");
 
         });
 
-        $('#clock').click(function (e) {
-            e.preventDefault();
+    });
 
-            $('#sendWizard').attr('disabled' , 'disabled');
+    var $root = $('html,body');
+    $('.page-scroll').click(function () {
+        $root.animate({
+            scrollTop: $($.attr(this, 'href')).offset().top
+        }, 1000);
+        return false;
 
+    });
 
+    function l(arg) {
+        console.log(arg);
+    }
 
-            var id = $('#homeId').val();
-            $.getJSON('/api/casas/' + id + '/?format=json').done(function (data) {
-                console.log(data.precio_alta);
-
-                var desde = $('#desde').val();
-                var hasta = $('#hasta').val();
-
-                var diffDays = daysBetween(desde, hasta);
-
-                var casa = $('#homeName').val();
-
-                var polo = $('#homePolo').val();
-
-                var precio = diffDays * data.precio_alta;
-
-                $('#finalInformation').html("Noches: " + diffDays + ", Precio: " + precio + " $");
-
-            });
-
-        });
-
-        var $root = $('html,body');
-                $('.page-scroll').click(function(){
-                    $root.animate({
-                        scrollTop: $($.attr(this, 'href')).offset().top
-                        }, 1000);
-                        return false;
-
-                });
-
-        function l(arg) {
-            console.log(arg);
-        }
-
-        function treatAsUTC(date) {
-            var result = new Date(date);
-            result.setMinutes(result.getMinutes() - result.getTimezoneOffset());
-            return result;
-        }
-        function daysBetween(startDate, endDate) {
-            var millisecondsPerDay = 24 * 60 * 60 * 1000;
-            return (treatAsUTC(endDate) - treatAsUTC(startDate)) / millisecondsPerDay;
-        }
-
-    </script>
-    <script src="{% static 'static/js/accordion_utils.js' %}"></script>
+    function treatAsUTC(date) {
+        var result = new Date(date);
+        result.setMinutes(result.getMinutes() - result.getTimezoneOffset());
+        return result;
+    }
+    function daysBetween(startDate, endDate) {
+        var millisecondsPerDay = 24 * 60 * 60 * 1000;
+        return (treatAsUTC(endDate) - treatAsUTC(startDate)) / millisecondsPerDay;
+    }
+</script>
 
 {% endblock %}
