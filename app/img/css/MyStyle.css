@@ -1,0 +1,148 @@
+<<<<<<< HEAD
+.backgroundc{
+    background-color: #556261;
+  	width: 50%;
+  	height: 35%;
+  	margin-left: 25%;
+  	margin-right: 40%;
+  	margin-top: 17%;
+  	opacity: 0.9;
+  	overflow-y: hidden;
+  	position: absolute;
+  	z-index: 10;
+    top:0;
+}
+.Nombre1{
+	text-align: center;
+	font-size: 190%;
+	color: white;
+	margin-top: 10px;
+	margin-bottom: 0%;
+    margin-left: 7%;
+}
+.Nombre2{
+	text-align: center;
+	font-size: 130%;
+	color: white;
+	margin-top: -2%;
+    margin-left: 2%;
+}
+.label1{
+	padding: 2px;
+}
+.label3{
+	padding: 2px;
+	margin-right: -2%;
+}	 	 
+.button{
+	margin-left: -15px;
+}
+
+.selectdays{
+	margin-left: 15%;
+}
+
+.findButton{
+	-webkit-border-radius: 0;
+    -moz-border-radius: 0;
+	-o-border-radius: 0;
+    border-radius: 0;
+	margin-top: 2px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+	.backgroundc{
+		height: 57% !important;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.backgroundc{
+		margin-top: 57% !important;
+		height: 50% !important;
+	}
+=======
+.backgroundc {
+    background-color: #556261;
+    width: 50%;
+    height: 35%;
+    margin-left: 25%;
+    margin-right: 40%;
+    margin-top: 17%;
+    opacity: 0.9;
+    overflow-y: hidden;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+}
+
+.Nombre1 {
+    text-align: center;
+    font-size: 190%;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 0%;
+    margin-left: 7%;
+}
+
+.Nombre2 {
+    text-align: center;
+    font-size: 130%;
+    color: white;
+    margin-top: -2%;
+    margin-left: 2%;
+}
+
+.label1 {
+    padding: 2px;
+}
+
+.label3 {
+    padding: 2px;
+    margin-right: -2%;
+}
+
+.button {
+    margin-left: -15px;
+}
+
+.selectdays {
+    margin-left: 15%;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
+    margin-top: 2px;
+}
+
+.findButton {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
+    margin-top: 2px;
+    width: 90% !important;
+    margin-bottom: 2%;
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .backgroundc {
+        height: 38% !important;
+        top: 25% !important;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px){
+    .Nombre1{
+        font-size: 150% !important;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .backgroundc {
+        margin-top: 57% !important;
+        height: 50% !important;
+    }
+>>>>>>> dcc2b0b1a2256a8310f07d4311143bdf66c9540a
+}
