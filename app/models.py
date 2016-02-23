@@ -110,6 +110,9 @@ class Casa(models.Model):
     def __str__(self):
         return self.nombre
 
+    def full_adress(self):
+        return self.direccion_postal + " 20100 " + self.municipio
+
 class Habitacion(models.Model):
 
     precio_alta = models.FloatField(default=0)
