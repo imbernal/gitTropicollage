@@ -31,17 +31,17 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
 
-            <form class="navbar-form navbar-left" role="search">
-                <div class="input-group">
-                    <input type="text" class="form-control">
-        					<span class="input-group-btn">
-        							<button type="button" class="btn btn-default">
-                                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                                    </button>
-        					</span>
-                </div>
-                <!-- /input-group -->
-            </form>
+            <!--<form class="navbar-form navbar-left" role="search">-->
+                <!--<div class="input-group">-->
+                    <!--<input type="text" class="form-control">-->
+        					<!--<span class="input-group-btn">-->
+        							<!--<button type="button" class="btn btn-default">-->
+                                        <!--<span class="glyphicon glyphicon-search" aria-hidden="true"></span>-->
+                                    <!--</button>-->
+        					<!--</span>-->
+                <!--</div>-->
+                <!--&lt;!&ndash; /input-group &ndash;&gt;-->
+            <!--</form>-->
 
           
             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
@@ -333,7 +333,8 @@
 {% block footer %}
 {% endblock %}
 {% block level_scripts %}
-    
+    <script src="{% static 'js/jquery-1.10.2.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
     <script src="{% static 'js/SmoothScroll.js' %}"></script>
 
     <script type="text/javascript" src="{% static 'js/moment.js' %}"></script>
