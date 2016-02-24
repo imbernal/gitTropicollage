@@ -112,7 +112,7 @@
 </div>
 
 <div class="gallery" id="gallery">
-    {% easy_map "Cuba, Pinar del Rio, Vinales" 1920 1080 %}
+    {% easy_map addr 1920 1080 %}
     <div class="jumbotron col-xs-12">
         <style>
             #owl-demo .item img {
@@ -1482,10 +1482,11 @@
     $('#clock').clockpicker();
     FormWizard.init();
 </script>
+
+
 <script type="text/javascript">
     // DO NOT REMOVE : GLOBAL FUNCTIONS!
     $(document).ready(function () {
-        // Some media queries in javascript... (What?, i'm not messing with you...)
 
         var width = screen.availWidth; // get the screen real size.
 
@@ -1503,16 +1504,7 @@
             css_props['height'] = '300px';
         else if (width >= 993)
             css_props['height'] = '400px';
-
-    });
-
-
-</script>
-
-<script type="text/javascript">
-    // DO NOT REMOVE : GLOBAL FUNCTIONS!
-    $(document).ready(function () {
-
+        
         map_container.css(css_props);
 
         //validate comment form

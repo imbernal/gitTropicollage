@@ -55,6 +55,8 @@ def homeDetails(request, home_id):
     feedbacks = FeedBack.objects.filter(casa=entity).order_by('-pub_date')
     cant_camas_simples = 0
     cant_camas_dobles = 0
+    addr = entity.full_address()
+
 
     for item in entity.habitacion_set.all():
         cant_camas_simples += item.cama_personal
@@ -69,7 +71,8 @@ def homeDetails(request, home_id):
                                                   'cant_camas_dobles': cant_camas_dobles,
                                                   'cant_total_personas': cant_total_personas,
                                                   'feedbacks': feedbacks,
-                                                  'pictures': pictures_list
+                                                  'pictures': pictures_list,
+                                                  'addr': addr,
                                                   },
                   context_instance=RequestContext(request))
 
