@@ -110,7 +110,7 @@ class Casa(models.Model):
     def __str__(self):
         return self.nombre
 
-    def full_adress(self):
+    def full_address(self):
         return self.direccion_postal + " 20100 " + self.municipio
 
 class Habitacion(models.Model):
