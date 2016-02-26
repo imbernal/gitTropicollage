@@ -206,7 +206,23 @@
                 <div id="slide">
                     {% for item in casas %}
                     <a href="{% url 'home_details' item.pk %}">
-                        <img src="/media/{{ item.foto_principal }}" width="400" height="300"/></a>
+                        <img src="/media/{{ item.foto_principal }}" width="400" height="300"/>
+                        <span>
+                            <img class="img-circle img-responsive"
+                                         src="/media/{{ item.foto_dueno }}"
+                                         id="owner" width="56" height="66"
+                                         alt="100">
+                            <div class="name">
+                                {{ item.nombre }}
+                                <br>
+                                {{ item.polo_turistico }}
+                                <div class="reviews">
+                                    {{ item.feedback_set.all.count }} Reviews
+                                </div>
+                            </div>
+
+                        </span>
+                    </a>
 
                     {% endfor %}
                 </div>
