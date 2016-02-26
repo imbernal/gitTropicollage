@@ -116,14 +116,12 @@
                 margin: 3px !important;
             }
 
-
         </style>
 
         <div id="owl-demo" class="owl-carousel">
-            {% for item in pictures %}
-
-            <a href="/media/imagenes/{{ item }}" title="{{ item }}"><img class="owl-item"
-                                                                         src="/media/imagenes/{{ item }}"></a>
+            {% for item in entity.gallery.images.all %}
+                
+                <a href="/media/imagenes/{{ item }}" title="{{ item }}"><img class="owl-item" src="/media/{{ item.file.thumbnail.400x400 }}"></a>
             {% endfor %}
         </div>
     </div>

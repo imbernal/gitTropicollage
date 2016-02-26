@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from versatileimagefield.fields import VersatileImageField
 
 # Create your models here.
 
@@ -14,7 +15,7 @@ class Gallery(models.Model):
 
 
 class Image(models.Model):
-    file = models.FileField('File', upload_to='imagenes/')
+    file = VersatileImageField('Image', upload_to='imagenes/')
     gallery = models.ForeignKey('Gallery', related_name='images', blank=True, null=True)
 
     def __str__(self):
@@ -41,7 +42,7 @@ class Casa(models.Model):
     ninos_enCasa = models.BooleanField(default=False)
     mascotas_enCasa = models.BooleanField(default=False)
     mensaje_promocional = models.TextField(max_length=600)
-    foto_principal = models.FileField(upload_to='imagenes', verbose_name='foto_principal')
+    foto_principal = VersatileImageField('Image', upload_to='imagenes')
     desayuno = models.BooleanField(default=False)
     meriendas = models.BooleanField(default=False)
     cena = models.BooleanField(default=False)
@@ -68,7 +69,7 @@ class Casa(models.Model):
     correo = models.CharField(max_length=255, default="")
     telf = models.CharField(max_length=255)
     celular = models.CharField(max_length=255)
-    foto_dueno = models.FileField(upload_to='imagenes', verbose_name='foto_dueno')
+    foto_dueno = VersatileImageField('Image', upload_to='imagenes')
 
     
     superhost = models.BooleanField(choices = CHOICES)

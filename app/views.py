@@ -216,7 +216,7 @@ def get_pictures_from_gallery(gallery_param):
     result = []
     pictures = Image.objects.filter(gallery=gallery_param)
     for item in pictures:
-        result.append(item.filename)
+        result.append(item)
     return result
 
 
