@@ -21,12 +21,8 @@
 <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
 <link rel="stylesheet" href="{% static 'css/owl.theme.css' %}">
 
-<!-- SmartAdmin RTL Support -->
+
 <link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/smartadmin-rtl.min.css' %}">
-<!-- We recommend you use "your_style.css" to override SmartAdmin
-                        specific styles this will also ensure you retrain your customization with each SmartAdmin update.
-<link rel="stylesheet" type="text/css" media="screen" href="css/your_style.css"> -->
-<!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
 <link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/demo.min.css' %}">
 <link rel="stylesheet" href="{% static 'flaticons/flaticon.css' %}">
 {% endblock %}
@@ -65,6 +61,31 @@
     </div>
 </div>
 
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Information</h4>
+            </div>
+            <div class="modal-body">
+
+
+                <h2 class="title-grp">
+                    <span>share Us</span>
+                </h2>
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
 <div class="gallery" id="gallery">
     {% easy_map addr 1920 1080 %}
     <div class="jumbotron col-xs-12">
@@ -81,13 +102,17 @@
 
         <div id="owl-demo" class="owl-carousel">
             {% for item in pictures %}
-
-            <a href="/media/imagenes/{{ item }}" title="{{ item }}"><img class="owl-item"
-                                                                         src="/media/imagenes/{{ item }}"></a>
+            <a class="fancybox-buttons" href="/media/imagenes/{{ item }}"
+               data-fancybox-group="gallery"
+               title="Dental Professional Group"><img
+                    src="/media/imagenes/{{ item }}" class="owl-item" alt=""/></a>
+            <!--<a href="/media/imagenes/{{ item }}" title="{{ item }}"><img class="owl-item"-->
+            <!--src="/media/imagenes/{{ item }}"></a>-->
             {% endfor %}
         </div>
     </div>
 </div>
+
 <div class="main-info" id="main-info">
     <div class="container">
 
@@ -134,7 +159,8 @@
                 <a href="#formComment" class="btn btn-lg btn-block btn-default page-scroll"><span
                         class="ion-chatbubbles"></span> Contact us
                 </a>
-                <a class="btn btn-lg btn-block btn-default page-scroll"><span class="ion-android-share-alt"></span>
+                <a class="btn btn-lg btn-block btn-default page-scroll" href="#myModal"><span
+                        class="ion-android-share-alt"></span>
                     Share
                 </a>
             </div>
@@ -1209,15 +1235,9 @@
                                         our arrival, directly with the owners of the house. <span> Only the payment in cash is accepted.</span>
                                         </p>
                                         <br>
-                                        <input type="checkbox" value="1" id="agree">I agree to the Terms and Conditions
+
                                         <h3>Congratulations!!!!</h3>
-
-                                        <p id="finalInformation2">sdasdasd</p>
-                                        <input type="checkbox" name="sadasdasd" id="terms">I agree to the Terms and
-                                        Conditions
-
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -1225,16 +1245,14 @@
                             <div class="row">
                                 <div class="col-md-offset-3 col-md-9">
                                     <a href="javascript:;" id="back" class="btn default button-previous">
-                                        <i class="m-icon-swapleft"></i> Back
+                                        <i class="ion-android-arrow-back"></i> Back
                                     </a>
                                     <a href="javascript:;" class="btn blue button-next">
-                                        Continue <i class="m-icon-swapright m-icon-white"></i>
+                                        Continue <i class="ion-android-arrow-forward"></i>
                                     </a>
-                                    <input type="submit" id="sendWizard" class="btn green button-submit"
-                                           style="display: none;"
+                                    <input type="submit" class="btn green button-submit"
+                                           style="display: none; width: 90px;"
                                            value="Submit">
-                                    <i class="m-icon-swapright m-icon-white"></i>
-
                                 </div>
                             </div>
                         </div>
@@ -1249,7 +1267,6 @@
 <div class="reviews-details" id="comments">
     <div class="container">
         <h5 class="reviews-count">{{ entity.feedback_set.all.count }} Reviews</h5>
-
 
         <div class="col-xs-12">
             <button class="translator-btn btn btn-block">Translate all the experiences</button>
@@ -1310,6 +1327,7 @@
 <script src="{% static 'js/jquery-1.10.2.min.js' %}"></script>
 <script src="{% static 'js/jquery-ui.min.js' %}"></script>
 <script src="{% static 'js/bootstrap.js' %}"></script>
+<script src="{% static 'js/jquery.mousewheel.pack.js' %}"></script>
 
 <script src="{% static 'js/gallery.js' %}"></script>
 <script src="{% static 'js/app.config.js' %}"></script>
@@ -1342,6 +1360,7 @@
 <script src="{% static 'js/rent-wizard.js' %}"></script>
 
 <script src="{% static 'js/owl.carousel.js' %}"></script>
+<script src="{% static 'js/jquery.fancybox.pack.js' %}"></script>
 
 <script type="text/javascript">
     $('#clock').clockpicker();
@@ -1352,6 +1371,7 @@
 <script type="text/javascript">
     // DO NOT REMOVE : GLOBAL FUNCTIONS!
     $(document).ready(function () {
+
 
         var width = screen.availWidth; // get the screen real size.
 
@@ -1415,22 +1435,6 @@
         });
 
     });
-    $('#agree').val(2);
-    $('#agree').click(function (e) {
-
-        var agreeVal = $('#agree').val();
-
-        if (agreeVal == 1) {
-
-            $('#agree').val(2);
-            $('#sendWizard').attr('disabled', 'disabled');
-        } else {
-            $('#sendWizard').attr('disabled', false);
-            $('#agree').val(1)
-        }
-
-
-    });
 
     $('#clock').click(function (e) {
         e.preventDefault();
@@ -1466,6 +1470,27 @@
         }, 1000);
         return false;
 
+    });
+
+    $('.fancybox-buttons').fancybox({
+        openEffect: 'none',
+        closeEffect: 'none',
+
+        prevEffect: 'none',
+        nextEffect: 'none',
+
+        closeBtn: false,
+
+        helpers: {
+            title: {
+                type: 'inside'
+            },
+            buttons: {}
+        },
+
+        afterLoad: function () {
+            this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+        }
     });
 
     function l(arg) {

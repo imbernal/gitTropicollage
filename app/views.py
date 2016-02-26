@@ -26,7 +26,7 @@ def exists(check, coll):
     return flag
 
 def home_page(request):
-    casas = Casa.objects.all()[:3]
+    casas = Casa.objects.all()[:10]
     feedbacks = FeedBack.objects.all()[:3]
     reservaciones = Reservacion.objects.all()[:5]
     lugares = Casa.objects.all()
@@ -34,7 +34,7 @@ def home_page(request):
     lugares_fin = []
 
     for item in lugares:
-        if not exists(item, lugares_fin):
+        if not exists(item.polo_turistico, lugares_fin):
             lugares_fin.append(str(item.polo_turistico))
 
     return render(request, 'home_page/index.html',
