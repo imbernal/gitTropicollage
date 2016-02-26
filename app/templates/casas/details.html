@@ -949,9 +949,7 @@
                                         </label>
 
                                         <div class="col-md-4">
-                                            <select name="cantHabitaciones" id="cantHabitaciones"
-                                                    class="form-control"
-                                            >
+                                            <select name="cantHabitaciones" id="cantHabitaciones" class="form-control">
                                                 {% for item in entity.habitacion_set.all %}
                                                 <option value="{{ forloop.counter }}">{{ forloop.counter }}</option>
                                                 {% endfor %}
@@ -1469,6 +1467,8 @@
 <script src="{% static 'js/rent-wizard.js' %}"></script>
 
 <script src="{% static 'js/owl.carousel.js' %}"></script>
+
+<script src="{% static 'js/rooms.validation.js' %}"></script>
 
 <script type="text/javascript">
     $('#clock').clockpicker();
