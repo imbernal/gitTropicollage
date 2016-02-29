@@ -25,8 +25,8 @@ SECRET_KEY = 'arexbbsm5o@lvlgtmg)kplx4hf^etd#wm+gq=t376bgguxh@8x'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['10.42.0.1', '127.0.0.1', '188.166.42.182']
-
+#ALLOWED_HOSTS = ['10.42.0.1', '127.0.0.1', '188.166.42.182']
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
@@ -115,7 +115,4 @@ STATIC_ROOT = os.path.join('app/','img')
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
-
-
-# STATIC_ROOT = '/opt/tropicollage/static/'
 
