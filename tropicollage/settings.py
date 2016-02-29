@@ -23,9 +23,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'arexbbsm5o@lvlgtmg)kplx4hf^etd#wm+gq=t376bgguxh@8x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-#ALLOWED_HOSTS = ['10.42.0.1', '127.0.0.1', '188.166.42.182']
 ALLOWED_HOSTS = ["*"]
 
 # Application definition
@@ -42,6 +41,7 @@ INSTALLED_APPS = (
     'multiupload',
     'django_filters',
     'easy_maps',
+    'versatileimagefield'
 )
 
 SERVER_EMAIL = "info@tropicollage.com"
