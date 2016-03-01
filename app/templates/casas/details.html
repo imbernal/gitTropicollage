@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 {% load staticfiles %}
-{% load easy_maps_tags %}
-{% load map_styles %}
+{% load easy_maps_tags cache %}
+
 
 {% block title %}Details{% endblock %}
 {% block level_styles %}
@@ -52,42 +52,60 @@
 <div class="categories  hidden-xs hidden-sm">
     <div class="container">
         <ul>
-            <li><a class="page-scroll" href="#gallery">Fotos</a></li>
-            <li><a class="page-scroll" href="#main-info">Informacion sobre este anuncio</a></li>
-            <li><a class="page-scroll" href="#detailed-info">Detalles</a></li>
-            <li><a class="page-scroll" href="#comments">Comentarios</a></li>
+            <li><a class="page-scroll" href="#gallery">Pictures</a></li>
+            <li><a class="page-scroll" href="#main-info">Info</a></li>
+            <li><a class="page-scroll" href="#detailed-info">Details</a></li>
+            <li><a class="page-scroll" href="#book">Book</a></li>
+            <li><a class="page-scroll" href="#comments">Comments</a></li>
 
         </ul>
     </div>
 </div>
 
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Information</h4>
-            </div>
-            <div class="modal-body">
+<!--<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">-->
+    <!--<div class="modal-dialog">-->
+        <!--<div class="modal-content">-->
+            <!--<div class="modal-header">-->
+                <!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>-->
+                <!--<h4 class="modal-title">Information</h4>-->
+            <!--</div>-->
+            <!--<div class="modal-body">-->
+                <!--You will receive within 24 hours of your appointment confirmation by email. If you want some other-->
+                <!--service Proceed towards our <a href="#contact">contact</a> section.-->
+                <!--Sincerely Dental Proffesional Group.-->
+
+                <!--<hr>-->
+
+                <!--<h2 class="title-grp">-->
+                    <!--<span>share Us</span>-->
+                <!--</h2>-->
+                <!--{% load social_share %}-->
 
 
-                <h2 class="title-grp">
-                    <span>share Us</span>
-                </h2>
+                <!--<div class="btn btn-fb btn-block btn-lg">{% post_to_facebook object_or_url "Share us on Facebook!" %}-->
+                <!--</div>-->
+                <!--<div class="btn btn-tw btn-block btn-lg">{% post_to_twitter object_or_url "Share us on Twitter!" %}-->
+                <!--</div>-->
+                <!--<div class="btn btn-gp btn-block btn-lg">{% post_to_gplus object_or_url "Share us on Google+!" %}-->
+                <!--</div>-->
 
 
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
-            </div>
-        </div>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-</div>
+            <!--</div>-->
+            <!--<div class="modal-footer">-->
+                <!--<button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--&lt;!&ndash; /.modal-content &ndash;&gt;-->
+    <!--</div>-->
+    <!--&lt;!&ndash; /.modal-dialog &ndash;&gt;-->
+<!--</div>-->
 
 <div class="gallery" id="gallery">
-    {% easy_map addr 1920 1080 %}
+
+    
+    {% easy_map "Adela Azcui 101 Pinar del Rio, Cuba" 1920 1080 %}
+    
+    
     <div class="jumbotron col-xs-12">
         <style>
             #owl-demo .item img {
@@ -105,7 +123,7 @@
             <a class="fancybox-buttons" href="/media/imagenes/{{ item }}" title="{{ item }}"
                data-fancybox-group="gallery">
 
-               <img src="/media/{{ item.file.thumbnail.400x400 }}" class="owl-item" alt=""/></a>
+                <img src="/media/{{ item.file.thumbnail.400x400 }}" class="owl-item" alt=""/></a>
             {% endfor %}
         </div>
     </div>
@@ -441,7 +459,7 @@
 </div>
 <br/>
 
-<div class="row">
+<div class="row" id="book">
     <div class="container">
         <div class="portlet box blue" id="form_wizard_1">
             <!--{#-->
@@ -1370,6 +1388,7 @@
     // DO NOT REMOVE : GLOBAL FUNCTIONS!
     $(document).ready(function () {
 
+        $('#myModal').modal('show');
 
         var width = screen.availWidth; // get the screen real size.
 

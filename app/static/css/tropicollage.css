@@ -219,7 +219,6 @@ hr {
   display: block;
   overflow-y: scroll;
   position: fixed;
-  overflow-x: hidden;
   background: #eee;
   right: 0;
   top: 47px;
@@ -292,7 +291,7 @@ hr {
   box-shadow: 14px 8px 22px rgba(65,63,61,0.7);
 }
 .total .posts .post .descripcion .casa-foto .price #simbolo_peso {
-  color: balck;
+  color: black;
   margin-left: 20px;
   margin-top: -11px;
 }

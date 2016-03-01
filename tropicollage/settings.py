@@ -41,7 +41,8 @@ INSTALLED_APPS = (
     'multiupload',
     'django_filters',
     'easy_maps',
-    'versatileimagefield'
+    'versatileimagefield',
+    'django_social_share'
 )
 
 SERVER_EMAIL = "info@tropicollage.com"

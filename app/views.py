@@ -116,10 +116,30 @@ def reservar(request, home_id):
 
     reservacion.save()
 
-    message = ""
+    message = "Datos de la reservacion:\n Casa: " + reservacion.casa + "\n" + 
+    "Pais: " + reservacion.country + "\n" + 
+    "Ciudad: " + reservacion.city_town + "\n" + 
+    "--------\n" + 
+    "Nombre del cliente:" + reservacion.first_name + " " + reservacion.last_name + "\n" +
+    "Telefono del cliente: " + reservacion.phone_nombre + "\n" +
+    "Email del cliente: " + reservacion.email + "\n" +
+    "--------\n" + 
+    "Detalles de la reservacion:\n" +
+    "Cantidad de Habitaciones: " + reservacion.cant_habitaciones + "\n" +
+    "Habitaciones simples: " + reservacion.hab_simples + "\n" +
+    "Habitaciones dobles: " + reservacion.hab_dobles + "\n" +
+    "Habitaciones triples: " + reservacion.hab_triples + "\n" +
+    "Fecha de entrada: " + reservacion.fecha_ini + "\n" +
+    "Fecha de salida: " + reservacion.fecha_fin + "\n" +
+    "Via de llegada: " + reservacion.forma_llegada + "\n" +
+    "Hora estimada de llegada: " + reservacion.hora_estimada + "\n" +
+    "Datos adicionales del cliente: " + reservacion.comment
 
-    send_mail('New rent', message, 'info@tropicollage.com',
-              ['i.martinez@estudiantes.upr.edu.cu', 'cesar.bretana@estudiantes.upr.edu.cu'], fail_silently=False)
+
+
+
+    send_mail('Nueva solicitud de reservacion', message, 'info@tropicollage.com',
+              ['imbernal92@nauta.cu', 'bretana@nauta.cu', 'imbernal9203@gmail.com', 'bretanac@gmail.com', 'mmillo@nauta.cu'], fail_silently=False)
 
 
 def fecha_search(request):
