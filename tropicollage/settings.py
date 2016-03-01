@@ -47,12 +47,12 @@ INSTALLED_APPS = (
 
 SERVER_EMAIL = "info@tropicollage.com"
 
-# EMAIL_HOST =
-# EMAIL_PORT =
-# EMAIL_HOST_USER =
-# EMAIL_HOST_PASSWORD =
-# EMAIL_USE_TLS =
-# EMAIL_USE_SSL =
+EMAIL_BACKEND = 'django_smtp_ssl.SSLEmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_PASSWORD = 'tropicollage2015'
+EMAIL_HOST_USER = 'infotropicollage@gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
