@@ -116,23 +116,22 @@ def reservar(request, home_id):
 
     reservacion.save()
 
-    message = "Datos de la reservacion:\n Casa: " + reservacion.casa + "\n" + 
-    "Pais: " + reservacion.country + "\n" + 
-    "Ciudad: " + reservacion.city_town + "\n" + 
-    "--------\n" + 
-    "Nombre del cliente:" + reservacion.first_name + " " + reservacion.last_name + "\n" +
-    "Telefono del cliente: " + reservacion.phone_nombre + "\n" +
-    "Email del cliente: " + reservacion.email + "\n" +
-    "--------\n" + 
-    "Detalles de la reservacion:\n" +
-    "Cantidad de Habitaciones: " + reservacion.cant_habitaciones + "\n" +
-    "Habitaciones simples: " + reservacion.hab_simples + "\n" +
-    "Habitaciones dobles: " + reservacion.hab_dobles + "\n" +
-    "Habitaciones triples: " + reservacion.hab_triples + "\n" +
-    "Fecha de entrada: " + reservacion.fecha_ini + "\n" +
-    "Fecha de salida: " + reservacion.fecha_fin + "\n" +
-    "Via de llegada: " + reservacion.forma_llegada + "\n" +
-    "Hora estimada de llegada: " + reservacion.hora_estimada + "\n" +
+    message = "Datos de la reservacion:\n Casa: " + reservacion.casa + "\n" + \
+    "Pais: " + reservacion.country + "\n" + "Ciudad: " + reservacion.city_town + "\n" + \
+    "--------\n" + \
+    "Nombre del cliente:" + reservacion.first_name + " " + reservacion.last_name + "\n" + \
+    "Telefono del cliente: " + reservacion.phone_nombre + "\n" +\
+    "Email del cliente: " + reservacion.email + "\n" +\
+    "--------\n" + \
+    "Detalles de la reservacion:\n" + \
+    "Cantidad de Habitaciones: " + reservacion.cant_habitaciones + "\n" + \
+    "Habitaciones simples: " + reservacion.hab_simples + "\n" + \
+    "Habitaciones dobles: " + reservacion.hab_dobles + "\n" + \
+    "Habitaciones triples: " + reservacion.hab_triples + "\n" + \
+    "Fecha de entrada: " + reservacion.fecha_ini + "\n" + \
+    "Fecha de salida: " + reservacion.fecha_fin + "\n" + \
+    "Via de llegada: " + reservacion.forma_llegada + "\n" + \
+    "Hora estimada de llegada: " + reservacion.hora_estimada + "\n" + \
     "Datos adicionales del cliente: " + reservacion.comment
 
 
