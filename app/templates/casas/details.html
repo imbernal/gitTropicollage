@@ -62,50 +62,13 @@
     </div>
 </div>
 
-<!--<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">-->
-    <!--<div class="modal-dialog">-->
-        <!--<div class="modal-content">-->
-            <!--<div class="modal-header">-->
-                <!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>-->
-                <!--<h4 class="modal-title">Information</h4>-->
-            <!--</div>-->
-            <!--<div class="modal-body">-->
-                <!--You will receive within 24 hours of your appointment confirmation by email. If you want some other-->
-                <!--service Proceed towards our <a href="#contact">contact</a> section.-->
-                <!--Sincerely Dental Proffesional Group.-->
-
-                <!--<hr>-->
-
-                <!--<h2 class="title-grp">-->
-                    <!--<span>share Us</span>-->
-                <!--</h2>-->
-                <!--{% load social_share %}-->
-
-
-                <!--<div class="btn btn-fb btn-block btn-lg">{% post_to_facebook object_or_url "Share us on Facebook!" %}-->
-                <!--</div>-->
-                <!--<div class="btn btn-tw btn-block btn-lg">{% post_to_twitter object_or_url "Share us on Twitter!" %}-->
-                <!--</div>-->
-                <!--<div class="btn btn-gp btn-block btn-lg">{% post_to_gplus object_or_url "Share us on Google+!" %}-->
-                <!--</div>-->
-
-
-            <!--</div>-->
-            <!--<div class="modal-footer">-->
-                <!--<button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--&lt;!&ndash; /.modal-content &ndash;&gt;-->
-    <!--</div>-->
-    <!--&lt;!&ndash; /.modal-dialog &ndash;&gt;-->
-<!--</div>-->
 
 <div class="gallery" id="gallery">
 
-    
+
     {% easy_map addr 1920 1080 %}
-    
-    
+
+
     <div class="jumbotron col-xs-12">
         <style>
             #owl-demo .item img {
@@ -131,6 +94,50 @@
 
 <div class="main-info" id="main-info">
     <div class="container">
+
+        <!--<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"-->
+             <!--aria-hidden="true">-->
+            <!--<div class="modal-dialog">-->
+                <!--<div class="modal-content">-->
+                    <!--<div class="modal-header">-->
+                        <!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>-->
+                        <!--<h4 class="modal-title">Information</h4>-->
+                    <!--</div>-->
+                    <!--<div class="modal-body">-->
+                        <!--You will receive within 24 hours of your appointment confirmation by email. If you want some-->
+                        <!--other-->
+                        <!--service Proceed towards our <a href="#contact">contact</a> section.-->
+                        <!--Sincerely Dental Proffesional Group.-->
+
+                        <!--<hr>-->
+
+                        <!--<h2 class="title-grp">-->
+                            <!--<span>share Us</span>-->
+                        <!--</h2>-->
+                        <!--{% load social_share %}-->
+
+
+                        <!--<div class="btn btn-fb btn-block btn-lg">{% post_to_facebook object_or_url "Share us on-->
+                            <!--Facebook!"-->
+                            <!--%}-->
+                        <!--</div>-->
+                        <!--<div class="btn btn-tw btn-block btn-lg">{% post_to_twitter object_or_url "Share us on Twitter!"-->
+                            <!--%}-->
+                        <!--</div>-->
+                        <!--<div class="btn btn-gp btn-block btn-lg">{% post_to_gplus object_or_url "Share us on Google+!"-->
+                            <!--%}-->
+                        <!--</div>-->
+
+
+                    <!--</div>-->
+                    <!--<div class="modal-footer">-->
+                        <!--<button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--&lt;!&ndash; /.modal-content &ndash;&gt;-->
+            <!--</div>-->
+            <!--&lt;!&ndash; /.modal-dialog &ndash;&gt;-->
+        <!--</div>-->
 
         <div class="details col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <h1 class="home-name">{{ entity }} at {{ entity.municipio }}</h1>
@@ -175,7 +182,7 @@
                 <a href="#formComment" class="btn btn-lg btn-block btn-default page-scroll"><span
                         class="ion-chatbubbles"></span> Contact us
                 </a>
-                <a class="btn btn-lg btn-block btn-default page-scroll" href="#myModal"><span
+                <a class="btn btn-lg btn-block btn-default page-scroll" data-toggle="modal" href="myModal"><span
                         class="ion-android-share-alt"></span>
                     Share
                 </a>
@@ -1388,7 +1395,7 @@
     // DO NOT REMOVE : GLOBAL FUNCTIONS!
     $(document).ready(function () {
 
-        $('#myModal').modal('show');
+//        $('#myModal').modal('show');
 
         var width = screen.availWidth; // get the screen real size.
 
