@@ -20,10 +20,17 @@ $(function () {
 		image_path = image_path + images[curr_index];
 
 		var abs = "url('/static/img/"+image_path+"')";
+		// $('#tf-home').css({ 'background-image': abs });
+		
+		var image = $('#tf-home');
+    		image.fadeOut(500, function () {
+	        image.css({ 'background-image': abs });
+	        image.fadeIn(500);
+	    });
 
-		$('#tf-home').animate({ opacity: 0.9 }, 'slow', function() {
-        		$(this).css({ 'background-image': abs }).animate({ opacity: 1 });
-    });
+		// $('#tf-home').animate({ opacity: 0.9 }, 'slow', function() {
+  //       		$('#tf-home').css({ 'background-image': abs }).animate({ opacity: 1 });
+  //       	});
 
 		//without any animations
 		// $('#tf-home').css();
