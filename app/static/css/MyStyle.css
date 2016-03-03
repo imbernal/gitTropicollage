@@ -61,6 +61,102 @@
     margin-bottom: 2%;
 }
 
+.shade {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 50;
+    opacity: 0;
+}
+.shade:hover {
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -ms-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+    opacity: 1;
+}
+
+.shade a, a:focus, a:active, a:hover {
+    outline: none;
+    text-decoration: none !important;
+    color: white;
+    font-size: 24px;
+}
+
+.go {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-radius: 0;
+    z-index 100;
+
+}
+.sales {
+    position: absolute;
+    margin: auto;
+    color: white;
+    font-size: 4.5em;
+}
+.house {
+    position: relative;
+    -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+    -moz-box-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+    -webkit-transition: all 0.25s linear;
+    -moz-transition: all 0.25s linear;
+    -ms-transition: all 0.25s linear;
+    -o-transition: all 0.25s linear;
+    transition: all 0.25s linear;
+    padding-right: 0;
+    padding-left: 0;
+    margin: 5px;
+    font-size: large;
+    display: inline-block;
+}
+
+
+@media screen and (min-width: 768px) {
+    .houses .house.col-md-4 {
+        width: 48.8% !important;
+    }
+    .sales {
+        margin-left: -14%;
+        left: 50%;
+        top: 50%;
+        margin-top: -15%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .houses .house {
+        margin-left: 0;
+    }
+
+    .sales {
+        margin-left: -13%;
+        left: 50%;
+        top: 50%;
+        margin-top: -14%;
+    }
+    
+}
+
+@media screen and (min-width: 992px) {
+    .houses .house.col-md-4 {
+        width: 32.2% !important;
+    }
+    .sales {
+        margin-left: -6%;
+        left: 50%;
+        top: 50%;
+        margin-top: -11%;
+    }
+}
+
 @media screen and (min-width: 768px) and (max-width: 991px) {
     .backgroundc {
         height: 38% !important;
@@ -81,7 +177,6 @@
     }
 }
 
-
 @media screen and (max-width: 768px) {
     .backgroundc {
         margin-top: 57% !important;
@@ -91,3 +186,4 @@
         margin-top: -10%;
     }
 }
+
