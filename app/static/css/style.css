@@ -124,14 +124,14 @@ font-weight: 900;
 	background-color: #FFF;
 	}
 /* Home Style */
-/*#tf-home{*/
-	/*background: url(../img/01.jpg);*/
-	/*background-size: cover;*/
-	/*background-position: center;*/
-	/*background-attachment: fixed;*/
-	/*background-repeat: no-repeat;*/
-	/*color: #cfcfcf;*/
-/*}*/
+#tf-home{
+	background: url(/static/img/03.JPG);
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	color: #cfcfcf;
+}
 
 #tf-home .overlay{
 	background: -moz-linear-gradient(top,  rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.73) 17%, rgba(0,0,0,0.66) 35%, rgba(0,0,0,0.55) 62%, rgba(0,0,0,0.4) 100%); /* FF3.6+ */
@@ -387,7 +387,7 @@ ol.type li a.active { font-weight: 700; }
     transition-property: transform, opacity;
 }
 .portfolio-item{
-	margin-bottom: 30px;
+	/*margin-bottom: 30px;*/
 }
 .portfolio-item .hover-bg{
 	height: 260px;

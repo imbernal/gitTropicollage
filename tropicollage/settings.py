@@ -42,7 +42,7 @@ INSTALLED_APPS = (
     'django_filters',
     'easy_maps',
     'versatileimagefield',
-    'django_social_share'
+    # 'django_social_share'
 )
 
 SERVER_EMAIL = "info@tropicollage.com"
