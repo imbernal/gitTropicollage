@@ -45,34 +45,41 @@
     <!-- Navigation
     ==========================================-->
     <nav id="tf-menu" class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                        data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="{% url 'home_page' %}">Tropicollage</a>
-            </div>
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="{% url 'home_page' %}">Tropicollage</a>
+                </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#tf-home" class="page-scroll">Home</a></li>
-                    <li><a href="#tf-about" class="page-scroll">About</a></li>
-                    <li><a href="#tf-reservations" class="page-scroll">Reservations</a></li>
-                    <li><a href="#tf-works" class="page-scroll">Services</a></li>
-                    <li><a href="#tf-testimonials" class="page-scroll">Testimonials</a></li>
-                    <li><a href="#tf-contact" class="page-scroll">Contact</a></li>
-                </ul>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#tf-home" class="page-scroll">Home</a></li>
+                        <li><a href="#tf-about" class="page-scroll">About</a></li>
+                        <li><a href="#tf-reservations" class="page-scroll">Reservations</a></li>
+                        <li><a href="#tf-works" class="page-scroll">Services</a></li>
+                        <li><a href="#tf-testimonials" class="page-scroll">Testimonials</a></li>
+                        <li><a href="#tf-contact" class="page-scroll">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
             </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
+            <!-- /.container-fluid -->
+        </nav>
+
+     <!--<li><a href="#tf-home" class="page-scroll">Home</a></li>-->
+                    <!--<li><a href="#tf-about" class="page-scroll">About</a></li>-->
+                    <!--<li><a href="#tf-reservations" class="page-scroll">Reservations</a></li>-->
+                    <!--<li><a href="#tf-works" class="page-scroll">Services</a></li>-->
+                    <!--<li><a href="#tf-testimonials" class="page-scroll">Testimonials</a></li>-->
+                    <!--<li><a href="#tf-contact" class="page-scroll">Contact</a></li>-->
 
     <!-- Home Page
     ==========================================-->
@@ -101,14 +108,6 @@
                                 <option value="{{ item }}">{{ item }}</option>
                                 {% endfor %}
                             </select>
-                            <!--<input type="text" class="" placeholder="Search">-->
-                            <!--</div>-->
-                            <!--<div class="form-group col-xs-12 col-sm-12 col-md-12 label1">-->
-                            <!--<input type="text" id="endDate" class="form-control" placeholder="Check in">-->
-                            <!--</div>-->
-                            <!--<div class="form-group col-xs-12 col-sm-12 col-md-12 label3">-->
-                            <!--<input type="text" id="startDate" class="form-control" placeholder="Check out">-->
-                            <!--</div>-->
                             <div>
                                 <button type="submit" class="btn btn-warning findButton">
                                     <span class="glyphicon glyphicon-search"></span>
@@ -131,10 +130,10 @@
     <div id="tf-about">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 col-xs-4">
+                <div class="col-md-4 col-xs-6">
                     <img src="{% static 'img/team/02.png' %}" class="img-responsive">
                 </div>
-                <div class="col-md-6 col-xs-6">
+                <div class="col-md-6 col-xs-12">
                     <div class="about-text">
                         <div class="section-title">
                             <h4>About us</h4>
@@ -201,35 +200,35 @@
             <div class="space"></div>
 
 
-            <div class="slide">
+            <!--<div class="slide">-->
 
-                <div id="slide">
-                    {% for item in casas %}
-                    <a href="{% url 'home_details' item.pk %}">
-                        <img src="/media/{{ item.foto_principal }}" width="400" height="300"/>
-                        <span>
-                            <img class="img-circle img-responsive"
-                                 src="/media/{{ item.foto_dueno }}"
-                                 id="owner" width="56" height="66"
-                                 alt="100">
-                            <div class="name">
-                                {{ item.nombre }}
-                                <br>
-                                {{ item.polo_turistico }}
-                                <div class="reviews">
-                                    {{ item.feedback_set.all.count }} Reviews
-                                </div>
-                            </div>
+                <!--<div id="slide">-->
+                    <!--{% for item in casas %}-->
+                    <!--<a href="{% url 'home_details' item.pk %}">-->
+                        <!--<img src="/media/{{ item.foto_principal }}" width="400" height="300"/>-->
+                        <!--<span>-->
+                            <!--<img class="img-circle img-responsive"-->
+                                 <!--src="/media/{{ item.foto_dueno }}"-->
+                                 <!--id="owner" width="56" height="66"-->
+                                 <!--alt="100">-->
+                            <!--<div class="name">-->
+                                <!--{{ item.nombre }}-->
+                                <!--<br>-->
+                                <!--{{ item.polo_turistico }}-->
+                                <!--<div class="reviews">-->
+                                    <!--{{ item.feedback_set.all.count }} Reviews-->
+                                <!--</div>-->
+                            <!--</div>-->
 
-                        </span>
-                    </a>
+                        <!--</span>-->
+                    <!--</a>-->
 
-                    {% endfor %}
-                </div>
-                <div class="tabs"><span id="toggle"></span>
-                </div>
+                    <!--{% endfor %}-->
+                <!--</div>-->
+                <!--<div class="tabs"><span id="toggle"></span>-->
+                <!--</div>-->
 
-            </div>
+            <!--</div>-->
 
 
         </div>
@@ -356,70 +355,55 @@
 
         $(document).ready(function () {
 
-            init({
-
-                animation: 'Rotate3D',
-                min: Carousel.scale ? .1 : .4,
-                yRadius: Carousel.scale ? 10 : 50,
-                margin: Carousel.scale ? 25 : 0,
-                offsetAngle: Carousel.scale ? -195 : 0,
-                centerOffset: {
-
-                    x: Carousel.scale ? -100 : 0,
-                    y: 0
-                }
-            });
+//            init({
+//
+//                animation: 'Rotate3D',
+//                min: Carousel.scale ? .1 : .4,
+//                yRadius: Carousel.scale ? 10 : 50,
+//                margin: Carousel.scale ? 25 : 0,
+//                offsetAngle: Carousel.scale ? -195 : 0,
+//                centerOffset: {
+//
+//                    x: Carousel.scale ? -100 : 0,
+//                    y: 0
+//                }
+//            });
 
             if (isMobile.any()) {
-                $('#my-video').addEventListener('autoplay', function () {
-                    $('#my-video').play();
-                });
-                $('#my-video').load();
-                $('#my-video').play();
-//                        $('#my-video').attr('poster', '/static/img/poster.jpg');
-//                        $('#my-video').removeAttr('autoplay');
+                $('#my-video').attr('poster', '/static/img/poster.jpg');
+                $('#my-video').removeAttr('autoplay');
+//                $('#my-video').addEventListener('autoplay', function () {
+//                    $('#my-video').play();
+//                    alert("asasa");
             }
-
-            $('#my-video').backgroundVideo({
-                pauseVideoOnViewLoss: true,
-                parallaxOptions: {
-                    effect: 1.7
-                }
-            });
-
-            $('#startDate').datepicker({
-                defaultDate: "+lw",
-                changeMonth: true,
-                onClose: function (selectedDate) {
-                    $("endDate").datepicker("option", "maxDate", selectedDate);
-                }
-            });
-
-            $('#endDate').datepicker({
-                defaultDate: "+lw",
-                changeMonth: true,
-                onClose: function (selectedDate) {
-                    $("#startDate").datepicker("option", "minDate", selectedDate);
-                }
-            });
-
-            $('#myTab a').click(function (e) {
-                e.preventDefault();
-                $(this).tab('show')
-            });
-
+//                $('#my-video').load();
+//                $('#my-video').play();
 //
-//                    {#                    $('#demo').daterangepicker({#}
-//                    {#                        "autoApply": true,#}
-//                    {#                        "startDate": "10/06/2015",#}
-//                    {#                        "endDate": "10/12/2015"#}
-//                    {#                    }, function (start, end, label) {#}
-//                    {#                        $('#in-date').attr('value', start.format('YYYY-MM-DD'));#}
-//                    {#                        $('#out-date').attr('value', end.format('YYYY-MM-DD'));#}
-//                    {#                        console.log(start.format('YYYY-MM-DD'));#}
-//                    {#                    });#}
-        })
-        ;
+        });
+
+        $('#my-video').backgroundVideo({
+            pauseVideoOnViewLoss: true,
+            parallaxOptions: {
+                effect: 1.7
+            }
+        });
+
+        $('#startDate').datepicker({
+            defaultDate: "+lw",
+            changeMonth: true,
+            onClose: function (selectedDate) {
+                $("endDate").datepicker("option", "maxDate", selectedDate);
+            }
+        });
+
+        $('#endDate').datepicker({
+            defaultDate: "+lw",
+            changeMonth: true,
+            onClose: function (selectedDate) {
+                $("#startDate").datepicker("option", "minDate", selectedDate);
+            }
+        });
+
 
         $('#owl-demo').owlCarousel({
             autoPlay: 3000, //Set AutoPlay to 3 seconds

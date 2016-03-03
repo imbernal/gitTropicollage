@@ -12,7 +12,7 @@
     <meta name="author" content="ThemeForces.com">
 
     {% load staticfiles%}
-
+    {% load social_share %}
 
     {% block global_styles %}
         <link rel="shortcut icon" href="{% static '/img/favicon.ico' %}" type="image/x-icon">
@@ -51,9 +51,10 @@
             </div>
             <div class="pull-right fnav">
                 <ul class="footer-social">
-                    <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                    <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                    <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
+
+                    <li>{% post_to_facebook 'http://www.tropicollage.com' '<i class="ion-social-facebook"></i>' %}</li>
+                    <li>{% post_to_twitter 'http://www.tropicollage.com' '<i class="ion-social-twitter"></i>' %}</li>
+                    <li>{% post_to_gplus 'http://www.tropicollage.com' '<i class="ion-social-googleplus"></i>' %}</li>
                 </ul>
             </div>
         </div>

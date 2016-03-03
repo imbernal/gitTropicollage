@@ -1,6 +1,7 @@
 {% extends 'layout.html' %}
 {% load staticfiles %}
 {% load easy_maps_tags cache %}
+{% load social_share %}
 
 
 {% block title %}Details{% endblock %}
@@ -192,14 +193,9 @@
 </div>
 
 <div class="container detailed-info" id="detailed-info">
-    <h3>More Info</h3>
+    <h3>Mensaje promocional</h3>
     <section>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>{{ entity.mensaje_promocional }}.</p>
     </section>
     <hr/>
     <section class="all-details">
@@ -335,16 +331,16 @@
             </div>
         </div>
         <hr/>
-        <div class="section-exponation col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-                <h4 class="title-details">Mensaje promocional</h4>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <p>{{ entity.mensaje_promocional }}</p>
-                </div>
-            </div>
-        </div>
+        <!--<div class="section-exponation col-xs-12 col-sm-12 col-md-12 col-lg-12">-->
+            <!--<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">-->
+                <!--<h4 class="title-details">Mensaje promocional</h4>-->
+            <!--</div>-->
+            <!--<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">-->
+                <!--<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">-->
+                    <!--<p>{{ entity.mensaje_promocional }}</p>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
     </section>
 </div>
 <hr>

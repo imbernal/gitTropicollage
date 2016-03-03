@@ -4,357 +4,308 @@
 
 {% block level_styles %}
 
-    <link rel="stylesheet" href="{% static 'css/details.css' %}">
-    <link rel="stylesheet" href="{% static 'css/tropicollage.css' %}">
-    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+<link rel="stylesheet" href="{% static 'css/details.css' %}">
+<link rel="stylesheet" href="{% static 'css/tropicollage.css' %}">
+<link rel="stylesheet" href="{% static 'css/normalize.css' %}">
 
 
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"/>
 {% endblock %}
 
 
 {% block nav %}
-    <nav class="navbar navbar-default" role="navigation">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Tropicollage</a>
-        </div>
+<nav class="navbar navbar-default" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#">Tropicollage</a>
+    </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
 
-            <!--<form class="navbar-form navbar-left" role="search">-->
-                <!--<div class="input-group">-->
-                    <!--<input type="text" class="form-control">-->
-        					<!--<span class="input-group-btn">-->
-        							<!--<button type="button" class="btn btn-default">-->
-                                        <!--<span class="glyphicon glyphicon-search" aria-hidden="true"></span>-->
-                                    <!--</button>-->
-        					<!--</span>-->
-                <!--</div>-->
-                <!--&lt;!&ndash; /input-group &ndash;&gt;-->
-            <!--</form>-->
-
-          
-            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                 aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4 class="modal-title">Articulos Sugeridos</h4>
-                        </div>
-                        <div class="modal-body">
-                            <h4><span class="ion-document-text"></span>Guia para empezar</h4>
-                        </div>
-                        <hr>
-                        <div class="modal-body">
-                            <h4><span class="ion-document-text"></span>Que tengo que hacer para reservar</h4>
-                        </div>
-                        <hr>
-                        <div class="modal-body">
-                            <h4><span class="ion-document-text"></span>Puedo modificar una reserva confirmada</h4>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                            <a href="#" class="pull-left">Centro de Ayuda</a>
-                        </div>
-                    </div>
-                    <!-- /.modal-content -->
-                </div>
-                <!-- /.modal-dialog -->
-            </div>
-            <!-- /.modal -->
-
-        </div>
-        <!-- /.navbar-collapse -->
-    </nav>
+</nav>
 {% endblock %}
 
 {% block body %}
 
-    <div class="total">
+<div class="total">
 
-        <div class="plus" id="plus">
-            <a class="navbar-toggle" data-toggle="collapse" data-target=".filt">
-                <span id="filters_simbol" class="ion-ios-arrow-forward"></span>
-            </a>
-        </div>
-        <div class="list_casas">
-
-
-            <div class="col-xs-11" id="home_list">
-                <section class="posts row">
-                    {% for item in filter %}
-
-                        <div class="item col-xs-8 col-sm-4 col-md-4 col-lg-3">
-
-                            <div class="post">
-                                <div class="descripcion row">
-                                    <div class="casa-foto">
-
-
-                                        <img class="img-responsive cv"
-                                             src="/media/{{ item.foto_principal }}"/>
-
-                                        <div class="price">
-                                            <span class="pull-left" id="simbolo_peso">$</span> <span
-                                                id="precio_valor">{{ item.precio_alta }}</span>
-                                        </div>
-
-
-                                    </div>
-
-
-                                </div>
-                                <div class="categoria">
-                                    <span class="star ion-android-star"></span>
-                                    <span class="star ion-android-star"></span>
-                                    <span class="star ion-android-star"></span>
-                                    <span class="star ion-android-star"></span>
-                                    <span class="star ion-android-star"></span>
-                                </div>
-                            </div>
-                            <div class="detalles">
-                                <div class="image_owner">
-                                    <img class="img-circle img-responsive"
-                                         src="/media/{{ item.foto_dueno }}"
-                                         id="owner" width="56" height="66"
-                                         alt="100">
-                                </div>
-                                <h4><a href="{% url 'home_details' item.pk %}">{{ item.nombre }}</a></h4>
-
-
-                                <h5 class="resumen text_truncate">
-                                    {{ item.mensaje_promocional }}
-                                </h5>
-
-                                <div class="reviews">
-                                    <a href="{% url 'home_details' item.pk %}">
-                                        <button class="btn-reserv btn btn-lg btn-block btn-default"><span
-                                                class="ion-ios-calendar-outline"></span> Book now!!
-                                        </button>
-                                    </a>
-                                </div>
-
-                            </div>
-                        </div>
-
-                    {% endfor %}
-
-                </section>
-            </div>
-        </div>
-
-
+    <div class="plus" id="plus">
+        <a class="navbar-toggle" data-toggle="collapse" data-target=".filt">
+            <span id="filters_simbol" class="ion-ios-arrow-forward"></span>
+        </a>
     </div>
-    <div class="collapse navbar-collapse filt">
-        <form action="" method="get">
-            <div class="filtros">
+    <div class="list_casas">
 
 
-                <div class="tipos_filtros row">
-                    <div class="filtros_title col-xs-12">
-                        <h2>Filtros</h2>
+        <div class="col-xs-11" id="home_list">
+            <section class="posts row">
+                {% if not filter %}
+                    <div class="col-xs-10 pull-left">
+                        <h3>Lo sentimos.... No se ha encontrado ningun resultado</h3>
                     </div>
 
-                    <div class="filter col-xs-12 col-sm-12 col-lg-11 row">
+                {% endif %}
+                {% for item in filter %}
 
-                        {% csrf_token %}
+                <div class="item col-xs-8 col-sm-4 col-md-4 col-lg-3">
 
-                        <div class="one_filter">
-                            <div class="one_filter_title">
-                                <h4><span
-                                        id="medal"
-                                        class="ion-ribbon-b"></span>SuperHost<span id="bombillo"
-                                                                                   class="ion-android-bulb"></span></h4>
-                            </div>
-                            <div class="row each_filter">
-                                <div class="col-xs-5 name_filter">
-                                    Superhost
+                    <div class="post">
+                        <div class="descripcion row">
+                            <div class="casa-foto">
+
+
+                                <img class="img-responsive cv"
+                                     src="/media/{{ item.foto_principal.thumbnail.400x400 }}"/>
+
+                                <div class="price">
+                                    <span class="pull-left" id="simbolo_peso">$</span> <span
+                                        id="precio_valor">{{ item.precio_alta }}</span>
                                 </div>
-                                <div class="col-xs-3 filter_select">
-                                    {{ filter.form.superhost }}
-                                </div>
+
+
                             </div>
+
+
+                        </div>
+                        <div class="categoria">
+                            <span class="star ion-android-star"></span>
+                            <span class="star ion-android-star"></span>
+                            <span class="star ion-android-star"></span>
+                            <span class="star ion-android-star"></span>
+                            <span class="star ion-android-star"></span>
+                        </div>
+                    </div>
+                    <div class="detalles">
+                        <div class="image_owner">
+                            <img class="img-circle img-responsive"
+                                 src="/media/{{ item.foto_dueno }}"
+                                 id="owner" width="56" height="66"
+                                 alt="100">
+                        </div>
+                        <h4><a href="{% url 'home_details' item.pk %}">{{ item.nombre }}</a></h4>
+
+
+                        <h5 class="resumen text_truncate">
+                            {{ item.mensaje_promocional }}
+                        </h5>
+
+                        <div class="reviews">
+                            <a href="{% url 'home_details' item.pk %}">
+                                <button class="btn-reserv btn btn-lg btn-block btn-default"><span
+                                        class="ion-ios-calendar-outline"></span> Book now!!
+                                </button>
+                            </a>
                         </div>
 
-                        <hr>
+                    </div>
+                </div>
 
 
-                        <div class="one_filter">
-                            <div class="one_filter_title">
-                                <h4><span class="icons ion-android-home"></span>Location</h4>
+                {% endfor %}
+
+            </section>
+        </div>
+    </div>
+
+
+</div>
+<div class="collapse navbar-collapse filt">
+    <form action="" method="get">
+        <div class="filtros">
+
+
+            <div class="tipos_filtros row">
+                <div class="filtros_title col-xs-12">
+                    <h2>Filtros</h2>
+                </div>
+
+                <div class="filter col-xs-12 col-sm-12 col-lg-11 row">
+
+                    {% csrf_token %}
+
+                    <div class="one_filter">
+                        <div class="one_filter_title">
+                            <h4><span
+                                    id="medal"
+                                    class="ion-ribbon-b"></span>SuperHost<span id="bombillo"
+                                                                               class="ion-android-bulb"></span></h4>
+                        </div>
+                        <div class="row each_filter">
+                            <div class="col-xs-5 name_filter">
+                                Superhost
                             </div>
-                            <div class="row each_filter">
-                                <div class="col-xs-5 name_filter">
-                                    Ciudad
-                                </div>
-                                <div class="col-xs-3 filter_select">
-                                    {{ filter.form.ciudad }}
-                                </div>
-                            </div>
-                            <div class="row each_filter">
-                                <div class="col-xs-5 name_filter">
-                                    Campo
-                                </div>
-                                <div class="col-xs-3 filter_select">
-                                    {{ filter.form.campo }}
-                                </div>
-                            </div>
-                            <div class="row each_filter">
-                                <div class="col-xs-5 name_filter">
-                                    Playa
-                                </div>
-                                <div class="col-xs-3 filter_select">
-                                    {{ filter.form.playa }}
-                                </div>
+                            <div class="col-xs-3 filter_select">
+                                {{ filter.form.superhost }}
                             </div>
                         </div>
-                        <hr>
+                    </div>
 
-                        <div class="one_filter">
+                    <hr>
 
 
-                            <div class="one_filter_title">
+                    <div class="one_filter">
+                        <div class="one_filter_title">
+                            <h4><span class="icons ion-android-home"></span>Location</h4>
+                        </div>
+                        <div class="row each_filter">
+                            <div class="col-xs-5 name_filter">
+                                Ciudad
+                            </div>
+                            <div class="col-xs-3 filter_select">
+                                {{ filter.form.ciudad }}
+                            </div>
+                        </div>
+                        <div class="row each_filter">
+                            <div class="col-xs-5 name_filter">
+                                Campo
+                            </div>
+                            <div class="col-xs-3 filter_select">
+                                {{ filter.form.campo }}
+                            </div>
+                        </div>
+                        <div class="row each_filter">
+                            <div class="col-xs-5 name_filter">
+                                Playa
+                            </div>
+                            <div class="col-xs-3 filter_select">
+                                {{ filter.form.playa }}
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
 
-                                <h4><span class="icons ion-happy-outline">
-                                                                    <span id="arrow_down"
-                                                                          class="ion-chevron-down"></span>
+                    <div class="one_filter">
+
+
+                        <div class="one_filter_title">
+
+                            <h4><span class="icons ion-happy-outline">
+                                                                    <span class="arrow_down ion-chevron-down"></span>
                                                                 </span>Servicios</h4>
 
-                            </div>
-                            <div class="col-xs-10 col-sm-12 col-lg-11">
-                                <div class="row each_filter">
-                                    <div class="col-xs-5 name_filter">
-                                        Internet
-                                    </div>
-                                    <div class="col-xs-3 filter_select">
-                                        {{ filter.form.internet }}
-                                    </div>
-                                </div>
-
-                                <div class="row each_filter">
-                                    <div class="col-xs-5 name_filter">
-                                        Parqueo
-                                    </div>
-                                    <div class="col-xs-3 filter_select">
-                                        {{ filter.form.parqueo }}
-                                    </div>
-                                </div>
-                                <div class="row each_filter">
-                                    <div class="col-xs-5 name_filter">
-                                        Agua Caliente
-                                    </div>
-                                    <div class="col-xs-3 filter_select">
-                                        {{ filter.form.filter_agua_caliente }}
-                                    </div>
-                                </div>
-
-                            </div>
                         </div>
-                        <div class="col-xs-10 col-sm-12 col-lg-11" id="more_comfort">
+                        <div class="col-xs-10 col-sm-12 col-lg-11">
                             <div class="row each_filter">
                                 <div class="col-xs-5 name_filter">
-                                    Caja Fuerte
+                                    Internet
                                 </div>
                                 <div class="col-xs-3 filter_select">
-                                    {{ filter.form.filter_caja_fuerte }}
-                                </div>
-
-                            </div>
-                            <div class="row each_filter">
-                                <div class="col-xs-5 name_filter">
-                                    Bano Privado
-                                </div>
-                                <div class="col-xs-3 filter_select">
-                                    {{ filter.form.filter_bano_privado }}
+                                    {{ filter.form.internet }}
                                 </div>
                             </div>
 
+                            <div class="row each_filter">
+                                <div class="col-xs-5 name_filter">
+                                    Parqueo
+                                </div>
+                                <div class="col-xs-3 filter_select">
+                                    {{ filter.form.parqueo }}
+                                </div>
+                            </div>
+                            <div class="row each_filter">
+                                <div class="col-xs-5 name_filter">
+                                    Agua Caliente
+                                </div>
+                                <div class="col-xs-3 filter_select">
+                                    {{ filter.form.filter_agua_caliente }}
+                                </div>
+                            </div>
 
                         </div>
                     </div>
+                    <div class="col-xs-10 col-sm-12 col-lg-11" id="more_comfort">
+                        <div class="row each_filter">
+                            <div class="col-xs-5 name_filter">
+                                Caja Fuerte
+                            </div>
+                            <div class="col-xs-3 filter_select">
+                                {{ filter.form.filter_caja_fuerte }}
+                            </div>
 
+                        </div>
+                        <div class="row each_filter">
+                            <div class="col-xs-5 name_filter">
+                                Bano Privado
+                            </div>
+                            <div class="col-xs-3 filter_select">
+                                {{ filter.form.filter_bano_privado }}
+                            </div>
+                        </div>
+
+
+                    </div>
                 </div>
 
-                <div class="buttons_filter">
-
-                    <button type="submit" id="filtrar" name="action" value="filtrar" class="btn">
-                        <span id="arrow_down"
-                          class="ion-android-search">
-                    </span>Filtrar
-                    </button>
-                </div>
             </div>
-        </form>
-    </div>
+
+            <div class="buttons_filter">
+
+                <button type="submit" id="filtrar" name="action" value="filtrar" class="btn">
+                        <span class="arrow_down ion-android-search">
+                    </span>Filtrar
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
 
 {% endblock %}
 {% block footer %}
 {% endblock %}
 {% block level_scripts %}
-    <script src="{% static 'js/jquery-1.10.2.min.js' %}"></script>
-    <script src="{% static 'js/bootstrap.js' %}"></script>
-    <script src="{% static 'js/SmoothScroll.js' %}"></script>
+<script src="{% static 'js/jquery-1.10.2.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.js' %}"></script>
+<script src="{% static 'js/SmoothScroll.js' %}"></script>
 
-    <script type="text/javascript" src="{% static 'js/moment.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/moment.js' %}"></script>
 
-    <script src="{% static 'js/modernizr.custom.js' %}"></script>
-
-
-    <script>
-
-        $(document).ready(function () {
-
-            $('#collapseOne').collapse('hide');
+<script src="{% static 'js/modernizr.custom.js' %}"></script>
 
 
-            $("#more_comfort").css("display", "none");
-            $("#more_foto").css("display", "none");
+<script>
 
-            $('#filters_simbol').on('click', function () {
-                $('#home_list').toggle(700);
-                $('#filters_simbol').toggleClass("ion-ios-arrow-back");
-                $('.filtros').css({width: 230, left: 46});
-            });
+    $(document).ready(function () {
 
-            $('#arrow_down').on('click', function () {
-
-                $('#more_comfort').toggle(700);
-                $('#arrow_down').toggleClass("ion-chevron-up");
-            });
-            $('#arrow_down_rooms').on('click', function () {
-
-                $('#more_rooms').toggle(700);
-                $('#arrow_down_rooms').toggleClass("ion-chevron-up");
-            });
+        $('#collapseOne').collapse('hide');
 
 
-            function disabled() {
-                var checkboxes = $('input[type="checkbox"]:checked');
+        $("#more_comfort").css("display", "none");
+        $("#more_foto").css("display", "none");
 
-                if (checkboxes.length == 0) {
-                    $('#superhostSelected').val(false);
-                    $('#filtrar').attr('disabled', true);
-                    $('#all').attr('disabled', false);
-                }
-
-            }
-
-            function validateButtons() {
-                $('#filtrar').attr('disabled', false);
-                $('#all').attr('disabled', true);
-            }
-
+        $('#filters_simbol').on('click', function () {
+            $('#home_list').toggle(700);
+            $('#filters_simbol').toggleClass("ion-ios-arrow-back");
+            $('.filtros').css({width: 230, left: 46});
         });
-    </script>
+
+        $('.arrow_down').on('click', function () {
+
+            $('#more_comfort').toggle(700);
+            $('.arrow_down').toggleClass("ion-chevron-up");
+        });
+        $('#arrow_down_rooms').on('click', function () {
+
+            $('#more_rooms').toggle(700);
+            $('#arrow_down_rooms').toggleClass("ion-chevron-up");
+        });
+
+
+        function disabled() {
+            var checkboxes = $('input[type="checkbox"]:checked');
+
+            if (checkboxes.length == 0) {
+                $('#superhostSelected').val(false);
+                $('#filtrar').attr('disabled', true);
+                $('#all').attr('disabled', false);
+            }
+
+        }
+
+        function validateButtons() {
+            $('#filtrar').attr('disabled', false);
+            $('#all').attr('disabled', true);
+        }
+
+    });
+</script>
 {% endblock %}
