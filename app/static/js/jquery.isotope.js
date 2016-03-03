@@ -152,7 +152,7 @@
       { // 3D transform functions
         translate : function ( position ) {
           //debugger;
-          console.log(position[0]);
+          
           if(position[0]!=0){
             position[0] = position[0] + a ;
             a = a*2;

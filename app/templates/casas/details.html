@@ -154,17 +154,17 @@
                 <small class="reviews">({{ entity.feedback_set.count }})</small>
             </div>
             <div class="simple-about col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="detail-container col-sm-3 col-xs-6"><a href="#" class="tooltip-test"
+                <div class="detail-container  col-sm-3 col-xs-6"><a href="#" class="tooltip-test"
                                                                    title="Cantidad de habitaciones"><span
                         class="flaticon-bedroom1"></span><span>&times; {{ entity.cant_habitaciones }}</span></a>
                 </div>
-                <div class="detail-container col-sm-3 col-xs-6"><a href="#" class="tooltip-test"
+                <div class="detail-container numHab numHab col-sm-3 col-xs-6"><a href="#" class="tooltip-test"
                                                                    title="Cantidad de camas simples"><span
                         class="flaticon-bed15"></span><span>&times; {{ cant_camas_simples }}</span></a></div>
-                <div class="detail-container col-sm-3 col-xs-6"><a href="#" class="tooltip-test"
+                <div class="detail-container numHab col-sm-3 col-xs-6"><a href="#" class="tooltip-test"
                                                                    title="Cantidad de camas dobles"><span
                         class="flaticon-bed13"></span><span>&times; {{ cant_camas_dobles }}</span></a></div>
-                <div class="detail-container col-sm-3 col-xs-6"><a href="#" class="tooltip-test"
+                <div class="detail-container numHab col-sm-3 col-xs-6"><a href="#" class="tooltip-test"
                                                                    title="Cantidad de personas"><span
                         class="flaticon-two148"></span><span>&times; {{ cant_total_personas }}</span></a></div>
             </div>
@@ -494,7 +494,7 @@
             <!--#}-->
 
             <div class="portlet-body form" id="wizard">
-                <form action="#" method="post" class="form-horizontal" id="submit_form">
+                <form action="{% url 'reservar' entity.pk  %}" method="post" class="form-horizontal" id="submit_form">
                     {% csrf_token %}
                     <div class="form-wizard">
 
@@ -1238,7 +1238,7 @@
                                     <div class="information">
 
 
-                                        <p id="finalInformation">sdasdasd</p>
+                                        <p id="finalInformation"></p>
                                         <br>
                                         <p>
                                         <h4>Cancellation Policy</h4>
@@ -1390,7 +1390,7 @@
 <script type="text/javascript">
     // DO NOT REMOVE : GLOBAL FUNCTIONS!
     $(document).ready(function () {
-
+        $('.numHab').val(0);
 //        $('#myModal').modal('show');
 
         var width = screen.availWidth; // get the screen real size.
@@ -1469,15 +1469,17 @@
             var desde = $('#desde').val();
             var hasta = $('#hasta').val();
 
-            var diffDays = daysBetween(desde, hasta);
+            var diffDays =  desde- hasta;
+            var cantDay = diffDays / 1000 / 60 / 60 / 24;
+            console.log(diffDays);
 
             var casa = $('#homeName').val();
 
             var polo = $('#homePolo').val();
 
-            var precio = diffDays * data.precio_alta;
+            var precio = cantDay * data.precio_alta;
 
-            $('#finalInformation').html("Noches: " + diffDays + ", Precio: " + precio + " $");
+            $('#finalInformation').html("Noches: " + cantDay + ", Precio: " + precio + " $");
 
         });
 
@@ -1512,6 +1514,8 @@
             this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
         }
     });
+
+
 
     function l(arg) {
         console.log(arg);

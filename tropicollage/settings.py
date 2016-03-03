@@ -47,7 +47,6 @@ INSTALLED_APPS = (
 
 SERVER_EMAIL = "info@tropicollage.com"
 
-EMAIL_BACKEND = 'django_smtp_ssl.SSLEmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_PASSWORD = 'tropicollage2015'
 EMAIL_HOST_USER = 'infotropicollage@gmail.com'

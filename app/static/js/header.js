@@ -4,7 +4,7 @@ function parsePicture(patt) {
 }
 
 $(function () {
-	var images = ["03.JPG", "04.JPG", "05.JPG", "054.jpg"];
+	var images = ["03.png", "04.png", "05.png", "06.png" , "07.png" ,"08.png","09.JPG","10.JPG" ];
 	
 	var initial_image = parsePicture($('#tf-home').css('background-image')).replace('"', '');
 	var initial_index = images.indexOf(initial_image);
