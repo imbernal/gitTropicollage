@@ -4,7 +4,7 @@ function parsePicture(patt) {
 }
 
 $(function () {
-	var images = ["03.png", "04.png", "05.png", "06.png" , "07.png" ,"08.png","09.JPG","10.JPG" ];
+	var images = ["03.png", "04.png", "05.png", "06.png" , "07.png" ,"08.png","09.JPG","poster.jpg" ];
 	
 	var initial_image = parsePicture($('#tf-home').css('background-image')).replace('"', '');
 	var initial_index = images.indexOf(initial_image);
@@ -20,7 +20,7 @@ $(function () {
 		image_path = image_path + images[curr_index];
 
 		var abs = "url('/static/img/"+image_path+"')";
-		// $('#tf-home').css({ 'background-image': abs });
+		 //$('#tf-home').css({ 'background-image': abs });
 		
 		var image = $('#tf-home');
     		image.fadeOut(500, function () {

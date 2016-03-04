@@ -11,7 +11,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.contrib import messages
 from django.core.mail import send_mail
 from app.filter import *
-
+import operator
 from .forms import UploadFileForm
 from .utils import handle_uploaded_file
 
@@ -26,19 +26,27 @@ def exists(check, coll):
     return flag
 
 def home_page(request):
-    casas = Casa.objects.all()[:10]
+    casas = Casa.objects.all()
     feedbacks = FeedBack.objects.all()[:3]
     reservaciones = Reservacion.objects.all()[:5]
     lugares = Casa.objects.all()
 
     lugares_fin = []
+    reservation = []
+
+    casas_reserva = {}
+
+    for item in casas:
+        casas_reserva[item.pk] = item.reservacion_set.count()
+
+    sorted_casas_reserva = sorted(casas_reserva.items() , key = operator.itemgetter(1))
 
     for item in lugares:
         if not exists(item.polo_turistico, lugares_fin):
             lugares_fin.append(str(item.polo_turistico))
 
     return render(request, 'home_page/index.html',
-                  {'feedbacks': feedbacks, 'casas': casas, 'reservaciones': reservaciones, 'places': lugares_fin})
+                  {'feedbacks': feedbacks, 'reservations': sorted_casas_reserva, 'reservaciones': reservaciones, 'places': lugares_fin})
 
 
 def homeList(request):
@@ -141,6 +149,7 @@ def reservar(request, home_id):
 
     send_mail('Nueva solicitud de reservacion', message, 'info@tropicollage.com',
               ['imbernal92@nauta.cu', 'bretana@nauta.cu', 'imbernal9203@gmail.com', 'bretanac@gmail.com', 'mmillo@nauta.cu'], fail_silently=False)
+
 
 
 def fecha_search(request):
