@@ -45,36 +45,36 @@
     <!-- Navigation
     ==========================================-->
     <nav id="tf-menu" class="navbar navbar-default navbar-fixed-top" role="navigation">
-            <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                            data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="{% url 'home_page' %}">Tropicollage</a>
-                </div>
-
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#tf-home" class="page-scroll">Home</a></li>
-                        <li><a href="#tf-about" class="page-scroll">About</a></li>
-                        <li><a href="#tf-reservations" class="page-scroll">Reservations</a></li>
-                        <li><a href="#tf-works" class="page-scroll">Services</a></li>
-                        <li><a href="#tf-testimonials" class="page-scroll">Testimonials</a></li>
-                        <li><a href="#tf-contact" class="page-scroll">Contact</a></li>
-                    </ul>
-                </div>
-                <!-- /.navbar-collapse -->
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" id="button-toggle" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{% url 'home_page' %}">Tropicollage</a>
             </div>
-            <!-- /.container-fluid -->
-        </nav>
 
-     
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#tf-home" class="page-scroll">Home</a></li>
+                    <li><a href="#tf-about" class="page-scroll">About</a></li>
+                    <li><a href="#tf-reservations" class="page-scroll">Reservations</a></li>
+                    <li><a href="#tf-works" class="page-scroll">Services</a></li>
+                    <li><a href="#tf-testimonials" class="page-scroll">Testimonials</a></li>
+                    <li><a href="#tf-contact" class="page-scroll">Contact</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+
     <!-- Home Page
     ==========================================-->
     <main id="tf-home">
@@ -168,147 +168,249 @@
     </div>
 
     <div id="tf-works">
-        <div class="container-fluid">
-            <div class="col-xs-12 houses">
-                <h3 class="text-center">Last Places</h3>
-                
-                <div class="house col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                    <img class="img-responsive" src="/media/imagenes/Casa Campo Andres y Mary Gallery_1.jpg" alt="">
-                    
-                    <div class="shade">
-                        <h1 class="sales">45</h1>
-                        <a href="#" title="" class="btn btn-warning go">Casa fulano de tal</a>
-                    </div>
-
+        <<<<<<< HEAD
+        <div class="container"> <!-- Container -->
+            <div class="section-title text-center center">
+                <h2>Take a look at <strong>our services</strong></h2>
+                <div class="line">
+                    <hr>
                 </div>
-
-                <div class="house col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                    <img class="img-responsive" src="/media/imagenes/Casa Campo Andres y Mary Gallery_1.jpg" alt="">
-                    <span class="shade"></span>
-                </div>
-
-                <div class="house col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                    <img class="img-responsive" src="/media/imagenes/Casa Campo Andres y Mary Gallery_1.jpg" alt="">
-                    <span class="shade"></span>
-                </div>
+                <div class="clearfix"></div>
+                <small><em>Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The
+                    Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of
+                    ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit
+                    amet..", comes from a line in section 1.10.32.</em></small>
             </div>
-        </div>
-    </div>
-</div>
+            <div class="space"></div>
 
-<!-- Testimonials Section
-==========================================-->
-<div id="tf-testimonials" style="   background: url({% static 'img/05.JPG' %});
+            <div class="categories">
+
+                <ul class="cat">
+                    <li class="pull-left"><h4>Filter by Type:</h4></li>
+                    <li class="pull-right">
+                        <ol class="type">
+                            <li><a href="#" data-filter="*" class="active">All</a></li>
+                            <li><a href="#" data-filter=".web">Web Design</a></li>
+                            <li><a href="#" data-filter=".photography">Photography</a></li>
+                            <li><a href="#" data-filter=".app">Mobile App</a></li>
+                            <li><a href="#" data-filter=".branding">Branding</a></li>
+                        </ol>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+
+            <div id="lightbox" class="row">
+
+                <div class="col-sm-6 col-md-3 col-lg-3 branding">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="#">
+                                <div class="hover-text">
+                                    <h4>Logo Design</h4>
+                                    <small>Branding</small>
+                                    <div class="clearfix"></div>
+                                    <i class="fa fa-plus"></i>
+                                </div>
+                                <img src="/static/img/portfolio/01.jpg" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3 col-lg-3 photography app">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="#">
+                                <div class="hover-text">
+                                    <h4>Logo Design</h4>
+                                    <small>Branding</small>
+                                    <div class="clearfix"></div>
+                                    <i class="fa fa-plus"></i>
+                                </div>
+                                <img src="img/portfolio/02.jpg" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3 col-lg-3 branding">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="#">
+                                <div class="hover-text">
+                                    <h4>Logo Design</h4>
+                                    <small>Branding</small>
+                                    <div class="clearfix"></div>
+                                    <i class="fa fa-plus"></i>
+                                </div>
+                                <img src="img/portfolio/03.jpg" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3 col-lg-3 branding">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="#">
+                                <div class="hover-text">
+                                    <h4>Logo Design</h4>
+                                    <small>Branding</small>
+                                    <div class="clearfix"></div>
+                                    <i class="fa fa-plus"></i>
+                                </div>
+                                <img src="img/portfolio/04.jpg" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                        <div class="container-fluid">
+                            <div class="col-xs-12 houses">
+                                <h3 class="text-center">Last Places</h3>
+
+
+                                <div class="house col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                    <img class="img-responsive"
+                                         src="/media/imagenes/Casa Campo Andres y Mary Gallery_1.jpg" alt="">
+                                    <span class="shade"></span>
+                                </div>
+
+                                <div class="house col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                    <img class="img-responsive"
+                                         src="/media/imagenes/Casa Campo Andres y Mary Gallery_1.jpg" alt="">
+                                    <span class="shade"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonials Section
+                ==========================================-->
+                <div id="tf-testimonials" style="   background: url({% static 'img/05.JPG' %});
                                             background-size: cover;
                                             background-position: center;
                                             background-attachment: fixed;
                                             background-repeat: no-repeat;
                                             color: #ffffff;" class="text-center">
-    <div class="overlay">
-        <div class="container">
-            <div class="section-title center">
-                <h2><strong>Our clients’</strong> testimonials</h2>
+                    <div class="overlay">
+                        <div class="container">
+                            <div class="section-title center">
+                                <h2><strong>Our clients’</strong> testimonials</h2>
 
 
-            </div>
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-8 col-md-offset-2">
 
-                    {% for entity in feedbacks %}
-                    <div class="item">
-                        <h5>{{ entity.body }}</h5>
+                                    {% for entity in feedbacks %}
+                                    <div class="item">
+                                        <h5>{{ entity.body }}</h5>
 
-                        <p>user: <strong>{{ entity.full_name }}</strong></p>
+                                        <p>user: <strong>{{ entity.full_name }}</strong></p>
+                                    </div>
+                                    {% endfor %}
+
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    {% endfor %}
+                </div>
+                {#TODO: Edit the search form in the tf-home #}
+                <!-- Contact Section
+                ==========================================-->
+                <div id="tf-contact" class="text-center">
+                    <div class="container">
 
+                        <div class="row">
+                            <div class="col-md-8 col-md-offset-2">
+
+                                <div class="title-contact center">
+                                    <h2>Feel free to <strong>contact us</strong></h2>
+                                </div>
+
+                                <form action="" method="POST">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input type="email" name="username" class="form-control"
+                                                       id="exampleInputEmail1"
+                                                       placeholder="Enter email">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input class="form-control" name="email" id="exampleInputPassword1"
+                                                       placeholder="Email adress">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea class="form-control" name="message" rows="3"></textarea>
+                                    </div>
+
+                                    <button type="submit" class="btn tf-btn btn-default">Submit</button>
+                                </form>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    {% block level_scripts %}
+                    <script type="text/javascript" src="{% static 'js/jquery-1.11.3.min.js' %}"></script>
+                    <script src="{% static 'js/jquery-ui.min.js' %}"></script>
+                    <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+                    <script src="{% static 'js/owl.carousel.js' %}"></script>
+                    <script type="text/javascript" src="{% static 'js/SmoothScroll.js' %}"></script>
+                    <script type="text/javascript" src="{% static 'js/jquery.isotope.js' %}"></script>
+                    <script src="{% static 'js/owl.carousel.js' %}"></script>
+                    <script type="text/javascript" src="{% static 'js/moment.js' %}"></script>
+                    <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+
+                    <script type="text/javascript" src="{% static 'js/mootools.js' %}"></script>
+                    <script type="text/javascript" src="{% static 'js/PeriodicalExecuter.js' %}"></script>
+                    <script type="text/javascript" src="{% static 'js/Carousel.js' %}"></script>
+                    <script type="text/javascript" src="{% static 'js/Carousel.Rotate3D.js' %}"></script>
+                    <script type="text/javascript" src="{% static 'js/Carousel.Extra.js' %}"></script>
+
+
+                    <script type="text/javascript" src="{% static 'js/carousel2.js' %}"></script>
+
+                    <script type="text/javascript" src="{% static 'js/backgroundVideo.js' %}"></script>
+                    <script src="{% static 'js/header.js' %}"></script>
+
+                    <script>
+
+                        $(document).ready(function () {
+
+                            var $root = $('html,body');
+                            $('.page-scroll').click(function () {
+                                $root.animate({
+                                    scrollTop: $($.attr(this, 'href')).offset().top
+                                }, 1000);
+                                return false;
+
+                            });
+
+                            $('.nav a').on('click', function () {
+
+                                $('.navbar-toggle').click(); //bootstrap 3.x by Richard
+                            });
+
+                            $(document).on('click', function (e) {
+                                if ($('#bs-example-navbar-collapse-1').hasClass('in')) {
+                                    $('.collapse').collapse('hide');
+                                }
+                            })
+
+                        });
+
+                    </script>
+                    {% endblock %}
 
                 </div>
             </div>
         </div>
-    </div>
-</div>
-{#TODO: Edit the search form in the tf-home #}
-<!-- Contact Section
-==========================================-->
-<div id="tf-contact" class="text-center">
-    <div class="container">
-
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-
-                <div class="title-contact center">
-                    <h2>Feel free to <strong>contact us</strong></h2>
-                </div>
-
-                <form action="" method="POST">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="email" name="username" class="form-control" id="exampleInputEmail1"
-                                       placeholder="Enter email">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input class="form-control" name="email" id="exampleInputPassword1"
-                                       placeholder="Email adress">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <textarea class="form-control" name="message" rows="3"></textarea>
-                    </div>
-
-                    <button type="submit" class="btn tf-btn btn-default">Submit</button>
-                </form>
-
-            </div>
-        </div>
-
-
-    </div>
-
-    {% block level_scripts %}
-    <script type="text/javascript" src="{% static 'js/jquery-1.10.2.min.js' %}"></script>
-    <script src="{% static 'js/jquery-ui.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
-    <script src="{% static 'js/owl.carousel.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/SmoothScroll.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/jquery.isotope.js' %}"></script>
-    <script src="{% static 'js/owl.carousel.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/moment.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
-
-    <script type="text/javascript" src="{% static 'js/mootools.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/PeriodicalExecuter.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/Carousel.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/Carousel.Rotate3D.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/Carousel.Extra.js' %}"></script>
-
-
-    <script type="text/javascript" src="{% static 'js/carousel2.js' %}"></script>
-
-    <script type="text/javascript" src="{% static 'js/backgroundVideo.js' %}"></script>
-    <script src="{% static 'js/header.js' %}"></script>
-
-    <script>
-
-        $(document).ready(function () {
-
-            var $root = $('html,body');
-            $('.page-scroll').click(function () {
-                $root.animate({
-                    scrollTop: $($.attr(this, 'href')).offset().top
-                }, 1000);
-                return false;
-
-            });
-        });
-    </script>
-    {% endblock %}
-
-</div>
-</div>
-</div>
-{% endblock %}
+        {% endblock %}

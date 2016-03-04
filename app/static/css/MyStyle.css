@@ -164,9 +164,26 @@
     }
 }
 
+@media screen and (min-width: 320px) and (max-width: 768px){
+    .backgroundc{
+        margin-left: 0 !important;
+        width: 100% !important;
+    }
+}
+
 @media screen and (min-width: 320px) and (max-width: 480px){
     .Nombre1{
         font-size: 150% !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .backgroundc {
+        margin-top: 57% !important;
+        height: 35% !important;
+    }
+    .Nombre1{
+        margin-top: -10%;
     }
 }
 

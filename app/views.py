@@ -118,7 +118,7 @@ def reservar(request, home_id):
 
     reservacion.save()
 
-    message = "Datos de la reservacion:\n Casa: " + reservacion.casa + "\n" + \
+    message = "Datos de la reservacion:\n Casa: " + reservacion.casa.nombre + "\n" + \
     "Pais: " + reservacion.country + "\n" + "Ciudad: " + reservacion.city_town + "\n" + \
     "--------\n" + \
     "Nombre del cliente:" + reservacion.first_name + " " + reservacion.last_name + "\n" + \
@@ -126,7 +126,7 @@ def reservar(request, home_id):
     "Email del cliente: " + reservacion.email + "\n" +\
     "--------\n" + \
     "Detalles de la reservacion:\n" + \
-    "Cantidad de Habitaciones: " + reservacion.cant_habitaciones + "\n" + \
+    "Cantidad de Habitaciones: " + reservacion.cant_habitacion + "\n" + \
     "Habitaciones simples: " + reservacion.hab_simples + "\n" + \
     "Habitaciones dobles: " + reservacion.hab_dobles + "\n" + \
     "Habitaciones triples: " + reservacion.hab_triples + "\n" + \
