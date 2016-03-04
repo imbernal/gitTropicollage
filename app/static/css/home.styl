@@ -10,9 +10,6 @@ half_section()
   display inline-block !important
   width 50% !important
 
-#tf-menu
-  background-color rgba(0, 0, 0, .89) !important
-
 .row
   margin 0
 .col-sm-6
@@ -90,3 +87,43 @@ half_section()
     margin-bottom 0 !important
     .form-control
       margin-left 0
+
+shadow(hoff, voff, blur, color)
+  -webkit-box-shadow: hoff voff blur color
+  -moz-box-shadow: hoff voff blur color
+  box-shadow: hoff voff blur color
+
+.row
+  margin-left 0
+  margin-right 0
+.swiper-container
+  width 100%
+  height 100%
+  position fixed
+.another-shade
+  position absolute
+  top 0
+  right 0
+  bottom 0
+  left 0
+  background-color rgba(0, 0, 0, 0.4)
+  z-index 50
+.swiper-slide
+  background-position center
+  background-size cover
+
+.swiper-pagination
+  z-index 51
+
+[class^=swiper-button]
+  display none
+
+#content.container-fluid
+  position absolute
+  top 100%
+  z-index 50
+  width 100%
+  background-color #fff
+  shadow(0, 0, 0, 0.8)
+  padding-left 0
+  padding-right 0

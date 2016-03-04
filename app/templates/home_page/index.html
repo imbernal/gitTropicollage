@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
 <link rel="stylesheet" href="{% static 'css/owl.theme.css' %}">
 <link type="text/css" rel="stylesheet" href="{% static 'css/carousel.css' %}"/>
+<link rel="stylesheet" href="{% static 'css/swiper.css' %}">
 <link rel="stylesheet" href="{% static 'css/home.css' %}">
 {% endblock %}
 {% block body %}
@@ -69,105 +70,115 @@
                     <li><a href="#tf-contact" class="page-scroll">Contact</a></li>
                 </ul>
             </div>
+<<<<<<< HEAD
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container-fluid -->
+=======
+        </div>
+>>>>>>> 6a4cad2c6e0371e2584072d7490d20d7dab04bfb
     </nav>
 
 
     <!-- Home Page
     ==========================================-->
-    <main id="tf-home">
-        <div class="overlay">
-            <div class="backgroundc">
-                <div class="container-fluid">
-                    <div class="content">
-                        <header>
-                            <p class="Nombre1">Find the house to spend your vacations.</p>
-                        </header>
-                        <form action="{% url 'casas' %}" class="form-inline" method="post" style="padding-bottom: 2%;">
-                            {% csrf_token %}
-                            <div class="selectdays">
-                                <!--<div class="form-group  label1">-->
-                                <select class="form-control findButton" name="destination">
-                                    <option value>Select a place</option>
-                                    {% for item in places %}
-                                    <option value="{{ item }}">{{ item }}</option>
-                                    {% endfor %}
-                                </select>
-                                <div>
-                                    <button type="submit" class="btn btn-warning findButton">
-                                        <span class="glyphicon glyphicon-search"></span>
-                                        Find
-                                    </button>
-                                </div>
-                            </div>
-
-                        </form>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-
-
-    <!-- About Us Page
-    ==========================================-->
-    <div id="tf-about">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 col-xs-6">
-                    <img src="{% static 'img/team/02.png' %}" class="img-responsive">
-                </div>
-                <div class="col-md-6 col-xs-12">
-                    <div class="about-text">
-                        <div class="section-title">
-                            <h4>About us</h4>
-
-                            <h2 style="color:black">Some words <strong>about us</strong></h2>
-
+    <div class="backgroundc">
+        <div class="container-fluid">
+            <div class="content">
+                <header>
+                    <p class="Nombre1">Find the house to spend your vacations.</p>
+                </header>
+                <form action="{% url 'casas' %}" class="form-inline" method="post" style="padding-bottom: 2%;">
+                    {% csrf_token %}
+                    <div class="selectdays">
+                        <!--<div class="form-group  label1">-->
+                        <select class="form-control findButton" name="destination">
+                            <option value>Select a place</option>
+                            {% for item in places %}
+                            <option value="{{ item }}">{{ item }}</option>
+                            {% endfor %}
+                        </select>
+                        <div>
+                            <button type="submit" class="btn btn-warning findButton">
+                                <span class="glyphicon glyphicon-search"></span>
+                                Find
+                            </button>
                         </div>
-                        <p class="intro">Somos un equipo con más de 5 años de experiencias, que siempre hemos tenido
-                            la satisfacción de llegar a cumplir las aspiraciones de nuestros clientes, esperamos que
-                            pasen las vacaciones de sus sueños.
-                            Atentamente equipo <strong>Tropicollage</strong></p>
                     </div>
-                </div>
+
+                </form>
+
             </div>
         </div>
     </div>
 
 
-    <!-- Clients Section
-    ==========================================-->
-    <div id="tf-reservations" style="background: url({% static 'img/08.png' %}); background-size: cover;
+    <div class="swiper-container">
+        <div class="another-shade"></div>
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-image:url({% static 'img/slider/03.png' %})"></div>
+            <div class="swiper-slide" style="background-image:url({% static 'img/slider/04.png' %})"></div>
+            <div class="swiper-slide" style="background-image:url({% static 'img/slider/05.png' %})"></div>
+            <div class="swiper-slide" style="background-image:url({% static 'img/slider/06.png' %})"></div>
+            <div class="swiper-slide" style="background-image:url({% static 'img/slider/07.png' %})"></div>
+            <div class="swiper-slide" style="background-image:url({% static 'img/slider/08.png' %})"></div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination swiper-pagination-white"></div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next swiper-button-white"></div>
+        <div class="swiper-button-prev swiper-button-white"></div>
+    </div>
+    <div id="content" class="container-fluid">
+
+        <div id="tf-about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-xs-6">
+                        <img src="{% static 'img/team/02.png' %}" class="img-responsive">
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                        <div class="about-text">
+                            <div class="section-title">
+                                <h4>About us</h4>
+
+                                <h2 style="color:black">Some words <strong>about us</strong></h2>
+
+                            </div>
+                            <p class="intro">Somos un equipo con más de 5 años de experiencias, que siempre hemos tenido
+                                la satisfacción de llegar a cumplir las aspiraciones de nuestros clientes, esperamos que
+                                pasen las vacaciones de sus sueños.
+                                Atentamente equipo <strong>Tropicollage</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="tf-reservations" style="background: url({% static 'img/08.png' %}); background-size: cover;
                                     background-position: center;
                                     background-attachment: fixed;
                                     background-repeat: no-repeat;
                                     color: #ffffff;" class="text-center overlay">
-        <!--<img id="prueba_foto" src=""  alt="">-->
-        <div class="overlay">
-            <div class="container">
+            <div class="overlay">
+                <div class="container">
 
-                <div class="section-title center">
-                    <h2>The last<strong> Reservations</strong></h2>
-                </div>
-                <div id="clients" class="owl-carousel owl-theme">
-                    {% for item in reservaciones %}
-                    <div class="item">
-                        <p>{{ item.first_name }} reservo la casa "{{ item.casa.nombre }}"
-                            desde {{ item.country }}</p>
+                    <div class="section-title center">
+                        <h2>The last<strong> Reservations</strong></h2>
                     </div>
-                    {% endfor %}
+                    <div id="clients" class="owl-carousel owl-theme">
+                        {% for item in reservaciones %}
+                        <div class="item">
+                            <p>{{ item.first_name }} reservo la casa "{{ item.casa.nombre }}"
+                                desde {{ item.country }}</p>
+                        </div>
+                        {% endfor %}
+
+                    </div>
 
                 </div>
-
             </div>
         </div>
-    </div>
-
-
+        
     <div id="tf-works">
         <div class="container-fluid">
             <div class="col-xs-12 houses">
@@ -188,124 +199,128 @@
                 </div>
                 {% endfor %}
 
+
+
             </div>
         </div>
-    </div>
-</div>
-
-<!-- Testimonials Section
-==========================================-->
-<div id="tf-testimonials" style="   background: url({% static 'img/05.JPG' %});
+        <div id="tf-testimonials" style="   background: url({% static 'img/05.JPG' %});
                                             background-size: cover;
                                             background-position: center;
                                             background-attachment: fixed;
                                             background-repeat: no-repeat;
                                             color: #ffffff;" class="text-center">
-    <div class="overlay">
-        <div class="container">
-            <div class="section-title center">
-                <h2><strong>Our clients’</strong> testimonials</h2>
+        <div class="overlay">
+            <div class="container">
+                <div class="section-title center">
+                    <h2><strong>Our clients’</strong> testimonials</h2>
 
 
+                </div>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+
+                        {% for entity in feedbacks %}
+                        <div class="item">
+                            <h5>{{ entity.body }}</h5>
+
+                            <p>user: <strong>{{ entity.full_name }}</strong></p>
+                        </div>
+                        {% endfor %}
+
+
+                    </div>
+                </div>
             </div>
+        </div>
+    </div>
+    <div id="tf-contact" class="text-center">
+        <div class="container">
+
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
 
-                    {% for entity in feedbacks %}
-                    <div class="item">
-                        <h5>{{ entity.body }}</h5>
-
-                        <p>user: <strong>{{ entity.full_name }}</strong></p>
+                    <div class="title-contact center">
+                        <h2>Feel free to <strong>contact us</strong></h2>
                     </div>
-                    {% endfor %}
 
+                    <form action="" method="POST">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="email" name="username" class="form-control" id="exampleInputEmail1"
+                                           placeholder="Enter email">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input class="form-control" name="email" id="exampleInputPassword1"
+                                           placeholder="Email adress">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" name="message" rows="3"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn tf-btn btn-default">Submit</button>
+                    </form>
 
                 </div>
             </div>
         </div>
+    </div>
+        {% block footer %}
+<nav id="footer" style="z-index: 56;">
+        <div class="container">
+            <div class="pull-left fnav">
+                <p>ALL RIGHTS RESERVED. COPYRIGHT © 2015. Tropicollage
+            </div>
+            <div class="pull-right fnav">
+                <ul class="footer-social">
+
+                    {# <li>{% post_to_facebook 'http://www.tropicollage.com' '<i class="ion-social-facebook"></i>' %}</li> #}
+                    {# <li>{% post_to_twitter 'http://www.tropicollage.com' '<i class="ion-social-twitter"></i>' %}</li> #}
+                    {# <li>{% post_to_gplus 'http://www.tropicollage.com' '<i class="ion-social-googleplus"></i>' %}</li> #}
+                </ul>
+            </div>
+        </div>
+    </nav>
+{% endblock %}
     </div>
 </div>
-{#TODO: Edit the search form in the tf-home #}
-<!-- Contact Section
-==========================================-->
-<div id="tf-contact" class="text-center">
-    <div class="container">
-
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-
-                <div class="title-contact center">
-                    <h2>Feel free to <strong>contact us</strong></h2>
-                </div>
-
-                <form action="" method="POST">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="email" name="username" class="form-control" id="exampleInputEmail1"
-                                       placeholder="Enter email">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input class="form-control" name="email" id="exampleInputPassword1"
-                                       placeholder="Email adress">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <textarea class="form-control" name="message" rows="3"></textarea>
-                    </div>
-
-                    <button type="submit" class="btn tf-btn btn-default">Submit</button>
-                </form>
-
-            </div>
-        </div>
+{% endblock %}
 
 
-    </div>
+{% block level_scripts %}
+<script type="text/javascript" src="{% static 'js/jquery-1.10.2.min.js' %}"></script>
+<script src="{% static 'js/jquery-ui.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+<script src="{% static 'js/owl.carousel.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/SmoothScroll.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.isotope.js' %}"></script>
+<script src="{% static 'js/owl.carousel.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/moment.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/main.js' %}"></script>
 
-    {% block level_scripts %}
-    <script type="text/javascript" src="{% static 'js/jquery-1.10.2.min.js' %}"></script>
-    <script src="{% static 'js/jquery-ui.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
-    <script src="{% static 'js/owl.carousel.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/SmoothScroll.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/jquery.isotope.js' %}"></script>
-    <script src="{% static 'js/owl.carousel.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/moment.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/mootools.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/PeriodicalExecuter.js' %}"></script>
 
-    <script type="text/javascript" src="{% static 'js/mootools.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/PeriodicalExecuter.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/Carousel.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/Carousel.Rotate3D.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/Carousel.Extra.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/carousel2.js' %}"></script>
+<script src="{% static 'js/swiper.js' %}"></script>
+<script src="{% static 'js/homepage.js' %}"></script>
 
+<script>
+    HomePage.init();
+    $(document).ready(function () {
 
-    <script type="text/javascript" src="{% static 'js/carousel2.js' %}"></script>
+        var $root = $('html,body');
+        $('.page-scroll').click(function () {
+            $root.animate({
+                scrollTop: $($.attr(this, 'href')).offset().top
+            }, 1000);
+            return false;
 
-    <script type="text/javascript" src="{% static 'js/backgroundVideo.js' %}"></script>
-    <script src="{% static 'js/header.js' %}"></script>
-
-    <script>
-
-        $(document).ready(function () {
-
-            var $root = $('html,body');
-            $('.page-scroll').click(function () {
-                $root.animate({
-                    scrollTop: $($.attr(this, 'href')).offset().top
-                }, 1000);
-                return false;
-
-            });
         });
-    </script>
-    {% endblock %}
-
-</div>
-</div>
-</div>
+    });
+</script>
 {% endblock %}

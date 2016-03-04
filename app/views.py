@@ -40,7 +40,7 @@ def home_page(request):
         casas_reserva[item.pk] = item.reservacion_set.count() , item.nombre , item.foto_principal , item.pk
 
     sorted_casas_reservas = sorted(casas_reserva.values(), reverse=True)
-   
+
 
     for item in lugares:
         if not exists(item.polo_turistico, lugares_fin):
