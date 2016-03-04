@@ -1,0 +1,107 @@
+#tf-menu {
+  background-color: rgba(0,0,0,0.89) !important;
+}
+.row {
+  margin: 0;
+}
+.col-sm-6 {
+  padding: 0 !important;
+}
+@media screen and (max-width: 767px) {
+  .main-filter {
+    top: 27%;
+    margin-left: -41%;
+    left: 41%;
+    right: 0;
+  }
+  .place {
+    margin-bottom: 0 !important;
+  }
+  .place .form-control {
+    display: block !important;
+    width: 100% !important;
+  }
+  .col-sm-6 {
+    margin-bottom: 0 !important;
+  }
+  .from {
+    display: block !important;
+    width: 100% !important;
+  }
+  .from input {
+    display: block !important;
+    width: 100% !important;
+  }
+  .to {
+    display: block !important;
+    width: 100% !important;
+  }
+  .to input {
+    display: block !important;
+    width: 100% !important;
+  }
+  .button_search {
+    display: block !important;
+    width: 100% !important;
+    padding-bottom: 6%;
+  }
+  .button_search button {
+    display: block !important;
+    width: 100% !important;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .main-filter {
+    margin-left: -41%;
+    left: 41%;
+    right: 0;
+  }
+  .place {
+    margin-bottom: 0 !important;
+  }
+  .place .form-control {
+    display: block !important;
+    width: 100% !important;
+  }
+  .from {
+    padding-left: 0;
+  }
+  .from input {
+    width: 100% !important;
+    margin-right: 0;
+  }
+  .to {
+    padding-right: 0;
+  }
+  .to input {
+    width: 100% !important;
+  }
+  .button_search {
+    display: block !important;
+    width: 100% !important;
+    padding-bottom: 6%;
+  }
+  .button_search button {
+    display: block !important;
+    width: 100% !important;
+  }
+  .col-sm-6 {
+    margin-bottom: 5px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .main-filter {
+    margin-left: -25%;
+    left: 50%;
+    right: 25%;
+  }
+  .main-filter .row {
+    display: inline-block;
+  }
+  .place {
+    margin-bottom: 0 !important;
+  }
+  .place .form-control {
+    margin-left: 0;
+  }
+}

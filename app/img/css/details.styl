@@ -1,0 +1,253 @@
+bootstrap_gray = #e7e7e7
+categories_gray = rgb(86, 90, 92)
+white_sec_nav = rgb(219, 219, 220)
+yellow_star = rgb(255, 180, 0)
+twitter_blue = #4099FF
+facebook_blue = #3b5998
+google_red = #db4a39
+
+shadow(hoff, voff, blur, color)
+  -webkit-box-shadow: hoff voff blur color
+  -moz-box-shadow: hoff voff blur color
+  box-shadow: hoff voff blur color
+
+body
+  background-color rgb(245, 245, 245)
+  overflow-x hidden
+
+borderRadius(amount)
+  -webkit-border-radius amount !important
+  -moz-border-radius amount !important
+  -o-border-radius amount !important
+  border-radius amount !important
+
+center(wo)
+  margin-left 0% - (wo / 2)
+  left 50%
+
+.navbar
+  //position relative
+  margin-bottom 0
+  borderRadius(0)
+  background-color transparent
+  .navbar-collapse
+    background-color rgb(247, 247, 247)
+
+  .navbar-header
+    .navbar-toggle
+      borderRadius(0)
+    .navbar-brand
+      border-right 1px solid bootstrap_gray
+
+  .navbar-form
+    .form-control
+      borderRadius(0)
+      border-right 0
+      background-color white
+    .btn
+      borderRadius(0)
+      border-left 0
+      background-color white
+
+  .navbar-right
+    li
+      border-left 1px solid bootstrap_gray
+
+.categories
+  background-color categories_gray
+  ul
+    display inline-block
+    list-style none
+    li
+      margin-top 14px
+      display inline-block
+      height 100%
+      a
+        padding 14px
+        text-decoration none
+        color white_sec_nav
+
+        &:hover
+          border-bottom 3px solid white_sec_nav
+
+.gallery
+  .jumbotron
+    margin-top 0
+    margin-bottom 0
+    padding-top 0
+    .gallery-info
+      padding 5%
+      a.btn
+        borderRadius(0)
+
+.main-info
+  background-color white
+  padding 5%
+  padding-bottom 0
+  .container
+    div
+      padding-top 5%
+
+.home-logo
+  border 1px dashed gray
+  width 75px
+  height 75px
+  borderRadius(50%)
+
+.usr-logo
+  border 1px dashed gray
+  width 75px
+  height 75px
+  borderRadius(50%)
+
+.author
+  padding-left 17px
+
+.details
+  .home-name
+    font-weight normal
+    font-size 24px
+    margin-top 0
+  .home-location
+    font-weight borded
+    color categories_gray
+    font-size 14px
+  .category
+    color yellow_star
+    font-size 1.3em
+    small
+      color categories_gray
+      font-size 0.7em
+
+.fav
+  .btn
+    borderRadius(0)
+
+.simple-about
+  padding-left 0
+  margin-left 0
+  .detail-container
+    color #858586
+    //padding 10%
+    font-size 2.3em
+    a
+      color categories_gray
+
+  .first
+    padding-left 0 !important
+  .description
+    display block
+    font-size 14px
+
+hr
+  color #858586
+
+
+.all-details
+  .section-exponation
+    padding-bottom 5%
+
+.reviews-details
+  background-color white
+  padding 5%
+  h5.reviews-count
+    font-weight bolder
+    font-size 1.5em
+
+  h6
+    display inline-block
+    font-weight bold
+  .score
+    color yellow_star
+    margin-left 7%
+
+.translator-btn
+  borderRadius(0)
+  background-color transparent
+  border 2px solid categories_gray
+  margin-top 1.3%
+  margin-bottom 4%
+
+.date
+  font-size 1.0099em
+  color categories_gray
+  margin-top 2%
+
+#pictureOwner
+  borderRadius(50%) !important
+
+.item
+  padding 5%
+
+@media screen and (min-width 320px) and (max-width 991px)
+  .usr-logo
+  .author
+    center(-67.666667%)
+
+.review-create-form
+  .review-create-title
+    text-align center
+    display block
+    font-size 2.5em
+  .comment-body
+    borderRadius(0)
+  .btn
+    borderRadius(0)
+    align-content right
+
+.gallery-container
+  width 50%
+  //position relative
+  left 0
+  display block
+  .picture
+    width 100%
+    //height 591px
+    boxShadow(0, 0, 10px, black)
+
+.map-container
+  width 50%
+  position relative
+  display inline-block
+  .map
+    width 100%
+    height 591px
+
+.modal
+  .modal-dialog
+    margin-top 368px
+  .modal-content
+    borderRadius(0)
+    .btn
+      borderRadius(0)
+      border 1px solid bootstrap_gray
+      color white
+      text-align left
+    .btn-tw
+      background-color twitter_blue
+    .btn-fb
+      background-color facebook_blue
+      .icon-social
+        padding-right 24px
+        padding-left 3px
+    .btn-gp
+      background-color google_red
+
+.icon-social
+  padding-right 20px
+
+.reservation-title
+  h2
+    color black
+
+//.thumbs
+//  width 60%
+//  display block
+//  a
+//    .thumb
+//      width 10%
+//      border 4px solid black
+//      margin .5%
+
+.panel
+  borderRadius(0)

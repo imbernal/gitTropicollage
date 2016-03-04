@@ -110,7 +110,7 @@ USE_L10N = True
 USE_TZ = True
 
 MEDIA_ROOT = os.path.join('app/','imagenes')
-STATIC_ROOT = os.path.join('app/','img')
+STATIC_ROOT = ('/opt/tropicollage/static')
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
