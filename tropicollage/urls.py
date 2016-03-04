@@ -32,7 +32,7 @@ urlpatterns = [
     url(r'^$', 'app.views.home_page', name='home_page'),
     url(r'^$/contact', 'app.views.contact', name='contact'),
     url(r'^casas/$', 'app.views.homeList', name='casas'),
-    url(r'^reservar/(?P<home_id>[0-9]+)$', 'app.views.reservar', name='reservar'),
+    url(r'^reservar/(?P<home_slug>[-\w]+)$', 'app.views.reservar', name='reservar'),
 
     url(r'^casas/reservaciones/$', 'app.views.fecha_search', name='fecha_search'),
     url(r'^uploadData/$', 'app.views.uploadJson', name='upload_json'),
@@ -40,9 +40,8 @@ urlpatterns = [
 
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT, }),
 
-    url(r'^casas/detalles/(?P<home_id>[0-9]+)$', 'app.views.homeDetails', name='home_details'),
+    url(r'^casas/detalles/(?P<home_slug>[-\w]+)$', 'app.views.homeDetails', name='home_details'),
     url(r'^home_pictures/$', 'app.views.get_pictures_from_home', name='home_details'),
-    # url(r'^list$', 'app.views.ax')
     url(r'^feedback/$', 'app.views.comment', name='comment'),
     url(r'^notif_mail/$', 'app.views.send_data', name='send_data'),
     url(r'^static/(?P<path>.*)$','django.views.static.serve',{'document_root': settings.STATIC_URL})

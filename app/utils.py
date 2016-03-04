@@ -3,7 +3,7 @@ import os
 from .models import *
 from app import from_base64_to_picture
 from tropicollage import settings
-
+from django.utils.text import slugify
 
 def handle_uploaded_file(cad):
 	data = json.loads(cad)
@@ -53,7 +53,7 @@ def handle_uploaded_file(cad):
 	casa.pantry = data['ClientUsageKitchen']
 	casa.permiten_ninos = data['ChildAllowed']
 	casa.permiten_mascotas = data['PetsAllowed']
-
+	casa.slug = slugify(casa.nombre)
 	gallery_set = data['Gallery']
 	gallery = Gallery()
 	gallery.title = gallery_set['GalleryName']

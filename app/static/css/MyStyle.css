@@ -92,7 +92,7 @@
     bottom: 0;
     width: 100%;
     border-radius: 0;
-    z-index 100;
+    z-index: 100;
 
 }
 .sales {
@@ -177,7 +177,17 @@
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) and (orientation: landscape) {
+    .backgroundc {
+        /*margin-top: 57% !important;*/
+        height: 61% !important;
+    }
+    .Nombre1{
+        margin-top: -10%;
+    }
+}
+
+@media screen and (max-width: 768px) and (orientation: portrait) {
     .backgroundc {
         margin-top: 57% !important;
         height: 35% !important;

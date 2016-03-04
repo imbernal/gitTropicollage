@@ -69,6 +69,7 @@ class Casa(models.Model):
     correo = models.CharField(max_length=255, default="")
     telf = models.CharField(max_length=255)
     celular = models.CharField(max_length=255)
+    prioridad = models.CharField(max_length=255 , null=True)
     foto_dueno = VersatileImageField('Image', upload_to='imagenes')
 
     
@@ -156,7 +157,7 @@ class Reservacion(models.Model):
     fecha_ini = models.DateField()
     fecha_fin = models.DateField()
     forma_llegada = models.CharField(max_length=50, default="")
-    hora_estimada = models.TimeField(default=None)
+    hora_estimada = models.CharField(max_length=255, default=None)
     comment = models.TextField(max_length=600, default="")
     casa = models.ForeignKey(Casa)
 

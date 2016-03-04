@@ -11,7 +11,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.contrib import messages
 from django.core.mail import send_mail
 from app.filter import *
-
+import operator
 from .forms import UploadFileForm
 from .utils import handle_uploaded_file
 
@@ -26,34 +26,47 @@ def exists(check, coll):
     return flag
 
 def home_page(request):
-    casas = Casa.objects.all()[:10]
+    casas = Casa.objects.all()
     feedbacks = FeedBack.objects.all()[:3]
     reservaciones = Reservacion.objects.all()[:5]
     lugares = Casa.objects.all()
 
     lugares_fin = []
 
+
+    casas_reserva = {}
+
+    for item in casas:
+        casas_reserva[item.pk] = item.reservacion_set.count() , item.nombre , item.foto_principal , item.slug
+
+    sorted_casas_reservas = sorted(casas_reserva.values(), reverse=True)
+
+
     for item in lugares:
         if not exists(item.polo_turistico, lugares_fin):
             lugares_fin.append(str(item.polo_turistico))
 
     return render(request, 'home_page/index.html',
-                  {'feedbacks': feedbacks, 'casas': casas, 'reservaciones': reservaciones, 'places': lugares_fin})
+                  {'feedbacks': feedbacks,'sorted_casas_reservas':sorted_casas_reservas[:3],'reservaciones': reservaciones, 'places': lugares_fin})
 
 
 def homeList(request):
     if request.POST :
         if request.POST['destination']:
+
             destination = request.POST['destination']
-            filter = CasaFilter(request.GET, queryset=Casa.objects.filter(polo_turistico=destination))
+
+            filter = CasaFilter(request.GET, queryset=Casa.objects.filter(polo_turistico=destination).order_by('-prioridad'))
+
             return render(request, 'casas/index.html', {"filter": filter})
 
-    filter = CasaFilter(request.GET, queryset=Casa.objects.all())
+    filter = CasaFilter(request.GET, queryset=Casa.objects.all().order_by('-prioridad'))
+
     return render(request, 'casas/index.html', {"filter": filter} )
 
 
-def homeDetails(request, home_id):
-    entity = get_object_or_404(Casa, pk=home_id)
+def homeDetails(request, home_slug):
+    entity = get_object_or_404(Casa, slug=home_slug)
     feedbacks = FeedBack.objects.filter(casa=entity).order_by('-pub_date')
     cant_camas_simples = 0
     cant_camas_dobles = 0
@@ -79,8 +92,8 @@ def homeDetails(request, home_id):
                   context_instance=RequestContext(request))
 
 @csrf_exempt
-def reservar(request, home_id):
-    casa = Casa.objects.get(pk=home_id)
+def reservar(request, home_slug):
+    casa = Casa.objects.get(slug=home_slug)
 
     fname = request.POST['fname']
     lname = request.POST['lname']
@@ -141,6 +154,9 @@ def reservar(request, home_id):
 
     send_mail('Nueva solicitud de reservacion', message, 'info@tropicollage.com',
               ['imbernal92@nauta.cu', 'bretana@nauta.cu', 'imbernal9203@gmail.com', 'bretanac@gmail.com', 'mmillo@nauta.cu'], fail_silently=False)
+
+    return render_to_response()
+
 
 
 def fecha_search(request):
