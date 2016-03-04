@@ -20,7 +20,7 @@ hr {
 
 .list_casas {
     margin-left: 11px;
-    margin-top: 50px;
+    margin-top: 97px;
 }
 
 .list_casas #home_list {
@@ -382,6 +382,17 @@ hr {
     display: block;
     right: -25%;
     bottom: 99%;
+}
+.logonombre{
+    top: -53px;
+    position: absolute;
+    background: #EEEEEE;
+}
+.logo{
+    position: absolute;
+    background: white;
+    left:0;
+    top:4%;
 }
 
 .detalles .image_owner #owner {

@@ -51,15 +51,23 @@
 
 
 <div class="categories">
-    <div class="container">
-        <ul>
-            <li><a class="page-scroll" href="#gallery">Pictures</a></li>
-            <li><a class="page-scroll" href="#main-info">Info</a></li>
-            <li><a class="page-scroll" href="#detailed-info">Details</a></li>
-            <li><a class="page-scroll" href="#book">Book</a></li>
-            <li><a class="page-scroll" href="#comments">Comments</a></li>
 
-        </ul>
+    <div class="row">
+        <div class="col-xs-6 logodetails">
+            <img class="img-responsive" width="100" height="100"
+                 src="{% static 'img/team/logoblanco.png' %}"/>
+        </div>
+        <div class="col-xs-6">
+            <ul>
+                <li><a class="page-scroll" href="#gallery">Pictures</a></li>
+                <li><a class="page-scroll" href="#main-info">Info</a></li>
+                <li><a class="page-scroll" href="#detailed-info">Details</a></li>
+                <li><a class="page-scroll" href="#book">Book</a></li>
+                <li><a class="page-scroll" href="#comments">Comments</a></li>
+
+            </ul>
+        </div>
+
     </div>
 </div>
 
@@ -97,47 +105,47 @@
     <div class="container">
 
         <!--<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"-->
-             <!--aria-hidden="true">-->
-            <!--<div class="modal-dialog">-->
-                <!--<div class="modal-content">-->
-                    <!--<div class="modal-header">-->
-                        <!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>-->
-                        <!--<h4 class="modal-title">Information</h4>-->
-                    <!--</div>-->
-                    <!--<div class="modal-body">-->
-                        <!--You will receive within 24 hours of your appointment confirmation by email. If you want some-->
-                        <!--other-->
-                        <!--service Proceed towards our <a href="#contact">contact</a> section.-->
-                        <!--Sincerely Dental Proffesional Group.-->
+        <!--aria-hidden="true">-->
+        <!--<div class="modal-dialog">-->
+        <!--<div class="modal-content">-->
+        <!--<div class="modal-header">-->
+        <!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>-->
+        <!--<h4 class="modal-title">Information</h4>-->
+        <!--</div>-->
+        <!--<div class="modal-body">-->
+        <!--You will receive within 24 hours of your appointment confirmation by email. If you want some-->
+        <!--other-->
+        <!--service Proceed towards our <a href="#contact">contact</a> section.-->
+        <!--Sincerely Dental Proffesional Group.-->
 
-                        <!--<hr>-->
+        <!--<hr>-->
 
-                        <!--<h2 class="title-grp">-->
-                            <!--<span>share Us</span>-->
-                        <!--</h2>-->
-                        {# <!--{% load social_share %}--> #}
-
-
-                        <!--<div class="btn btn-fb btn-block btn-lg">{% post_to_facebook object_or_url "Share us on-->
-                            <!--Facebook!"-->
-                            <!--%}-->
-                        <!--</div>-->
-                        <!--<div class="btn btn-tw btn-block btn-lg">{% post_to_twitter object_or_url "Share us on Twitter!"-->
-                            <!--%}-->
-                        <!--</div>-->
-                        <!--<div class="btn btn-gp btn-block btn-lg">{% post_to_gplus object_or_url "Share us on Google+!"-->
-                            <!--%}-->
-                        <!--</div>-->
+        <!--<h2 class="title-grp">-->
+        <!--<span>share Us</span>-->
+        <!--</h2>-->
+        {# <!--{% load social_share %}--> #}
 
 
-                    <!--</div>-->
-                    <!--<div class="modal-footer">-->
-                        <!--<button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--&lt;!&ndash; /.modal-content &ndash;&gt;-->
-            <!--</div>-->
-            <!--&lt;!&ndash; /.modal-dialog &ndash;&gt;-->
+        <!--<div class="btn btn-fb btn-block btn-lg">{% post_to_facebook object_or_url "Share us on-->
+        <!--Facebook!"-->
+        <!--%}-->
+        <!--</div>-->
+        <!--<div class="btn btn-tw btn-block btn-lg">{% post_to_twitter object_or_url "Share us on Twitter!"-->
+        <!--%}-->
+        <!--</div>-->
+        <!--<div class="btn btn-gp btn-block btn-lg">{% post_to_gplus object_or_url "Share us on Google+!"-->
+        <!--%}-->
+        <!--</div>-->
+
+
+        <!--</div>-->
+        <!--<div class="modal-footer">-->
+        <!--<button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--&lt;!&ndash; /.modal-content &ndash;&gt;-->
+        <!--</div>-->
+        <!--&lt;!&ndash; /.modal-dialog &ndash;&gt;-->
         <!--</div>-->
 
         <div class="details col-xs-12 col-sm-12 col-md-6 col-lg-6">
@@ -155,7 +163,7 @@
             </div>
             <div class="simple-about col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="detail-container  col-sm-3 col-xs-6"><a href="#" class="tooltip-test"
-                                                                   title="Cantidad de habitaciones"><span
+                                                                    title="Cantidad de habitaciones"><span
                         class="flaticon-bedroom1"></span><span>&times; {{ entity.cant_habitaciones }}</span></a>
                 </div>
                 <div class="detail-container col-sm-3 col-xs-6"><a href="#" class="tooltip-test"
@@ -332,14 +340,14 @@
         </div>
         <hr/>
         <!--<div class="section-exponation col-xs-12 col-sm-12 col-md-12 col-lg-12">-->
-            <!--<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">-->
-                <!--<h4 class="title-details">Mensaje promocional</h4>-->
-            <!--</div>-->
-            <!--<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">-->
-                <!--<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">-->
-                    <!--<p>{{ entity.mensaje_promocional }}</p>-->
-                <!--</div>-->
-            <!--</div>-->
+        <!--<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">-->
+        <!--<h4 class="title-details">Mensaje promocional</h4>-->
+        <!--</div>-->
+        <!--<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">-->
+        <!--<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">-->
+        <!--<p>{{ entity.mensaje_promocional }}</p>-->
+        <!--</div>-->
+        <!--</div>-->
         <!--</div>-->
     </section>
 </div>
@@ -1463,7 +1471,7 @@
             var desde = $('#desde').val();
             var hasta = $('#hasta').val();
 
-            var diffDays =  desde- hasta;
+            var diffDays = desde - hasta;
             var cantDay = diffDays / 1000 / 60 / 60 / 24;
             console.log(diffDays);
 
@@ -1508,7 +1516,6 @@
             this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
         }
     });
-
 
 
     function l(arg) {
