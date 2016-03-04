@@ -53,11 +53,15 @@ def home_page(request):
 def homeList(request):
     if request.POST :
         if request.POST['destination']:
+
             destination = request.POST['destination']
-            filter = CasaFilter(request.GET, queryset=Casa.objects.filter(polo_turistico=destination))
+
+            filter = CasaFilter(request.GET, queryset=Casa.objects.filter(polo_turistico=destination).order_by('-prioridad'))
+
             return render(request, 'casas/index.html', {"filter": filter})
 
-    filter = CasaFilter(request.GET, queryset=Casa.objects.all())
+    filter = CasaFilter(request.GET, queryset=Casa.objects.all().order_by('-prioridad'))
+
     return render(request, 'casas/index.html', {"filter": filter} )
 
 

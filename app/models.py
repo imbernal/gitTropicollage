@@ -69,6 +69,7 @@ class Casa(models.Model):
     correo = models.CharField(max_length=255, default="")
     telf = models.CharField(max_length=255)
     celular = models.CharField(max_length=255)
+    prioridad = models.CharField(max_length=255 , null=True)
     foto_dueno = VersatileImageField('Image', upload_to='imagenes')
 
     
