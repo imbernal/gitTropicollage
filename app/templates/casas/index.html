@@ -53,7 +53,6 @@
                         <div class="descripcion row">
                             <div class="casa-foto">
 
-
                                 <img class="img-responsive cv"
                                      src="/media/{{ item.foto_principal.thumbnail.1600x1200 }}"/>
 
@@ -61,11 +60,7 @@
                                     <span class="pull-left" id="simbolo_peso">$</span> <span
                                         id="precio_valor">{{ item.precio_alta }}</span>
                                 </div>
-
-
                             </div>
-
-
                         </div>
                         <div class="categoria">
                             <span class="star ion-android-star"></span>
@@ -82,7 +77,7 @@
                                  id="owner" width="56" height="66"
                                  alt="100">
                         </div>
-                        <h4><a href="{% url 'home_details' item.pk %}">{{ item.nombre }}</a></h4>
+                        <h4><a href="{% url 'home_details' item.slug %}">{{ item.nombre }}</a></h4>
 
 
                         <h5 class="resumen text_truncate">
@@ -90,7 +85,7 @@
                         </h5>
 
                         <div class="reviews">
-                            <a href="{% url 'home_details' item.pk %}">
+                            <a href="{% url 'home_details' item.slug %}">
                                 <button class="btn-reserv btn btn-lg btn-block btn-default"><span
                                         class="ion-ios-calendar-outline"></span> Book now!!
                                 </button>

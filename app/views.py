@@ -65,8 +65,8 @@ def homeList(request):
     return render(request, 'casas/index.html', {"filter": filter} )
 
 
-def homeDetails(request, home_id):
-    entity = get_object_or_404(Casa, pk=home_id)
+def homeDetails(request, home_slug):
+    entity = get_object_or_404(Casa, slug=home_slug)
     feedbacks = FeedBack.objects.filter(casa=entity).order_by('-pub_date')
     cant_camas_simples = 0
     cant_camas_dobles = 0
@@ -92,8 +92,8 @@ def homeDetails(request, home_id):
                   context_instance=RequestContext(request))
 
 @csrf_exempt
-def reservar(request, home_id):
-    casa = Casa.objects.get(pk=home_id)
+def reservar(request, home_slug):
+    casa = Casa.objects.get(slug=home_slug)
 
     fname = request.POST['fname']
     lname = request.POST['lname']
