@@ -70,7 +70,12 @@
                     <li><a href="#tf-contact" class="page-scroll">Contact</a></li>
                 </ul>
             </div>
+
+            <!-- /.navbar-collapse -->
         </div>
+        <!-- /.container-fluid -->
+        
+
     </nav>
 
 
@@ -173,31 +178,26 @@
             </div>
         </div>
 
-        <div id="tf-works">
-            <div class="container-fluid">
-                <div class="col-xs-12 houses">
-                    <h3 class="text-center">Last Places</h3>
 
-                    <div class="house col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                        <img class="img-responsive" src="/media/imagenes/Casa Campo Andres y Mary Gallery_1.jpg" alt="">
+    <div id="tf-works">
+        <div class="container-fluid">
+            <div class="col-xs-12 houses">
+                <h3 class="text-center">Last Places</h3>
+                {% for i,j,k,m in sorted_casas_reservas %}
+                
+                <div class="house col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                    <img class="img-responsive" src="/media/{{ k }}" alt="">
 
-                        <div class="shade">
-                            <h1 class="sales">45</h1>
-                            <a href="#" title="" class="btn btn-warning go">Casa fulano de tal</a>
-                        </div>
-
+                    <div class="shade">
+                        <h1 class="sales">{{ i }}</h1>
+                        <a href="{% url 'home_details' m %}" title="" class="btn btn-warning go">{{ j }}</a>
                     </div>
 
-                    <div class="house col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                        <img class="img-responsive" src="/media/imagenes/Casa Campo Andres y Mary Gallery_1.jpg" alt="">
-                        <span class="shade"></span>
-                    </div>
-
-                    <div class="house col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                        <img class="img-responsive" src="/media/imagenes/Casa Campo Andres y Mary Gallery_1.jpg" alt="">
-                        <span class="shade"></span>
-                    </div>
                 </div>
+                {% endfor %}
+
+
+
             </div>
         </div>
         <div id="tf-testimonials" style="   background: url({% static 'img/05.JPG' %});
