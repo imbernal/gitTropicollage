@@ -37,7 +37,7 @@ def home_page(request):
     casas_reserva = {}
 
     for item in casas:
-        casas_reserva[item.pk] = item.reservacion_set.count() , item.nombre , item.foto_principal , item.pk
+        casas_reserva[item.pk] = item.reservacion_set.count() , item.nombre , item.foto_principal , item.slug
 
     sorted_casas_reservas = sorted(casas_reserva.values(), reverse=True)
 
