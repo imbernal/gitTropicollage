@@ -1,5 +1,6 @@
 /*
 ---
+Isra
 script: Carousel.js
 license: MIT-style license.
 description: Carousel - Extensible mootools carousel with dynamic elements addition/removal.

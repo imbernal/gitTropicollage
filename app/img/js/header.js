@@ -1,0 +1,47 @@
+function parsePicture(patt) {
+	var a = patt.split('/');
+	return a[a.length - 1].replace(')', '');
+}
+
+$(function () {
+	var images = ["03.png", "04.png", "05.png", "06.png" , "07.png" ,"08.png","09.JPG","10.JPG" ];
+	
+	var initial_image = parsePicture($('#tf-home').css('background-image')).replace('"', '');
+	var initial_index = images.indexOf(initial_image);
+	var curr_index = 1;
+
+
+	setInterval(function () {
+		if (curr_index > images.length - 1) {
+			curr_index = 0;
+		}
+
+		var image_path = '';
+		image_path = image_path + images[curr_index];
+
+		var abs = "url('/static/img/"+image_path+"')";
+		// $('#tf-home').css({ 'background-image': abs });
+		
+		var image = $('#tf-home');
+    		image.fadeOut(500, function () {
+	        image.css({ 'background-image': abs });
+	        image.fadeIn(500);
+	    });
+
+		// $('#tf-home').animate({ opacity: 0.9 }, 'slow', function() {
+  //       		$('#tf-home').css({ 'background-image': abs }).animate({ opacity: 1 });
+  //       	});
+
+		//without any animations
+		// $('#tf-home').css();
+
+		curr_index++;
+
+
+	}, 3500)
+
+});
+
+function l(patt) {
+	console.log(patt);
+}
