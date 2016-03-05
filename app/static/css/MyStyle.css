@@ -1,5 +1,4 @@
 .backgroundc {
-    background-color: #556261;
     width: 50%;
     height: 35%;
     margin-left: 25%;
@@ -14,10 +13,10 @@
 
 .Nombre1 {
     text-align: center;
-    font-size: 190%;
+    font-size: 1.72em;
     color: white;
     margin-top: 10px;
-    margin-bottom: 0%;
+    margin-bottom: 0;
     margin-left: 7%;
 }
 
@@ -42,14 +41,6 @@
     margin-left: -15px;
 }
 
-.selectdays {
-    margin-left: 15%;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    -o-border-radius: 0;
-    border-radius: 0;
-    margin-top: 11px;
-}
 
 .findButton {
     -webkit-border-radius: 0;
@@ -57,8 +48,9 @@
     -o-border-radius: 0;
     border-radius: 0;
     margin-top: 2px;
-    width: 90% !important;
-    margin-bottom: 2%;
+    width: 69% !important;
+    margin-bottom: 0.5%;
+    margin-left: 19%;
 }
 
 .shade {

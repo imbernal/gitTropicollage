@@ -43,8 +43,7 @@
 </style>
 
 <div class="text-overlay-example">
-    <!-- Navigation
-    ==========================================-->
+
     <nav id="tf-menu" class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -58,8 +57,6 @@
                 </button>
                 <a class="navbar-brand" href="{% url 'home_page' %}">Tropicollage</a>
             </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#tf-home" class="page-scroll">Home</a></li>
@@ -70,50 +67,39 @@
                     <li><a href="#tf-contact" class="page-scroll">Contact</a></li>
                 </ul>
             </div>
-
-            <!-- /.navbar-collapse -->
         </div>
-        <!-- /.container-fluid -->
-
-
     </nav>
 
-
-    <!-- Home Page
-    ==========================================-->
-    <div class="backgroundc">
-        <div class="container-fluid">
-            <div class="content">
-                <header>
-                    <p class="Nombre1">Find the house to spend your vacations.</p>
-                </header>
-                <form action="{% url 'casas' %}" class="form-inline" method="post" style="padding-bottom: 2%;">
-                    {% csrf_token %}
-                    <div class="selectdays">
-                        <!--<div class="form-group  label1">-->
-                        <select class="form-control findButton" name="destination">
-                            <option value>Select a place</option>
-                            {% for item in places %}
-                            <option value="{{ item }}">{{ item }}</option>
-                            {% endfor %}
-                        </select>
-                        <div>
-                            <button type="submit" class="btn btn-warning findButton">
-                                <span class="glyphicon glyphicon-search"></span>
-                                Find
-                            </button>
+    <div id="tf-home" class="swiper-container">
+        <div class="another-shade">
+            <div class="backgroundc">
+            <div class="container-fluid">
+                <div class="content">
+                    <header>
+                        <p class="Nombre1">Find the house to spend your vacations.</p>
+                    </header>
+                    <form action="{% url 'casas' %}" class="form-inline" method="post" style="padding-bottom: 2%;">
+                        {% csrf_token %}
+                        <div class="selectdays">
+                            <!--<div class="form-group  label1">-->
+                            <select class="form-control findButton" name="destination">
+                                <option value>Select a place</option>
+                                {% for item in places %}
+                                <option value="{{ item }}">{{ item }}</option>
+                                {% endfor %}
+                            </select>
+                            <div>
+                                <button type="submit" class="btn btn-warning findButton">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                    Find
+                                </button>
+                            </div>
                         </div>
-                    </div>
-
-                </form>
-
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
-
-
-    <div class="swiper-container">
-        <div class="another-shade"></div>
+        </div>
         <div class="swiper-wrapper">
             <div class="swiper-slide" style="background-image:url({% static 'img/slider/03.png' %})"></div>
             <div class="swiper-slide" style="background-image:url({% static 'img/slider/04.png' %})"></div>
@@ -153,6 +139,7 @@
                 </div>
             </div>
         </div>
+
         <div id="tf-reservations" style="background: url({% static 'img/08.png' %}); background-size: cover;
                                     background-position: center;
                                     background-attachment: fixed;
@@ -179,145 +166,144 @@
         </div>
 
 
-    <div id="tf-works">
-        <div class="container-fluid" style="padding-bottom: 80px;">
-            <div class="col-xs-12 houses">
-                <h3 class="text-center">Most Sales</h3>
-                {% for i,j,k,m in sorted_casas_reservas %}
+        <div id="tf-works">
+            <div class="container-fluid" style="padding-bottom: 80px;">
+                <div class="col-xs-12 houses">
+                    <h3 class="text-center">Most Sales</h3>
+                    {% for i,j,k,m in sorted_casas_reservas %}
 
-                <div class="house col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                    <img class="img-responsive" src="/media/{{ k }}" alt="">
+                    <div class="house col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                        <img class="img-responsive" src="/media/{{ k }}" alt="">
 
-                    <div class="shade">
-                        <h1 class="sales">{{ i }}</h1>
-                        <a href="{% url 'home_details' m %}" title="" class="btn btn-warning go">{{ j }}</a>
+                        <div class="shade">
+                            <h1 class="sales">{{ i }}</h1>
+                            <a href="{% url 'home_details' m %}" title="" class="btn btn-warning go">{{ j }}</a>
+                        </div>
+
                     </div>
-
+                    {% endfor %}
                 </div>
-                {% endfor %}
-
-
-
             </div>
         </div>
+
         <div id="tf-testimonials" style="   background: url({% static 'img/05.JPG' %});
                                             background-size: cover;
                                             background-position: center;
                                             background-attachment: fixed;
                                             background-repeat: no-repeat;
                                             color: #ffffff;" class="text-center">
-        <div class="overlay">
-            <div class="container">
-                <div class="section-title center">
-                    <h2><strong>Our clients’</strong> testimonials</h2>
+            <div class="overlay">
+                <div class="container">
+                    <div class="section-title center">
+                        <h2><strong>Our clients’</strong> testimonials</h2>
 
 
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
+
+                            {% for entity in feedbacks %}
+                            <div class="item">
+                                <h5>{{ entity.body }}</h5>
+
+                                <p>user: <strong>{{ entity.full_name }}</strong></p>
+                            </div>
+                            {% endfor %}
+
+
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </div>
+
+        <div id="tf-contact" class="text-center">
+            <div class="container">
+
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
 
-                        {% for entity in feedbacks %}
-                        <div class="item">
-                            <h5>{{ entity.body }}</h5>
-
-                            <p>user: <strong>{{ entity.full_name }}</strong></p>
+                        <div class="title-contact center">
+                            <h2>Feel free to <strong>contact us</strong></h2>
                         </div>
-                        {% endfor %}
 
+                        <form action="" method="POST">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="email" name="username" class="form-control" id="exampleInputEmail1"
+                                               placeholder="Enter email">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input class="form-control" name="email" id="exampleInputPassword1"
+                                               placeholder="Email adress">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" name="message" rows="3"></textarea>
+                            </div>
+
+                            <button type="submit" class="btn tf-btn btn-default">Submit</button>
+                        </form>
 
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div id="tf-contact" class="text-center">
-        <div class="container">
 
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-
-                    <div class="title-contact center">
-                        <h2>Feel free to <strong>contact us</strong></h2>
-                    </div>
-
-                    <form action="" method="POST">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="email" name="username" class="form-control" id="exampleInputEmail1"
-                                           placeholder="Enter email">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input class="form-control" name="email" id="exampleInputPassword1"
-                                           placeholder="Email adress">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" name="message" rows="3"></textarea>
-                        </div>
-
-                        <button type="submit" class="btn tf-btn btn-default">Submit</button>
-                    </form>
-
-                </div>
-            </div>
-        </div>
-    </div>
         {% block footer %}
-<nav id="footer" style="z-index: 56;">
-        <div class="container">
-            <div class="pull-left fnav">
-                <p>ALL RIGHTS RESERVED. COPYRIGHT © 2015. Tropicollage
+        <nav id="footer" style="z-index: 56;">
+            <div class="container">
+                <div class="pull-left fnav">
+                    <p>ALL RIGHTS RESERVED. COPYRIGHT © 2015. Tropicollage
+                </div>
+                <div class="pull-right fnav">
+                    <ul class="footer-social">
+                        {#<li>{% post_to_facebook 'http://www.tropicollage.com' '<i class="ion-social-facebook"></i>' %}</li>#}
+                        {#<li>{% post_to_twitter 'http://www.tropicollage.com' '<i class="ion-social-twitter"></i>' %}</li>#}
+                        {#<li>{% post_to_gplus 'http://www.tropicollage.com' '<i class="ion-social-googleplus"></i>' %}</li>#}
+                    </ul>
+                </div>
             </div>
-            <div class="pull-right fnav">
-                <ul class="footer-social">
-
-                    {# <li>{% post_to_facebook 'http://www.tropicollage.com' '<i class="ion-social-facebook"></i>' %}</li> #}
-                    {# <li>{% post_to_twitter 'http://www.tropicollage.com' '<i class="ion-social-twitter"></i>' %}</li> #}
-                    {# <li>{% post_to_gplus 'http://www.tropicollage.com' '<i class="ion-social-googleplus"></i>' %}</li> #}
-                </ul>
-            </div>
-        </div>
-    </nav>
-{% endblock %}
+        </nav>
+        {% endblock %}
     </div>
-</div>
-{% endblock %}
+    {% endblock %}
 
 
-{% block level_scripts %}
-<script type="text/javascript" src="{% static 'js/jquery-1.10.2.min.js' %}"></script>
-<script src="{% static 'js/jquery-ui.min.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
-<script src="{% static 'js/owl.carousel.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/SmoothScroll.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/jquery.isotope.js' %}"></script>
-<script src="{% static 'js/owl.carousel.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/moment.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+    {% block level_scripts %}
+    <script type="text/javascript" src="{% static 'js/jquery-1.10.2.min.js' %}"></script>
+    <script src="{% static 'js/jquery-ui.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/SmoothScroll.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.isotope.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/moment.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
 
-<script type="text/javascript" src="{% static 'js/mootools.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/PeriodicalExecuter.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/mootools.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/PeriodicalExecuter.js' %}"></script>
 
-<script type="text/javascript" src="{% static 'js/carousel2.js' %}"></script>
-<script src="{% static 'js/swiper.js' %}"></script>
-<script src="{% static 'js/homepage.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/carousel2.js' %}"></script>
+    <script src="{% static 'js/swiper.js' %}"></script>
+    <script src="{% static 'js/homepage.js' %}"></script>
 
-<script>
-    HomePage.init();
-    $(document).ready(function () {
+    <script>
+        HomePage.init();
+        $(document).ready(function () {
 
-        var $root = $('html,body');
-        $('.page-scroll').click(function () {
-            $root.animate({
-                scrollTop: $($.attr(this, 'href')).offset().top
-            }, 1000);
-            return false;
+            var $root = $('html,body');
+            $('.page-scroll').click(function () {
+                $root.animate({
+                    scrollTop: $($.attr(this, 'href')).offset().top
+                }, 1000);
+                return false;
 
+            });
         });
-    });
-</script>
-{% endblock %}
+    </script>
+    {% endblock %}
