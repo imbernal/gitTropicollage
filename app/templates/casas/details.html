@@ -503,7 +503,7 @@
             <!--#}-->
 
             <div class="portlet-body form" id="wizard">
-                <form action="{% url 'reservar' entity.pk  %}" method="post" class="form-horizontal" id="submit_form">
+                <form action="{% url 'reservar' entity.slug  %}" method="post" class="form-horizontal" id="submit_form">
                     {% csrf_token %}
                     <div class="form-wizard">
 
