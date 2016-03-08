@@ -22,6 +22,9 @@
 
 
 <div class="total">
+    <div id="translate-this"><a style="width:180px;height:18px;display:block;" class="translate-this-button" href="https://www.translatecompany.com/translate-this/">Translate Website</a></div>
+
+            <script type="text/javascript" src="//x.translateth.is/translate-this.js"></script><script type="text/javascript">TranslateThis();</script>
 
     <div class="plus" id="plus">
         <a class="navbar-toggle" data-toggle="collapse" data-target=".filt">
@@ -48,7 +51,7 @@
                             <div class="casa-foto">
 
                                 <img class="img-responsive cv"
-                                     src="/media/{{ item.foto_principal.thumbnail.1600x1200 }}"/>
+                                     src="/media/{{ item.foto_principal.crop.400x400 }}"/>
 
                                 <div class="price">
                                     <span class="pull-left" id="simbolo_peso">$</span> <span
@@ -75,7 +78,7 @@
                                  id="owner" width="56" height="66"
                                  alt="100">
                         </div>
-                        <h4><a href="{% url 'home_details' item.slug %}">{{ item.nombre }}</a></h4>
+                        <h4 class="text_truncate"><a href="{% url 'home_details' item.slug %}">{{ item.nombre }}</a></h4>
 
 
                         <h5 class="resumen text_truncate">
