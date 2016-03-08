@@ -99,7 +99,7 @@
             <a class="fancybox-buttons" href="/media/imagenes/{{ item }}" title="{{ item }}"
                data-fancybox-group="gallery">
 
-                <img src="/media/{{ item.file.thumbnail.400x400 }}" class="owl-item" alt=""/></a>
+                <img src="/media/{{ item.file.crop.600x600 }}" class="owl-item" alt=""/></a>
             {% endfor %}
         </div>
     </div>
@@ -506,7 +506,7 @@
             <!--#}-->
 
             <div class="portlet-body form" id="wizard">
-                <form action="{% url 'reservar' entity.pk  %}" method="post" class="form-horizontal" id="submit_form">
+                <form action="{% url 'reservar' entity.slug  %}" method="post" class="form-horizontal" id="submit_form">
                     {% csrf_token %}
                     <div class="form-wizard">
 
