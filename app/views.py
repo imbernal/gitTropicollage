@@ -153,7 +153,7 @@ def reservar(request, home_slug):
 
 
     send_mail('Nueva solicitud de reservacion', message, 'info@tropicollage.com',
-              ['imbernal92@nauta.cu', 'bretana@nauta.cu', 'imbernal9203@gmail.com', 'bretanac@gmail.com', 'mmillo@nauta.cu'], fail_silently=False)
+              ['imbernal92@nauta.cu', 'bretana@nauta.cu', 'imbernal9203@gmail.com', 'bretanac@gmail.com', 'mmillo@nauta.cu' , 'i.martinez@estudiantes.upr.edu.cu' , 'cesar.bretana@estudiantes.upr.edu.cu'], fail_silently=False)
 
     return HttpResponseRedirect('/casas/detalles/' + casa.slug)
 
