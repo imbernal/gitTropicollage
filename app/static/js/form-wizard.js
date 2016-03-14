@@ -126,10 +126,18 @@ var FormWizard = function () {
                 submitHandler: function (form) {
                     success.show();
                     error.hide();
-                    form.submit();
+                    toastr.info( 'We sent you an email, please, check your inbox', 'Check email', {timeOut: 0});
+                    toastr.options.closeButton = true;
+                    toastr.options.timeout = 0;
+                    toastr.options.closeMethod = 'fadeOut';
+                    toastr.options.closeDuration = 3000;
+                    toastr.options.closeEasing = 'swing';
+
+                    setTimeout(function (){
+                        form.submit();
+                    }, 1500);
                     //add here some ajax code to submit your form or just call form.submit() if you want to submit the form without ajax
                 }
-
             });
 
             var displayConfirm = function () {

@@ -54,8 +54,8 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
 # EMAIL_HOST = 'mta.estudiantes.upr.edu.cu'
-# EMAIL_HOST_PASSWORD = 'asdasfasdasdadss'
-# EMAIL_HOST_USER = 'cesar.bretana'
+# EMAIL_HOST_PASSWORD = 'asdasdasfasd'
+# EMAIL_HOST_USER = 'asdfsa.asdas'
 # EMAIL_PORT = 25
 # EMAIL_USE_TLS = True
 
