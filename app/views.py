@@ -14,7 +14,7 @@ from app.filter import *
 import operator
 from .forms import UploadFileForm
 from .utils import handle_uploaded_file
-
+import uuid
 
 # Create your views here.
 
@@ -28,7 +28,7 @@ def exists(check, coll):
 def home_page(request):
     casas = Casa.objects.all()
     feedbacks = FeedBack.objects.all()[:3]
-    reservaciones = Reservacion.objects.all()[:5]
+    reservaciones = Reservacion.objects.filter(status="ACCEPTED")[:5]
     lugares = Casa.objects.all()
 
     lugares_fin = []
@@ -128,6 +128,25 @@ def reservar(request, home_slug):
     reservacion.fecha_fin = hasta
     reservacion.forma_llegada = llegar
     reservacion.hora_estimada = horaLLegada
+    reservacion.status = "PENDING"
+    reservacion.token = str(uuid.uuid4())
+
+    reservacion.save()
+
+    message = "Click the following link to confirm your reservation:\n" + \
+              "http://tropicollage.com/confirm/" + reservacion.token
+
+    send_mail('Book Confirmation', message, 'info@tropicollage.com',
+              [reservacion.email], fail_silently=False)
+
+    return HttpResponseRedirect('/casas/detalles/' + casa.slug)
+
+def confirm(request, token):
+    reservacion = Reservacion.objects.get(token=str(token))
+    
+    reservacion.status = "ACCEPTED"
+
+    print(str(reservacion.comment))
 
     reservacion.save()
 
@@ -149,15 +168,15 @@ def reservar(request, home_slug):
     "Hora estimada de llegada: " + reservacion.hora_estimada + "\n" + \
     "Datos adicionales del cliente: " + reservacion.comment
 
-
-
-
     send_mail('Nueva solicitud de reservacion', message, 'info@tropicollage.com',
               ['imbernal92@nauta.cu', 'bretana@nauta.cu', 'imbernal9203@gmail.com', 'bretanac@gmail.com', 'mmillo@nauta.cu' , 'i.martinez@estudiantes.upr.edu.cu' , 'cesar.bretana@estudiantes.upr.edu.cu'], fail_silently=False)
 
-    return HttpResponseRedirect('/casas/detalles/' + casa.slug)
+    message2 = "Your reservation has been successfully confirmed, please wait until we contact you.\n Grettings.\n Tropicollage Staff."
 
+    send_mail('Tropicollage Book Confirmation', message2, 'info@tropicollage.com',
+              [reservacion.email], fail_silently=False)
 
+    return HttpResponseRedirect('/')
 
 def fecha_search(request):
     start_date = request.POST['in-date']

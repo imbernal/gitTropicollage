@@ -160,7 +160,8 @@ class Reservacion(models.Model):
     hora_estimada = models.CharField(max_length=255, default=None)
     comment = models.TextField(max_length=600, default="")
     casa = models.ForeignKey(Casa)
-
+    status = models.CharField(max_length=50, default="")
+    token = models.CharField(max_length=50, default="")
 
 
 class FeedBack(models.Model):
