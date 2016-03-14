@@ -52,6 +52,7 @@ EMAIL_HOST_USER = 'infotropicollage@gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
+
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
