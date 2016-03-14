@@ -2,11 +2,11 @@
 {% load i18n %}
 
 {% block object-tools-items %}
-  {% if multiupload_list %}
-  <li>
+{% if multiupload_list %}
+<li>
     <a href="{{ multiupload_list_url }}">{% trans 'Multiupload' %}</a>
-  </li>
-  {% endif %}
+</li>
+{% endif %}
 {{ block.super }}
 
 {% endblock %}

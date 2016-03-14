@@ -3,31 +3,31 @@ function parse_data(full_name, body) {
 
 }
 $('#formComment').validate({
-    rules:{
-        full_name:{
+    rules: {
+        full_name: {
             required: true
         },
         user_email: {
             required: true,
             email: true
         },
-        comment_body:{
+        comment_body: {
             required: true
         }
 
     },
-    submitHandler: function(form){
+    submitHandler: function (form) {
         $.ajax({
-            method: "POST",
-            url: $('#post_url').val(),
-            data: {
-                full_name: $('#full_name').val(),
-                email: $('#user_email').val(),
-                body: $('#comment-body').val(),
-                home_id: $('#home_id').val()
-            }
-         })
-            .done(function(e){
+                method: "POST",
+                url: $('#post_url').val(),
+                data: {
+                    full_name: $('#full_name').val(),
+                    email: $('#user_email').val(),
+                    body: $('#comment-body').val(),
+                    home_id: $('#home_id').val()
+                }
+            })
+            .done(function (e) {
                 var html = parse_data($('#full_name').val(), $('#comment-body').val());
                 $('.reviews-list').prepend(html);
                 $('#full_name').val("");

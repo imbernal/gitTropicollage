@@ -10,4 +10,3 @@ def to_picture(img_encoded, full_path_file_name):
 
     # TODO: Check extension in json file for correct saving.
     foo.close()
-

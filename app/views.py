@@ -16,6 +16,7 @@ from .forms import UploadFileForm
 from .utils import handle_uploaded_file
 import uuid
 
+
 # Create your views here.
 
 def exists(check, coll):
@@ -25,6 +26,7 @@ def exists(check, coll):
             flag = True
     return flag
 
+
 def home_page(request):
     casas = Casa.objects.all()
     feedbacks = FeedBack.objects.all()[:3]
@@ -33,36 +35,35 @@ def home_page(request):
 
     lugares_fin = []
 
-
     casas_reserva = {}
 
     for item in casas:
-        casas_reserva[item.pk] = item.reservacion_set.count() , item.nombre , item.foto_principal , item.slug
+        casas_reserva[item.pk] = item.reservacion_set.count(), item.nombre, item.foto_principal, item.slug
 
     sorted_casas_reservas = sorted(casas_reserva.values(), reverse=True)
-
 
     for item in lugares:
         if not exists(item.polo_turistico, lugares_fin):
             lugares_fin.append(str(item.polo_turistico))
 
     return render(request, 'home_page/index.html',
-                  {'feedbacks': feedbacks,'sorted_casas_reservas':sorted_casas_reservas[:3],'reservaciones': reservaciones, 'places': lugares_fin})
+                  {'feedbacks': feedbacks, 'sorted_casas_reservas': sorted_casas_reservas[:3],
+                   'reservaciones': reservaciones, 'places': lugares_fin})
 
 
 def homeList(request):
-    if request.POST :
+    if request.POST:
         if request.POST['destination']:
-
             destination = request.POST['destination']
 
-            filter = CasaFilter(request.GET, queryset=Casa.objects.filter(polo_turistico=destination).order_by('-prioridad'))
+            filter = CasaFilter(request.GET,
+                                queryset=Casa.objects.filter(polo_turistico=destination).order_by('-prioridad'))
 
             return render(request, 'casas/index.html', {"filter": filter})
 
     filter = CasaFilter(request.GET, queryset=Casa.objects.all().order_by('-prioridad'))
 
-    return render(request, 'casas/index.html', {"filter": filter} )
+    return render(request, 'casas/index.html', {"filter": filter})
 
 
 def homeDetails(request, home_slug):
@@ -71,7 +72,6 @@ def homeDetails(request, home_slug):
     cant_camas_simples = 0
     cant_camas_dobles = 0
     addr = entity.full_address()
-
 
     for item in entity.habitacion_set.all():
         cant_camas_simples += item.cama_personal
@@ -90,6 +90,7 @@ def homeDetails(request, home_slug):
                                                   'addr': addr,
                                                   },
                   context_instance=RequestContext(request))
+
 
 @csrf_exempt
 def reservar(request, home_slug):
@@ -141,42 +142,44 @@ def reservar(request, home_slug):
 
     return HttpResponseRedirect('/casas/detalles/' + casa.slug)
 
+
 def confirm(request, token):
     reservacion = Reservacion.objects.get(token=str(token))
-    
-    reservacion.status = "ACCEPTED"
 
-    print(str(reservacion.comment))
+    reservacion.status = "ACCEPTED"
 
     reservacion.save()
 
-    message = "Datos de la reservacion:\n Casa: " + reservacion.casa.nombre + "\n" + \
-    "Pais: " + reservacion.country + "\n" + "Ciudad: " + reservacion.city_town + "\n" + \
-    "--------\n" + \
-    "Nombre del cliente:" + reservacion.first_name + " " + reservacion.last_name + "\n" + \
-    "Telefono del cliente: " + reservacion.phone_nombre + "\n" +\
-    "Email del cliente: " + reservacion.email + "\n" +\
-    "--------\n" + \
-    "Detalles de la reservacion:\n" + \
-    "Cantidad de Habitaciones: " + reservacion.cant_habitacion + "\n" + \
-    "Habitaciones simples: " + reservacion.hab_simples + "\n" + \
-    "Habitaciones dobles: " + reservacion.hab_dobles + "\n" + \
-    "Habitaciones triples: " + reservacion.hab_triples + "\n" + \
-    "Fecha de entrada: " + reservacion.fecha_ini + "\n" + \
-    "Fecha de salida: " + reservacion.fecha_fin + "\n" + \
-    "Via de llegada: " + reservacion.forma_llegada + "\n" + \
-    "Hora estimada de llegada: " + reservacion.hora_estimada + "\n" + \
-    "Datos adicionales del cliente: " + reservacion.comment
+    message = "Datos de la reservacion:\nCasa: " + reservacion.casa.nombre + "\n" + \
+              "Pais: " + reservacion.country + "\n" + "Ciudad: " + reservacion.city_town + "\n" + \
+              "--------\n" + \
+              "Nombre del cliente:" + reservacion.first_name + " " + reservacion.last_name + "\n" + \
+              "Telefono del cliente: " + str(reservacion.phone_nombre) + "\n" + \
+              "Email del cliente: " + reservacion.email + "\n" + \
+              "--------\n" + \
+              "Detalles de la reservacion:\n" + \
+              "Cantidad de Habitaciones: " + str(reservacion.cant_habitacion) + "\n" + \
+              "Habitaciones simples: " + str(reservacion.hab_simples) + "\n" + \
+              "Habitaciones dobles: " + str(reservacion.hab_dobles) + "\n" + \
+              "Habitaciones triples: " + str(reservacion.hab_triples) + "\n" + \
+              "Fecha de entrada: " + str(reservacion.fecha_ini) + "\n" + \
+              "Fecha de salida: " + str(reservacion.fecha_fin) + "\n" + \
+              "Via de llegada: " + str(reservacion.forma_llegada) + "\n" + \
+              "Hora estimada de llegada: " + str(reservacion.hora_estimada) + "\n" + \
+              "Datos adicionales del cliente: " + reservacion.comment
 
     send_mail('Nueva solicitud de reservacion', message, 'info@tropicollage.com',
-              ['imbernal92@nauta.cu', 'bretana@nauta.cu', 'imbernal9203@gmail.com', 'bretanac@gmail.com', 'mmillo@nauta.cu' , 'i.martinez@estudiantes.upr.edu.cu' , 'cesar.bretana@estudiantes.upr.edu.cu'], fail_silently=False)
+              ['imbernal92@nauta.cu', 'bretana@nauta.cu', 'imbernal9203@gmail.com', 'bretanac@gmail.com',
+               'mmillo@nauta.cu', 'i.martinez@estudiantes.upr.edu.cu', 'cesar.bretana@estudiantes.upr.edu.cu'],
+              fail_silently=False)
 
-    message2 = "Your reservation has been successfully confirmed, please wait until we contact you.\n Grettings.\n Tropicollage Staff."
+    message2 = "Your reservation has been successfully confirmed, please wait until we contact you.\nBest Regards.\nTropicollage Staff."
 
     send_mail('Tropicollage Book Confirmation', message2, 'info@tropicollage.com',
               [reservacion.email], fail_silently=False)
 
     return HttpResponseRedirect('/')
+
 
 def fecha_search(request):
     start_date = request.POST['in-date']
@@ -219,12 +222,13 @@ def contact(request):
 
 
 def send_data(request):
-    data = {'name': 'Cesar Bretana Glez', 'start_date': '05-02-15', }
+    data = {'name': 'Cesar Bretana Glez', 'start_date': '05-02-15',}
     message = data['name'] + ' rento en ' + data['start_date']
 
     send_mail('New rent', message, 'info@tropicollage.com',
               ['i.martinez@estudiantes.upr.edu.cu', 'cesar.bretana@estudiantes.upr.edu.cu'], fail_silently=False)
     return HttpResponse(200)
+
 
 def register(request):
     if request.method == 'POST':

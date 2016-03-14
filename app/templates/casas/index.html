@@ -22,9 +22,11 @@
 
 
 <div class="total">
-    <div id="translate-this"><a style="width:180px;height:18px;display:block;" class="translate-this-button" href="https://www.translatecompany.com/translate-this/">Translate Website</a></div>
+    <div id="translate-this"><a style="width:180px;height:18px;display:block;" class="translate-this-button"
+                                href="https://www.translatecompany.com/translate-this/">Translate Website</a></div>
 
-            <script type="text/javascript" src="//x.translateth.is/translate-this.js"></script><script type="text/javascript">TranslateThis();</script>
+    <script type="text/javascript" src="//x.translateth.is/translate-this.js"></script>
+    <script type="text/javascript">TranslateThis();</script>
 
     <div class="plus" id="plus">
         <a class="navbar-toggle" data-toggle="collapse" data-target=".filt">
@@ -78,7 +80,8 @@
                                  id="owner" width="56" height="66"
                                  alt="100">
                         </div>
-                        <h4 class="text_truncate"><a href="{% url 'home_details' item.slug %}">{{ item.nombre }}</a></h4>
+                        <h4 class="text_truncate"><a href="{% url 'home_details' item.slug %}">{{ item.nombre }}</a>
+                        </h4>
 
 
                         <h5 class="resumen text_truncate">
@@ -109,8 +112,9 @@
     <form action="" method="get">
         <div class="filtros">
             <div class="logonombre">
-                <a class="navbar-brand" href="{% url 'home_page' %}"><img class="img-responsive" width="150" height="150"
-                                                      src="{% static 'img/team/logoname.png' %}"/></a>
+                <a class="navbar-brand" href="{% url 'home_page' %}"><img class="img-responsive" width="150"
+                                                                          height="150"
+                                                                          src="{% static 'img/team/logoname.png' %}"/></a>
 
             </div>
 

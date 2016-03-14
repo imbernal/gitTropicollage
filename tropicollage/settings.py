@@ -15,7 +15,6 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
@@ -53,12 +52,6 @@ EMAIL_HOST_USER = 'infotropicollage@gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
-# EMAIL_HOST = 'mta.estudiantes.upr.edu.cu'
-# EMAIL_HOST_PASSWORD = 'asdasfasdasdadss'
-# EMAIL_HOST_USER = 'cesar.bretana'
-# EMAIL_PORT = 25
-# EMAIL_USE_TLS = True
-
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -90,7 +83,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'tropicollage.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
@@ -100,7 +92,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
@@ -115,10 +106,9 @@ USE_L10N = True
 
 USE_TZ = True
 
-MEDIA_ROOT = os.path.join('app/','imagenes')
+MEDIA_ROOT = os.path.join('app/', 'imagenes')
 STATIC_ROOT = ('/opt/tropicollage/static')
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
-

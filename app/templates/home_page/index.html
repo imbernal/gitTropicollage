@@ -65,12 +65,15 @@
                     <li><a href="#tf-works" class="page-scroll">Services</a></li>
                     <li><a href="#tf-testimonials" class="page-scroll">Testimonials</a></li>
                     <li><a href="#tf-contact" class="page-scroll">Contact</a></li>
-                
+
                 </ul>
             </div>
-            <div id="translate-this"><a style="width:180px;height:18px;display:block;" class="translate-this-button" href="https://www.translatecompany.com/translate-this/">Translate Website</a></div>
+            <div id="translate-this"><a style="width:180px;height:18px;display:block;" class="translate-this-button"
+                                        href="https://www.translatecompany.com/translate-this/">Translate Website</a>
+            </div>
 
-            <script type="text/javascript" src="//x.translateth.is/translate-this.js"></script><script type="text/javascript">TranslateThis();</script>
+            <script type="text/javascript" src="//x.translateth.is/translate-this.js"></script>
+            <script type="text/javascript">TranslateThis();</script>
         </div>
 
     </nav>
@@ -78,32 +81,32 @@
     <div id="tf-home" class="swiper-container">
         <div class="another-shade">
             <div class="backgroundc">
-            <div class="container-fluid">
-                <div class="content">
-                    <header>
-                        <p class="Nombre1">Find the house to spend your vacations.</p>
-                    </header>
-                    <form action="{% url 'casas' %}" class="form-inline" method="post" style="padding-bottom: 2%;">
-                        {% csrf_token %}
-                        <div class="selectdays">
-                            <!--<div class="form-group  label1">-->
-                            <select class="form-control findButton" name="destination">
-                                <option value>Select a place</option>
-                                {% for item in places %}
-                                <option value="{{ item }}">{{ item }}</option>
-                                {% endfor %}
-                            </select>
-                            <div>
-                                <button type="submit" class="btn btn-warning findButton">
-                                    <span class="glyphicon glyphicon-search"></span>
-                                    Find
-                                </button>
+                <div class="container-fluid">
+                    <div class="content">
+                        <header>
+                            <p class="Nombre1">Find the house to spend your vacations.</p>
+                        </header>
+                        <form action="{% url 'casas' %}" class="form-inline" method="post" style="padding-bottom: 2%;">
+                            {% csrf_token %}
+                            <div class="selectdays">
+                                <!--<div class="form-group  label1">-->
+                                <select class="form-control findButton" name="destination">
+                                    <option value>Select a place</option>
+                                    {% for item in places %}
+                                    <option value="{{ item }}">{{ item }}</option>
+                                    {% endfor %}
+                                </select>
+                                <div>
+                                    <button type="submit" class="btn btn-warning findButton">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                        Find
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
         </div>
         <div class="swiper-wrapper">
             <div class="swiper-slide" style="background-image:url({% static 'img/slider/03.png' %})"></div>
@@ -133,7 +136,8 @@
                             <div class="section-title">
                                 <h2 style="color:black" class="text-center">About us</h2>
                             </div>
-                            <p class="intro text-center">Somos un equipo con más de 5 años de experiencias, que siempre hemos tenido
+                            <p class="intro text-center">Somos un equipo con más de 5 años de experiencias, que siempre
+                                hemos tenido
                                 la satisfacción de llegar a cumplir las aspiraciones de nuestros clientes, esperamos que
                                 con nosotros pasen las vacaciones de sus sueños.
                                 Atentamente equipo <strong>Tropicollage</strong></p>
@@ -262,13 +266,6 @@
                 <div class="pull-left fnav">
                     <p>ALL RIGHTS RESERVED. COPYRIGHT © 2015. Tropicollage
                 </div>
-                <div class="pull-right fnav">
-                    <ul class="footer-social">
-                        {#<li>{% post_to_facebook 'http://www.tropicollage.com' '<i class="ion-social-facebook"></i>' %}</li>#}
-                        {#<li>{% post_to_twitter 'http://www.tropicollage.com' '<i class="ion-social-twitter"></i>' %}</li>#}
-                        {#<li>{% post_to_gplus 'http://www.tropicollage.com' '<i class="ion-social-googleplus"></i>' %}</li>#}
-                    </ul>
-                </div>
             </div>
         </nav>
         {% endblock %}
@@ -308,5 +305,5 @@
             });
         });
     </script>
-    
+
     {% endblock %}

@@ -7,7 +7,6 @@ import versatileimagefield.fields
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('app', '0015_casa_slug'),
     ]

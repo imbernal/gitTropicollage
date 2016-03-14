@@ -57,7 +57,7 @@ function doAjaxSubmit(e) {
         processData: false,
         headers: {'Accept': 'text/html; q=1.0, */*'},
     });
-    ret.always(function(data, textStatus, jqXHR) {
+    ret.always(function (data, textStatus, jqXHR) {
         if (textStatus != 'success') {
             jqXHR = data;
         }
@@ -67,8 +67,8 @@ function doAjaxSubmit(e) {
             try {
                 // Modify the location and scroll to top, as if after page load.
                 history.replaceState({}, '', url);
-                scroll(0,0);
-            } catch(err) {
+                scroll(0, 0);
+            } catch (err) {
                 // History API not supported, so redirect.
                 window.location = url;
             }
@@ -88,7 +88,7 @@ function captureSubmittingElement(e) {
 }
 
 
-$.fn.ajaxForm = function() {
+$.fn.ajaxForm = function () {
     var options = {}
     return this
         .unbind('submit.form-plugin  click.form-plugin')

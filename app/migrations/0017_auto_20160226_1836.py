@@ -7,7 +7,6 @@ import versatileimagefield.fields
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('app', '0016_auto_20160226_1824'),
     ]

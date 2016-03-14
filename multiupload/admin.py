@@ -6,7 +6,7 @@ except ImportError:
 
 from django.contrib import admin
 from django.shortcuts import render, get_object_or_404
-from django.conf.urls import patterns,url
+from django.conf.urls import patterns, url
 from django.core.urlresolvers import reverse
 from django.http import HttpResponse, HttpResponseBadRequest
 from django.views.decorators.csrf import csrf_exempt
@@ -33,6 +33,7 @@ class MultiUploadAdmin(admin.ModelAdmin):
                     'css/multiupload.css',
                     ],
         }
+
     change_form_template = 'multiupload/change_form.html'
     change_list_template = 'multiupload/change_list.html'
     multiupload_template = 'multiupload/upload.html'
@@ -44,7 +45,7 @@ class MultiUploadAdmin(admin.ModelAdmin):
     # tuple with mimetype accepted
     multiupload_acceptedformats = ("image/jpeg",
                                    "image/pjpeg",
-                                   "image/png", )
+                                   "image/png",)
 
     @property
     def upload_options(self):
@@ -104,16 +105,16 @@ class MultiUploadAdmin(admin.ModelAdmin):
         multi_urls = patterns('')
         if self.multiupload_list:
             multi_urls += patterns('',
-                url(r'^multiupload/$',
-                    self.admin_site.admin_view(self.admin_upload_view),
-                    name=self.get_multiupload_list_view_name())
-            )
+                                   url(r'^multiupload/$',
+                                       self.admin_site.admin_view(self.admin_upload_view),
+                                       name=self.get_multiupload_list_view_name())
+                                   )
         if self.multiupload_form:
             multi_urls += patterns('',
-                url(r'^(?P<id>\d+)/multiupload/$',
-                    self.admin_site.admin_view(self.admin_upload_view),
-                    name=self.get_multiupload_form_view_name()),
-            )
+                                   url(r'^(?P<id>\d+)/multiupload/$',
+                                       self.admin_site.admin_view(self.admin_upload_view),
+                                       name=self.get_multiupload_form_view_name()),
+                                   )
         return multi_urls + super(MultiUploadAdmin, self).get_urls(*args,
                                                                    **kwargs)
 
@@ -154,7 +155,7 @@ class MultiUploadAdmin(admin.ModelAdmin):
             object = self.get_object(request, id)
         else:
             object = None
-        if request.method == 'POST':    # POST data
+        if request.method == 'POST':  # POST data
             if not ("f" in request.GET.keys()):  # upload file
                 if not request.FILES:
                     return HttpResponseBadRequest('Must upload a file')
@@ -204,8 +205,8 @@ class MultiUploadAdmin(admin.ModelAdmin):
 
                         assert 'id' in data, 'Must return id in data'
                         response_data.update(data)
-                        response_data['delete_url'] = request.path + "?"\
-                            + urlencode({'f': data['id']})
+                        response_data['delete_url'] = request.path + "?" \
+                                                      + urlencode({'f': data['id']})
 
                     resp.append(response_data)
 
@@ -248,7 +249,7 @@ class MultiUploadAdmin(admin.ModelAdmin):
                 return HttpResponse(response_data, content_type="application/json")
 
         else:
-            #GET
+            # GET
             context = {
                 # these two are necessary to generate the jQuery templates
                 # they have to be included here since they conflict

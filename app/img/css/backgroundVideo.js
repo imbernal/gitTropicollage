@@ -1,4 +1,4 @@
-;(function ( $, window, document, undefined ) {
+;(function ($, window, document, undefined) {
     "use strict";
 
     // Create the defaults once
@@ -17,10 +17,10 @@
         };
 
     // The actual plugin constructor
-    function Plugin( element, options ) {
+    function Plugin(element, options) {
         var me = this;
         this.element = element;
-        this.options = $.extend( {}, defaults, options );
+        this.options = $.extend({}, defaults, options);
 
         this._defaults = defaults;
         this._name = pluginName;
@@ -52,7 +52,7 @@
         function readyCallback() {
             me.options.originalVideoW = me.options.$video[0].videoWidth;
             me.options.originalVideoH = me.options.$video[0].videoHeight;
-            if(me.initialised) {
+            if (me.initialised) {
                 return;
             }
             me.init();
@@ -61,19 +61,21 @@
 
     Plugin.prototype = {
 
-        init: function() {
+        init: function () {
             var me = this;
 
             this.initialised = true;
 
             // Pause video when the video goes out of the browser view
-            if(this.options.pauseVideoOnViewLoss) {
+            if (this.options.pauseVideoOnViewLoss) {
                 this.playPauseVideo();
             }
 
             // Prevent context menu on right click for object
-            if(this.options.preventContextMenu) {
-                this.options.$video.on('contextmenu', function() { return false; });
+            if (this.options.preventContextMenu) {
+                this.options.$video.on('contextmenu', function () {
+                    return false;
+                });
             }
 
             me.update();
@@ -83,19 +85,19 @@
             var me = this,
                 ticking = false;
 
-            var update = function() {
+            var update = function () {
                 me.positionObject();
                 ticking = false;
             };
 
-            var requestTick = function() {
+            var requestTick = function () {
                 if (!ticking) {
                     window.requestAnimationFrame(update);
                     ticking = true;
                 }
             };
 
-            if(this.options.parallax) {
+            if (this.options.parallax) {
                 this.options.$window.on('scroll.backgroundVideo', requestTick);
             }
 
@@ -105,26 +107,26 @@
 
         detect3d: function () {
             var el = document.createElement('p'), t, has3d,
-            transforms = {
-                'WebkitTransform':'-webkit-transform',
-                'OTransform':'-o-transform',
-                'MSTransform':'-ms-transform',
-                'MozTransform':'-moz-transform',
-                'transform':'transform'
-            };
+                transforms = {
+                    'WebkitTransform': '-webkit-transform',
+                    'OTransform': '-o-transform',
+                    'MSTransform': '-ms-transform',
+                    'MozTransform': '-moz-transform',
+                    'transform': 'transform'
+                };
 
             document.body.insertBefore(el, document.body.lastChild);
 
-            for(t in transforms){
-                if( el.style[t] !== undefined ){
+            for (t in transforms) {
+                if (el.style[t] !== undefined) {
                     el.style[t] = 'matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)';
-                    has3d = window.getComputedStyle(el).getPropertyValue( transforms[t] );
+                    has3d = window.getComputedStyle(el).getPropertyValue(transforms[t]);
                 }
             }
 
             el.parentNode.removeChild(el);
 
-            if( has3d !== undefined ){
+            if (has3d !== undefined) {
                 return has3d !== 'none';
             } else {
                 return false;
@@ -134,11 +136,11 @@
         detectBrowser: function () {
             var val = navigator.userAgent.toLowerCase();
 
-            if( val.indexOf('chrome') > -1 || val.indexOf('safari') > -1 ) {
+            if (val.indexOf('chrome') > -1 || val.indexOf('safari') > -1) {
                 this.options.browser = 'webkit';
                 this.options.browserPrexix = '-webkit-';
             }
-            else if( val.indexOf('firefox') > -1 ) {
+            else if (val.indexOf('firefox') > -1) {
                 this.options.browser = 'firefox';
                 this.options.browserPrexix = '-moz-';
             }
@@ -146,13 +148,13 @@
                 this.options.browser = 'ie';
                 this.options.browserPrexix = '-ms-';
             }
-            else if( val.indexOf('Opera') > -1 ) {
+            else if (val.indexOf('Opera') > -1) {
                 this.options.browser = 'opera';
                 this.options.browserPrexix = '-o-';
             }
         },
 
-        scaleObject: function() {
+        scaleObject: function () {
             var me = this, heightScale, widthScale, scaleFactor;
 
             // Set the video wrap to the outerWrap size (defaulted to window)
@@ -179,7 +181,7 @@
 
         },
 
-        positionObject: function() {
+        positionObject: function () {
             var me = this,
                 scrollPos = window.pageYOffset,
                 scaleObject = this.scaleObject(this.options.$video, me.options.$videoWrap),
@@ -187,10 +189,10 @@
                 yPos = scaleObject.yPos;
 
             // Check for parallax
-            if(this.options.parallax) {
+            if (this.options.parallax) {
                 // Prevent parallax when scroll position is negative to the window
-                if(scrollPos >= 0) {
-                    yPos = this.calculateYPos(yPos,scrollPos);
+                if (scrollPos >= 0) {
+                    yPos = this.calculateYPos(yPos, scrollPos);
                 } else {
                     yPos = this.calculateYPos(yPos, 0);
                 }
@@ -199,12 +201,12 @@
             }
 
             // Check for 3dtransforms
-            if(me.options.has3d) {
-                this.options.$video.css(me.options.browserPrexix + 'transform', 'translate3d(-'+ xPos +'px, ' + yPos + 'px, 0)');
-                this.options.$video.css('transform', 'translate3d('+ xPos +'px, ' + yPos + 'px, 0)');
+            if (me.options.has3d) {
+                this.options.$video.css(me.options.browserPrexix + 'transform', 'translate3d(-' + xPos + 'px, ' + yPos + 'px, 0)');
+                this.options.$video.css('transform', 'translate3d(' + xPos + 'px, ' + yPos + 'px, 0)');
             } else {
-                this.options.$video.css(me.options.browserPrexix + 'transform', 'translate(-'+ xPos +'px, ' + yPos + 'px)');
-                this.options.$video.css('transform', 'translate('+ xPos +'px, ' + yPos + 'px)');
+                this.options.$video.css(me.options.browserPrexix + 'transform', 'translate(-' + xPos + 'px, ' + yPos + 'px)');
+                this.options.$video.css('transform', 'translate(' + xPos + 'px, ' + yPos + 'px)');
             }
         },
 
@@ -227,7 +229,7 @@
 
             this.options.$window.on('scroll.backgroundVideoPlayPause', function () {
                 // Play/Pause video depending on where the user is in the browser
-                if(me.options.$window.scrollTop() < me.options.$videoWrap.height()) {
+                if (me.options.$window.scrollTop() < me.options.$videoWrap.height()) {
                     me.options.$video.get(0).play();
                 } else {
                     me.options.$video.get(0).pause();
@@ -240,24 +242,26 @@
 
             var lastTime = 0;
             var vendors = ['ms', 'moz', 'webkit', 'o'];
-            for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
-                window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
-                window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame']
-                                           || window[vendors[x]+'CancelRequestAnimationFrame'];
+            for (var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+                window.requestAnimationFrame = window[vendors[x] + 'RequestAnimationFrame'];
+                window.cancelAnimationFrame = window[vendors[x] + 'CancelAnimationFrame']
+                    || window[vendors[x] + 'CancelRequestAnimationFrame'];
             }
 
             if (!window.requestAnimationFrame)
-                window.requestAnimationFrame = function(callback, element) {
+                window.requestAnimationFrame = function (callback, element) {
                     var currTime = new Date().getTime();
                     var timeToCall = Math.max(0, 16 - (currTime - lastTime));
-                    var id = window.setTimeout(function() { callback(currTime + timeToCall); },
-                      timeToCall);
+                    var id = window.setTimeout(function () {
+                            callback(currTime + timeToCall);
+                        },
+                        timeToCall);
                     lastTime = currTime + timeToCall;
                     return id;
                 };
 
             if (!window.cancelAnimationFrame)
-                window.cancelAnimationFrame = function(id) {
+                window.cancelAnimationFrame = function (id) {
                     clearTimeout(id);
                 };
         }
@@ -265,13 +269,13 @@
 
     // A really lightweight plugin wrapper around the constructor,
     // preventing against multiple instantiations
-    $.fn[pluginName] = function ( options ) {
+    $.fn[pluginName] = function (options) {
         return this.each(function () {
             if (!$.data(this, "plugin_" + pluginName)) {
                 $.data(this, "plugin_" + pluginName,
-                new Plugin( this, options ));
+                    new Plugin(this, options));
             }
         });
     };
 
-})( jQuery, window, document );
+})(jQuery, window, document);

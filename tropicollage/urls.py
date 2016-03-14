@@ -26,8 +26,8 @@ router.register(r'galleries', GalleryViewSet)
 router.register(r'images', ImagesViewSet)
 
 urlpatterns = [
-    url(r'^api/' , include(router.urls)),
-    url(r'^api-auth/' , include('rest_framework.urls' , namespace='rest_framework')),
+    url(r'^api/', include(router.urls)),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'app.views.home_page', name='home_page'),
     url(r'^$/contact', 'app.views.contact', name='contact'),
@@ -38,12 +38,12 @@ urlpatterns = [
     url(r'^uploadData/$', 'app.views.uploadJson', name='upload_json'),
     url(r'^upload/$', 'app.views.upload', name='app_upload'),
 
-    url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT, }),
+    url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT,}),
 
     url(r'^casas/detalles/(?P<home_slug>[-\w]+)$', 'app.views.homeDetails', name='home_details'),
     url(r'^home_pictures/$', 'app.views.get_pictures_from_home', name='home_details'),
     url(r'^feedback/$', 'app.views.comment', name='comment'),
     url(r'^notif_mail/$', 'app.views.send_data', name='send_data'),
     url(r'^confirm/(?P<token>[-\w]+)$', 'app.views.confirm', name='confirm_reservation'),
-    url(r'^static/(?P<path>.*)$','django.views.static.serve',{'document_root': settings.STATIC_URL})
+    url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_URL})
 ]

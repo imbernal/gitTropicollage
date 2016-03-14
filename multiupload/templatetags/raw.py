@@ -3,6 +3,7 @@
 # This code is released under the GPL.
 
 from django import template
+
 register = template.Library()
 
 try:
@@ -36,7 +37,7 @@ except ImportError:
         while parser.tokens:
             token = parser.next_token()
             if token.token_type == template.TOKEN_BLOCK and \
-                    token.contents == parse_until:
+                            token.contents == parse_until:
                 return template.TextNode(u''.join(text))
             start, end = tag_mapping[token.token_type]
             if token.contents.startswith('='):
@@ -44,4 +45,3 @@ except ImportError:
             else:
                 text.append(u'%s %s %s' % (start, token.contents, end))
         parser.unclosed_block_tag(parse_until)
-

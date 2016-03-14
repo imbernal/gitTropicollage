@@ -3,25 +3,26 @@ from django.shortcuts import get_object_or_404
 from .models import *
 from multiupload.admin import MultiUploadAdmin
 
+
 # Register your models here.
 
 class CasaAdmin(admin.ModelAdmin):
+    list_display = ('nombre', 'direccion_postal', 'correo', 'mensaje_promocional', 'superhost')
 
-    list_display = ('nombre' , 'direccion_postal' , 'correo', 'mensaje_promocional', 'superhost' )
 
 class HabitacionAdmin(admin.ModelAdmin):
-    list_display = ( 'casa' , )
+    list_display = ('casa',)
 
 
 class ReservacionAdmin(admin.ModelAdmin):
-    list_display = ('hora_estimada' , 'fecha_fin' , 'casa')
+    list_display = ('hora_estimada', 'fecha_fin', 'casa')
+
 
 class ImageInlineAdmin(admin.TabularInline):
     model = Image
 
 
 class GalleryMultiuploadMixing(object):
-
     def process_uploaded_file(self, uploaded, gallery, request):
         if gallery:
             image = gallery.images.create(file=uploaded)
@@ -34,9 +35,9 @@ class GalleryMultiuploadMixing(object):
             'name': image.filename
         }
 
-class GalleryAdmin(GalleryMultiuploadMixing, MultiUploadAdmin):
 
-    inlines = [ImageInlineAdmin,]
+class GalleryAdmin(GalleryMultiuploadMixing, MultiUploadAdmin):
+    inlines = [ImageInlineAdmin, ]
     multiupload_form = True
     multiupload_list = False
 
@@ -53,11 +54,9 @@ class ImageAdmin(GalleryMultiuploadMixing, MultiUploadAdmin):
     multiupload_list = True
 
 
-
-
 admin.site.register(Gallery, GalleryAdmin)
 admin.site.register(Image, ImageAdmin)
-admin.site.register(Casa , CasaAdmin)
-admin.site.register(Reservacion , ReservacionAdmin)
+admin.site.register(Casa, CasaAdmin)
+admin.site.register(Reservacion, ReservacionAdmin)
 admin.site.register(FeedBack)
-admin.site.register(Habitacion , HabitacionAdmin)
+admin.site.register(Habitacion, HabitacionAdmin)

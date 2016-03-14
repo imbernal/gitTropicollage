@@ -23,7 +23,6 @@ var FormWizard = function () {
                 }
             });
 
-            
 
             var form = $('#submit_form');
             var error = $('.alert-danger', form);

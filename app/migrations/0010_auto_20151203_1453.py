@@ -7,7 +7,6 @@ import datetime
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('app', '0009_auto_20151202_2144'),
     ]
@@ -31,7 +30,8 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='feedback',
             name='pub_date',
-            field=models.DateTimeField(auto_now=True, default=datetime.datetime(2015, 12, 3, 14, 53, 51, 200801, tzinfo=utc)),
+            field=models.DateTimeField(auto_now=True,
+                                       default=datetime.datetime(2015, 12, 3, 14, 53, 51, 200801, tzinfo=utc)),
             preserve_default=False,
         ),
     ]

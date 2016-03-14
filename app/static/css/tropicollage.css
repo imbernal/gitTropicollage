@@ -383,16 +383,18 @@ hr {
     right: -25%;
     bottom: 99%;
 }
-.logonombre{
+
+.logonombre {
     top: -53px;
     position: absolute;
     background: #EEEEEE;
 }
-.logo{
+
+.logo {
     position: absolute;
     background: white;
-    left:0;
-    top:4%;
+    left: 0;
+    top: 4%;
 }
 
 .detalles .image_owner #owner {
